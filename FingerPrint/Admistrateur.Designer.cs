@@ -144,6 +144,11 @@
             this.GBX_ListeProg = new System.Windows.Forms.GroupBox();
             this.DGV_ListeProgramme = new System.Windows.Forms.DataGridView();
             this.GBX_FormProg = new System.Windows.Forms.GroupBox();
+            this.CBX_HeureFinProg = new System.Windows.Forms.ComboBox();
+            this.CBX_HeureDebutProg = new System.Windows.Forms.ComboBox();
+            this.CBX_SelectProgMatiere = new System.Windows.Forms.ComboBox();
+            this.CBX_SelectProgProf = new System.Windows.Forms.ComboBox();
+            this.CBX_SelectClasse = new System.Windows.Forms.ComboBox();
             this.TXB_NomProgramme = new System.Windows.Forms.TextBox();
             this.LBL_NomProgramme = new System.Windows.Forms.Label();
             this.LBL_HeureFinProg = new System.Windows.Forms.Label();
@@ -163,18 +168,18 @@
             this.GBX_ListePresence = new System.Windows.Forms.GroupBox();
             this.DGV_ListePresence = new System.Windows.Forms.DataGridView();
             this.GBX_FormPresence = new System.Windows.Forms.GroupBox();
+            this.CBX_HeureFinPres = new System.Windows.Forms.ComboBox();
+            this.CBX_HeureDebutPres = new System.Windows.Forms.ComboBox();
+            this.CBX_SelectNomProg = new System.Windows.Forms.ComboBox();
             this.DTP_Presence = new System.Windows.Forms.DateTimePicker();
             this.LBL_DatePres = new System.Windows.Forms.Label();
             this.LBL_HeureFinPresence = new System.Windows.Forms.Label();
             this.LBL_HeureDebutPresence = new System.Windows.Forms.Label();
             this.LBL_SelectNomProg = new System.Windows.Forms.Label();
-            this.BTN_Aide = new System.Windows.Forms.Button();
-            this.BTN_Quitter = new System.Windows.Forms.Button();
-            this.BTN_Rapports = new System.Windows.Forms.Button();
-            this.BTN_Horaires = new System.Windows.Forms.Button();
-            this.BTN_EtatReseau = new System.Windows.Forms.Button();
             this.TPG_MatiereProf = new System.Windows.Forms.TabPage();
             this.GBX_FormMatiereProf = new System.Windows.Forms.GroupBox();
+            this.CBX_SelectMatiere = new System.Windows.Forms.ComboBox();
+            this.CBX_SelectProf = new System.Windows.Forms.ComboBox();
             this.LBL_Matiere = new System.Windows.Forms.Label();
             this.LBL_Prof = new System.Windows.Forms.Label();
             this.BTN_AnnulerMatProf = new System.Windows.Forms.Button();
@@ -183,18 +188,15 @@
             this.GBX_RechMatiereProf = new System.Windows.Forms.GroupBox();
             this.TXB_RechMatiereProf = new System.Windows.Forms.TextBox();
             this.BTN_RechMatiereProf = new System.Windows.Forms.Button();
-            this.DGV_MatiereProf = new System.Windows.Forms.DataGridView();
             this.GBX_ListeMatiereProf = new System.Windows.Forms.GroupBox();
-            this.CBX_SelectProf = new System.Windows.Forms.ComboBox();
-            this.CBX_SelectMatiere = new System.Windows.Forms.ComboBox();
-            this.CBX_SelectNomProg = new System.Windows.Forms.ComboBox();
-            this.CBX_HeureDebutPres = new System.Windows.Forms.ComboBox();
-            this.CBX_HeureFinPres = new System.Windows.Forms.ComboBox();
-            this.CBX_SelectClasse = new System.Windows.Forms.ComboBox();
-            this.CBX_SelectProgProf = new System.Windows.Forms.ComboBox();
-            this.CBX_SelectProgMatiere = new System.Windows.Forms.ComboBox();
-            this.CBX_HeureFinProg = new System.Windows.Forms.ComboBox();
-            this.CBX_HeureDebutProg = new System.Windows.Forms.ComboBox();
+            this.DGV_MatiereProf = new System.Windows.Forms.DataGridView();
+            this.BTN_Aide = new System.Windows.Forms.Button();
+            this.BTN_Quitter = new System.Windows.Forms.Button();
+            this.BTN_Rapports = new System.Windows.Forms.Button();
+            this.BTN_Horaires = new System.Windows.Forms.Button();
+            this.BTN_EtatReseau = new System.Windows.Forms.Button();
+            this.LBL_TypeUtil = new System.Windows.Forms.Label();
+            this.CBX_TypeUtil = new System.Windows.Forms.ComboBox();
             this.TCL_Admin.SuspendLayout();
             this.TPG_Professeur.SuspendLayout();
             this.GBX_RechercheProf.SuspendLayout();
@@ -235,8 +237,8 @@
             this.TPG_MatiereProf.SuspendLayout();
             this.GBX_FormMatiereProf.SuspendLayout();
             this.GBX_RechMatiereProf.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_MatiereProf)).BeginInit();
             this.GBX_ListeMatiereProf.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_MatiereProf)).BeginInit();
             this.SuspendLayout();
             // 
             // TCL_Admin
@@ -1167,6 +1169,8 @@
             // 
             // GBX_FormAdmin
             // 
+            this.GBX_FormAdmin.Controls.Add(this.CBX_TypeUtil);
+            this.GBX_FormAdmin.Controls.Add(this.LBL_TypeUtil);
             this.GBX_FormAdmin.Controls.Add(this.TXB_MotDePasseAdmin);
             this.GBX_FormAdmin.Controls.Add(this.LBL_MotDePasseAdmin);
             this.GBX_FormAdmin.Controls.Add(this.TXB_LoginAdmin);
@@ -1184,7 +1188,7 @@
             // 
             // TXB_MotDePasseAdmin
             // 
-            this.TXB_MotDePasseAdmin.Location = new System.Drawing.Point(428, 72);
+            this.TXB_MotDePasseAdmin.Location = new System.Drawing.Point(579, 73);
             this.TXB_MotDePasseAdmin.Name = "TXB_MotDePasseAdmin";
             this.TXB_MotDePasseAdmin.Size = new System.Drawing.Size(114, 20);
             this.TXB_MotDePasseAdmin.TabIndex = 7;
@@ -1192,7 +1196,7 @@
             // LBL_MotDePasseAdmin
             // 
             this.LBL_MotDePasseAdmin.AutoSize = true;
-            this.LBL_MotDePasseAdmin.Location = new System.Drawing.Point(332, 74);
+            this.LBL_MotDePasseAdmin.Location = new System.Drawing.Point(483, 75);
             this.LBL_MotDePasseAdmin.Name = "LBL_MotDePasseAdmin";
             this.LBL_MotDePasseAdmin.Size = new System.Drawing.Size(74, 13);
             this.LBL_MotDePasseAdmin.TabIndex = 6;
@@ -1200,7 +1204,7 @@
             // 
             // TXB_LoginAdmin
             // 
-            this.TXB_LoginAdmin.Location = new System.Drawing.Point(428, 31);
+            this.TXB_LoginAdmin.Location = new System.Drawing.Point(579, 32);
             this.TXB_LoginAdmin.Name = "TXB_LoginAdmin";
             this.TXB_LoginAdmin.Size = new System.Drawing.Size(114, 20);
             this.TXB_LoginAdmin.TabIndex = 5;
@@ -1208,7 +1212,7 @@
             // LBL_LoginAdmin
             // 
             this.LBL_LoginAdmin.AutoSize = true;
-            this.LBL_LoginAdmin.Location = new System.Drawing.Point(332, 33);
+            this.LBL_LoginAdmin.Location = new System.Drawing.Point(483, 34);
             this.LBL_LoginAdmin.Name = "LBL_LoginAdmin";
             this.LBL_LoginAdmin.Size = new System.Drawing.Size(33, 13);
             this.LBL_LoginAdmin.TabIndex = 4;
@@ -1357,6 +1361,46 @@
             this.GBX_FormProg.TabStop = false;
             this.GBX_FormProg.Text = "Formulaire Programme";
             this.GBX_FormProg.Enter += new System.EventHandler(this.GBX_FormProg_Enter);
+            // 
+            // CBX_HeureFinProg
+            // 
+            this.CBX_HeureFinProg.FormattingEnabled = true;
+            this.CBX_HeureFinProg.Location = new System.Drawing.Point(348, 89);
+            this.CBX_HeureFinProg.Name = "CBX_HeureFinProg";
+            this.CBX_HeureFinProg.Size = new System.Drawing.Size(126, 21);
+            this.CBX_HeureFinProg.TabIndex = 12;
+            // 
+            // CBX_HeureDebutProg
+            // 
+            this.CBX_HeureDebutProg.FormattingEnabled = true;
+            this.CBX_HeureDebutProg.Location = new System.Drawing.Point(187, 89);
+            this.CBX_HeureDebutProg.Name = "CBX_HeureDebutProg";
+            this.CBX_HeureDebutProg.Size = new System.Drawing.Size(126, 21);
+            this.CBX_HeureDebutProg.TabIndex = 11;
+            // 
+            // CBX_SelectProgMatiere
+            // 
+            this.CBX_SelectProgMatiere.FormattingEnabled = true;
+            this.CBX_SelectProgMatiere.Location = new System.Drawing.Point(348, 37);
+            this.CBX_SelectProgMatiere.Name = "CBX_SelectProgMatiere";
+            this.CBX_SelectProgMatiere.Size = new System.Drawing.Size(126, 21);
+            this.CBX_SelectProgMatiere.TabIndex = 10;
+            // 
+            // CBX_SelectProgProf
+            // 
+            this.CBX_SelectProgProf.FormattingEnabled = true;
+            this.CBX_SelectProgProf.Location = new System.Drawing.Point(187, 41);
+            this.CBX_SelectProgProf.Name = "CBX_SelectProgProf";
+            this.CBX_SelectProgProf.Size = new System.Drawing.Size(126, 21);
+            this.CBX_SelectProgProf.TabIndex = 9;
+            // 
+            // CBX_SelectClasse
+            // 
+            this.CBX_SelectClasse.FormattingEnabled = true;
+            this.CBX_SelectClasse.Location = new System.Drawing.Point(21, 41);
+            this.CBX_SelectClasse.Name = "CBX_SelectClasse";
+            this.CBX_SelectClasse.Size = new System.Drawing.Size(126, 21);
+            this.CBX_SelectClasse.TabIndex = 8;
             // 
             // TXB_NomProgramme
             // 
@@ -1542,6 +1586,30 @@
             this.GBX_FormPresence.TabStop = false;
             this.GBX_FormPresence.Text = "Formulaire Presence";
             // 
+            // CBX_HeureFinPres
+            // 
+            this.CBX_HeureFinPres.FormattingEnabled = true;
+            this.CBX_HeureFinPres.Location = new System.Drawing.Point(524, 41);
+            this.CBX_HeureFinPres.Name = "CBX_HeureFinPres";
+            this.CBX_HeureFinPres.Size = new System.Drawing.Size(132, 21);
+            this.CBX_HeureFinPres.TabIndex = 14;
+            // 
+            // CBX_HeureDebutPres
+            // 
+            this.CBX_HeureDebutPres.FormattingEnabled = true;
+            this.CBX_HeureDebutPres.Location = new System.Drawing.Point(356, 42);
+            this.CBX_HeureDebutPres.Name = "CBX_HeureDebutPres";
+            this.CBX_HeureDebutPres.Size = new System.Drawing.Size(132, 21);
+            this.CBX_HeureDebutPres.TabIndex = 13;
+            // 
+            // CBX_SelectNomProg
+            // 
+            this.CBX_SelectNomProg.FormattingEnabled = true;
+            this.CBX_SelectNomProg.Location = new System.Drawing.Point(9, 41);
+            this.CBX_SelectNomProg.Name = "CBX_SelectNomProg";
+            this.CBX_SelectNomProg.Size = new System.Drawing.Size(132, 21);
+            this.CBX_SelectNomProg.TabIndex = 12;
+            // 
             // DTP_Presence
             // 
             this.DTP_Presence.Location = new System.Drawing.Point(195, 42);
@@ -1586,51 +1654,6 @@
             this.LBL_SelectNomProg.Text = "Selection Nom des Programmes";
             this.LBL_SelectNomProg.Click += new System.EventHandler(this.LBL_SelectNomProgramme_Click);
             // 
-            // BTN_Aide
-            // 
-            this.BTN_Aide.Location = new System.Drawing.Point(901, 549);
-            this.BTN_Aide.Name = "BTN_Aide";
-            this.BTN_Aide.Size = new System.Drawing.Size(133, 36);
-            this.BTN_Aide.TabIndex = 1;
-            this.BTN_Aide.Text = "Aide";
-            this.BTN_Aide.UseVisualStyleBackColor = true;
-            // 
-            // BTN_Quitter
-            // 
-            this.BTN_Quitter.Location = new System.Drawing.Point(901, 603);
-            this.BTN_Quitter.Name = "BTN_Quitter";
-            this.BTN_Quitter.Size = new System.Drawing.Size(133, 36);
-            this.BTN_Quitter.TabIndex = 2;
-            this.BTN_Quitter.Text = "Quitter";
-            this.BTN_Quitter.UseVisualStyleBackColor = true;
-            // 
-            // BTN_Rapports
-            // 
-            this.BTN_Rapports.Location = new System.Drawing.Point(901, 37);
-            this.BTN_Rapports.Name = "BTN_Rapports";
-            this.BTN_Rapports.Size = new System.Drawing.Size(133, 36);
-            this.BTN_Rapports.TabIndex = 3;
-            this.BTN_Rapports.Text = "Rapports";
-            this.BTN_Rapports.UseVisualStyleBackColor = true;
-            // 
-            // BTN_Horaires
-            // 
-            this.BTN_Horaires.Location = new System.Drawing.Point(901, 96);
-            this.BTN_Horaires.Name = "BTN_Horaires";
-            this.BTN_Horaires.Size = new System.Drawing.Size(133, 36);
-            this.BTN_Horaires.TabIndex = 4;
-            this.BTN_Horaires.Text = "Horaires";
-            this.BTN_Horaires.UseVisualStyleBackColor = true;
-            // 
-            // BTN_EtatReseau
-            // 
-            this.BTN_EtatReseau.Location = new System.Drawing.Point(901, 158);
-            this.BTN_EtatReseau.Name = "BTN_EtatReseau";
-            this.BTN_EtatReseau.Size = new System.Drawing.Size(133, 36);
-            this.BTN_EtatReseau.TabIndex = 5;
-            this.BTN_EtatReseau.Text = "Etat du Reseau";
-            this.BTN_EtatReseau.UseVisualStyleBackColor = true;
-            // 
             // TPG_MatiereProf
             // 
             this.TPG_MatiereProf.Controls.Add(this.GBX_FormMatiereProf);
@@ -1659,6 +1682,22 @@
             this.GBX_FormMatiereProf.TabIndex = 12;
             this.GBX_FormMatiereProf.TabStop = false;
             this.GBX_FormMatiereProf.Text = "Formulaire Matiere Professeur";
+            // 
+            // CBX_SelectMatiere
+            // 
+            this.CBX_SelectMatiere.FormattingEnabled = true;
+            this.CBX_SelectMatiere.Location = new System.Drawing.Point(510, 35);
+            this.CBX_SelectMatiere.Name = "CBX_SelectMatiere";
+            this.CBX_SelectMatiere.Size = new System.Drawing.Size(121, 21);
+            this.CBX_SelectMatiere.TabIndex = 4;
+            // 
+            // CBX_SelectProf
+            // 
+            this.CBX_SelectProf.FormattingEnabled = true;
+            this.CBX_SelectProf.Location = new System.Drawing.Point(123, 35);
+            this.CBX_SelectProf.Name = "CBX_SelectProf";
+            this.CBX_SelectProf.Size = new System.Drawing.Size(121, 21);
+            this.CBX_SelectProf.TabIndex = 3;
             // 
             // LBL_Matiere
             // 
@@ -1732,14 +1771,6 @@
             this.BTN_RechMatiereProf.Text = "Recherche";
             this.BTN_RechMatiereProf.UseVisualStyleBackColor = true;
             // 
-            // DGV_MatiereProf
-            // 
-            this.DGV_MatiereProf.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_MatiereProf.Location = new System.Drawing.Point(11, 21);
-            this.DGV_MatiereProf.Name = "DGV_MatiereProf";
-            this.DGV_MatiereProf.Size = new System.Drawing.Size(681, 386);
-            this.DGV_MatiereProf.TabIndex = 0;
-            // 
             // GBX_ListeMatiereProf
             // 
             this.GBX_ListeMatiereProf.Controls.Add(this.DGV_MatiereProf);
@@ -1750,85 +1781,78 @@
             this.GBX_ListeMatiereProf.TabStop = false;
             this.GBX_ListeMatiereProf.Text = "Liste Matiere Professeur";
             // 
-            // CBX_SelectProf
+            // DGV_MatiereProf
             // 
-            this.CBX_SelectProf.FormattingEnabled = true;
-            this.CBX_SelectProf.Location = new System.Drawing.Point(123, 35);
-            this.CBX_SelectProf.Name = "CBX_SelectProf";
-            this.CBX_SelectProf.Size = new System.Drawing.Size(121, 21);
-            this.CBX_SelectProf.TabIndex = 3;
+            this.DGV_MatiereProf.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_MatiereProf.Location = new System.Drawing.Point(11, 21);
+            this.DGV_MatiereProf.Name = "DGV_MatiereProf";
+            this.DGV_MatiereProf.Size = new System.Drawing.Size(681, 386);
+            this.DGV_MatiereProf.TabIndex = 0;
             // 
-            // CBX_SelectMatiere
+            // BTN_Aide
             // 
-            this.CBX_SelectMatiere.FormattingEnabled = true;
-            this.CBX_SelectMatiere.Location = new System.Drawing.Point(510, 35);
-            this.CBX_SelectMatiere.Name = "CBX_SelectMatiere";
-            this.CBX_SelectMatiere.Size = new System.Drawing.Size(121, 21);
-            this.CBX_SelectMatiere.TabIndex = 4;
+            this.BTN_Aide.Location = new System.Drawing.Point(901, 549);
+            this.BTN_Aide.Name = "BTN_Aide";
+            this.BTN_Aide.Size = new System.Drawing.Size(133, 36);
+            this.BTN_Aide.TabIndex = 1;
+            this.BTN_Aide.Text = "Aide";
+            this.BTN_Aide.UseVisualStyleBackColor = true;
             // 
-            // CBX_SelectNomProg
+            // BTN_Quitter
             // 
-            this.CBX_SelectNomProg.FormattingEnabled = true;
-            this.CBX_SelectNomProg.Location = new System.Drawing.Point(9, 41);
-            this.CBX_SelectNomProg.Name = "CBX_SelectNomProg";
-            this.CBX_SelectNomProg.Size = new System.Drawing.Size(132, 21);
-            this.CBX_SelectNomProg.TabIndex = 12;
+            this.BTN_Quitter.Location = new System.Drawing.Point(901, 603);
+            this.BTN_Quitter.Name = "BTN_Quitter";
+            this.BTN_Quitter.Size = new System.Drawing.Size(133, 36);
+            this.BTN_Quitter.TabIndex = 2;
+            this.BTN_Quitter.Text = "Quitter";
+            this.BTN_Quitter.UseVisualStyleBackColor = true;
             // 
-            // CBX_HeureDebutPres
+            // BTN_Rapports
             // 
-            this.CBX_HeureDebutPres.FormattingEnabled = true;
-            this.CBX_HeureDebutPres.Location = new System.Drawing.Point(356, 42);
-            this.CBX_HeureDebutPres.Name = "CBX_HeureDebutPres";
-            this.CBX_HeureDebutPres.Size = new System.Drawing.Size(132, 21);
-            this.CBX_HeureDebutPres.TabIndex = 13;
+            this.BTN_Rapports.Location = new System.Drawing.Point(901, 37);
+            this.BTN_Rapports.Name = "BTN_Rapports";
+            this.BTN_Rapports.Size = new System.Drawing.Size(133, 36);
+            this.BTN_Rapports.TabIndex = 3;
+            this.BTN_Rapports.Text = "Rapports";
+            this.BTN_Rapports.UseVisualStyleBackColor = true;
             // 
-            // CBX_HeureFinPres
+            // BTN_Horaires
             // 
-            this.CBX_HeureFinPres.FormattingEnabled = true;
-            this.CBX_HeureFinPres.Location = new System.Drawing.Point(524, 41);
-            this.CBX_HeureFinPres.Name = "CBX_HeureFinPres";
-            this.CBX_HeureFinPres.Size = new System.Drawing.Size(132, 21);
-            this.CBX_HeureFinPres.TabIndex = 14;
+            this.BTN_Horaires.Location = new System.Drawing.Point(901, 96);
+            this.BTN_Horaires.Name = "BTN_Horaires";
+            this.BTN_Horaires.Size = new System.Drawing.Size(133, 36);
+            this.BTN_Horaires.TabIndex = 4;
+            this.BTN_Horaires.Text = "Horaires";
+            this.BTN_Horaires.UseVisualStyleBackColor = true;
             // 
-            // CBX_SelectClasse
+            // BTN_EtatReseau
             // 
-            this.CBX_SelectClasse.FormattingEnabled = true;
-            this.CBX_SelectClasse.Location = new System.Drawing.Point(21, 41);
-            this.CBX_SelectClasse.Name = "CBX_SelectClasse";
-            this.CBX_SelectClasse.Size = new System.Drawing.Size(126, 21);
-            this.CBX_SelectClasse.TabIndex = 8;
+            this.BTN_EtatReseau.Location = new System.Drawing.Point(901, 158);
+            this.BTN_EtatReseau.Name = "BTN_EtatReseau";
+            this.BTN_EtatReseau.Size = new System.Drawing.Size(133, 36);
+            this.BTN_EtatReseau.TabIndex = 5;
+            this.BTN_EtatReseau.Text = "Etat du Reseau";
+            this.BTN_EtatReseau.UseVisualStyleBackColor = true;
             // 
-            // CBX_SelectProgProf
+            // LBL_TypeUtil
             // 
-            this.CBX_SelectProgProf.FormattingEnabled = true;
-            this.CBX_SelectProgProf.Location = new System.Drawing.Point(187, 41);
-            this.CBX_SelectProgProf.Name = "CBX_SelectProgProf";
-            this.CBX_SelectProgProf.Size = new System.Drawing.Size(126, 21);
-            this.CBX_SelectProgProf.TabIndex = 9;
+            this.LBL_TypeUtil.AutoSize = true;
+            this.LBL_TypeUtil.Location = new System.Drawing.Point(317, 34);
+            this.LBL_TypeUtil.Name = "LBL_TypeUtil";
+            this.LBL_TypeUtil.Size = new System.Drawing.Size(80, 13);
+            this.LBL_TypeUtil.TabIndex = 8;
+            this.LBL_TypeUtil.Text = "Type Utilisateur";
             // 
-            // CBX_SelectProgMatiere
+            // CBX_TypeUtil
             // 
-            this.CBX_SelectProgMatiere.FormattingEnabled = true;
-            this.CBX_SelectProgMatiere.Location = new System.Drawing.Point(348, 37);
-            this.CBX_SelectProgMatiere.Name = "CBX_SelectProgMatiere";
-            this.CBX_SelectProgMatiere.Size = new System.Drawing.Size(126, 21);
-            this.CBX_SelectProgMatiere.TabIndex = 10;
-            // 
-            // CBX_HeureFinProg
-            // 
-            this.CBX_HeureFinProg.FormattingEnabled = true;
-            this.CBX_HeureFinProg.Location = new System.Drawing.Point(348, 89);
-            this.CBX_HeureFinProg.Name = "CBX_HeureFinProg";
-            this.CBX_HeureFinProg.Size = new System.Drawing.Size(126, 21);
-            this.CBX_HeureFinProg.TabIndex = 12;
-            // 
-            // CBX_HeureDebutProg
-            // 
-            this.CBX_HeureDebutProg.FormattingEnabled = true;
-            this.CBX_HeureDebutProg.Location = new System.Drawing.Point(187, 89);
-            this.CBX_HeureDebutProg.Name = "CBX_HeureDebutProg";
-            this.CBX_HeureDebutProg.Size = new System.Drawing.Size(126, 21);
-            this.CBX_HeureDebutProg.TabIndex = 11;
+            this.CBX_TypeUtil.FormattingEnabled = true;
+            this.CBX_TypeUtil.Items.AddRange(new object[] {
+            "Administrateur",
+            "Utilisateur"});
+            this.CBX_TypeUtil.Location = new System.Drawing.Point(291, 60);
+            this.CBX_TypeUtil.Name = "CBX_TypeUtil";
+            this.CBX_TypeUtil.Size = new System.Drawing.Size(167, 21);
+            this.CBX_TypeUtil.TabIndex = 9;
             // 
             // Admistrateur
             // 
@@ -1900,8 +1924,8 @@
             this.GBX_FormMatiereProf.PerformLayout();
             this.GBX_RechMatiereProf.ResumeLayout(false);
             this.GBX_RechMatiereProf.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_MatiereProf)).EndInit();
             this.GBX_ListeMatiereProf.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_MatiereProf)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2075,5 +2099,7 @@
         private System.Windows.Forms.Button BTN_RechMatiereProf;
         private System.Windows.Forms.GroupBox GBX_ListeMatiereProf;
         private System.Windows.Forms.DataGridView DGV_MatiereProf;
+        private System.Windows.Forms.ComboBox CBX_TypeUtil;
+        private System.Windows.Forms.Label LBL_TypeUtil;
     }
 }
