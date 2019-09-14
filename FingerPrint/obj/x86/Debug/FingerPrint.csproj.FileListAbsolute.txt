@@ -15,6 +15,7 @@ C:\Users\USer\Documents\Bitrix24\Julia\FingerPrint\FingerPrint\FingerPrint\obj\x
 C:\Users\USer\Documents\Bitrix24\Julia\FingerPrint\FingerPrint\FingerPrint\obj\x86\Debug\FingerPrint.csprojAssemblyReference.cache
 C:\Users\Raoul\Documents\Niv1\Bitrix24\Julia\FingerPrint\FingerPrint\FingerPrint\obj\x86\Debug\FingerPrint.exe
 C:\Users\Raoul\Documents\Niv1\Bitrix24\Julia\FingerPrint\FingerPrint\FingerPrint\obj\x86\Debug\FingerPrint.pdb
+<<<<<<< HEAD
 C:\Users\Raoul\Documents\wandaflexcode\fingerprintcode\FingerPrint\obj\x86\Debug\FingerPrint.exe
 C:\Users\Raoul\Documents\wandaflexcode\fingerprintcode\FingerPrint\obj\x86\Debug\FingerPrint.pdb
 C:\Users\Raoul\Documents\wandaflexcode\fingerprintcode\FingerPrint\bin\Debug\FingerPrint.exe.config
@@ -30,3 +31,19 @@ C:\Users\Raoul\Documents\wandaflexcode\fingerprintcode\FingerPrint\obj\x86\Debug
 C:\Users\Raoul\Documents\wandaflexcode\fingerprintcode\FingerPrint\obj\x86\Debug\FingerPrint.csproj.GenerateResource.cache
 C:\Users\Raoul\Documents\wandaflexcode\fingerprintcode\FingerPrint\obj\x86\Debug\FingerPrint.csproj.CoreCompileInputs.cache
 C:\Users\Raoul\Documents\wandaflexcode\fingerprintcode\FingerPrint\obj\x86\Debug\FingerPrint.csproj.CopyComplete
+=======
+C:\Users\USer\Documents\ProjetGit\fingerprintcode\FingerPrint\bin\Debug\FingerPrint.exe.config
+C:\Users\USer\Documents\ProjetGit\fingerprintcode\FingerPrint\bin\Debug\FingerPrint.exe
+C:\Users\USer\Documents\ProjetGit\fingerprintcode\FingerPrint\bin\Debug\FingerPrint.pdb
+C:\Users\USer\Documents\ProjetGit\fingerprintcode\FingerPrint\bin\Debug\MySql.Data.dll
+C:\Users\USer\Documents\ProjetGit\fingerprintcode\FingerPrint\bin\Debug\MySql.Data.xml
+C:\Users\USer\Documents\ProjetGit\fingerprintcode\FingerPrint\obj\x86\Debug\FingerPrint.Admistrateur.resources
+C:\Users\USer\Documents\ProjetGit\fingerprintcode\FingerPrint\obj\x86\Debug\FingerPrint.GestionHoraire.resources
+C:\Users\USer\Documents\ProjetGit\fingerprintcode\FingerPrint\obj\x86\Debug\FingerPrint.Login.resources
+C:\Users\USer\Documents\ProjetGit\fingerprintcode\FingerPrint\obj\x86\Debug\FingerPrint.Properties.Resources.resources
+C:\Users\USer\Documents\ProjetGit\fingerprintcode\FingerPrint\obj\x86\Debug\FingerPrint.csproj.GenerateResource.cache
+C:\Users\USer\Documents\ProjetGit\fingerprintcode\FingerPrint\obj\x86\Debug\FingerPrint.csproj.CopyComplete
+C:\Users\USer\Documents\ProjetGit\fingerprintcode\FingerPrint\obj\x86\Debug\FingerPrint.exe
+C:\Users\USer\Documents\ProjetGit\fingerprintcode\FingerPrint\obj\x86\Debug\FingerPrint.pdb
+C:\Users\USer\Documents\ProjetGit\fingerprintcode\FingerPrint\obj\x86\Debug\FingerPrint.csprojAssemblyReference.cache
+>>>>>>> eb657c7e361d3158d764abe7fd23862b6771522f
