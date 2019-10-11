@@ -338,3 +338,7 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+.vs/FingerPrint/v16/.suo
+.vs/FingerPrint/v16/Server/sqlite3/storage.ide
+.vs/FingerPrint/v16/Server/sqlite3/storage.ide-shm
+.vs/FingerPrint/v16/Server/sqlite3/storage.ide-wal
