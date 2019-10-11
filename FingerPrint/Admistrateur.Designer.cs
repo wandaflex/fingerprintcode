@@ -146,6 +146,8 @@
             this.GBX_ListeProg = new System.Windows.Forms.GroupBox();
             this.DGV_ListeProgramme = new System.Windows.Forms.DataGridView();
             this.GBX_FormProg = new System.Windows.Forms.GroupBox();
+            this.CBX_HeureFinProg = new System.Windows.Forms.ComboBox();
+            this.CBX_HeureDebutProg = new System.Windows.Forms.ComboBox();
             this.CBX_SelectProgMatiere = new System.Windows.Forms.ComboBox();
             this.CBX_SelectProgProf = new System.Windows.Forms.ComboBox();
             this.CBX_SelectClasse = new System.Windows.Forms.ComboBox();
@@ -168,6 +170,8 @@
             this.GBX_ListePresence = new System.Windows.Forms.GroupBox();
             this.DGV_ListePresence = new System.Windows.Forms.DataGridView();
             this.GBX_FormPresence = new System.Windows.Forms.GroupBox();
+            this.TXB_HeureFinPres = new System.Windows.Forms.TextBox();
+            this.TXB_HeureDebutPres = new System.Windows.Forms.TextBox();
             this.CBX_SelectNomProg = new System.Windows.Forms.ComboBox();
             this.DTP_Presence = new System.Windows.Forms.DateTimePicker();
             this.LBL_DatePres = new System.Windows.Forms.Label();
@@ -193,10 +197,6 @@
             this.BTN_Rapports = new System.Windows.Forms.Button();
             this.BTN_Horaires = new System.Windows.Forms.Button();
             this.BTN_EtatReseau = new System.Windows.Forms.Button();
-            this.CBX_HeureDebutProg = new System.Windows.Forms.ComboBox();
-            this.CBX_HeureFinProg = new System.Windows.Forms.ComboBox();
-            this.TXB_HeureDebutPres = new System.Windows.Forms.TextBox();
-            this.TXB_HeureFinPres = new System.Windows.Forms.TextBox();
             this.TCL_Admin.SuspendLayout();
             this.TPG_Professeur.SuspendLayout();
             this.GBX_RechercheProf.SuspendLayout();
@@ -830,6 +830,7 @@
             this.BTN_EnregisterCycle.TabIndex = 9;
             this.BTN_EnregisterCycle.Text = "Enregistrer";
             this.BTN_EnregisterCycle.UseVisualStyleBackColor = true;
+            this.BTN_EnregisterCycle.Click += new System.EventHandler(this.BTN_EnregisterCycle_Click);
             // 
             // GBX_RechercheCycle
             // 
@@ -1382,6 +1383,121 @@
             this.GBX_FormProg.Text = "Formulaire Programme";
             this.GBX_FormProg.Enter += new System.EventHandler(this.GBX_FormProg_Enter);
             // 
+            // CBX_HeureFinProg
+            // 
+            this.CBX_HeureFinProg.FormattingEnabled = true;
+            this.CBX_HeureFinProg.Items.AddRange(new object[] {
+            "00:00",
+            "00:30",
+            "01:00",
+            "01:30",
+            "02:00",
+            "02:30",
+            "03:00",
+            "03:30",
+            "04:00",
+            "04:30",
+            "05:00",
+            "05:30",
+            "06:00",
+            "06:30",
+            "07:00",
+            "07:30",
+            "08:00",
+            "08:30",
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30",
+            "17:00",
+            "17:30",
+            "18:00",
+            "18:30",
+            "19:00",
+            "19:30",
+            "20:00",
+            "20:30",
+            "21:00",
+            "21:30",
+            "22:00",
+            "22:30",
+            "23:00",
+            "23:30"});
+            this.CBX_HeureFinProg.Location = new System.Drawing.Point(348, 89);
+            this.CBX_HeureFinProg.Name = "CBX_HeureFinProg";
+            this.CBX_HeureFinProg.Size = new System.Drawing.Size(132, 21);
+            this.CBX_HeureFinProg.TabIndex = 15;
+            // 
+            // CBX_HeureDebutProg
+            // 
+            this.CBX_HeureDebutProg.FormattingEnabled = true;
+            this.CBX_HeureDebutProg.Items.AddRange(new object[] {
+            "00:00",
+            "00:30",
+            "01:00",
+            "01:30",
+            "02:00",
+            "02:30",
+            "03:00",
+            "03:30",
+            "04:00",
+            "04:30",
+            "05:00",
+            "05:30",
+            "06:00",
+            "06:30",
+            "07:00",
+            "07:30",
+            "08:00",
+            "08:30",
+            "09:00",
+            "09:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00",
+            "15:30",
+            "16:00",
+            "16:30",
+            "17:00",
+            "17:30",
+            "18:00",
+            "18:30",
+            "19:00",
+            "19:30",
+            "20:00",
+            "20:30",
+            "21:00",
+            "21:30",
+            "22:00",
+            "22:30",
+            "23:00",
+            "23:30"});
+            this.CBX_HeureDebutProg.Location = new System.Drawing.Point(187, 89);
+            this.CBX_HeureDebutProg.Name = "CBX_HeureDebutProg";
+            this.CBX_HeureDebutProg.Size = new System.Drawing.Size(132, 21);
+            this.CBX_HeureDebutProg.TabIndex = 14;
+            this.CBX_HeureDebutProg.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // CBX_SelectProgMatiere
             // 
             this.CBX_SelectProgMatiere.FormattingEnabled = true;
@@ -1589,6 +1705,20 @@
             this.GBX_FormPresence.TabIndex = 6;
             this.GBX_FormPresence.TabStop = false;
             this.GBX_FormPresence.Text = "Formulaire Presence";
+            // 
+            // TXB_HeureFinPres
+            // 
+            this.TXB_HeureFinPres.Location = new System.Drawing.Point(524, 45);
+            this.TXB_HeureFinPres.Name = "TXB_HeureFinPres";
+            this.TXB_HeureFinPres.Size = new System.Drawing.Size(99, 20);
+            this.TXB_HeureFinPres.TabIndex = 17;
+            // 
+            // TXB_HeureDebutPres
+            // 
+            this.TXB_HeureDebutPres.Location = new System.Drawing.Point(383, 45);
+            this.TXB_HeureDebutPres.Name = "TXB_HeureDebutPres";
+            this.TXB_HeureDebutPres.Size = new System.Drawing.Size(99, 20);
+            this.TXB_HeureDebutPres.TabIndex = 16;
             // 
             // CBX_SelectNomProg
             // 
@@ -1821,135 +1951,6 @@
             this.BTN_EtatReseau.TabIndex = 5;
             this.BTN_EtatReseau.Text = "Etat du Reseau";
             this.BTN_EtatReseau.UseVisualStyleBackColor = true;
-            // 
-            // CBX_HeureDebutProg
-            // 
-            this.CBX_HeureDebutProg.FormattingEnabled = true;
-            this.CBX_HeureDebutProg.Items.AddRange(new object[] {
-            "00:00",
-            "00:30",
-            "01:00",
-            "01:30",
-            "02:00",
-            "02:30",
-            "03:00",
-            "03:30",
-            "04:00",
-            "04:30",
-            "05:00",
-            "05:30",
-            "06:00",
-            "06:30",
-            "07:00",
-            "07:30",
-            "08:00",
-            "08:30",
-            "09:00",
-            "09:30",
-            "10:00",
-            "10:30",
-            "11:00",
-            "11:30",
-            "12:00",
-            "12:30",
-            "13:00",
-            "13:30",
-            "14:00",
-            "14:30",
-            "15:00",
-            "15:30",
-            "16:00",
-            "16:30",
-            "17:00",
-            "17:30",
-            "18:00",
-            "18:30",
-            "19:00",
-            "19:30",
-            "20:00",
-            "20:30",
-            "21:00",
-            "21:30",
-            "22:00",
-            "22:30",
-            "23:00",
-            "23:30"});
-            this.CBX_HeureDebutProg.Location = new System.Drawing.Point(187, 89);
-            this.CBX_HeureDebutProg.Name = "CBX_HeureDebutProg";
-            this.CBX_HeureDebutProg.Size = new System.Drawing.Size(132, 21);
-            this.CBX_HeureDebutProg.TabIndex = 14;
-            this.CBX_HeureDebutProg.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // CBX_HeureFinProg
-            // 
-            this.CBX_HeureFinProg.FormattingEnabled = true;
-            this.CBX_HeureFinProg.Items.AddRange(new object[] {
-            "00:00",
-            "00:30",
-            "01:00",
-            "01:30",
-            "02:00",
-            "02:30",
-            "03:00",
-            "03:30",
-            "04:00",
-            "04:30",
-            "05:00",
-            "05:30",
-            "06:00",
-            "06:30",
-            "07:00",
-            "07:30",
-            "08:00",
-            "08:30",
-            "09:00",
-            "09:30",
-            "10:00",
-            "10:30",
-            "11:00",
-            "11:30",
-            "12:00",
-            "12:30",
-            "13:00",
-            "13:30",
-            "14:00",
-            "14:30",
-            "15:00",
-            "15:30",
-            "16:00",
-            "16:30",
-            "17:00",
-            "17:30",
-            "18:00",
-            "18:30",
-            "19:00",
-            "19:30",
-            "20:00",
-            "20:30",
-            "21:00",
-            "21:30",
-            "22:00",
-            "22:30",
-            "23:00",
-            "23:30"});
-            this.CBX_HeureFinProg.Location = new System.Drawing.Point(348, 89);
-            this.CBX_HeureFinProg.Name = "CBX_HeureFinProg";
-            this.CBX_HeureFinProg.Size = new System.Drawing.Size(132, 21);
-            this.CBX_HeureFinProg.TabIndex = 15;
-            // 
-            // TXB_HeureDebutPres
-            // 
-            this.TXB_HeureDebutPres.Location = new System.Drawing.Point(383, 45);
-            this.TXB_HeureDebutPres.Name = "TXB_HeureDebutPres";
-            this.TXB_HeureDebutPres.Size = new System.Drawing.Size(99, 20);
-            this.TXB_HeureDebutPres.TabIndex = 16;
-            // 
-            // TXB_HeureFinPres
-            // 
-            this.TXB_HeureFinPres.Location = new System.Drawing.Point(524, 45);
-            this.TXB_HeureFinPres.Name = "TXB_HeureFinPres";
-            this.TXB_HeureFinPres.Size = new System.Drawing.Size(99, 20);
-            this.TXB_HeureFinPres.TabIndex = 17;
             // 
             // Admistrateur
             // 

@@ -21,7 +21,7 @@ namespace FingerPrint
 
         private void Admistrateur_Load(object sender, EventArgs e)
         {
-            GridAdminFill();
+            GridFill("AdminViewAll", DGV_ListeAdmin); 
         }
 
         #region Enregistrement Administrateur 
@@ -39,7 +39,7 @@ namespace FingerPrint
                 mySqlCmd.Parameters.AddWithValue("_AdminPwd", TXB_MotDePasseAdmin.Text.Trim());
                 mySqlCmd.ExecuteNonQuery();
                 MessageBox.Show("Submited successful");
-                GridAdminFill();
+                GridFill("AdminViewAll",DGV_ListeAdmin);
             }
         }
 
@@ -48,17 +48,18 @@ namespace FingerPrint
             cleanForm(GBX_FormAdmin);
         }
 
-        void GridAdminFill()
+        void GridFill(String procedure, DataGridView dataGrid)
         {
             using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
             {
                 mySqlCon.Open();
-                MySqlDataAdapter sqlDa = new MySqlDataAdapter("AdminViewAll", mySqlCon);
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter(procedure, mySqlCon);
                 sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
                 DataTable dtbAdmin = new DataTable();
                 sqlDa.Fill(dtbAdmin);
-                DGV_ListeAdmin.DataSource = dtbAdmin;
-                DGV_ListeAdmin.Columns[0].Visible = false;
+                dataGrid.DataSource = dtbAdmin;
+                dataGrid.Columns[0].Visible = false;
+                dataGrid.Columns[dataGrid.Columns.Count-1].Visible = false; 
             }
         }
 
@@ -133,6 +134,24 @@ namespace FingerPrint
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void BTN_EnregisterCycle_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+            {
+                mySqlCon.Open();
+                MySqlCommand mySqlCmd = new MySqlCommand("AdminAddOrEdit", mySqlCon);
+                mySqlCmd.CommandType = CommandType.StoredProcedure;
+                mySqlCmd.Parameters.AddWithValue("_AdminID", adminID);
+                mySqlCmd.Parameters.AddWithValue("_AdminNom", TXB_NomAdmin.Text.Trim());
+                mySqlCmd.Parameters.AddWithValue("_AdminPremon", TXB_PrenomAdmin.Text.Trim());
+                mySqlCmd.Parameters.AddWithValue("_AdminLogin", TXB_LoginAdmin.Text.Trim());
+                mySqlCmd.Parameters.AddWithValue("_AdminPwd", TXB_MotDePasseAdmin.Text.Trim());
+                mySqlCmd.ExecuteNonQuery();
+                MessageBox.Show("Submited successful");
+                GridFill("AdminViewAll", DGV_ListeAdmin);
+            }
         }
     }
 }
