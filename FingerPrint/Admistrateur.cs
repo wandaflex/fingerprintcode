@@ -141,10 +141,10 @@ namespace FingerPrint
             using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
             {
                 mySqlCon.Open();
-                MySqlCommand mySqlCmd = new MySqlCommand("AdminAddOrEdit", mySqlCon);
+                MySqlCommand mySqlCmd = new MySqlCommand("CycleAddOrEdit", mySqlCon);
                 mySqlCmd.CommandType = CommandType.StoredProcedure;
-                mySqlCmd.Parameters.AddWithValue("_AdminID", adminID);
-                mySqlCmd.Parameters.AddWithValue("_AdminNom", TXB_NomAdmin.Text.Trim());
+                mySqlCmd.Parameters.AddWithValue("_CycleID", adminID);
+                mySqlCmd.Parameters.AddWithValue("_CycleNom", TXB_NomAdmin.Text.Trim());
                 mySqlCmd.Parameters.AddWithValue("_AdminPremon", TXB_PrenomAdmin.Text.Trim());
                 mySqlCmd.Parameters.AddWithValue("_AdminLogin", TXB_LoginAdmin.Text.Trim());
                 mySqlCmd.Parameters.AddWithValue("_AdminPwd", TXB_MotDePasseAdmin.Text.Trim());
