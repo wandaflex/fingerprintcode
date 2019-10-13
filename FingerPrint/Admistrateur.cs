@@ -153,5 +153,10 @@ namespace FingerPrint
                 GridFill("AdminViewAll", DGV_ListeAdmin);
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

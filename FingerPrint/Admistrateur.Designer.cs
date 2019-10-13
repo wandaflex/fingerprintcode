@@ -197,6 +197,7 @@
             this.BTN_Rapports = new System.Windows.Forms.Button();
             this.BTN_Horaires = new System.Windows.Forms.Button();
             this.BTN_EtatReseau = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.TCL_Admin.SuspendLayout();
             this.TPG_Professeur.SuspendLayout();
             this.GBX_RechercheProf.SuspendLayout();
@@ -1273,6 +1274,7 @@
             // 
             // TPG_Programme
             // 
+            this.TPG_Programme.Controls.Add(this.label1);
             this.TPG_Programme.Controls.Add(this.BTN_AnnulerProg);
             this.TPG_Programme.Controls.Add(this.BTN_ModifierProg);
             this.TPG_Programme.Controls.Add(this.BTN_EnregisterProg);
@@ -1952,6 +1954,17 @@
             this.BTN_EtatReseau.Text = "Etat du Reseau";
             this.BTN_EtatReseau.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(735, 266);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Description:\r\n";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Admistrateur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2004,6 +2017,7 @@
             this.GBX_FormAdmin.ResumeLayout(false);
             this.GBX_FormAdmin.PerformLayout();
             this.TPG_Programme.ResumeLayout(false);
+            this.TPG_Programme.PerformLayout();
             this.GBX_RechercheProg.ResumeLayout(false);
             this.GBX_RechercheProg.PerformLayout();
             this.GBX_ListeProg.ResumeLayout(false);
@@ -2199,5 +2213,6 @@
         private System.Windows.Forms.ComboBox CBX_HeureFinProg;
         private System.Windows.Forms.TextBox TXB_HeureFinPres;
         private System.Windows.Forms.TextBox TXB_HeureDebutPres;
+        private System.Windows.Forms.Label label1;
     }
 }
