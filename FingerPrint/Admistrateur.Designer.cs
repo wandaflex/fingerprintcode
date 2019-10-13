@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admistrateur));
             this.TCL_Admin = new System.Windows.Forms.TabControl();
             this.TPG_Professeur = new System.Windows.Forms.TabPage();
-            this.BTN_SuprimerProf = new System.Windows.Forms.Button();
-            this.BTN_ModifierProf = new System.Windows.Forms.Button();
+            this.BTN_AnnulerProf = new System.Windows.Forms.Button();
+            this.BTN_SupprimerProf = new System.Windows.Forms.Button();
             this.BTN_EnregistrerProf = new System.Windows.Forms.Button();
             this.GBX_RechercheProf = new System.Windows.Forms.GroupBox();
             this.TBX_RecherchePof = new System.Windows.Forms.TextBox();
@@ -39,12 +40,8 @@
             this.GBX_ListeProfesseur = new System.Windows.Forms.GroupBox();
             this.DGV_ListeProf = new System.Windows.Forms.DataGridView();
             this.GBX_FormProfesseur = new System.Windows.Forms.GroupBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.TXB_FaceID2Prof = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.TXB_Empreinte3Prof = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.TXB_FaceID1Prof = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.TXB_Empreinte2Prof = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -56,7 +53,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.TXB_Taux1ierCycleProf = new System.Windows.Forms.TextBox();
             this.LBL_EtatServiceProf = new System.Windows.Forms.Label();
-            this.TXB_EtatServiceProf = new System.Windows.Forms.TextBox();
             this.LBL_TypeProf = new System.Windows.Forms.Label();
             this.TXB_TypeProf = new System.Windows.Forms.TextBox();
             this.LBL_TelephoneProf = new System.Windows.Forms.Label();
@@ -72,7 +68,7 @@
             this.PBX_Professeur = new System.Windows.Forms.PictureBox();
             this.TPG_Matiere = new System.Windows.Forms.TabPage();
             this.BTN_AnnulerMatiere = new System.Windows.Forms.Button();
-            this.BTN_ModifierMatiere = new System.Windows.Forms.Button();
+            this.BTN_SupprimerMatiere = new System.Windows.Forms.Button();
             this.BTN_EnregisterMatiere = new System.Windows.Forms.Button();
             this.GBX_RechecheMatiere = new System.Windows.Forms.GroupBox();
             this.TBX_RechercheMatiere = new System.Windows.Forms.TextBox();
@@ -88,7 +84,7 @@
             this.LBL_CodeMatiere = new System.Windows.Forms.Label();
             this.TPG_Cycle = new System.Windows.Forms.TabPage();
             this.BTN_AnnulerCycle = new System.Windows.Forms.Button();
-            this.BTN_ModifierCycle = new System.Windows.Forms.Button();
+            this.BTN_SupprimerModifierCycle = new System.Windows.Forms.Button();
             this.BTN_EnregisterCycle = new System.Windows.Forms.Button();
             this.GBX_RechercheCycle = new System.Windows.Forms.GroupBox();
             this.TXB_RechercheCycle = new System.Windows.Forms.TextBox();
@@ -102,7 +98,7 @@
             this.LBL_NumCycle = new System.Windows.Forms.Label();
             this.TPG_Classe = new System.Windows.Forms.TabPage();
             this.BTN_AnnulerClasse = new System.Windows.Forms.Button();
-            this.BTN_ModifierClasse = new System.Windows.Forms.Button();
+            this.BTN_SupprimerClasse = new System.Windows.Forms.Button();
             this.BTN_EnregisterClasse = new System.Windows.Forms.Button();
             this.GBX_RechercheClasse = new System.Windows.Forms.GroupBox();
             this.TXB_RechercheClasse = new System.Windows.Forms.TextBox();
@@ -118,7 +114,7 @@
             this.LBL_NomClasse = new System.Windows.Forms.Label();
             this.TPG_Administrateur = new System.Windows.Forms.TabPage();
             this.BTN_AnnulerAdmin = new System.Windows.Forms.Button();
-            this.BTN_ModifierAdmin = new System.Windows.Forms.Button();
+            this.BTN_SupprimerAdmin = new System.Windows.Forms.Button();
             this.BTN_EnregisterAdmin = new System.Windows.Forms.Button();
             this.GBX_RechercheAdmin = new System.Windows.Forms.GroupBox();
             this.TXB_RechercheAdmin = new System.Windows.Forms.TextBox();
@@ -137,8 +133,9 @@
             this.TXB_NomAdmin = new System.Windows.Forms.TextBox();
             this.LBL_NomAdmin = new System.Windows.Forms.Label();
             this.TPG_Programme = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.BTN_AnnulerProg = new System.Windows.Forms.Button();
-            this.BTN_ModifierProg = new System.Windows.Forms.Button();
+            this.BTN_SupprimerProg = new System.Windows.Forms.Button();
             this.BTN_EnregisterProg = new System.Windows.Forms.Button();
             this.GBX_RechercheProg = new System.Windows.Forms.GroupBox();
             this.TXB_RechercheProg = new System.Windows.Forms.TextBox();
@@ -162,7 +159,7 @@
             this.LBL_SelectClasse = new System.Windows.Forms.Label();
             this.TPG_Presence = new System.Windows.Forms.TabPage();
             this.BTN_AnnulerPresence = new System.Windows.Forms.Button();
-            this.BTN_ModifierPresence = new System.Windows.Forms.Button();
+            this.BTN_SupprimerPresence = new System.Windows.Forms.Button();
             this.BTN_EnregisterPresence = new System.Windows.Forms.Button();
             this.GBX_RecherchePresence = new System.Windows.Forms.GroupBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -185,7 +182,7 @@
             this.LBL_Matiere = new System.Windows.Forms.Label();
             this.LBL_Prof = new System.Windows.Forms.Label();
             this.BTN_AnnulerMatProf = new System.Windows.Forms.Button();
-            this.BTN_ModifierMatProf = new System.Windows.Forms.Button();
+            this.BTN_SupprimerMatProf = new System.Windows.Forms.Button();
             this.BTN_EnregistrerMatProf = new System.Windows.Forms.Button();
             this.GBX_RechMatiereProf = new System.Windows.Forms.GroupBox();
             this.TXB_RechMatiereProf = new System.Windows.Forms.TextBox();
@@ -197,7 +194,11 @@
             this.BTN_Rapports = new System.Windows.Forms.Button();
             this.BTN_Horaires = new System.Windows.Forms.Button();
             this.BTN_EtatReseau = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.BTN_Empreinte1 = new System.Windows.Forms.Button();
+            this.BTN_Empreinte2 = new System.Windows.Forms.Button();
+            this.BTN_Empreinte3 = new System.Windows.Forms.Button();
+            this.DTP_Recrutement = new System.Windows.Forms.DateTimePicker();
             this.TCL_Admin.SuspendLayout();
             this.TPG_Professeur.SuspendLayout();
             this.GBX_RechercheProf.SuspendLayout();
@@ -260,8 +261,9 @@
             // 
             // TPG_Professeur
             // 
-            this.TPG_Professeur.Controls.Add(this.BTN_SuprimerProf);
-            this.TPG_Professeur.Controls.Add(this.BTN_ModifierProf);
+            this.TPG_Professeur.Controls.Add(this.label2);
+            this.TPG_Professeur.Controls.Add(this.BTN_AnnulerProf);
+            this.TPG_Professeur.Controls.Add(this.BTN_SupprimerProf);
             this.TPG_Professeur.Controls.Add(this.BTN_EnregistrerProf);
             this.TPG_Professeur.Controls.Add(this.GBX_RechercheProf);
             this.TPG_Professeur.Controls.Add(this.GBX_ListeProfesseur);
@@ -274,23 +276,23 @@
             this.TPG_Professeur.Text = "Professeur";
             this.TPG_Professeur.UseVisualStyleBackColor = true;
             // 
-            // BTN_SuprimerProf
+            // BTN_AnnulerProf
             // 
-            this.BTN_SuprimerProf.Location = new System.Drawing.Point(736, 189);
-            this.BTN_SuprimerProf.Name = "BTN_SuprimerProf";
-            this.BTN_SuprimerProf.Size = new System.Drawing.Size(120, 41);
-            this.BTN_SuprimerProf.TabIndex = 5;
-            this.BTN_SuprimerProf.Text = "Annuler";
-            this.BTN_SuprimerProf.UseVisualStyleBackColor = true;
+            this.BTN_AnnulerProf.Location = new System.Drawing.Point(736, 189);
+            this.BTN_AnnulerProf.Name = "BTN_AnnulerProf";
+            this.BTN_AnnulerProf.Size = new System.Drawing.Size(120, 41);
+            this.BTN_AnnulerProf.TabIndex = 5;
+            this.BTN_AnnulerProf.Text = "Annuler";
+            this.BTN_AnnulerProf.UseVisualStyleBackColor = true;
             // 
-            // BTN_ModifierProf
+            // BTN_SupprimerProf
             // 
-            this.BTN_ModifierProf.Location = new System.Drawing.Point(736, 121);
-            this.BTN_ModifierProf.Name = "BTN_ModifierProf";
-            this.BTN_ModifierProf.Size = new System.Drawing.Size(120, 41);
-            this.BTN_ModifierProf.TabIndex = 4;
-            this.BTN_ModifierProf.Text = "Modifier";
-            this.BTN_ModifierProf.UseVisualStyleBackColor = true;
+            this.BTN_SupprimerProf.Location = new System.Drawing.Point(736, 121);
+            this.BTN_SupprimerProf.Name = "BTN_SupprimerProf";
+            this.BTN_SupprimerProf.Size = new System.Drawing.Size(120, 41);
+            this.BTN_SupprimerProf.TabIndex = 4;
+            this.BTN_SupprimerProf.Text = "Supprimer";
+            this.BTN_SupprimerProf.UseVisualStyleBackColor = true;
             // 
             // BTN_EnregistrerProf
             // 
@@ -305,9 +307,9 @@
             // 
             this.GBX_RechercheProf.Controls.Add(this.TBX_RecherchePof);
             this.GBX_RechercheProf.Controls.Add(this.BTN_RechercheProf);
-            this.GBX_RechercheProf.Location = new System.Drawing.Point(15, 321);
+            this.GBX_RechercheProf.Location = new System.Drawing.Point(10, 293);
             this.GBX_RechercheProf.Name = "GBX_RechercheProf";
-            this.GBX_RechercheProf.Size = new System.Drawing.Size(701, 46);
+            this.GBX_RechercheProf.Size = new System.Drawing.Size(712, 46);
             this.GBX_RechercheProf.TabIndex = 2;
             this.GBX_RechercheProf.TabStop = false;
             this.GBX_RechercheProf.Text = "Recherche";
@@ -316,12 +318,12 @@
             // 
             this.TBX_RecherchePof.Location = new System.Drawing.Point(17, 18);
             this.TBX_RecherchePof.Name = "TBX_RecherchePof";
-            this.TBX_RecherchePof.Size = new System.Drawing.Size(537, 20);
+            this.TBX_RecherchePof.Size = new System.Drawing.Size(533, 20);
             this.TBX_RecherchePof.TabIndex = 7;
             // 
             // BTN_RechercheProf
             // 
-            this.BTN_RechercheProf.Location = new System.Drawing.Point(575, 12);
+            this.BTN_RechercheProf.Location = new System.Drawing.Point(575, 13);
             this.BTN_RechercheProf.Name = "BTN_RechercheProf";
             this.BTN_RechercheProf.Size = new System.Drawing.Size(120, 28);
             this.BTN_RechercheProf.TabIndex = 6;
@@ -331,9 +333,9 @@
             // GBX_ListeProfesseur
             // 
             this.GBX_ListeProfesseur.Controls.Add(this.DGV_ListeProf);
-            this.GBX_ListeProfesseur.Location = new System.Drawing.Point(15, 373);
+            this.GBX_ListeProfesseur.Location = new System.Drawing.Point(15, 345);
             this.GBX_ListeProfesseur.Name = "GBX_ListeProfesseur";
-            this.GBX_ListeProfesseur.Size = new System.Drawing.Size(841, 229);
+            this.GBX_ListeProfesseur.Size = new System.Drawing.Size(841, 261);
             this.GBX_ListeProfesseur.TabIndex = 1;
             this.GBX_ListeProfesseur.TabStop = false;
             this.GBX_ListeProfesseur.Text = "Liste Professeur";
@@ -343,18 +345,18 @@
             this.DGV_ListeProf.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_ListeProf.Location = new System.Drawing.Point(11, 20);
             this.DGV_ListeProf.Name = "DGV_ListeProf";
-            this.DGV_ListeProf.Size = new System.Drawing.Size(824, 203);
+            this.DGV_ListeProf.Size = new System.Drawing.Size(824, 235);
             this.DGV_ListeProf.TabIndex = 0;
             this.DGV_ListeProf.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_ListeAdmin_CellContentDoubleClick);
             // 
             // GBX_FormProfesseur
             // 
-            this.GBX_FormProfesseur.Controls.Add(this.label17);
-            this.GBX_FormProfesseur.Controls.Add(this.TXB_FaceID2Prof);
+            this.GBX_FormProfesseur.Controls.Add(this.DTP_Recrutement);
+            this.GBX_FormProfesseur.Controls.Add(this.BTN_Empreinte3);
+            this.GBX_FormProfesseur.Controls.Add(this.BTN_Empreinte2);
+            this.GBX_FormProfesseur.Controls.Add(this.BTN_Empreinte1);
             this.GBX_FormProfesseur.Controls.Add(this.label18);
             this.GBX_FormProfesseur.Controls.Add(this.TXB_Empreinte3Prof);
-            this.GBX_FormProfesseur.Controls.Add(this.label14);
-            this.GBX_FormProfesseur.Controls.Add(this.TXB_FaceID1Prof);
             this.GBX_FormProfesseur.Controls.Add(this.label15);
             this.GBX_FormProfesseur.Controls.Add(this.TXB_Empreinte2Prof);
             this.GBX_FormProfesseur.Controls.Add(this.label11);
@@ -366,7 +368,6 @@
             this.GBX_FormProfesseur.Controls.Add(this.label7);
             this.GBX_FormProfesseur.Controls.Add(this.TXB_Taux1ierCycleProf);
             this.GBX_FormProfesseur.Controls.Add(this.LBL_EtatServiceProf);
-            this.GBX_FormProfesseur.Controls.Add(this.TXB_EtatServiceProf);
             this.GBX_FormProfesseur.Controls.Add(this.LBL_TypeProf);
             this.GBX_FormProfesseur.Controls.Add(this.TXB_TypeProf);
             this.GBX_FormProfesseur.Controls.Add(this.LBL_TelephoneProf);
@@ -382,31 +383,16 @@
             this.GBX_FormProfesseur.Controls.Add(this.PBX_Professeur);
             this.GBX_FormProfesseur.Location = new System.Drawing.Point(10, 18);
             this.GBX_FormProfesseur.Name = "GBX_FormProfesseur";
-            this.GBX_FormProfesseur.Size = new System.Drawing.Size(706, 297);
+            this.GBX_FormProfesseur.Size = new System.Drawing.Size(717, 260);
             this.GBX_FormProfesseur.TabIndex = 0;
             this.GBX_FormProfesseur.TabStop = false;
             this.GBX_FormProfesseur.Text = "Formulaire Professeur";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(471, 183);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(54, 13);
-            this.label17.TabIndex = 34;
-            this.label17.Text = "Face ID 2";
-            // 
-            // TXB_FaceID2Prof
-            // 
-            this.TXB_FaceID2Prof.Location = new System.Drawing.Point(558, 180);
-            this.TXB_FaceID2Prof.Name = "TXB_FaceID2Prof";
-            this.TXB_FaceID2Prof.Size = new System.Drawing.Size(99, 20);
-            this.TXB_FaceID2Prof.TabIndex = 33;
+            this.GBX_FormProfesseur.Enter += new System.EventHandler(this.GBX_FormProfesseur_Enter);
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(15, 264);
+            this.label18.Location = new System.Drawing.Point(11, 227);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(63, 13);
             this.label18.TabIndex = 32;
@@ -414,31 +400,15 @@
             // 
             // TXB_Empreinte3Prof
             // 
-            this.TXB_Empreinte3Prof.Location = new System.Drawing.Point(102, 261);
+            this.TXB_Empreinte3Prof.Location = new System.Drawing.Point(98, 224);
             this.TXB_Empreinte3Prof.Name = "TXB_Empreinte3Prof";
             this.TXB_Empreinte3Prof.Size = new System.Drawing.Size(99, 20);
             this.TXB_Empreinte3Prof.TabIndex = 31;
             // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(471, 139);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(54, 13);
-            this.label14.TabIndex = 28;
-            this.label14.Text = "Face ID 1";
-            // 
-            // TXB_FaceID1Prof
-            // 
-            this.TXB_FaceID1Prof.Location = new System.Drawing.Point(558, 136);
-            this.TXB_FaceID1Prof.Name = "TXB_FaceID1Prof";
-            this.TXB_FaceID1Prof.Size = new System.Drawing.Size(99, 20);
-            this.TXB_FaceID1Prof.TabIndex = 27;
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(15, 220);
+            this.label15.Location = new System.Drawing.Point(11, 183);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(63, 13);
             this.label15.TabIndex = 26;
@@ -446,7 +416,7 @@
             // 
             // TXB_Empreinte2Prof
             // 
-            this.TXB_Empreinte2Prof.Location = new System.Drawing.Point(102, 217);
+            this.TXB_Empreinte2Prof.Location = new System.Drawing.Point(98, 180);
             this.TXB_Empreinte2Prof.Name = "TXB_Empreinte2Prof";
             this.TXB_Empreinte2Prof.Size = new System.Drawing.Size(99, 20);
             this.TXB_Empreinte2Prof.TabIndex = 25;
@@ -454,7 +424,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(210, 179);
+            this.label11.Location = new System.Drawing.Point(525, 131);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(128, 13);
             this.label11.TabIndex = 22;
@@ -462,7 +432,7 @@
             // 
             // TXB_Taux2iemeCycleProf
             // 
-            this.TXB_Taux2iemeCycleProf.Location = new System.Drawing.Point(344, 177);
+            this.TXB_Taux2iemeCycleProf.Location = new System.Drawing.Point(538, 149);
             this.TXB_Taux2iemeCycleProf.Name = "TXB_Taux2iemeCycleProf";
             this.TXB_Taux2iemeCycleProf.Size = new System.Drawing.Size(99, 20);
             this.TXB_Taux2iemeCycleProf.TabIndex = 21;
@@ -470,7 +440,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(15, 177);
+            this.label12.Location = new System.Drawing.Point(11, 140);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(63, 13);
             this.label12.TabIndex = 20;
@@ -478,7 +448,7 @@
             // 
             // TXB_Empreinte1Prof
             // 
-            this.TXB_Empreinte1Prof.Location = new System.Drawing.Point(102, 174);
+            this.TXB_Empreinte1Prof.Location = new System.Drawing.Point(98, 137);
             this.TXB_Empreinte1Prof.Name = "TXB_Empreinte1Prof";
             this.TXB_Empreinte1Prof.Size = new System.Drawing.Size(99, 20);
             this.TXB_Empreinte1Prof.TabIndex = 19;
@@ -486,7 +456,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(242, 243);
+            this.label9.Location = new System.Drawing.Point(348, 199);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(60, 13);
             this.label9.TabIndex = 18;
@@ -494,16 +464,17 @@
             // 
             // TXB_DescriptionProf
             // 
-            this.TXB_DescriptionProf.Location = new System.Drawing.Point(318, 217);
+            this.TXB_DescriptionProf.Location = new System.Drawing.Point(414, 184);
             this.TXB_DescriptionProf.Multiline = true;
             this.TXB_DescriptionProf.Name = "TXB_DescriptionProf";
-            this.TXB_DescriptionProf.Size = new System.Drawing.Size(339, 64);
+            this.TXB_DescriptionProf.Size = new System.Drawing.Size(286, 61);
             this.TXB_DescriptionProf.TabIndex = 17;
+            this.TXB_DescriptionProf.TextChanged += new System.EventHandler(this.TXB_DescriptionProf_TextChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(210, 139);
+            this.label7.Location = new System.Drawing.Point(365, 131);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(117, 13);
             this.label7.TabIndex = 16;
@@ -511,7 +482,7 @@
             // 
             // TXB_Taux1ierCycleProf
             // 
-            this.TXB_Taux1ierCycleProf.Location = new System.Drawing.Point(344, 136);
+            this.TXB_Taux1ierCycleProf.Location = new System.Drawing.Point(377, 151);
             this.TXB_Taux1ierCycleProf.Name = "TXB_Taux1ierCycleProf";
             this.TXB_Taux1ierCycleProf.Size = new System.Drawing.Size(99, 20);
             this.TXB_Taux1ierCycleProf.TabIndex = 15;
@@ -519,23 +490,17 @@
             // LBL_EtatServiceProf
             // 
             this.LBL_EtatServiceProf.AutoSize = true;
-            this.LBL_EtatServiceProf.Location = new System.Drawing.Point(15, 136);
+            this.LBL_EtatServiceProf.ForeColor = System.Drawing.Color.Red;
+            this.LBL_EtatServiceProf.Location = new System.Drawing.Point(558, 29);
             this.LBL_EtatServiceProf.Name = "LBL_EtatServiceProf";
-            this.LBL_EtatServiceProf.Size = new System.Drawing.Size(80, 13);
+            this.LBL_EtatServiceProf.Size = new System.Drawing.Size(109, 13);
             this.LBL_EtatServiceProf.TabIndex = 14;
-            this.LBL_EtatServiceProf.Text = "Etat de Service";
-            // 
-            // TXB_EtatServiceProf
-            // 
-            this.TXB_EtatServiceProf.Location = new System.Drawing.Point(102, 133);
-            this.TXB_EtatServiceProf.Name = "TXB_EtatServiceProf";
-            this.TXB_EtatServiceProf.Size = new System.Drawing.Size(99, 20);
-            this.TXB_EtatServiceProf.TabIndex = 13;
+            this.LBL_EtatServiceProf.Text = "Date de Recrutement";
             // 
             // LBL_TypeProf
             // 
             this.LBL_TypeProf.AutoSize = true;
-            this.LBL_TypeProf.Location = new System.Drawing.Point(471, 86);
+            this.LBL_TypeProf.Location = new System.Drawing.Point(305, 86);
             this.LBL_TypeProf.Name = "LBL_TypeProf";
             this.LBL_TypeProf.Size = new System.Drawing.Size(84, 13);
             this.LBL_TypeProf.TabIndex = 12;
@@ -543,7 +508,7 @@
             // 
             // TXB_TypeProf
             // 
-            this.TXB_TypeProf.Location = new System.Drawing.Point(558, 83);
+            this.TXB_TypeProf.Location = new System.Drawing.Point(392, 83);
             this.TXB_TypeProf.Name = "TXB_TypeProf";
             this.TXB_TypeProf.Size = new System.Drawing.Size(99, 20);
             this.TXB_TypeProf.TabIndex = 11;
@@ -551,7 +516,7 @@
             // LBL_TelephoneProf
             // 
             this.LBL_TelephoneProf.AutoSize = true;
-            this.LBL_TelephoneProf.Location = new System.Drawing.Point(158, 86);
+            this.LBL_TelephoneProf.Location = new System.Drawing.Point(127, 86);
             this.LBL_TelephoneProf.Name = "LBL_TelephoneProf";
             this.LBL_TelephoneProf.Size = new System.Drawing.Size(58, 13);
             this.LBL_TelephoneProf.TabIndex = 10;
@@ -559,7 +524,7 @@
             // 
             // TXB_TelephoneProf
             // 
-            this.TXB_TelephoneProf.Location = new System.Drawing.Point(245, 83);
+            this.TXB_TelephoneProf.Location = new System.Drawing.Point(191, 83);
             this.TXB_TelephoneProf.Name = "TXB_TelephoneProf";
             this.TXB_TelephoneProf.Size = new System.Drawing.Size(99, 20);
             this.TXB_TelephoneProf.TabIndex = 9;
@@ -567,7 +532,7 @@
             // LBL_DiplomeProf
             // 
             this.LBL_DiplomeProf.AutoSize = true;
-            this.LBL_DiplomeProf.Location = new System.Drawing.Point(471, 55);
+            this.LBL_DiplomeProf.Location = new System.Drawing.Point(305, 55);
             this.LBL_DiplomeProf.Name = "LBL_DiplomeProf";
             this.LBL_DiplomeProf.Size = new System.Drawing.Size(45, 13);
             this.LBL_DiplomeProf.TabIndex = 8;
@@ -575,7 +540,7 @@
             // 
             // TXB_DiplomeProf
             // 
-            this.TXB_DiplomeProf.Location = new System.Drawing.Point(558, 52);
+            this.TXB_DiplomeProf.Location = new System.Drawing.Point(392, 52);
             this.TXB_DiplomeProf.Name = "TXB_DiplomeProf";
             this.TXB_DiplomeProf.Size = new System.Drawing.Size(99, 20);
             this.TXB_DiplomeProf.TabIndex = 7;
@@ -583,7 +548,7 @@
             // LBL_PrenomProf
             // 
             this.LBL_PrenomProf.AutoSize = true;
-            this.LBL_PrenomProf.Location = new System.Drawing.Point(158, 55);
+            this.LBL_PrenomProf.Location = new System.Drawing.Point(127, 55);
             this.LBL_PrenomProf.Name = "LBL_PrenomProf";
             this.LBL_PrenomProf.Size = new System.Drawing.Size(43, 13);
             this.LBL_PrenomProf.TabIndex = 6;
@@ -591,7 +556,7 @@
             // 
             // TXB_PrenomProf
             // 
-            this.TXB_PrenomProf.Location = new System.Drawing.Point(245, 52);
+            this.TXB_PrenomProf.Location = new System.Drawing.Point(191, 52);
             this.TXB_PrenomProf.Name = "TXB_PrenomProf";
             this.TXB_PrenomProf.Size = new System.Drawing.Size(99, 20);
             this.TXB_PrenomProf.TabIndex = 5;
@@ -599,7 +564,7 @@
             // LBL_Telephone2Prof
             // 
             this.LBL_Telephone2Prof.AutoSize = true;
-            this.LBL_Telephone2Prof.Location = new System.Drawing.Point(471, 23);
+            this.LBL_Telephone2Prof.Location = new System.Drawing.Point(305, 22);
             this.LBL_Telephone2Prof.Name = "LBL_Telephone2Prof";
             this.LBL_Telephone2Prof.Size = new System.Drawing.Size(67, 13);
             this.LBL_Telephone2Prof.TabIndex = 4;
@@ -607,7 +572,7 @@
             // 
             // TXB_Telephone2Prof
             // 
-            this.TXB_Telephone2Prof.Location = new System.Drawing.Point(558, 20);
+            this.TXB_Telephone2Prof.Location = new System.Drawing.Point(392, 22);
             this.TXB_Telephone2Prof.Name = "TXB_Telephone2Prof";
             this.TXB_Telephone2Prof.Size = new System.Drawing.Size(99, 20);
             this.TXB_Telephone2Prof.TabIndex = 3;
@@ -615,7 +580,7 @@
             // LBL_NomProf
             // 
             this.LBL_NomProf.AutoSize = true;
-            this.LBL_NomProf.Location = new System.Drawing.Point(158, 23);
+            this.LBL_NomProf.Location = new System.Drawing.Point(127, 23);
             this.LBL_NomProf.Name = "LBL_NomProf";
             this.LBL_NomProf.Size = new System.Drawing.Size(29, 13);
             this.LBL_NomProf.TabIndex = 2;
@@ -623,7 +588,7 @@
             // 
             // TXB_NomProf
             // 
-            this.TXB_NomProf.Location = new System.Drawing.Point(245, 20);
+            this.TXB_NomProf.Location = new System.Drawing.Point(191, 20);
             this.TXB_NomProf.Name = "TXB_NomProf";
             this.TXB_NomProf.Size = new System.Drawing.Size(99, 20);
             this.TXB_NomProf.TabIndex = 1;
@@ -639,7 +604,7 @@
             // TPG_Matiere
             // 
             this.TPG_Matiere.Controls.Add(this.BTN_AnnulerMatiere);
-            this.TPG_Matiere.Controls.Add(this.BTN_ModifierMatiere);
+            this.TPG_Matiere.Controls.Add(this.BTN_SupprimerMatiere);
             this.TPG_Matiere.Controls.Add(this.BTN_EnregisterMatiere);
             this.TPG_Matiere.Controls.Add(this.GBX_RechecheMatiere);
             this.TPG_Matiere.Controls.Add(this.GBX_ListeMatiere);
@@ -661,14 +626,14 @@
             this.BTN_AnnulerMatiere.Text = "Annuler";
             this.BTN_AnnulerMatiere.UseVisualStyleBackColor = true;
             // 
-            // BTN_ModifierMatiere
+            // BTN_SupprimerMatiere
             // 
-            this.BTN_ModifierMatiere.Location = new System.Drawing.Point(740, 117);
-            this.BTN_ModifierMatiere.Name = "BTN_ModifierMatiere";
-            this.BTN_ModifierMatiere.Size = new System.Drawing.Size(120, 41);
-            this.BTN_ModifierMatiere.TabIndex = 10;
-            this.BTN_ModifierMatiere.Text = "Modifier";
-            this.BTN_ModifierMatiere.UseVisualStyleBackColor = true;
+            this.BTN_SupprimerMatiere.Location = new System.Drawing.Point(740, 117);
+            this.BTN_SupprimerMatiere.Name = "BTN_SupprimerMatiere";
+            this.BTN_SupprimerMatiere.Size = new System.Drawing.Size(120, 41);
+            this.BTN_SupprimerMatiere.TabIndex = 10;
+            this.BTN_SupprimerMatiere.Text = "Supprimer";
+            this.BTN_SupprimerMatiere.UseVisualStyleBackColor = true;
             // 
             // BTN_EnregisterMatiere
             // 
@@ -792,7 +757,7 @@
             // TPG_Cycle
             // 
             this.TPG_Cycle.Controls.Add(this.BTN_AnnulerCycle);
-            this.TPG_Cycle.Controls.Add(this.BTN_ModifierCycle);
+            this.TPG_Cycle.Controls.Add(this.BTN_SupprimerModifierCycle);
             this.TPG_Cycle.Controls.Add(this.BTN_EnregisterCycle);
             this.TPG_Cycle.Controls.Add(this.GBX_RechercheCycle);
             this.TPG_Cycle.Controls.Add(this.GBX_ListeCycle);
@@ -814,14 +779,14 @@
             this.BTN_AnnulerCycle.Text = "Annuler";
             this.BTN_AnnulerCycle.UseVisualStyleBackColor = true;
             // 
-            // BTN_ModifierCycle
+            // BTN_SupprimerModifierCycle
             // 
-            this.BTN_ModifierCycle.Location = new System.Drawing.Point(740, 117);
-            this.BTN_ModifierCycle.Name = "BTN_ModifierCycle";
-            this.BTN_ModifierCycle.Size = new System.Drawing.Size(120, 41);
-            this.BTN_ModifierCycle.TabIndex = 10;
-            this.BTN_ModifierCycle.Text = "Modifier";
-            this.BTN_ModifierCycle.UseVisualStyleBackColor = true;
+            this.BTN_SupprimerModifierCycle.Location = new System.Drawing.Point(740, 117);
+            this.BTN_SupprimerModifierCycle.Name = "BTN_SupprimerModifierCycle";
+            this.BTN_SupprimerModifierCycle.Size = new System.Drawing.Size(120, 41);
+            this.BTN_SupprimerModifierCycle.TabIndex = 10;
+            this.BTN_SupprimerModifierCycle.Text = "Supprimer";
+            this.BTN_SupprimerModifierCycle.UseVisualStyleBackColor = true;
             // 
             // BTN_EnregisterCycle
             // 
@@ -926,7 +891,7 @@
             // TPG_Classe
             // 
             this.TPG_Classe.Controls.Add(this.BTN_AnnulerClasse);
-            this.TPG_Classe.Controls.Add(this.BTN_ModifierClasse);
+            this.TPG_Classe.Controls.Add(this.BTN_SupprimerClasse);
             this.TPG_Classe.Controls.Add(this.BTN_EnregisterClasse);
             this.TPG_Classe.Controls.Add(this.GBX_RechercheClasse);
             this.TPG_Classe.Controls.Add(this.GBX_ListeClasse);
@@ -948,14 +913,14 @@
             this.BTN_AnnulerClasse.Text = "Annuler";
             this.BTN_AnnulerClasse.UseVisualStyleBackColor = true;
             // 
-            // BTN_ModifierClasse
+            // BTN_SupprimerClasse
             // 
-            this.BTN_ModifierClasse.Location = new System.Drawing.Point(740, 117);
-            this.BTN_ModifierClasse.Name = "BTN_ModifierClasse";
-            this.BTN_ModifierClasse.Size = new System.Drawing.Size(120, 41);
-            this.BTN_ModifierClasse.TabIndex = 10;
-            this.BTN_ModifierClasse.Text = "Modifier";
-            this.BTN_ModifierClasse.UseVisualStyleBackColor = true;
+            this.BTN_SupprimerClasse.Location = new System.Drawing.Point(740, 117);
+            this.BTN_SupprimerClasse.Name = "BTN_SupprimerClasse";
+            this.BTN_SupprimerClasse.Size = new System.Drawing.Size(120, 41);
+            this.BTN_SupprimerClasse.TabIndex = 10;
+            this.BTN_SupprimerClasse.Text = "Supprimer";
+            this.BTN_SupprimerClasse.UseVisualStyleBackColor = true;
             // 
             // BTN_EnregisterClasse
             // 
@@ -971,7 +936,7 @@
             // 
             this.GBX_RechercheClasse.Controls.Add(this.TXB_RechercheClasse);
             this.GBX_RechercheClasse.Controls.Add(this.BTN_RechercheClasse);
-            this.GBX_RechercheClasse.Location = new System.Drawing.Point(19, 121);
+            this.GBX_RechercheClasse.Location = new System.Drawing.Point(14, 93);
             this.GBX_RechercheClasse.Name = "GBX_RechercheClasse";
             this.GBX_RechercheClasse.Size = new System.Drawing.Size(701, 46);
             this.GBX_RechercheClasse.TabIndex = 8;
@@ -997,9 +962,9 @@
             // GBX_ListeClasse
             // 
             this.GBX_ListeClasse.Controls.Add(this.DGV_ListeClasse);
-            this.GBX_ListeClasse.Location = new System.Drawing.Point(19, 173);
+            this.GBX_ListeClasse.Location = new System.Drawing.Point(14, 145);
             this.GBX_ListeClasse.Name = "GBX_ListeClasse";
-            this.GBX_ListeClasse.Size = new System.Drawing.Size(700, 425);
+            this.GBX_ListeClasse.Size = new System.Drawing.Size(700, 457);
             this.GBX_ListeClasse.TabIndex = 7;
             this.GBX_ListeClasse.TabStop = false;
             this.GBX_ListeClasse.Text = "Liste Classe";
@@ -1009,7 +974,7 @@
             this.DGV_ListeClasse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_ListeClasse.Location = new System.Drawing.Point(11, 21);
             this.DGV_ListeClasse.Name = "DGV_ListeClasse";
-            this.DGV_ListeClasse.Size = new System.Drawing.Size(681, 398);
+            this.DGV_ListeClasse.Size = new System.Drawing.Size(681, 430);
             this.DGV_ListeClasse.TabIndex = 0;
             // 
             // GBX_FormClasse
@@ -1022,7 +987,7 @@
             this.GBX_FormClasse.Controls.Add(this.LBL_NomClasse);
             this.GBX_FormClasse.Location = new System.Drawing.Point(14, 14);
             this.GBX_FormClasse.Name = "GBX_FormClasse";
-            this.GBX_FormClasse.Size = new System.Drawing.Size(706, 94);
+            this.GBX_FormClasse.Size = new System.Drawing.Size(706, 73);
             this.GBX_FormClasse.TabIndex = 6;
             this.GBX_FormClasse.TabStop = false;
             this.GBX_FormClasse.Text = "Formulaire Classe";
@@ -1078,7 +1043,7 @@
             // TPG_Administrateur
             // 
             this.TPG_Administrateur.Controls.Add(this.BTN_AnnulerAdmin);
-            this.TPG_Administrateur.Controls.Add(this.BTN_ModifierAdmin);
+            this.TPG_Administrateur.Controls.Add(this.BTN_SupprimerAdmin);
             this.TPG_Administrateur.Controls.Add(this.BTN_EnregisterAdmin);
             this.TPG_Administrateur.Controls.Add(this.GBX_RechercheAdmin);
             this.TPG_Administrateur.Controls.Add(this.GBX_ListeAdmin);
@@ -1101,14 +1066,14 @@
             this.BTN_AnnulerAdmin.UseVisualStyleBackColor = true;
             this.BTN_AnnulerAdmin.Click += new System.EventHandler(this.BTN_AnnulerAdmin_Click);
             // 
-            // BTN_ModifierAdmin
+            // BTN_SupprimerAdmin
             // 
-            this.BTN_ModifierAdmin.Location = new System.Drawing.Point(740, 117);
-            this.BTN_ModifierAdmin.Name = "BTN_ModifierAdmin";
-            this.BTN_ModifierAdmin.Size = new System.Drawing.Size(120, 41);
-            this.BTN_ModifierAdmin.TabIndex = 10;
-            this.BTN_ModifierAdmin.Text = "Modifier";
-            this.BTN_ModifierAdmin.UseVisualStyleBackColor = true;
+            this.BTN_SupprimerAdmin.Location = new System.Drawing.Point(740, 117);
+            this.BTN_SupprimerAdmin.Name = "BTN_SupprimerAdmin";
+            this.BTN_SupprimerAdmin.Size = new System.Drawing.Size(120, 41);
+            this.BTN_SupprimerAdmin.TabIndex = 10;
+            this.BTN_SupprimerAdmin.Text = "Supprimer";
+            this.BTN_SupprimerAdmin.UseVisualStyleBackColor = true;
             // 
             // BTN_EnregisterAdmin
             // 
@@ -1276,7 +1241,7 @@
             // 
             this.TPG_Programme.Controls.Add(this.label1);
             this.TPG_Programme.Controls.Add(this.BTN_AnnulerProg);
-            this.TPG_Programme.Controls.Add(this.BTN_ModifierProg);
+            this.TPG_Programme.Controls.Add(this.BTN_SupprimerProg);
             this.TPG_Programme.Controls.Add(this.BTN_EnregisterProg);
             this.TPG_Programme.Controls.Add(this.GBX_RechercheProg);
             this.TPG_Programme.Controls.Add(this.GBX_ListeProg);
@@ -1289,6 +1254,17 @@
             this.TPG_Programme.Text = "Programme";
             this.TPG_Programme.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(725, 260);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(137, 143);
+            this.label1.TabIndex = 12;
+            this.label1.Text = resources.GetString("label1.Text");
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // BTN_AnnulerProg
             // 
             this.BTN_AnnulerProg.Location = new System.Drawing.Point(740, 185);
@@ -1298,14 +1274,14 @@
             this.BTN_AnnulerProg.Text = "Annuler";
             this.BTN_AnnulerProg.UseVisualStyleBackColor = true;
             // 
-            // BTN_ModifierProg
+            // BTN_SupprimerProg
             // 
-            this.BTN_ModifierProg.Location = new System.Drawing.Point(740, 117);
-            this.BTN_ModifierProg.Name = "BTN_ModifierProg";
-            this.BTN_ModifierProg.Size = new System.Drawing.Size(120, 41);
-            this.BTN_ModifierProg.TabIndex = 10;
-            this.BTN_ModifierProg.Text = "Modifier";
-            this.BTN_ModifierProg.UseVisualStyleBackColor = true;
+            this.BTN_SupprimerProg.Location = new System.Drawing.Point(740, 117);
+            this.BTN_SupprimerProg.Name = "BTN_SupprimerProg";
+            this.BTN_SupprimerProg.Size = new System.Drawing.Size(120, 41);
+            this.BTN_SupprimerProg.TabIndex = 10;
+            this.BTN_SupprimerProg.Text = "Supprimer";
+            this.BTN_SupprimerProg.UseVisualStyleBackColor = true;
             // 
             // BTN_EnregisterProg
             // 
@@ -1388,55 +1364,6 @@
             // CBX_HeureFinProg
             // 
             this.CBX_HeureFinProg.FormattingEnabled = true;
-            this.CBX_HeureFinProg.Items.AddRange(new object[] {
-            "00:00",
-            "00:30",
-            "01:00",
-            "01:30",
-            "02:00",
-            "02:30",
-            "03:00",
-            "03:30",
-            "04:00",
-            "04:30",
-            "05:00",
-            "05:30",
-            "06:00",
-            "06:30",
-            "07:00",
-            "07:30",
-            "08:00",
-            "08:30",
-            "09:00",
-            "09:30",
-            "10:00",
-            "10:30",
-            "11:00",
-            "11:30",
-            "12:00",
-            "12:30",
-            "13:00",
-            "13:30",
-            "14:00",
-            "14:30",
-            "15:00",
-            "15:30",
-            "16:00",
-            "16:30",
-            "17:00",
-            "17:30",
-            "18:00",
-            "18:30",
-            "19:00",
-            "19:30",
-            "20:00",
-            "20:30",
-            "21:00",
-            "21:30",
-            "22:00",
-            "22:30",
-            "23:00",
-            "23:30"});
             this.CBX_HeureFinProg.Location = new System.Drawing.Point(348, 89);
             this.CBX_HeureFinProg.Name = "CBX_HeureFinProg";
             this.CBX_HeureFinProg.Size = new System.Drawing.Size(132, 21);
@@ -1445,55 +1372,6 @@
             // CBX_HeureDebutProg
             // 
             this.CBX_HeureDebutProg.FormattingEnabled = true;
-            this.CBX_HeureDebutProg.Items.AddRange(new object[] {
-            "00:00",
-            "00:30",
-            "01:00",
-            "01:30",
-            "02:00",
-            "02:30",
-            "03:00",
-            "03:30",
-            "04:00",
-            "04:30",
-            "05:00",
-            "05:30",
-            "06:00",
-            "06:30",
-            "07:00",
-            "07:30",
-            "08:00",
-            "08:30",
-            "09:00",
-            "09:30",
-            "10:00",
-            "10:30",
-            "11:00",
-            "11:30",
-            "12:00",
-            "12:30",
-            "13:00",
-            "13:30",
-            "14:00",
-            "14:30",
-            "15:00",
-            "15:30",
-            "16:00",
-            "16:30",
-            "17:00",
-            "17:30",
-            "18:00",
-            "18:30",
-            "19:00",
-            "19:30",
-            "20:00",
-            "20:30",
-            "21:00",
-            "21:30",
-            "22:00",
-            "22:30",
-            "23:00",
-            "23:30"});
             this.CBX_HeureDebutProg.Location = new System.Drawing.Point(187, 89);
             this.CBX_HeureDebutProg.Name = "CBX_HeureDebutProg";
             this.CBX_HeureDebutProg.Size = new System.Drawing.Size(132, 21);
@@ -1606,7 +1484,7 @@
             // TPG_Presence
             // 
             this.TPG_Presence.Controls.Add(this.BTN_AnnulerPresence);
-            this.TPG_Presence.Controls.Add(this.BTN_ModifierPresence);
+            this.TPG_Presence.Controls.Add(this.BTN_SupprimerPresence);
             this.TPG_Presence.Controls.Add(this.BTN_EnregisterPresence);
             this.TPG_Presence.Controls.Add(this.GBX_RecherchePresence);
             this.TPG_Presence.Controls.Add(this.GBX_ListePresence);
@@ -1628,14 +1506,14 @@
             this.BTN_AnnulerPresence.Text = "Annuler";
             this.BTN_AnnulerPresence.UseVisualStyleBackColor = true;
             // 
-            // BTN_ModifierPresence
+            // BTN_SupprimerPresence
             // 
-            this.BTN_ModifierPresence.Location = new System.Drawing.Point(740, 117);
-            this.BTN_ModifierPresence.Name = "BTN_ModifierPresence";
-            this.BTN_ModifierPresence.Size = new System.Drawing.Size(120, 41);
-            this.BTN_ModifierPresence.TabIndex = 10;
-            this.BTN_ModifierPresence.Text = "Modifier";
-            this.BTN_ModifierPresence.UseVisualStyleBackColor = true;
+            this.BTN_SupprimerPresence.Location = new System.Drawing.Point(740, 117);
+            this.BTN_SupprimerPresence.Name = "BTN_SupprimerPresence";
+            this.BTN_SupprimerPresence.Size = new System.Drawing.Size(120, 41);
+            this.BTN_SupprimerPresence.TabIndex = 10;
+            this.BTN_SupprimerPresence.Text = "Supprimer";
+            this.BTN_SupprimerPresence.UseVisualStyleBackColor = true;
             // 
             // BTN_EnregisterPresence
             // 
@@ -1778,7 +1656,7 @@
             // 
             this.TPG_MatiereProf.Controls.Add(this.GBX_FormMatiereProf);
             this.TPG_MatiereProf.Controls.Add(this.BTN_AnnulerMatProf);
-            this.TPG_MatiereProf.Controls.Add(this.BTN_ModifierMatProf);
+            this.TPG_MatiereProf.Controls.Add(this.BTN_SupprimerMatProf);
             this.TPG_MatiereProf.Controls.Add(this.BTN_EnregistrerMatProf);
             this.TPG_MatiereProf.Controls.Add(this.GBX_RechMatiereProf);
             this.TPG_MatiereProf.Controls.Add(this.GBX_ListeMatiereProf);
@@ -1846,14 +1724,14 @@
             this.BTN_AnnulerMatProf.Text = "Annuler";
             this.BTN_AnnulerMatProf.UseVisualStyleBackColor = true;
             // 
-            // BTN_ModifierMatProf
+            // BTN_SupprimerMatProf
             // 
-            this.BTN_ModifierMatProf.Location = new System.Drawing.Point(740, 117);
-            this.BTN_ModifierMatProf.Name = "BTN_ModifierMatProf";
-            this.BTN_ModifierMatProf.Size = new System.Drawing.Size(120, 41);
-            this.BTN_ModifierMatProf.TabIndex = 16;
-            this.BTN_ModifierMatProf.Text = "Modifier";
-            this.BTN_ModifierMatProf.UseVisualStyleBackColor = true;
+            this.BTN_SupprimerMatProf.Location = new System.Drawing.Point(740, 117);
+            this.BTN_SupprimerMatProf.Name = "BTN_SupprimerMatProf";
+            this.BTN_SupprimerMatProf.Size = new System.Drawing.Size(120, 41);
+            this.BTN_SupprimerMatProf.TabIndex = 16;
+            this.BTN_SupprimerMatProf.Text = "Supprimer";
+            this.BTN_SupprimerMatProf.UseVisualStyleBackColor = true;
             // 
             // BTN_EnregistrerMatProf
             // 
@@ -1954,16 +1832,50 @@
             this.BTN_EtatReseau.Text = "Etat du Reseau";
             this.BTN_EtatReseau.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // label2
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(735, 266);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Description:\r\n";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(733, 242);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(142, 78);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Note: \r\nSuprimer \'Etat de service\r\nFace ID 1 et 2,\r\n\r\n\r\nAjouter \'Date de recrutem" +
+    "ent\r\n";
+            // 
+            // BTN_Empreinte1
+            // 
+            this.BTN_Empreinte1.Location = new System.Drawing.Point(223, 135);
+            this.BTN_Empreinte1.Name = "BTN_Empreinte1";
+            this.BTN_Empreinte1.Size = new System.Drawing.Size(90, 23);
+            this.BTN_Empreinte1.TabIndex = 33;
+            this.BTN_Empreinte1.Text = "Empreinte 1 >>";
+            this.BTN_Empreinte1.UseVisualStyleBackColor = true;
+            // 
+            // BTN_Empreinte2
+            // 
+            this.BTN_Empreinte2.Location = new System.Drawing.Point(223, 178);
+            this.BTN_Empreinte2.Name = "BTN_Empreinte2";
+            this.BTN_Empreinte2.Size = new System.Drawing.Size(90, 23);
+            this.BTN_Empreinte2.TabIndex = 34;
+            this.BTN_Empreinte2.Text = "Empreinte 2 >>";
+            this.BTN_Empreinte2.UseVisualStyleBackColor = true;
+            // 
+            // BTN_Empreinte3
+            // 
+            this.BTN_Empreinte3.Location = new System.Drawing.Point(223, 222);
+            this.BTN_Empreinte3.Name = "BTN_Empreinte3";
+            this.BTN_Empreinte3.Size = new System.Drawing.Size(90, 23);
+            this.BTN_Empreinte3.TabIndex = 35;
+            this.BTN_Empreinte3.Text = "Empreinte 3 >>";
+            this.BTN_Empreinte3.UseVisualStyleBackColor = true;
+            // 
+            // DTP_Recrutement
+            // 
+            this.DTP_Recrutement.Location = new System.Drawing.Point(557, 55);
+            this.DTP_Recrutement.Name = "DTP_Recrutement";
+            this.DTP_Recrutement.Size = new System.Drawing.Size(129, 20);
+            this.DTP_Recrutement.TabIndex = 36;
             // 
             // Admistrateur
             // 
@@ -1981,6 +1893,7 @@
             this.Load += new System.EventHandler(this.Admistrateur_Load);
             this.TCL_Admin.ResumeLayout(false);
             this.TPG_Professeur.ResumeLayout(false);
+            this.TPG_Professeur.PerformLayout();
             this.GBX_RechercheProf.ResumeLayout(false);
             this.GBX_RechercheProf.PerformLayout();
             this.GBX_ListeProfesseur.ResumeLayout(false);
@@ -2046,8 +1959,8 @@
 
         private System.Windows.Forms.TabControl TCL_Admin;
         private System.Windows.Forms.TabPage TPG_Professeur;
-        private System.Windows.Forms.Button BTN_SuprimerProf;
-        private System.Windows.Forms.Button BTN_ModifierProf;
+        private System.Windows.Forms.Button BTN_AnnulerProf;
+        private System.Windows.Forms.Button BTN_SupprimerProf;
         private System.Windows.Forms.Button BTN_EnregistrerProf;
         private System.Windows.Forms.GroupBox GBX_RechercheProf;
         private System.Windows.Forms.TextBox TBX_RecherchePof;
@@ -2061,7 +1974,7 @@
         private System.Windows.Forms.TabPage TPG_Programme;
         private System.Windows.Forms.TabPage TPG_Presence;
         private System.Windows.Forms.Button BTN_AnnulerMatiere;
-        private System.Windows.Forms.Button BTN_ModifierMatiere;
+        private System.Windows.Forms.Button BTN_SupprimerMatiere;
         private System.Windows.Forms.Button BTN_EnregisterMatiere;
         private System.Windows.Forms.GroupBox GBX_RechecheMatiere;
         private System.Windows.Forms.TextBox TBX_RechercheMatiere;
@@ -2069,7 +1982,7 @@
         private System.Windows.Forms.GroupBox GBX_ListeMatiere;
         private System.Windows.Forms.GroupBox GBX_FormMatiere;
         private System.Windows.Forms.Button BTN_AnnulerCycle;
-        private System.Windows.Forms.Button BTN_ModifierCycle;
+        private System.Windows.Forms.Button BTN_SupprimerModifierCycle;
         private System.Windows.Forms.Button BTN_EnregisterCycle;
         private System.Windows.Forms.GroupBox GBX_RechercheCycle;
         private System.Windows.Forms.TextBox TXB_RechercheCycle;
@@ -2077,7 +1990,7 @@
         private System.Windows.Forms.GroupBox GBX_ListeCycle;
         private System.Windows.Forms.GroupBox GBX_FormCycle;
         private System.Windows.Forms.Button BTN_AnnulerClasse;
-        private System.Windows.Forms.Button BTN_ModifierClasse;
+        private System.Windows.Forms.Button BTN_SupprimerClasse;
         private System.Windows.Forms.Button BTN_EnregisterClasse;
         private System.Windows.Forms.GroupBox GBX_RechercheClasse;
         private System.Windows.Forms.TextBox TXB_RechercheClasse;
@@ -2085,7 +1998,7 @@
         private System.Windows.Forms.GroupBox GBX_ListeClasse;
         private System.Windows.Forms.GroupBox GBX_FormClasse;
         private System.Windows.Forms.Button BTN_AnnulerAdmin;
-        private System.Windows.Forms.Button BTN_ModifierAdmin;
+        private System.Windows.Forms.Button BTN_SupprimerAdmin;
         private System.Windows.Forms.Button BTN_EnregisterAdmin;
         private System.Windows.Forms.GroupBox GBX_RechercheAdmin;
         private System.Windows.Forms.TextBox TXB_RechercheAdmin;
@@ -2093,7 +2006,7 @@
         private System.Windows.Forms.GroupBox GBX_ListeAdmin;
         private System.Windows.Forms.GroupBox GBX_FormAdmin;
         private System.Windows.Forms.Button BTN_AnnulerProg;
-        private System.Windows.Forms.Button BTN_ModifierProg;
+        private System.Windows.Forms.Button BTN_SupprimerProg;
         private System.Windows.Forms.Button BTN_EnregisterProg;
         private System.Windows.Forms.GroupBox GBX_RechercheProg;
         private System.Windows.Forms.TextBox TXB_RechercheProg;
@@ -2101,7 +2014,7 @@
         private System.Windows.Forms.GroupBox GBX_ListeProg;
         private System.Windows.Forms.GroupBox GBX_FormProg;
         private System.Windows.Forms.Button BTN_AnnulerPresence;
-        private System.Windows.Forms.Button BTN_ModifierPresence;
+        private System.Windows.Forms.Button BTN_SupprimerPresence;
         private System.Windows.Forms.Button BTN_EnregisterPresence;
         private System.Windows.Forms.GroupBox GBX_RecherchePresence;
         private System.Windows.Forms.TextBox textBox7;
@@ -2114,12 +2027,8 @@
         private System.Windows.Forms.Button BTN_Horaires;
         private System.Windows.Forms.Button BTN_EtatReseau;
         private System.Windows.Forms.PictureBox PBX_Professeur;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox TXB_FaceID2Prof;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox TXB_Empreinte3Prof;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox TXB_FaceID1Prof;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox TXB_Empreinte2Prof;
         private System.Windows.Forms.Label label11;
@@ -2131,7 +2040,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox TXB_Taux1ierCycleProf;
         private System.Windows.Forms.Label LBL_EtatServiceProf;
-        private System.Windows.Forms.TextBox TXB_EtatServiceProf;
         private System.Windows.Forms.Label LBL_TypeProf;
         private System.Windows.Forms.TextBox TXB_TypeProf;
         private System.Windows.Forms.Label LBL_TelephoneProf;
@@ -2199,7 +2107,7 @@
         private System.Windows.Forms.Label LBL_Matiere;
         private System.Windows.Forms.Label LBL_Prof;
         private System.Windows.Forms.Button BTN_AnnulerMatProf;
-        private System.Windows.Forms.Button BTN_ModifierMatProf;
+        private System.Windows.Forms.Button BTN_SupprimerMatProf;
         private System.Windows.Forms.Button BTN_EnregistrerMatProf;
         private System.Windows.Forms.GroupBox GBX_RechMatiereProf;
         private System.Windows.Forms.TextBox TXB_RechMatiereProf;
@@ -2214,5 +2122,10 @@
         private System.Windows.Forms.TextBox TXB_HeureFinPres;
         private System.Windows.Forms.TextBox TXB_HeureDebutPres;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button BTN_Empreinte3;
+        private System.Windows.Forms.Button BTN_Empreinte2;
+        private System.Windows.Forms.Button BTN_Empreinte1;
+        private System.Windows.Forms.DateTimePicker DTP_Recrutement;
     }
 }

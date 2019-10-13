@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -21,7 +22,26 @@ namespace FingerPrint
 
         private void Admistrateur_Load(object sender, EventArgs e)
         {
-            GridFill("AdminViewAll", DGV_ListeAdmin); 
+            GridFill("AdminViewAll", DGV_ListeAdmin);
+
+                //Cedric: Ajout fichier TXT pout lecture des hauraires.
+            try
+            {
+                StreamReader sr = new StreamReader("./Horaires.txt");
+                string line = sr.ReadLine();
+
+                while (line != null)
+                {
+                    CBX_HeureDebutProg.Items.Add(line);
+                    CBX_HeureFinProg.Items.Add(line);
+                    line = sr.ReadLine();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error : " + ex.Message);
+            }
         }
 
         #region Enregistrement Administrateur 
@@ -155,6 +175,16 @@ namespace FingerPrint
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TXB_DescriptionProf_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GBX_FormProfesseur_Enter(object sender, EventArgs e)
         {
 
         }
