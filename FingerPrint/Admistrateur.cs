@@ -14,6 +14,7 @@ namespace FingerPrint
     {
         string connectionString = @"Server=localhost;Database=presence_db;Uid=root;Pwd='';";
         int adminID = 0;
+        int cycleID = 0;
         public Admistrateur()
         {
             InitializeComponent();
@@ -21,7 +22,8 @@ namespace FingerPrint
 
         private void Admistrateur_Load(object sender, EventArgs e)
         {
-            GridFill("AdminViewAll", DGV_ListeAdmin); 
+            GridFill("AdminViewAll", DGV_ListeAdmin);
+            GridFill("CycleViewAll", DGV_ListeCycle);
         }
 
         #region Enregistrement Administrateur 
@@ -33,7 +35,7 @@ namespace FingerPrint
                 MySqlCommand mySqlCmd = new MySqlCommand("AdminAddOrEdit", mySqlCon);
                 mySqlCmd.CommandType = CommandType.StoredProcedure;
                 mySqlCmd.Parameters.AddWithValue("_AdminID",adminID);
-                mySqlCmd.Parameters.AddWithValue("_AdminNom",TXB_NomAdmin.Text.Trim() );
+                mySqlCmd.Parameters.AddWithValue("_AdminNom",TXB_NumCycle.Text.Trim());
                 mySqlCmd.Parameters.AddWithValue("_AdminPremon", TXB_PrenomAdmin.Text.Trim());
                 mySqlCmd.Parameters.AddWithValue("_AdminLogin", TXB_LoginAdmin.Text.Trim());
                 mySqlCmd.Parameters.AddWithValue("_AdminPwd", TXB_MotDePasseAdmin.Text.Trim());
@@ -143,14 +145,23 @@ namespace FingerPrint
                 mySqlCon.Open();
                 MySqlCommand mySqlCmd = new MySqlCommand("CycleAddOrEdit", mySqlCon);
                 mySqlCmd.CommandType = CommandType.StoredProcedure;
-                mySqlCmd.Parameters.AddWithValue("_CycleID", adminID);
-                mySqlCmd.Parameters.AddWithValue("_CycleNom", TXB_NomAdmin.Text.Trim());
-                mySqlCmd.Parameters.AddWithValue("_AdminPremon", TXB_PrenomAdmin.Text.Trim());
-                mySqlCmd.Parameters.AddWithValue("_AdminLogin", TXB_LoginAdmin.Text.Trim());
-                mySqlCmd.Parameters.AddWithValue("_AdminPwd", TXB_MotDePasseAdmin.Text.Trim());
+                mySqlCmd.Parameters.AddWithValue("_CycleID", cycleID);
+                mySqlCmd.Parameters.AddWithValue("_CycleNumero", TXB_NumCycle.Text.Trim());
+                mySqlCmd.Parameters.AddWithValue("_CycleDescription", TXB_DescriptionCycle.Text.Trim());
                 mySqlCmd.ExecuteNonQuery();
                 MessageBox.Show("Submited successful");
-                GridFill("AdminViewAll", DGV_ListeAdmin);
+                GridFill("CycleViewAll", DGV_ListeCycle);
+            }
+        }
+
+        private void DGV_ListeCycle_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (DGV_ListeCycle.CurrentRow.Index != -1)
+            {
+                TXB_NumCycle.Text = DGV_ListeCycle.CurrentRow.Cells[1].Value.ToString();
+                TXB_DescriptionCycle.Text = DGV_ListeCycle.CurrentRow.Cells[2].Value.ToString();
+                cycleID = Convert.ToInt32(DGV_ListeCycle.CurrentRow.Cells[0].Value.ToString());
+                BTN_EnregisterAdmin.Text = "Modifier";
             }
         }
     }
