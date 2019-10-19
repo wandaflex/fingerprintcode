@@ -15,6 +15,7 @@ namespace FingerPrint
     {
         string connectionString = @"Server=localhost;Database=presence_db;Uid=root;Pwd='';";
         int adminID = 0;
+        int cycleID = 0;
         public Admistrateur()
         {
             InitializeComponent();
@@ -23,8 +24,9 @@ namespace FingerPrint
         private void Admistrateur_Load(object sender, EventArgs e)
         {
             GridFill("AdminViewAll", DGV_ListeAdmin);
+            GridFill("CycleViewAll", DGV_ListeCycle);
 
-                //Cedric: Ajout fichier TXT pout lecture des hauraires.
+            //Cedric: Ajout fichier TXT pout lecture des hauraires.
             try
             {
                 StreamReader sr = new StreamReader("./Horaires.txt");
@@ -89,7 +91,10 @@ namespace FingerPrint
                 if (oControlFormulaire is TextBox)
                     oControlFormulaire.Text = String.Empty;
             adminID = 0;
+            cycleID = 0;
+
             BTN_EnregisterAdmin.Text = "Enregistrer";
+            BTN_EnregisterCycle.Text = "Enregistrer";
 
         }
         #endregion
@@ -163,14 +168,13 @@ namespace FingerPrint
                 mySqlCon.Open();
                 MySqlCommand mySqlCmd = new MySqlCommand("CycleAddOrEdit", mySqlCon);
                 mySqlCmd.CommandType = CommandType.StoredProcedure;
-                mySqlCmd.Parameters.AddWithValue("_CycleID", adminID);
-                mySqlCmd.Parameters.AddWithValue("_CycleNom", TXB_NomAdmin.Text.Trim());
-                mySqlCmd.Parameters.AddWithValue("_AdminPremon", TXB_PrenomAdmin.Text.Trim());
-                mySqlCmd.Parameters.AddWithValue("_AdminLogin", TXB_LoginAdmin.Text.Trim());
-                mySqlCmd.Parameters.AddWithValue("_AdminPwd", TXB_MotDePasseAdmin.Text.Trim());
+                mySqlCmd.Parameters.AddWithValue("_CycleID", cycleID);
+                mySqlCmd.Parameters.AddWithValue("_CycleNumero", TXB_NumCycle.Text.Trim());
+                mySqlCmd.Parameters.AddWithValue("_CycleDescription", TXB_DescriptionCycle.Text.Trim());
                 mySqlCmd.ExecuteNonQuery();
                 MessageBox.Show("Submited successful");
-                GridFill("AdminViewAll", DGV_ListeAdmin);
+                GridFill("CycleViewAll", DGV_ListeCycle);
+                BTN_EnregisterCycle.Text = "Modifier";
             }
         }
 
