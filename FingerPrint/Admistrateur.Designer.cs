@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admistrateur));
             this.TCL_Admin = new System.Windows.Forms.TabControl();
             this.TPG_Professeur = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
             this.BTN_AnnulerProf = new System.Windows.Forms.Button();
             this.BTN_SupprimerProf = new System.Windows.Forms.Button();
             this.BTN_EnregistrerProf = new System.Windows.Forms.Button();
@@ -40,6 +41,10 @@
             this.GBX_ListeProfesseur = new System.Windows.Forms.GroupBox();
             this.DGV_ListeProf = new System.Windows.Forms.DataGridView();
             this.GBX_FormProfesseur = new System.Windows.Forms.GroupBox();
+            this.DTP_Recrutement = new System.Windows.Forms.DateTimePicker();
+            this.BTN_Empreinte3 = new System.Windows.Forms.Button();
+            this.BTN_Empreinte2 = new System.Windows.Forms.Button();
+            this.BTN_Empreinte1 = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.TXB_Empreinte3Prof = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -194,11 +199,6 @@
             this.BTN_Rapports = new System.Windows.Forms.Button();
             this.BTN_Horaires = new System.Windows.Forms.Button();
             this.BTN_EtatReseau = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.BTN_Empreinte1 = new System.Windows.Forms.Button();
-            this.BTN_Empreinte2 = new System.Windows.Forms.Button();
-            this.BTN_Empreinte3 = new System.Windows.Forms.Button();
-            this.DTP_Recrutement = new System.Windows.Forms.DateTimePicker();
             this.TCL_Admin.SuspendLayout();
             this.TPG_Professeur.SuspendLayout();
             this.GBX_RechercheProf.SuspendLayout();
@@ -275,6 +275,17 @@
             this.TPG_Professeur.TabIndex = 0;
             this.TPG_Professeur.Text = "Professeur";
             this.TPG_Professeur.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(733, 242);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(142, 78);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Note: \r\nSuprimer \'Etat de service\r\nFace ID 1 et 2,\r\n\r\n\r\nAjouter \'Date de recrutem" +
+    "ent\r\n";
             // 
             // BTN_AnnulerProf
             // 
@@ -388,6 +399,40 @@
             this.GBX_FormProfesseur.TabStop = false;
             this.GBX_FormProfesseur.Text = "Formulaire Professeur";
             this.GBX_FormProfesseur.Enter += new System.EventHandler(this.GBX_FormProfesseur_Enter);
+            // 
+            // DTP_Recrutement
+            // 
+            this.DTP_Recrutement.Location = new System.Drawing.Point(557, 55);
+            this.DTP_Recrutement.Name = "DTP_Recrutement";
+            this.DTP_Recrutement.Size = new System.Drawing.Size(129, 20);
+            this.DTP_Recrutement.TabIndex = 36;
+            // 
+            // BTN_Empreinte3
+            // 
+            this.BTN_Empreinte3.Location = new System.Drawing.Point(223, 222);
+            this.BTN_Empreinte3.Name = "BTN_Empreinte3";
+            this.BTN_Empreinte3.Size = new System.Drawing.Size(90, 23);
+            this.BTN_Empreinte3.TabIndex = 35;
+            this.BTN_Empreinte3.Text = "Empreinte 3 >>";
+            this.BTN_Empreinte3.UseVisualStyleBackColor = true;
+            // 
+            // BTN_Empreinte2
+            // 
+            this.BTN_Empreinte2.Location = new System.Drawing.Point(223, 178);
+            this.BTN_Empreinte2.Name = "BTN_Empreinte2";
+            this.BTN_Empreinte2.Size = new System.Drawing.Size(90, 23);
+            this.BTN_Empreinte2.TabIndex = 34;
+            this.BTN_Empreinte2.Text = "Empreinte 2 >>";
+            this.BTN_Empreinte2.UseVisualStyleBackColor = true;
+            // 
+            // BTN_Empreinte1
+            // 
+            this.BTN_Empreinte1.Location = new System.Drawing.Point(223, 135);
+            this.BTN_Empreinte1.Name = "BTN_Empreinte1";
+            this.BTN_Empreinte1.Size = new System.Drawing.Size(90, 23);
+            this.BTN_Empreinte1.TabIndex = 33;
+            this.BTN_Empreinte1.Text = "Empreinte 1 >>";
+            this.BTN_Empreinte1.UseVisualStyleBackColor = true;
             // 
             // label18
             // 
@@ -1111,6 +1156,7 @@
             this.BTN_RechercheAdmin.TabIndex = 6;
             this.BTN_RechercheAdmin.Text = "Recherche";
             this.BTN_RechercheAdmin.UseVisualStyleBackColor = true;
+            this.BTN_RechercheAdmin.Click += new System.EventHandler(this.BTN_RechercheAdmin_Click);
             // 
             // GBX_ListeAdmin
             // 
@@ -1831,51 +1877,6 @@
             this.BTN_EtatReseau.TabIndex = 5;
             this.BTN_EtatReseau.Text = "Etat du Reseau";
             this.BTN_EtatReseau.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(733, 242);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(142, 78);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Note: \r\nSuprimer \'Etat de service\r\nFace ID 1 et 2,\r\n\r\n\r\nAjouter \'Date de recrutem" +
-    "ent\r\n";
-            // 
-            // BTN_Empreinte1
-            // 
-            this.BTN_Empreinte1.Location = new System.Drawing.Point(223, 135);
-            this.BTN_Empreinte1.Name = "BTN_Empreinte1";
-            this.BTN_Empreinte1.Size = new System.Drawing.Size(90, 23);
-            this.BTN_Empreinte1.TabIndex = 33;
-            this.BTN_Empreinte1.Text = "Empreinte 1 >>";
-            this.BTN_Empreinte1.UseVisualStyleBackColor = true;
-            // 
-            // BTN_Empreinte2
-            // 
-            this.BTN_Empreinte2.Location = new System.Drawing.Point(223, 178);
-            this.BTN_Empreinte2.Name = "BTN_Empreinte2";
-            this.BTN_Empreinte2.Size = new System.Drawing.Size(90, 23);
-            this.BTN_Empreinte2.TabIndex = 34;
-            this.BTN_Empreinte2.Text = "Empreinte 2 >>";
-            this.BTN_Empreinte2.UseVisualStyleBackColor = true;
-            // 
-            // BTN_Empreinte3
-            // 
-            this.BTN_Empreinte3.Location = new System.Drawing.Point(223, 222);
-            this.BTN_Empreinte3.Name = "BTN_Empreinte3";
-            this.BTN_Empreinte3.Size = new System.Drawing.Size(90, 23);
-            this.BTN_Empreinte3.TabIndex = 35;
-            this.BTN_Empreinte3.Text = "Empreinte 3 >>";
-            this.BTN_Empreinte3.UseVisualStyleBackColor = true;
-            // 
-            // DTP_Recrutement
-            // 
-            this.DTP_Recrutement.Location = new System.Drawing.Point(557, 55);
-            this.DTP_Recrutement.Name = "DTP_Recrutement";
-            this.DTP_Recrutement.Size = new System.Drawing.Size(129, 20);
-            this.DTP_Recrutement.TabIndex = 36;
             // 
             // Admistrateur
             // 

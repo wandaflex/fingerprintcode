@@ -49,20 +49,29 @@ namespace FingerPrint
         #region Enregistrement Administrateur 
         private void BTN_EnregisterAdmin_Click(object sender, EventArgs e)
         {
-            using(MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+            try
             {
-                mySqlCon.Open();
-                MySqlCommand mySqlCmd = new MySqlCommand("AdminAddOrEdit", mySqlCon);
-                mySqlCmd.CommandType = CommandType.StoredProcedure;
-                mySqlCmd.Parameters.AddWithValue("_AdminID",adminID);
-                mySqlCmd.Parameters.AddWithValue("_AdminNom",TXB_NomAdmin.Text.Trim() );
-                mySqlCmd.Parameters.AddWithValue("_AdminPremon", TXB_PrenomAdmin.Text.Trim());
-                mySqlCmd.Parameters.AddWithValue("_AdminLogin", TXB_LoginAdmin.Text.Trim());
-                mySqlCmd.Parameters.AddWithValue("_AdminPwd", TXB_MotDePasseAdmin.Text.Trim());
-                mySqlCmd.ExecuteNonQuery();
-                MessageBox.Show("Submited successful");
-                GridFill("AdminViewAll",DGV_ListeAdmin);
+                using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+                {
+                    mySqlCon.Open();
+                    MySqlCommand mySqlCmd = new MySqlCommand("AdminAddOrEdit", mySqlCon);
+                    mySqlCmd.CommandType = CommandType.StoredProcedure;
+                    mySqlCmd.Parameters.AddWithValue("_AdminID", adminID);
+                    mySqlCmd.Parameters.AddWithValue("_AdminNom", TXB_NomAdmin.Text.Trim());
+                    mySqlCmd.Parameters.AddWithValue("_AdminPremon", TXB_PrenomAdmin.Text.Trim());
+                    mySqlCmd.Parameters.AddWithValue("_AdminLogin", TXB_LoginAdmin.Text.Trim());
+                    mySqlCmd.Parameters.AddWithValue("_AdminPwd", TXB_MotDePasseAdmin.Text.Trim());
+                    mySqlCmd.ExecuteNonQuery();
+                    MessageBox.Show("Submited successfully");
+                    GridFill("AdminViewAll", DGV_ListeAdmin);
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error Message ");
+
+            }
+         
         }
 
         private void BTN_AnnulerAdmin_Click(object sender, EventArgs e)
@@ -77,6 +86,7 @@ namespace FingerPrint
                 mySqlCon.Open();
                 MySqlDataAdapter sqlDa = new MySqlDataAdapter(procedure, mySqlCon);
                 sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
+                //sqlDa.SelectCommand.Parameters.AddWithValue("AdminSearchByValue", TXB_RechercheAdmin.Text.Trim());
                 DataTable dtbAdmin = new DataTable();
                 sqlDa.Fill(dtbAdmin);
                 dataGrid.DataSource = dtbAdmin;
@@ -91,11 +101,9 @@ namespace FingerPrint
                 if (oControlFormulaire is TextBox)
                     oControlFormulaire.Text = String.Empty;
             adminID = 0;
-            cycleID = 0;
-
+       
             BTN_EnregisterAdmin.Text = "Enregistrer";
-            BTN_EnregisterCycle.Text = "Enregistrer";
-
+          
         }
         #endregion
 
@@ -163,18 +171,26 @@ namespace FingerPrint
 
         private void BTN_EnregisterCycle_Click(object sender, EventArgs e)
         {
-            using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+            try
+            { 
+               using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+               {
+                   mySqlCon.Open();
+                    MySqlCommand mySqlCmd = new MySqlCommand("CycleAddOrEdit", mySqlCon);
+                    mySqlCmd.CommandType = CommandType.StoredProcedure;
+                    mySqlCmd.Parameters.AddWithValue("_CycleID", cycleID);
+                   mySqlCmd.Parameters.AddWithValue("_CycleNumero", TXB_NumCycle.Text.Trim());
+                    mySqlCmd.Parameters.AddWithValue("_CycleDescription", TXB_DescriptionCycle.Text.Trim());
+                    mySqlCmd.ExecuteNonQuery();
+                    MessageBox.Show("Submited successfully");
+                    GridFill("CycleViewAll", DGV_ListeCycle);
+                    BTN_EnregisterCycle.Text = "Modifier";
+                }
+            }
+            catch (Exception ex)
             {
-                mySqlCon.Open();
-                MySqlCommand mySqlCmd = new MySqlCommand("CycleAddOrEdit", mySqlCon);
-                mySqlCmd.CommandType = CommandType.StoredProcedure;
-                mySqlCmd.Parameters.AddWithValue("_CycleID", cycleID);
-                mySqlCmd.Parameters.AddWithValue("_CycleNumero", TXB_NumCycle.Text.Trim());
-                mySqlCmd.Parameters.AddWithValue("_CycleDescription", TXB_DescriptionCycle.Text.Trim());
-                mySqlCmd.ExecuteNonQuery();
-                MessageBox.Show("Submited successful");
-                GridFill("CycleViewAll", DGV_ListeCycle);
-                BTN_EnregisterCycle.Text = "Modifier";
+                MessageBox.Show(ex.Message, "Error Message ");
+
             }
         }
 
@@ -191,6 +207,28 @@ namespace FingerPrint
         private void GBX_FormProfesseur_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void BTN_RechercheAdmin_Click(object sender, EventArgs e)
+        {
+           /* try
+            {
+                using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+                {
+                    mySqlCon.Open();
+                    MySqlCommand mySqlCmd = new MySqlCommand("AdminSearchByValue", mySqlCon);
+                    mySqlCmd.CommandType = CommandType.StoredProcedure;
+                    mySqlCmd.Parameters.AddWithValue("_SearchValue", TXB_RechercheAdmin.Text.Trim());
+                    mySqlCmd.ExecuteNonQuery();
+                    MessageBox.Show("Submited successfully");
+                   
+                    GridFill("AdminSearchByValue", DGV_ListeAdmin);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error Message ");
+            }*/
         }
     }
 }
