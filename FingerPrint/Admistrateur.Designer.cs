@@ -887,7 +887,7 @@
             this.DGV_ListeCycle.Name = "DGV_ListeCycle";
             this.DGV_ListeCycle.Size = new System.Drawing.Size(683, 412);
             this.DGV_ListeCycle.TabIndex = 0;
-            this.DGV_ListeCycle.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_ListeCycle_CellContentDoubleClick);
+            //this.DGV_ListeCycle.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_ListeCycle_CellContentDoubleClick);
             // 
             // GBX_FormCycle
             // 
