@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ * 
+ * PROGRAMMEUR : RAOUL BUGUEM & JONATHAN ZOGONA
+ * 
+ * 
+ */
+
+
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
