@@ -74,6 +74,7 @@
     <Compile Include="Admistrateur.Designer.cs">
       <DependentUpon>Admistrateur.cs</DependentUpon>
     </Compile>
+    <Compile Include="generalClass.cs" />
     <Compile Include="GestionHoraire.cs">
       <SubType>Form</SubType>
     </Compile>

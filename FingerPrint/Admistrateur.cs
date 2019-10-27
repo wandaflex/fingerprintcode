@@ -23,7 +23,7 @@ namespace FingerPrint
     public partial class Admistrateur : Form
     {
         string connectionString = @"Server=localhost;Database=presence_db;Uid=root;Pwd='';";
-        int adminID = 0;
+        public int adminID = 0;
         int cycleID = 0;
         public Admistrateur()
         {
@@ -104,7 +104,7 @@ namespace FingerPrint
             }
         }
 
-        void cleanForm(GroupBox groupBox)
+        public void cleanForm(GroupBox groupBox)
         {
             foreach (Control oControlFormulaire in groupBox.Controls)
                 if (oControlFormulaire is TextBox)
