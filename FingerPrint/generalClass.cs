@@ -13,7 +13,7 @@ namespace FingerPrint
 {
     class generalClass
     {
-        adm.
+        
         
     }
 }
