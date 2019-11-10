@@ -31,6 +31,7 @@ namespace FingerPrint
             InitializeComponent();
         }
 
+        #region Initialisation du formulaire principal
         private void Admistrateur_Load(object sender, EventArgs e)
         {
             GridFill("AdminViewAll", DGV_ListeAdmin);
@@ -56,6 +57,8 @@ namespace FingerPrint
                 MessageBox.Show("Error : " + ex.Message);
             }
         }
+
+        #endregion
 
         #region Enregistrement Administrateur 
         private void BTN_EnregisterAdmin_Click(object sender, EventArgs e)
