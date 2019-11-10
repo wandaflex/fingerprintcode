@@ -399,10 +399,10 @@
             this.GBX_FormProfesseur.TabIndex = 0;
             this.GBX_FormProfesseur.TabStop = false;
             this.GBX_FormProfesseur.Text = "Formulaire Professeur";
-            this.GBX_FormProfesseur.Enter += new System.EventHandler(this.GBX_FormProfesseur_Enter);
             // 
             // DTP_Recrutement
             // 
+            this.DTP_Recrutement.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DTP_Recrutement.Location = new System.Drawing.Point(557, 55);
             this.DTP_Recrutement.Name = "DTP_Recrutement";
             this.DTP_Recrutement.Size = new System.Drawing.Size(129, 20);
@@ -515,7 +515,6 @@
             this.TXB_DescriptionProf.Name = "TXB_DescriptionProf";
             this.TXB_DescriptionProf.Size = new System.Drawing.Size(286, 61);
             this.TXB_DescriptionProf.TabIndex = 17;
-            this.TXB_DescriptionProf.TextChanged += new System.EventHandler(this.TXB_DescriptionProf_TextChanged);
             // 
             // label7
             // 
@@ -749,7 +748,6 @@
             this.GBX_FormMatiere.TabIndex = 6;
             this.GBX_FormMatiere.TabStop = false;
             this.GBX_FormMatiere.Text = "Formulaire Matiere";
-            this.GBX_FormMatiere.Enter += new System.EventHandler(this.GBX_FormMatiere_Enter);
             // 
             // CBX_FormMatiere
             // 
@@ -1316,7 +1314,6 @@
             this.label1.Size = new System.Drawing.Size(137, 143);
             this.label1.TabIndex = 12;
             this.label1.Text = resources.GetString("label1.Text");
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // BTN_AnnulerProg
             // 
@@ -1412,7 +1409,6 @@
             this.GBX_FormProg.TabIndex = 6;
             this.GBX_FormProg.TabStop = false;
             this.GBX_FormProg.Text = "Formulaire Programme";
-            this.GBX_FormProg.Enter += new System.EventHandler(this.GBX_FormProg_Enter);
             // 
             // CBX_HeureFinProg
             // 
@@ -1429,7 +1425,6 @@
             this.CBX_HeureDebutProg.Name = "CBX_HeureDebutProg";
             this.CBX_HeureDebutProg.Size = new System.Drawing.Size(132, 21);
             this.CBX_HeureDebutProg.TabIndex = 14;
-            this.CBX_HeureDebutProg.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // CBX_SelectProgMatiere
             // 
@@ -1495,7 +1490,6 @@
             this.DTP_Programme.Name = "DTP_Programme";
             this.DTP_Programme.Size = new System.Drawing.Size(129, 20);
             this.DTP_Programme.TabIndex = 3;
-            this.DTP_Programme.ValueChanged += new System.EventHandler(this.DateTimePicker1_ValueChanged);
             // 
             // LBL_DateProg
             // 
@@ -1523,7 +1517,6 @@
             this.LBL_SelectProf.Size = new System.Drawing.Size(104, 13);
             this.LBL_SelectProf.TabIndex = 0;
             this.LBL_SelectProf.Text = "Selection Professeur";
-            this.LBL_SelectProf.Click += new System.EventHandler(this.Label2_Click);
             // 
             // LBL_SelectClasse
             // 
@@ -1703,7 +1696,6 @@
             this.LBL_SelectNomProg.Size = new System.Drawing.Size(157, 13);
             this.LBL_SelectNomProg.TabIndex = 0;
             this.LBL_SelectNomProg.Text = "Selection Nom des Programmes";
-            this.LBL_SelectNomProg.Click += new System.EventHandler(this.LBL_SelectNomProgramme_Click);
             // 
             // TPG_MatiereProf
             // 

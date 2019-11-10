@@ -26,6 +26,7 @@ namespace FingerPrint
         public int adminID = 0;
         int cycleID = 0;
         int classeID = 0;
+        int professeurID = 0;
         public Admistrateur()
         {
             InitializeComponent();
@@ -37,6 +38,7 @@ namespace FingerPrint
             GridFill("AdminViewAll", DGV_ListeAdmin);
             GridFill("CycleViewAll", DGV_ListeCycle);
             GridFill("ClasseViewAll", DGV_ListeClasse);
+            GridFill("ProfViewAll", DGV_ListeProf);
 
             //Cedric: Ajout fichier TXT pout lecture des hauraires.
             try
@@ -184,40 +186,7 @@ namespace FingerPrint
 
         }
 
-        private void GBX_FormMatiere_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GBX_FormProg_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LBL_SelectNomProgramme_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CBX_HeureDebutPres_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void BTN_EnregisterCycle_Click(object sender, EventArgs e)
         {
@@ -257,20 +226,7 @@ namespace FingerPrint
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TXB_DescriptionProf_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GBX_FormProfesseur_Enter(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void BTN_RechercheAdmin_Click(object sender, EventArgs e)
         {
@@ -297,7 +253,39 @@ namespace FingerPrint
 
         private void BTN_EnregistrerProf_Click(object sender, EventArgs e)
         {
+            try
+            {
+                using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+                {
+                    mySqlCon.Open();
+                    MySqlCommand mySqlCmd = new MySqlCommand("ProfAddOrEdit", mySqlCon);
+                    mySqlCmd.CommandType = CommandType.StoredProcedure;
+                    mySqlCmd.Parameters.AddWithValue("_ProfID", professeurID);
+                    mySqlCmd.Parameters.AddWithValue("_ProfNom", TXB_NomProf.Text.Trim());
+                    mySqlCmd.Parameters.AddWithValue("_ProfPrenom", TXB_PrenomProf.Text.Trim());
+                    mySqlCmd.Parameters.AddWithValue("_ProfTel_1", TXB_TelephoneProf.Text.Trim());
+                    mySqlCmd.Parameters.AddWithValue("_ProfTel_2", TXB_Telephone2Prof.Text.Trim());
+                    mySqlCmd.Parameters.AddWithValue("_Diplome", TXB_DiplomeProf.Text.Trim());
+                    mySqlCmd.Parameters.AddWithValue("_ProfType", TXB_TypeProf.Text.Trim());
+                    mySqlCmd.Parameters.AddWithValue("_ProfEmpreinte_1", TXB_Empreinte1Prof.Text.Trim());
+                    mySqlCmd.Parameters.AddWithValue("_ProfEmpreinte_2", TXB_Empreinte2Prof.Text.Trim());
+                    mySqlCmd.Parameters.AddWithValue("_ProfEmpreinte_3", TXB_Empreinte3Prof.Text.Trim());
+                    mySqlCmd.Parameters.AddWithValue("_ProfETaux_Horaire_1", TXB_Taux1ierCycleProf.Text.Trim());
+                    mySqlCmd.Parameters.AddWithValue("_ProfETaux_Horaire_2", TXB_Taux2iemeCycleProf.Text.Trim());
+                    mySqlCmd.Parameters.AddWithValue("_profDate_recrutement", DTP_Recrutement.Value);
+                    mySqlCmd.Parameters.AddWithValue("_Description", TXB_DescriptionProf.Text.Trim());
+                    mySqlCmd.ExecuteNonQuery();
+                    MessageBox.Show("Submited successfully");
+                    GridFill("ProfViewAll", DGV_ListeProf);
+                    BTN_EnregisterCycle.Text = "Modifier";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error Message ");
 
+            }
         }
+
     }
 }
