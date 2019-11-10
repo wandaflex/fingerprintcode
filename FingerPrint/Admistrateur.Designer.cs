@@ -313,6 +313,7 @@
             this.BTN_EnregistrerProf.TabIndex = 3;
             this.BTN_EnregistrerProf.Text = "Enregistrer";
             this.BTN_EnregistrerProf.UseVisualStyleBackColor = true;
+            this.BTN_EnregistrerProf.Click += new System.EventHandler(this.BTN_EnregistrerProf_Click);
             // 
             // GBX_RechercheProf
             // 
@@ -885,9 +886,10 @@
             this.DGV_ListeCycle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_ListeCycle.Location = new System.Drawing.Point(11, 17);
             this.DGV_ListeCycle.Name = "DGV_ListeCycle";
+            this.DGV_ListeCycle.ReadOnly = true;
             this.DGV_ListeCycle.Size = new System.Drawing.Size(683, 412);
             this.DGV_ListeCycle.TabIndex = 0;
-            //this.DGV_ListeCycle.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_ListeCycle_CellContentDoubleClick);
+            this.DGV_ListeCycle.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_ListeCycle_CellContentDoubleClick);
             // 
             // GBX_FormCycle
             // 
@@ -1017,11 +1019,15 @@
             // 
             // DGV_ListeClasse
             // 
+            this.DGV_ListeClasse.AllowUserToAddRows = false;
+            this.DGV_ListeClasse.AllowUserToDeleteRows = false;
             this.DGV_ListeClasse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_ListeClasse.Location = new System.Drawing.Point(11, 21);
             this.DGV_ListeClasse.Name = "DGV_ListeClasse";
+            this.DGV_ListeClasse.ReadOnly = true;
             this.DGV_ListeClasse.Size = new System.Drawing.Size(681, 430);
             this.DGV_ListeClasse.TabIndex = 0;
+            this.DGV_ListeClasse.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_ListeClasse_CellContentDoubleClick);
             // 
             // GBX_FormClasse
             // 

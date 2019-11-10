@@ -25,6 +25,7 @@ namespace FingerPrint
         string connectionString = @"Server=localhost;Database=presence_db;Uid=root;Pwd='';";
         public int adminID = 0;
         int cycleID = 0;
+        int classeID = 0;
         public Admistrateur()
         {
             InitializeComponent();
@@ -34,6 +35,7 @@ namespace FingerPrint
         {
             GridFill("AdminViewAll", DGV_ListeAdmin);
             GridFill("CycleViewAll", DGV_ListeCycle);
+            GridFill("ClasseViewAll", DGV_ListeClasse);
 
             //Cedric: Ajout fichier TXT pout lecture des hauraires.
             try
@@ -96,9 +98,9 @@ namespace FingerPrint
                 MySqlDataAdapter sqlDa = new MySqlDataAdapter(procedure, mySqlCon);
                 sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
                 //sqlDa.SelectCommand.Parameters.AddWithValue("AdminSearchByValue", TXB_RechercheAdmin.Text.Trim());
-                DataTable dtbAdmin = new DataTable();
-                sqlDa.Fill(dtbAdmin);
-                dataGrid.DataSource = dtbAdmin;
+                DataTable dtb = new DataTable();
+                sqlDa.Fill(dtb);
+                dataGrid.DataSource = dtb;
                 dataGrid.Columns[0].Visible = false;
                 dataGrid.Columns[dataGrid.Columns.Count-1].Visible = false; 
             }
@@ -119,6 +121,42 @@ namespace FingerPrint
         #region Classe
         private void BTN_EnregisterClasse_Click(object sender, EventArgs e)
         {
+            try
+            {
+                using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+                {
+                    mySqlCon.Open();
+                    MySqlCommand mySqlCmd = new MySqlCommand("ClasseAddOrEdit", mySqlCon);
+                    mySqlCmd.CommandType = CommandType.StoredProcedure;
+                    mySqlCmd.Parameters.AddWithValue("_ClasseID", classeID);
+                    mySqlCmd.Parameters.AddWithValue("_ClasseNom", TXB_NomClasse.Text.Trim());
+                    mySqlCmd.Parameters.AddWithValue("_ClasseCode", TXB_CodeClasse.Text.Trim());
+                    mySqlCmd.Parameters.AddWithValue("_ClasseDescription", TXB_DescriptionClasse.Text.Trim());
+                    mySqlCmd.ExecuteNonQuery();
+                    MessageBox.Show("Submited successfully");
+                    GridFill("ClasseViewAll", DGV_ListeClasse);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error Message ");
+
+            }
+        }
+
+        private void DGV_ListeClasse_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (DGV_ListeClasse.CurrentRow.Index != -1)
+            {
+                
+                TXB_NomClasse.Text = DGV_ListeClasse.CurrentRow.Cells[1].Value.ToString();
+                TXB_CodeClasse.Text = DGV_ListeClasse.CurrentRow.Cells[2].Value.ToString();
+                TXB_DescriptionClasse.Text = DGV_ListeClasse.CurrentRow.Cells[3].Value.ToString();
+                
+                classeID = Convert.ToInt32(DGV_ListeClasse.CurrentRow.Cells[0].Value.ToString());
+                BTN_EnregisterClasse.Text = "Modifier";
+                
+            }
 
         }
 
@@ -188,7 +226,7 @@ namespace FingerPrint
                     MySqlCommand mySqlCmd = new MySqlCommand("CycleAddOrEdit", mySqlCon);
                     mySqlCmd.CommandType = CommandType.StoredProcedure;
                     mySqlCmd.Parameters.AddWithValue("_CycleID", cycleID);
-                   mySqlCmd.Parameters.AddWithValue("_CycleNumero", TXB_NumCycle.Text.Trim());
+                    mySqlCmd.Parameters.AddWithValue("_CycleNumero", TXB_NumCycle.Text.Trim());
                     mySqlCmd.Parameters.AddWithValue("_CycleDescription", TXB_DescriptionCycle.Text.Trim());
                     mySqlCmd.ExecuteNonQuery();
                     MessageBox.Show("Submited successfully");
@@ -199,6 +237,19 @@ namespace FingerPrint
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error Message ");
+
+            }
+        }
+
+        private void DGV_ListeCycle_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (DGV_ListeCycle.CurrentRow.Index != -1)
+            {
+                TXB_NumCycle.Text = DGV_ListeCycle.CurrentRow.Cells[1].Value.ToString();                
+                TXB_DescriptionCycle.Text = DGV_ListeCycle.CurrentRow.Cells[2].Value.ToString();
+
+                cycleID = Convert.ToInt32(DGV_ListeCycle.CurrentRow.Cells[0].Value.ToString());
+                BTN_EnregisterCycle.Text = "Modifier";
 
             }
         }
@@ -220,7 +271,8 @@ namespace FingerPrint
 
         private void BTN_RechercheAdmin_Click(object sender, EventArgs e)
         {
-           /* try
+            /*
+            try
             {
                 using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
                 {
@@ -229,15 +281,20 @@ namespace FingerPrint
                     mySqlCmd.CommandType = CommandType.StoredProcedure;
                     mySqlCmd.Parameters.AddWithValue("_SearchValue", TXB_RechercheAdmin.Text.Trim());
                     mySqlCmd.ExecuteNonQuery();
-                    MessageBox.Show("Submited successfully");
-                   
+                    MessageBox.Show("Submited successfully");                   
                     GridFill("AdminSearchByValue", DGV_ListeAdmin);
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error Message ");
-            }*/
+            }
+            */
+        }
+
+        private void BTN_EnregistrerProf_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
