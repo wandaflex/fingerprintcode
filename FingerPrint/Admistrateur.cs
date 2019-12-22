@@ -75,6 +75,7 @@ namespace FingerPrint
                     mySqlCmd.Parameters.AddWithValue("_AdminID", adminID);
                     mySqlCmd.Parameters.AddWithValue("_AdminNom", TXB_NomAdmin.Text.Trim());
                     mySqlCmd.Parameters.AddWithValue("_AdminPremon", TXB_PrenomAdmin.Text.Trim());
+                    mySqlCmd.Parameters.AddWithValue("_AdminType", CBX_TypeUtil.SelectedItem.ToString().Trim());    // Jonathan : Ce paramètre manquait
                     mySqlCmd.Parameters.AddWithValue("_AdminLogin", TXB_LoginAdmin.Text.Trim());
                     mySqlCmd.Parameters.AddWithValue("_AdminPwd", TXB_MotDePasseAdmin.Text.Trim());
                     mySqlCmd.ExecuteNonQuery();
@@ -288,5 +289,9 @@ namespace FingerPrint
             }
         }
 
+        private void BTN_SupprimerAdmin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
