@@ -128,6 +128,7 @@ namespace FingerPrint
         {
             try
             {
+                // Enregistrer
                 using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
                 {
                     mySqlCon.Open();
