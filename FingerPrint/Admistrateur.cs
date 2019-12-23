@@ -111,6 +111,26 @@ namespace FingerPrint
             }
         }
 
+        void ComboFill(String procedure, ComboBox dataCombo)
+        {
+            using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+            {
+                mySqlCon.Open();
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter(procedure, mySqlCon);
+                sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
+                //sqlDa.SelectCommand.Parameters.AddWithValue("AdminSearchByValue", TXB_RechercheAdmin.Text.Trim());
+                DataTable dtb = new DataTable();
+                sqlDa.Fill(dtb);
+
+                //MySqlDataReader mySqlDataReader = sqlDa;
+                
+                //dataCombo.Items.Add(dtb.Columns[0].);
+
+                //dataGrid.Columns[0].Visible = false;
+                //dataGrid.Columns[dataGrid.Columns.Count - 1].Visible = false;
+            }
+        }
+
         public void cleanForm(GroupBox groupBox)
         {
             foreach (Control oControlFormulaire in groupBox.Controls)
@@ -287,5 +307,14 @@ namespace FingerPrint
             }
         }
 
+        private void BTN_EnregisterMatiere_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TCL_Admin_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboFill("CycleViewAll", CBX_FormMatiere);
+        }
     }
 }
