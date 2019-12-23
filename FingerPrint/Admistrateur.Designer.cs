@@ -256,7 +256,7 @@
             this.TCL_Admin.SelectedIndex = 0;
             this.TCL_Admin.Size = new System.Drawing.Size(1177, 785);
             this.TCL_Admin.TabIndex = 0;
-            this.TCL_Admin.SelectedIndexChanged += new System.EventHandler(this.TCL_Admin_SelectedIndexChanged);
+            //this.TCL_Admin.SelectedIndexChanged += new System.EventHandler(this.TCL_Admin_SelectedIndexChanged);
             // 
             // TPG_Professeur
             // 
@@ -707,7 +707,7 @@
             this.BTN_EnregisterMatiere.TabIndex = 9;
             this.BTN_EnregisterMatiere.Text = "Enregistrer";
             this.BTN_EnregisterMatiere.UseVisualStyleBackColor = true;
-            this.BTN_EnregisterMatiere.Click += new System.EventHandler(this.BTN_EnregisterMatiere_Click);
+            //this.BTN_EnregisterMatiere.Click += new System.EventHandler(this.BTN_EnregisterMatiere_Click);
             // 
             // GBX_RechecheMatiere
             // 
