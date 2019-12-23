@@ -270,8 +270,8 @@ namespace FingerPrint
                     mySqlCmd.Parameters.AddWithValue("_Diplome", TXB_DiplomeProf.Text.Trim());
                     mySqlCmd.Parameters.AddWithValue("_ProfType", TXB_TypeProf.Text.Trim());
                     mySqlCmd.Parameters.AddWithValue("_ProfEmpreinte_1", TXB_Empreinte1Prof.Text.Trim());
-                    mySqlCmd.Parameters.AddWithValue("_ProfEmpreinte_2", TXB_Empreinte2Prof.Text.Trim());
-                    mySqlCmd.Parameters.AddWithValue("_ProfEmpreinte_3", TXB_Empreinte3Prof.Text.Trim());
+                    mySqlCmd.Parameters.AddWithValue("_ProfEmpreinte_2", TXB_Empreinte2Prof.Text.Trim());                 
+                    mySqlCmd.Parameters.AddWithValue("_ProfProfil", "Profil IMG");
                     mySqlCmd.Parameters.AddWithValue("_ProfETaux_Horaire_1", TXB_Taux1ierCycleProf.Text.Trim());
                     mySqlCmd.Parameters.AddWithValue("_ProfETaux_Horaire_2", TXB_Taux2iemeCycleProf.Text.Trim());
                     mySqlCmd.Parameters.AddWithValue("_profDate_recrutement", DTP_Recrutement.Value);
@@ -285,11 +285,40 @@ namespace FingerPrint
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error Message ");
-
             }
         }
 
         private void BTN_SupprimerAdmin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DGV_ListeProf_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (DGV_ListeProf.CurrentRow.Index != -1)
+            {
+                TXB_NomProf.Text = DGV_ListeProf.CurrentRow.Cells[1].Value.ToString();
+                TXB_PrenomProf.Text = DGV_ListeProf.CurrentRow.Cells[2].Value.ToString();
+                TXB_TelephoneProf.Text = DGV_ListeProf.CurrentRow.Cells[3].Value.ToString();
+                TXB_Telephone2Prof.Text = DGV_ListeProf.CurrentRow.Cells[4].Value.ToString();
+                TXB_DiplomeProf.Text = DGV_ListeProf.CurrentRow.Cells[5].Value.ToString();
+                TXB_TypeProf.Text = DGV_ListeProf.CurrentRow.Cells[6].Value.ToString();
+                TXB_Empreinte1Prof.Text = DGV_ListeProf.CurrentRow.Cells[7].Value.ToString();
+                TXB_Empreinte2Prof.Text = DGV_ListeProf.CurrentRow.Cells[8].Value.ToString();
+                TXB_Taux1ierCycleProf.Text = DGV_ListeProf.CurrentRow.Cells[10].Value.ToString();
+                TXB_Taux2iemeCycleProf.Text = DGV_ListeProf.CurrentRow.Cells[11].Value.ToString();
+                TXB_DescriptionProf.Text = DGV_ListeProf.CurrentRow.Cells[12].Value.ToString();
+
+                DTP_Recrutement.Value = DateTime.Parse(DGV_ListeProf.CurrentRow.Cells[13].Value.ToString());
+
+
+                professeurID = Convert.ToInt32(DGV_ListeProf.CurrentRow.Cells[0].Value.ToString());
+                BTN_EnregistrerProf.Text = "Modifier";
+
+            }
+        }
+
+        private void BTN_SupprimerProf_Click(object sender, EventArgs e)
         {
 
         }
