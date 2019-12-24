@@ -336,7 +336,18 @@ namespace FingerPrint
 
         private void BTN_SupprimerProf_Click(object sender, EventArgs e)
         {
+            using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+            {
+                mySqlCon.Open();
+                MySqlCommand mySqlCmd = new MySqlCommand("ProfDeleteByID", mySqlCon);
+                mySqlCmd.CommandType = CommandType.StoredProcedure;
+                mySqlCmd.Parameters.AddWithValue("_ProfID", professeurID);
+                mySqlCmd.ExecuteNonQuery();
+                MessageBox.Show("Deleted successfully");
+                cleanForm(GBX_FormProfesseur);
+                GridFill("ProfViewAll", DGV_ListeProf);
 
+            }
         }
 
         private void BTN_RechercheProf_Click(object sender, EventArgs e)
