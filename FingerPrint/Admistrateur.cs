@@ -257,6 +257,7 @@ namespace FingerPrint
         {
             try
             {
+                // Test Commment Jonathan
                 using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
                 {
                     mySqlCon.Open();
