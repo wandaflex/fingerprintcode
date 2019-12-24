@@ -355,22 +355,6 @@ namespace FingerPrint
             }
         }
 
-        private void BTN_RechercheMatiere_Click(object sender, EventArgs e)
-        {
-            using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
-            {
-                mySqlCon.Open();
-                MySqlDataAdapter sqlDa = new MySqlDataAdapter("ProfSearchByValue", mySqlCon);
-                sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
-                sqlDa.SelectCommand.Parameters.AddWithValue("_SearchValue", TBX_RecherchePof.Text.Trim());
-                DataTable dtb = new DataTable();
-                sqlDa.Fill(dtb);
-                DGV_ListeProf.DataSource = dtb;
-                DGV_ListeProf.Columns[0].Visible = false;
-                DGV_ListeProf.Columns[DGV_ListeProf.Columns.Count - 1].Visible = false;
-            }
-        }
-
         private void BTN_RechercheClasse_Click(object sender, EventArgs e)
         {
             using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
