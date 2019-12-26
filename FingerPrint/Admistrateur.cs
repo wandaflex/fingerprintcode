@@ -112,6 +112,37 @@ namespace FingerPrint
             }
         }
 
+        void ComboFill(String Query, ComboBox comboGrid)
+        {
+           
+            using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+            {
+                mySqlCon.Open();
+
+                MySqlCommand cmdDataBase = new MySqlCommand(Query, mySqlCon);
+                MySqlDataReader myReader;
+                myReader = cmdDataBase.ExecuteReader();
+
+                while (myReader.Read())
+                {
+                    //string mName = myReader.GetString("NumeroCycle");
+                    //comboGrid.Items.Add(mName);
+
+                }
+
+               // MySqlDataAdapter sqlDa = new MySqlDataAdapter(procedure, mySqlCon);
+                //sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
+                //sqlDa.SelectCommand.Parameters.AddWithValue("AdminSearchByValue", TXB_RechercheAdmin.Text.Trim());
+                //DataTable dtb = new DataTable();
+                //sqlDa.M
+                //sqlDa.Fill(dtb);
+                //comboGrid.DataSource = dtb;
+                //comboGrid.Items.Add(sqlDa);
+                //comboGrid.Columns[0].Visible = false;
+                //comboGrid.Columns[comboGrid.Columns.Count - 1].Visible = false;
+            }
+        }
+
         public void cleanForm(GroupBox groupBox)
         {
             foreach (Control oControlFormulaire in groupBox.Controls)
@@ -320,6 +351,18 @@ namespace FingerPrint
 
         private void BTN_SupprimerProf_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void TCL_Admin_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //ComboFill("AdminViewAll", CBX_FormMatiere);
+        }
+
+        private void CBX_FormMatiere_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string Query = "select * from presence_db.cycle where visible=true ;";
+            ComboFill(Query, CBX_FormMatiere);
 
         }
     }
