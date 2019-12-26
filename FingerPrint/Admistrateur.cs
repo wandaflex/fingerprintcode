@@ -263,6 +263,21 @@ namespace FingerPrint
 
         private void BTN_RechercheAdmin_Click(object sender, EventArgs e)
         {
+
+            using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+            {
+                mySqlCon.Open();
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter("AdminSearchByValue", mySqlCon);
+                sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sqlDa.SelectCommand.Parameters.AddWithValue("_SearchValue", TXB_RechercheAdmin.Text.Trim());
+                DataTable dtb = new DataTable();
+                sqlDa.Fill(dtb);
+                DGV_ListeAdmin.DataSource = dtb;
+                DGV_ListeAdmin.Columns[0].Visible = false;
+                DGV_ListeAdmin.Columns[DGV_ListeAdmin.Columns.Count - 1].Visible = false;
+            }
+
+
             /*
             try
             {
@@ -288,6 +303,7 @@ namespace FingerPrint
         {
             try
             {
+                // Test Commment Jonathan
                 using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
                 {
                     mySqlCon.Open();
@@ -351,7 +367,66 @@ namespace FingerPrint
 
         private void BTN_SupprimerProf_Click(object sender, EventArgs e)
         {
+            using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+            {
+                mySqlCon.Open();
+                MySqlCommand mySqlCmd = new MySqlCommand("ProfDeleteByID", mySqlCon);
+                mySqlCmd.CommandType = CommandType.StoredProcedure;
+                mySqlCmd.Parameters.AddWithValue("_ProfID", professeurID);
+                mySqlCmd.ExecuteNonQuery();
+                MessageBox.Show("Deleted successfully");
+                cleanForm(GBX_FormProfesseur);
+                GridFill("ProfViewAll", DGV_ListeProf);
 
+            }
+        }
+
+        private void BTN_RechercheProf_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+            {
+                mySqlCon.Open();
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter("ProfSearchByValue", mySqlCon);
+                sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sqlDa.SelectCommand.Parameters.AddWithValue("_SearchValue", TBX_RecherchePof.Text.Trim());
+                DataTable dtb = new DataTable();
+                sqlDa.Fill(dtb);
+                DGV_ListeProf.DataSource = dtb;
+                DGV_ListeProf.Columns[0].Visible = false;
+                DGV_ListeProf.Columns[DGV_ListeProf.Columns.Count - 1].Visible = false;
+            }
+        }
+
+        private void BTN_RechercheClasse_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+            {
+                mySqlCon.Open();
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter("ClasseSearchByValue", mySqlCon);
+                sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sqlDa.SelectCommand.Parameters.AddWithValue("_SearchValue", TXB_RechercheClasse.Text.Trim());
+                DataTable dtb = new DataTable();
+                sqlDa.Fill(dtb);
+                DGV_ListeClasse.DataSource = dtb;
+                DGV_ListeClasse.Columns[0].Visible = false;
+                DGV_ListeClasse.Columns[DGV_ListeClasse.Columns.Count - 1].Visible = false;
+            }
+        }
+
+        private void BTN_RechercheCycle_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+            {
+                mySqlCon.Open();
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter("CycleSearchByValue", mySqlCon);
+                sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sqlDa.SelectCommand.Parameters.AddWithValue("_SearchValue", TXB_RechercheCycle.Text.Trim());
+                DataTable dtb = new DataTable();
+                sqlDa.Fill(dtb);
+                DGV_ListeCycle.DataSource = dtb;
+                DGV_ListeCycle.Columns[0].Visible = false;
+                DGV_ListeCycle.Columns[DGV_ListeCycle.Columns.Count - 1].Visible = false;
+            }
         }
 
         private void TCL_Admin_SelectedIndexChanged(object sender, EventArgs e)
