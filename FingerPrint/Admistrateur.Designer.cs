@@ -660,7 +660,7 @@
             this.BTN_EnregisterMatiere.TabIndex = 9;
             this.BTN_EnregisterMatiere.Text = "Enregistrer";
             this.BTN_EnregisterMatiere.UseVisualStyleBackColor = true;
-            this.BTN_EnregisterMatiere.Click += new System.EventHandler(this.BTN_EnregisterMatiere_Click);
+            //this.BTN_EnregisterMatiere.Click += new System.EventHandler(this.BTN_EnregisterMatiere_Click);
             // 
             // GBX_RechecheMatiere
             // 
@@ -730,7 +730,7 @@
             this.CBX_FormMatiere.Name = "CBX_FormMatiere";
             this.CBX_FormMatiere.Size = new System.Drawing.Size(90, 21);
             this.CBX_FormMatiere.TabIndex = 4;
-            this.CBX_FormMatiere.SelectedIndexChanged += new System.EventHandler(this.CBX_FormMatiere_SelectedIndexChanged);
+            //this.CBX_FormMatiere.SelectedIndexChanged += new System.EventHandler(this.CBX_FormMatiere_SelectedIndexChanged);
             // 
             // LBL_SelectCycle
             // 
