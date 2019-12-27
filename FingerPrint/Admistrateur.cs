@@ -58,9 +58,6 @@ namespace FingerPrint
             {
                 MessageBox.Show("Error : " + ex.Message);
             }
-
-            string Query = "select * from presence_db.cycle where visible=true ;";
-            ComboFill(Query, CBX_FormMatiere);
         }
 
         #endregion
@@ -112,35 +109,6 @@ namespace FingerPrint
                 dataGrid.DataSource = dtb;
                 dataGrid.Columns[0].Visible = false;
                 dataGrid.Columns[dataGrid.Columns.Count-1].Visible = false; 
-            }
-        }
-
-        void ComboFill(String Query, ComboBox comboGrid)
-        {
-            DataSet ds2;
-           
-            using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
-            {
-                mySqlCon.Open();
-
-                //MySqlCommand cmdDataBase = new MySqlCommand(Query, mySqlCon);
-                MySqlDataAdapter sqlDa = new MySqlDataAdapter(Query, mySqlCon);
-                ds2 = new DataSet();
-                sqlDa.Fill(ds2,"sqlDa");
-                comboGrid.ValueMember = "NumeroCycle";
-                comboGrid.DataSource = ds2.Tables["Cycle"];
-                comboGrid.DropDownStyle = ComboBoxStyle.DropDownList;
-                comboGrid.Enabled = true;
-
-                //sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
-                //sqlDa.SelectCommand.Parameters.AddWithValue("AdminSearchByValue", TXB_RechercheAdmin.Text.Trim());
-                //DataTable dtb = new DataTable();
-                //sqlDa.M
-                //sqlDa.Fill(dtb);
-                //comboGrid.DataSource = dtb;
-                //comboGrid.Items.Add(sqlDa);
-                //comboGrid.Columns[0].Visible = false;
-                //comboGrid.Columns[comboGrid.Columns.Count - 1].Visible = false;
             }
         }
 
@@ -336,10 +304,7 @@ namespace FingerPrint
             }
         }
 
-        private void BTN_SupprimerAdmin_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void DGV_ListeProf_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -430,21 +395,49 @@ namespace FingerPrint
             }
         }
 
-        private void TCL_Admin_SelectedIndexChanged(object sender, EventArgs e)
+        private void BTN_SupprimerClasse_Click(object sender, EventArgs e)
         {
-            //ComboFill("AdminViewAll", CBX_FormMatiere);
+            using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+            {
+                mySqlCon.Open();
+                MySqlCommand mySqlCmd = new MySqlCommand("ClasseDeleteByID", mySqlCon);
+                mySqlCmd.CommandType = CommandType.StoredProcedure;
+                mySqlCmd.Parameters.AddWithValue("_ClasseID", classeID);
+                mySqlCmd.ExecuteNonQuery();
+                MessageBox.Show("Deleted successfully");
+                cleanForm(GBX_FormClasse);
+                GridFill("ClasseViewAll", DGV_ListeClasse);
+            }
         }
 
-        private void CBX_FormMatiere_SelectedIndexChanged(object sender, EventArgs e)
+        private void BTN_SupprimerAdmin_Click(object sender, EventArgs e)
         {
-            string Query = "select * from presence_db.cycle where visible=true ;";
-            ComboFill(Query, CBX_FormMatiere);
-
+            using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+            {
+                mySqlCon.Open();
+                MySqlCommand mySqlCmd = new MySqlCommand("AdmimDeleteByID", mySqlCon);
+                mySqlCmd.CommandType = CommandType.StoredProcedure;
+                mySqlCmd.Parameters.AddWithValue("_AdminID", adminID);
+                mySqlCmd.ExecuteNonQuery();
+                MessageBox.Show("Deleted successfully");
+                cleanForm(GBX_FormAdmin);
+                GridFill("AdminViewAll", DGV_ListeAdmin);
+            }
         }
 
-        private void BTN_EnregisterMatiere_Click(object sender, EventArgs e)
+        private void BTN_SupprimerModifierCycle_Click(object sender, EventArgs e)
         {
-
+            using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+            {
+                mySqlCon.Open();
+                MySqlCommand mySqlCmd = new MySqlCommand("CycleDeleteByID", mySqlCon);
+                mySqlCmd.CommandType = CommandType.StoredProcedure;
+                mySqlCmd.Parameters.AddWithValue("_CycleID", cycleID);
+                mySqlCmd.ExecuteNonQuery();
+                MessageBox.Show("Deleted successfully");
+                cleanForm(GBX_FormCycle);
+                GridFill("CycleViewAll", DGV_ListeCycle);
+            }
         }
     }
 }
