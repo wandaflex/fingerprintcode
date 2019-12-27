@@ -58,6 +58,9 @@ namespace FingerPrint
             {
                 MessageBox.Show("Error : " + ex.Message);
             }
+
+            string Query = "select * from presence_db.cycle where visible=true ;";
+            ComboFill(Query, CBX_FormMatiere);
         }
 
         #endregion
@@ -114,23 +117,21 @@ namespace FingerPrint
 
         void ComboFill(String Query, ComboBox comboGrid)
         {
+            DataSet ds2;
            
             using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
             {
                 mySqlCon.Open();
 
-                MySqlCommand cmdDataBase = new MySqlCommand(Query, mySqlCon);
-                MySqlDataReader myReader;
-                myReader = cmdDataBase.ExecuteReader();
+                //MySqlCommand cmdDataBase = new MySqlCommand(Query, mySqlCon);
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter(Query, mySqlCon);
+                ds2 = new DataSet();
+                sqlDa.Fill(ds2,"sqlDa");
+                comboGrid.ValueMember = "NumeroCycle";
+                comboGrid.DataSource = ds2.Tables["Cycle"];
+                comboGrid.DropDownStyle = ComboBoxStyle.DropDownList;
+                comboGrid.Enabled = true;
 
-                while (myReader.Read())
-                {
-                    //string mName = myReader.GetString("NumeroCycle");
-                    //comboGrid.Items.Add(mName);
-
-                }
-
-               // MySqlDataAdapter sqlDa = new MySqlDataAdapter(procedure, mySqlCon);
                 //sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
                 //sqlDa.SelectCommand.Parameters.AddWithValue("AdminSearchByValue", TXB_RechercheAdmin.Text.Trim());
                 //DataTable dtb = new DataTable();
@@ -438,6 +439,11 @@ namespace FingerPrint
         {
             string Query = "select * from presence_db.cycle where visible=true ;";
             ComboFill(Query, CBX_FormMatiere);
+
+        }
+
+        private void BTN_EnregisterMatiere_Click(object sender, EventArgs e)
+        {
 
         }
     }

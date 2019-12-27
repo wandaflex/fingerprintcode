@@ -660,6 +660,7 @@
             this.BTN_EnregisterMatiere.TabIndex = 9;
             this.BTN_EnregisterMatiere.Text = "Enregistrer";
             this.BTN_EnregisterMatiere.UseVisualStyleBackColor = true;
+            this.BTN_EnregisterMatiere.Click += new System.EventHandler(this.BTN_EnregisterMatiere_Click);
             // 
             // GBX_RechecheMatiere
             // 
