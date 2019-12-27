@@ -304,10 +304,7 @@ namespace FingerPrint
             }
         }
 
-        private void BTN_SupprimerAdmin_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void DGV_ListeProf_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -395,6 +392,51 @@ namespace FingerPrint
                 DGV_ListeCycle.DataSource = dtb;
                 DGV_ListeCycle.Columns[0].Visible = false;
                 DGV_ListeCycle.Columns[DGV_ListeCycle.Columns.Count - 1].Visible = false;
+            }
+        }
+
+        private void BTN_SupprimerClasse_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+            {
+                mySqlCon.Open();
+                MySqlCommand mySqlCmd = new MySqlCommand("ClasseDeleteByID", mySqlCon);
+                mySqlCmd.CommandType = CommandType.StoredProcedure;
+                mySqlCmd.Parameters.AddWithValue("_ClasseID", classeID);
+                mySqlCmd.ExecuteNonQuery();
+                MessageBox.Show("Deleted successfully");
+                cleanForm(GBX_FormClasse);
+                GridFill("ClasseViewAll", DGV_ListeClasse);
+            }
+        }
+
+        private void BTN_SupprimerAdmin_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+            {
+                mySqlCon.Open();
+                MySqlCommand mySqlCmd = new MySqlCommand("AdmimDeleteByID", mySqlCon);
+                mySqlCmd.CommandType = CommandType.StoredProcedure;
+                mySqlCmd.Parameters.AddWithValue("_AdminID", adminID);
+                mySqlCmd.ExecuteNonQuery();
+                MessageBox.Show("Deleted successfully");
+                cleanForm(GBX_FormAdmin);
+                GridFill("AdminViewAll", DGV_ListeAdmin);
+            }
+        }
+
+        private void BTN_SupprimerModifierCycle_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+            {
+                mySqlCon.Open();
+                MySqlCommand mySqlCmd = new MySqlCommand("CycleDeleteByID", mySqlCon);
+                mySqlCmd.CommandType = CommandType.StoredProcedure;
+                mySqlCmd.Parameters.AddWithValue("_CycleID", cycleID);
+                mySqlCmd.ExecuteNonQuery();
+                MessageBox.Show("Deleted successfully");
+                cleanForm(GBX_FormCycle);
+                GridFill("CycleViewAll", DGV_ListeCycle);
             }
         }
     }
