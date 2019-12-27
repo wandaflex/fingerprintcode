@@ -40,6 +40,8 @@ namespace FingerPrint
             GridFill("ClasseViewAll", DGV_ListeClasse);
             GridFill("ProfViewAll", DGV_ListeProf);
 
+            ComboFill("CycleViewAll",ref CBX_FormMatiere);
+
             //Cedric: Ajout fichier TXT pout lecture des hauraires.
             try
             {
@@ -88,7 +90,7 @@ namespace FingerPrint
                 MessageBox.Show(ex.Message, "Error Message ");
 
             }
-         
+
         }
 
         private void BTN_AnnulerAdmin_Click(object sender, EventArgs e)
@@ -108,7 +110,7 @@ namespace FingerPrint
                 sqlDa.Fill(dtb);
                 dataGrid.DataSource = dtb;
                 dataGrid.Columns[0].Visible = false;
-                dataGrid.Columns[dataGrid.Columns.Count-1].Visible = false; 
+                dataGrid.Columns[dataGrid.Columns.Count - 1].Visible = false;
             }
         }
 
@@ -118,9 +120,9 @@ namespace FingerPrint
                 if (oControlFormulaire is TextBox)
                     oControlFormulaire.Text = String.Empty;
             adminID = 0;
-       
+
             BTN_EnregisterAdmin.Text = "Enregistrer";
-          
+
         }
         #endregion
 
@@ -155,14 +157,14 @@ namespace FingerPrint
         {
             if (DGV_ListeClasse.CurrentRow.Index != -1)
             {
-                
+
                 TXB_NomClasse.Text = DGV_ListeClasse.CurrentRow.Cells[1].Value.ToString();
                 TXB_CodeClasse.Text = DGV_ListeClasse.CurrentRow.Cells[2].Value.ToString();
                 TXB_DescriptionClasse.Text = DGV_ListeClasse.CurrentRow.Cells[3].Value.ToString();
-                
+
                 classeID = Convert.ToInt32(DGV_ListeClasse.CurrentRow.Cells[0].Value.ToString());
                 BTN_EnregisterClasse.Text = "Modifier";
-                
+
             }
 
         }
@@ -180,7 +182,7 @@ namespace FingerPrint
                 adminID = Convert.ToInt32(DGV_ListeAdmin.CurrentRow.Cells[0].Value.ToString());
                 BTN_EnregisterAdmin.Text = "Modifier";
             }
-            
+
         }
 
         private void DGV_ListeProf_DoubleClick(object sender, EventArgs e)
@@ -188,15 +190,15 @@ namespace FingerPrint
 
         }
 
-      
+
 
         private void BTN_EnregisterCycle_Click(object sender, EventArgs e)
         {
             try
-            { 
-               using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
-               {
-                   mySqlCon.Open();
+            {
+                using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+                {
+                    mySqlCon.Open();
                     MySqlCommand mySqlCmd = new MySqlCommand("CycleAddOrEdit", mySqlCon);
                     mySqlCmd.CommandType = CommandType.StoredProcedure;
                     mySqlCmd.Parameters.AddWithValue("_CycleID", cycleID);
@@ -219,7 +221,7 @@ namespace FingerPrint
         {
             if (DGV_ListeCycle.CurrentRow.Index != -1)
             {
-                TXB_NumCycle.Text = DGV_ListeCycle.CurrentRow.Cells[1].Value.ToString();                
+                TXB_NumCycle.Text = DGV_ListeCycle.CurrentRow.Cells[1].Value.ToString();
                 TXB_DescriptionCycle.Text = DGV_ListeCycle.CurrentRow.Cells[2].Value.ToString();
 
                 cycleID = Convert.ToInt32(DGV_ListeCycle.CurrentRow.Cells[0].Value.ToString());
@@ -228,7 +230,7 @@ namespace FingerPrint
             }
         }
 
-       
+
 
         private void BTN_RechercheAdmin_Click(object sender, EventArgs e)
         {
@@ -286,7 +288,7 @@ namespace FingerPrint
                     mySqlCmd.Parameters.AddWithValue("_Diplome", TXB_DiplomeProf.Text.Trim());
                     mySqlCmd.Parameters.AddWithValue("_ProfType", TXB_TypeProf.Text.Trim());
                     mySqlCmd.Parameters.AddWithValue("_ProfEmpreinte_1", TXB_Empreinte1Prof.Text.Trim());
-                    mySqlCmd.Parameters.AddWithValue("_ProfEmpreinte_2", TXB_Empreinte2Prof.Text.Trim());                 
+                    mySqlCmd.Parameters.AddWithValue("_ProfEmpreinte_2", TXB_Empreinte2Prof.Text.Trim());
                     mySqlCmd.Parameters.AddWithValue("_ProfProfil", "Profil IMG");
                     mySqlCmd.Parameters.AddWithValue("_ProfETaux_Horaire_1", TXB_Taux1ierCycleProf.Text.Trim());
                     mySqlCmd.Parameters.AddWithValue("_ProfETaux_Horaire_2", TXB_Taux2iemeCycleProf.Text.Trim());
@@ -304,7 +306,7 @@ namespace FingerPrint
             }
         }
 
-        
+
 
         private void DGV_ListeProf_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -439,5 +441,25 @@ namespace FingerPrint
                 GridFill("CycleViewAll", DGV_ListeCycle);
             }
         }
+
+        // Methode pour le combobox
+        private void ComboFill(string procedure, ref ComboBox oComboBox)
+        {
+            using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+            {
+                mySqlCon.Open();
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter(procedure, mySqlCon);
+                sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
+                //sqlDa.SelectCommand.Parameters.AddWithValue("AdminSearchByValue", TXB_RechercheAdmin.Text.Trim());
+                DataTable dtb = new DataTable();
+                sqlDa.Fill(dtb);
+                oComboBox.DataSource = dtb;
+                Console.WriteLine("DATATABLE");
+                Console.WriteLine(dtb);
+                oComboBox.DisplayMember = "NumeroCycle";
+                oComboBox.ValueMember = "NumeroCycle";
+            }
+        }
+
     }
 }
