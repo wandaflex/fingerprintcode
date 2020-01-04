@@ -255,6 +255,7 @@
             this.TCL_Admin.SelectedIndex = 0;
             this.TCL_Admin.Size = new System.Drawing.Size(883, 638);
             this.TCL_Admin.TabIndex = 0;
+            this.TCL_Admin.SelectedIndexChanged += new System.EventHandler(this.TCL_Admin_SelectedIndexChanged);
             // 
             // TPG_Professeur
             // 
@@ -660,7 +661,7 @@
             this.BTN_EnregisterMatiere.TabIndex = 9;
             this.BTN_EnregisterMatiere.Text = "Enregistrer";
             this.BTN_EnregisterMatiere.UseVisualStyleBackColor = true;
-            //this.BTN_EnregisterMatiere.Click += new System.EventHandler(this.BTN_EnregisterMatiere_Click);
+            this.BTN_EnregisterMatiere.Click += new System.EventHandler(this.BTN_EnregisterMatiere_Click);
             // 
             // GBX_RechecheMatiere
             // 
@@ -707,6 +708,7 @@
             this.DGV_ListeMatiere.RowHeadersWidth = 51;
             this.DGV_ListeMatiere.Size = new System.Drawing.Size(682, 426);
             this.DGV_ListeMatiere.TabIndex = 0;
+            this.DGV_ListeMatiere.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_ListeMatiere_CellContentDoubleClick);
             // 
             // GBX_FormMatiere
             // 
@@ -725,12 +727,12 @@
             // 
             // CBX_FormMatiere
             // 
+            this.CBX_FormMatiere.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.CBX_FormMatiere.FormattingEnabled = true;
             this.CBX_FormMatiere.Location = new System.Drawing.Point(117, 26);
             this.CBX_FormMatiere.Name = "CBX_FormMatiere";
             this.CBX_FormMatiere.Size = new System.Drawing.Size(90, 21);
             this.CBX_FormMatiere.TabIndex = 4;
-            //this.CBX_FormMatiere.SelectedIndexChanged += new System.EventHandler(this.CBX_FormMatiere_SelectedIndexChanged);
             // 
             // LBL_SelectCycle
             // 

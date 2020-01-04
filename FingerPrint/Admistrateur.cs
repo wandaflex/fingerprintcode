@@ -27,6 +27,7 @@ namespace FingerPrint
         int cycleID = 0;
         int classeID = 0;
         int professeurID = 0;
+        int matiereID = 0;
         public Admistrateur()
         {
             InitializeComponent();
@@ -39,6 +40,8 @@ namespace FingerPrint
             GridFill("CycleViewAll", DGV_ListeCycle);
             GridFill("ClasseViewAll", DGV_ListeClasse);
             GridFill("ProfViewAll", DGV_ListeProf);
+
+            GridFill("MAtiereViewAll", DGV_ListeMatiere);
 
             ComboFill("CycleViewAll",ref CBX_FormMatiere);
 
@@ -185,9 +188,47 @@ namespace FingerPrint
 
         }
 
-        private void DGV_ListeProf_DoubleClick(object sender, EventArgs e)
-        {
 
+        private void BTN_EnregisterMatiere_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(CBX_FormMatiere.SelectedValue.ToString());
+
+            try
+            {
+                using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+                {
+                    mySqlCon.Open();
+                    MySqlCommand mySqlCmd = new MySqlCommand("MatiereAddOrEdit", mySqlCon);
+                    mySqlCmd.CommandType = CommandType.StoredProcedure;
+                    mySqlCmd.Parameters.AddWithValue("_MatiereID", matiereID);
+                    mySqlCmd.Parameters.AddWithValue("_MatiereCode", TXB_CodeMatiere.Text.Trim());
+                    mySqlCmd.Parameters.AddWithValue("_MatiereNom", TXB_NomMatiere.Text.Trim());
+                    mySqlCmd.Parameters.AddWithValue("_CycleID_Cycle", CBX_FormMatiere.SelectedValue.ToString());    // Jonathan : Ce paramètre manquait
+                   
+                    mySqlCmd.ExecuteNonQuery();
+                    MessageBox.Show("Submited successfully");
+                    GridFill("MAtiereViewAll", DGV_ListeMatiere);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error Message ");
+
+            }
+        }
+
+        private void DGV_ListeMatiere_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (DGV_ListeMatiere.CurrentRow.Index != -1)
+            {
+                TXB_CodeMatiere.Text = DGV_ListeMatiere.CurrentRow.Cells[2].Value.ToString();
+                TXB_NomMatiere.Text = DGV_ListeMatiere.CurrentRow.Cells[3].Value.ToString();
+
+                //CBX_FormMatiere.SelectedText = DGV_ListeMatiere.CurrentRow.Cells[4].Value.ToString();
+
+                matiereID = Convert.ToInt32(DGV_ListeMatiere.CurrentRow.Cells[0].Value.ToString());
+                BTN_EnregisterCycle.Text = "Modifier";
+            }
         }
 
 
@@ -454,12 +495,18 @@ namespace FingerPrint
                 DataTable dtb = new DataTable();
                 sqlDa.Fill(dtb);
                 oComboBox.DataSource = dtb;
-                Console.WriteLine("DATATABLE");
-                Console.WriteLine(dtb);
+                //Console.WriteLine("DATATABLE");
+                //Console.WriteLine(dtb);
                 oComboBox.DisplayMember = "NumeroCycle";
-                oComboBox.ValueMember = "NumeroCycle";
+                oComboBox.ValueMember = "idCycle";
             }
         }
 
+        private void TCL_Admin_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }
