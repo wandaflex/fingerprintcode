@@ -43,7 +43,7 @@ namespace FingerPrint
 
             GridFill("MAtiereViewAll", DGV_ListeMatiere);
 
-            ComboFill("CycleViewAll",ref CBX_FormMatiere);
+            ComboFill("CycleViewAll",ref CBX_FormMatiere, "NumeroCycle", "idCycle");
 
             //Cedric: Ajout fichier TXT pout lecture des hauraires.
             try
@@ -91,7 +91,6 @@ namespace FingerPrint
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error Message ");
-
             }
 
         }
@@ -484,7 +483,7 @@ namespace FingerPrint
         }
 
         // Methode pour le combobox
-        private void ComboFill(string procedure, ref ComboBox oComboBox)
+        private void ComboFill(string procedure, ref ComboBox oComboBox, string displayMember, string valueMember)
         {
             using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
             {
@@ -497,8 +496,8 @@ namespace FingerPrint
                 oComboBox.DataSource = dtb;
                 //Console.WriteLine("DATATABLE");
                 //Console.WriteLine(dtb);
-                oComboBox.DisplayMember = "NumeroCycle";
-                oComboBox.ValueMember = "idCycle";
+                oComboBox.DisplayMember = displayMember;
+                oComboBox.ValueMember = valueMember;
             }
         }
 
