@@ -43,7 +43,7 @@ namespace FingerPrint
 
             GridFill("MAtiereViewAll", DGV_ListeMatiere);
 
-            ComboFill("CycleViewAll",ref CBX_FormMatiere, "NumeroCycle", "idCycle");
+            ComboFill("MatiereCycleComboViewAll", ref CBX_FormMatiere, "cycle", "idCycle");
 
             //Cedric: Ajout fichier TXT pout lecture des hauraires.
             try
@@ -220,10 +220,11 @@ namespace FingerPrint
         {
             if (DGV_ListeMatiere.CurrentRow.Index != -1)
             {
-                TXB_CodeMatiere.Text = DGV_ListeMatiere.CurrentRow.Cells[2].Value.ToString();
-                TXB_NomMatiere.Text = DGV_ListeMatiere.CurrentRow.Cells[3].Value.ToString();
+                TXB_CodeMatiere.Text = DGV_ListeMatiere.CurrentRow.Cells[1].Value.ToString();
+                TXB_NomMatiere.Text = DGV_ListeMatiere.CurrentRow.Cells[2].Value.ToString();
 
-                //CBX_FormMatiere.SelectedText = DGV_ListeMatiere.CurrentRow.Cells[4].Value.ToString();
+                CBX_FormMatiere.SelectedIndex = CBX_FormMatiere.FindStringExact(DGV_ListeMatiere.CurrentRow.Cells[3].Value.ToString());
+
 
                 matiereID = Convert.ToInt32(DGV_ListeMatiere.CurrentRow.Cells[0].Value.ToString());
                 BTN_EnregisterCycle.Text = "Modifier";
@@ -506,6 +507,9 @@ namespace FingerPrint
 
         }
 
-       
+        private void CBX_SelectProf_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
