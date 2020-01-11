@@ -112,8 +112,6 @@
             this.LBL_DescriptionClasse = new System.Windows.Forms.Label();
             this.TXB_CodeClasse = new System.Windows.Forms.TextBox();
             this.LBL_CodeClasse = new System.Windows.Forms.Label();
-            this.TXB_NomClasse = new System.Windows.Forms.TextBox();
-            this.LBL_NomClasse = new System.Windows.Forms.Label();
             this.TPG_Administrateur = new System.Windows.Forms.TabPage();
             this.BTN_AnnulerAdmin = new System.Windows.Forms.Button();
             this.BTN_SupprimerAdmin = new System.Windows.Forms.Button();
@@ -1004,7 +1002,6 @@
             this.DGV_ListeClasse.RowHeadersWidth = 51;
             this.DGV_ListeClasse.Size = new System.Drawing.Size(681, 430);
             this.DGV_ListeClasse.TabIndex = 0;
-            this.DGV_ListeClasse.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_ListeClasse_CellContentDoubleClick);
             // 
             // GBX_FormClasse
             // 
@@ -1012,8 +1009,6 @@
             this.GBX_FormClasse.Controls.Add(this.LBL_DescriptionClasse);
             this.GBX_FormClasse.Controls.Add(this.TXB_CodeClasse);
             this.GBX_FormClasse.Controls.Add(this.LBL_CodeClasse);
-            this.GBX_FormClasse.Controls.Add(this.TXB_NomClasse);
-            this.GBX_FormClasse.Controls.Add(this.LBL_NomClasse);
             this.GBX_FormClasse.Location = new System.Drawing.Point(14, 14);
             this.GBX_FormClasse.Name = "GBX_FormClasse";
             this.GBX_FormClasse.Size = new System.Drawing.Size(706, 73);
@@ -1052,22 +1047,6 @@
             this.LBL_CodeClasse.Size = new System.Drawing.Size(32, 13);
             this.LBL_CodeClasse.TabIndex = 2;
             this.LBL_CodeClasse.Text = "Code";
-            // 
-            // TXB_NomClasse
-            // 
-            this.TXB_NomClasse.Location = new System.Drawing.Point(86, 30);
-            this.TXB_NomClasse.Name = "TXB_NomClasse";
-            this.TXB_NomClasse.Size = new System.Drawing.Size(102, 20);
-            this.TXB_NomClasse.TabIndex = 1;
-            // 
-            // LBL_NomClasse
-            // 
-            this.LBL_NomClasse.AutoSize = true;
-            this.LBL_NomClasse.Location = new System.Drawing.Point(16, 33);
-            this.LBL_NomClasse.Name = "LBL_NomClasse";
-            this.LBL_NomClasse.Size = new System.Drawing.Size(29, 13);
-            this.LBL_NomClasse.TabIndex = 0;
-            this.LBL_NomClasse.Text = "Nom";
             // 
             // TPG_Administrateur
             // 
@@ -2039,8 +2018,6 @@
         private System.Windows.Forms.Label LBL_DescriptionClasse;
         private System.Windows.Forms.TextBox TXB_CodeClasse;
         private System.Windows.Forms.Label LBL_CodeClasse;
-        private System.Windows.Forms.TextBox TXB_NomClasse;
-        private System.Windows.Forms.Label LBL_NomClasse;
         private System.Windows.Forms.TextBox TXB_MotDePasseAdmin;
         private System.Windows.Forms.Label LBL_MotDePasseAdmin;
         private System.Windows.Forms.TextBox TXB_LoginAdmin;
