@@ -73,13 +73,11 @@
             this.BTN_SupprimerMatiere = new System.Windows.Forms.Button();
             this.BTN_EnregisterMatiere = new System.Windows.Forms.Button();
             this.GBX_RechecheMatiere = new System.Windows.Forms.GroupBox();
-            this.TBX_RechercheMatiere = new System.Windows.Forms.TextBox();
+            this.TXB_RechercheMatiere = new System.Windows.Forms.TextBox();
             this.BTN_RechercheMatiere = new System.Windows.Forms.Button();
             this.GBX_ListeMatiere = new System.Windows.Forms.GroupBox();
             this.DGV_ListeMatiere = new System.Windows.Forms.DataGridView();
             this.GBX_FormMatiere = new System.Windows.Forms.GroupBox();
-            this.CBX_FormMatiere = new System.Windows.Forms.ComboBox();
-            this.LBL_SelectCycle = new System.Windows.Forms.Label();
             this.TXB_NomMatiere = new System.Windows.Forms.TextBox();
             this.LBL_NomMatiere = new System.Windows.Forms.Label();
             this.TXB_CodeMatiere = new System.Windows.Forms.TextBox();
@@ -108,6 +106,10 @@
             this.GBX_ListeClasse = new System.Windows.Forms.GroupBox();
             this.DGV_ListeClasse = new System.Windows.Forms.DataGridView();
             this.GBX_FormClasse = new System.Windows.Forms.GroupBox();
+            this.TXB_NomClasse = new System.Windows.Forms.TextBox();
+            this.LBL_NomClasse = new System.Windows.Forms.Label();
+            this.CBX_CycleClasse = new System.Windows.Forms.ComboBox();
+            this.LBL_CycleClasse = new System.Windows.Forms.Label();
             this.TXB_DescriptionClasse = new System.Windows.Forms.TextBox();
             this.LBL_DescriptionClasse = new System.Windows.Forms.Label();
             this.TXB_CodeClasse = new System.Windows.Forms.TextBox();
@@ -194,8 +196,6 @@
             this.BTN_Rapports = new System.Windows.Forms.Button();
             this.BTN_Horaires = new System.Windows.Forms.Button();
             this.BTN_EtatReseau = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.TCL_Admin.SuspendLayout();
             this.TPG_Professeur.SuspendLayout();
             this.GBX_RechercheProf.SuspendLayout();
@@ -255,7 +255,6 @@
             this.TCL_Admin.SelectedIndex = 0;
             this.TCL_Admin.Size = new System.Drawing.Size(883, 638);
             this.TCL_Admin.TabIndex = 0;
-            this.TCL_Admin.SelectedIndexChanged += new System.EventHandler(this.TCL_Admin_SelectedIndexChanged);
             // 
             // TPG_Professeur
             // 
@@ -652,6 +651,7 @@
             this.BTN_SupprimerMatiere.TabIndex = 10;
             this.BTN_SupprimerMatiere.Text = "Supprimer";
             this.BTN_SupprimerMatiere.UseVisualStyleBackColor = true;
+            this.BTN_SupprimerMatiere.Click += new System.EventHandler(this.BTN_SupprimerMatiere_Click);
             // 
             // BTN_EnregisterMatiere
             // 
@@ -665,7 +665,7 @@
             // 
             // GBX_RechecheMatiere
             // 
-            this.GBX_RechecheMatiere.Controls.Add(this.TBX_RechercheMatiere);
+            this.GBX_RechecheMatiere.Controls.Add(this.TXB_RechercheMatiere);
             this.GBX_RechecheMatiere.Controls.Add(this.BTN_RechercheMatiere);
             this.GBX_RechecheMatiere.Location = new System.Drawing.Point(19, 97);
             this.GBX_RechecheMatiere.Name = "GBX_RechecheMatiere";
@@ -674,12 +674,13 @@
             this.GBX_RechecheMatiere.TabStop = false;
             this.GBX_RechecheMatiere.Text = "Recherche";
             // 
-            // TBX_RechercheMatiere
+            // TXB_RechercheMatiere
             // 
-            this.TBX_RechercheMatiere.Location = new System.Drawing.Point(17, 18);
-            this.TBX_RechercheMatiere.Name = "TBX_RechercheMatiere";
-            this.TBX_RechercheMatiere.Size = new System.Drawing.Size(537, 20);
-            this.TBX_RechercheMatiere.TabIndex = 7;
+            this.TXB_RechercheMatiere.Location = new System.Drawing.Point(17, 18);
+            this.TXB_RechercheMatiere.Name = "TXB_RechercheMatiere";
+            this.TXB_RechercheMatiere.Size = new System.Drawing.Size(537, 20);
+            this.TXB_RechercheMatiere.TabIndex = 7;
+            this.TXB_RechercheMatiere.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TXB_RechercheMatiere_KeyPress);
             // 
             // BTN_RechercheMatiere
             // 
@@ -689,6 +690,7 @@
             this.BTN_RechercheMatiere.TabIndex = 6;
             this.BTN_RechercheMatiere.Text = "Recherche";
             this.BTN_RechercheMatiere.UseVisualStyleBackColor = true;
+            this.BTN_RechercheMatiere.Click += new System.EventHandler(this.BTN_RechercheMatiere_Click);
             // 
             // GBX_ListeMatiere
             // 
@@ -712,8 +714,6 @@
             // 
             // GBX_FormMatiere
             // 
-            this.GBX_FormMatiere.Controls.Add(this.CBX_FormMatiere);
-            this.GBX_FormMatiere.Controls.Add(this.LBL_SelectCycle);
             this.GBX_FormMatiere.Controls.Add(this.TXB_NomMatiere);
             this.GBX_FormMatiere.Controls.Add(this.LBL_NomMatiere);
             this.GBX_FormMatiere.Controls.Add(this.TXB_CodeMatiere);
@@ -724,24 +724,6 @@
             this.GBX_FormMatiere.TabIndex = 6;
             this.GBX_FormMatiere.TabStop = false;
             this.GBX_FormMatiere.Text = "Formulaire Matiere";
-            // 
-            // CBX_FormMatiere
-            // 
-            this.CBX_FormMatiere.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.CBX_FormMatiere.FormattingEnabled = true;
-            this.CBX_FormMatiere.Location = new System.Drawing.Point(117, 26);
-            this.CBX_FormMatiere.Name = "CBX_FormMatiere";
-            this.CBX_FormMatiere.Size = new System.Drawing.Size(90, 21);
-            this.CBX_FormMatiere.TabIndex = 4;
-            // 
-            // LBL_SelectCycle
-            // 
-            this.LBL_SelectCycle.AutoSize = true;
-            this.LBL_SelectCycle.Location = new System.Drawing.Point(22, 29);
-            this.LBL_SelectCycle.Name = "LBL_SelectCycle";
-            this.LBL_SelectCycle.Size = new System.Drawing.Size(80, 13);
-            this.LBL_SelectCycle.TabIndex = 3;
-            this.LBL_SelectCycle.Text = "Selection Cycle";
             // 
             // TXB_NomMatiere
             // 
@@ -817,7 +799,6 @@
             this.BTN_EnregisterCycle.TabIndex = 9;
             this.BTN_EnregisterCycle.Text = "Enregistrer";
             this.BTN_EnregisterCycle.UseVisualStyleBackColor = true;
-            this.BTN_EnregisterCycle.Click += new System.EventHandler(this.BTN_EnregisterCycle_Click);
             // 
             // GBX_RechercheCycle
             // 
@@ -845,6 +826,7 @@
             this.BTN_RechercheCycle.TabIndex = 6;
             this.BTN_RechercheCycle.Text = "Recherche";
             this.BTN_RechercheCycle.UseVisualStyleBackColor = true;
+            this.BTN_RechercheCycle.Click += new System.EventHandler(this.BTN_RechercheCycle_Click);
             // 
             // GBX_ListeCycle
             // 
@@ -865,7 +847,6 @@
             this.DGV_ListeCycle.RowHeadersWidth = 51;
             this.DGV_ListeCycle.Size = new System.Drawing.Size(683, 412);
             this.DGV_ListeCycle.TabIndex = 0;
-            this.DGV_ListeCycle.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_ListeCycle_CellContentDoubleClick);
             // 
             // GBX_FormCycle
             // 
@@ -936,6 +917,7 @@
             this.BTN_AnnulerClasse.TabIndex = 11;
             this.BTN_AnnulerClasse.Text = "Annuler";
             this.BTN_AnnulerClasse.UseVisualStyleBackColor = true;
+            this.BTN_AnnulerClasse.Click += new System.EventHandler(this.BTN_AnnulerClasse_Click);
             // 
             // BTN_SupprimerClasse
             // 
@@ -945,6 +927,7 @@
             this.BTN_SupprimerClasse.TabIndex = 10;
             this.BTN_SupprimerClasse.Text = "Supprimer";
             this.BTN_SupprimerClasse.UseVisualStyleBackColor = true;
+            this.BTN_SupprimerClasse.Click += new System.EventHandler(this.BTN_SupprimerClasse_Click_1);
             // 
             // BTN_EnregisterClasse
             // 
@@ -982,6 +965,7 @@
             this.BTN_RechercheClasse.TabIndex = 6;
             this.BTN_RechercheClasse.Text = "Recherche";
             this.BTN_RechercheClasse.UseVisualStyleBackColor = true;
+            this.BTN_RechercheClasse.Click += new System.EventHandler(this.BTN_RechercheClasse_Click);
             // 
             // GBX_ListeClasse
             // 
@@ -1004,11 +988,14 @@
             this.DGV_ListeClasse.RowHeadersWidth = 51;
             this.DGV_ListeClasse.Size = new System.Drawing.Size(681, 430);
             this.DGV_ListeClasse.TabIndex = 0;
+            this.DGV_ListeClasse.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_ListeClasse_CellContentDoubleClick);
             // 
             // GBX_FormClasse
             // 
-            this.GBX_FormClasse.Controls.Add(this.comboBox1);
-            this.GBX_FormClasse.Controls.Add(this.label3);
+            this.GBX_FormClasse.Controls.Add(this.TXB_NomClasse);
+            this.GBX_FormClasse.Controls.Add(this.LBL_NomClasse);
+            this.GBX_FormClasse.Controls.Add(this.CBX_CycleClasse);
+            this.GBX_FormClasse.Controls.Add(this.LBL_CycleClasse);
             this.GBX_FormClasse.Controls.Add(this.TXB_DescriptionClasse);
             this.GBX_FormClasse.Controls.Add(this.LBL_DescriptionClasse);
             this.GBX_FormClasse.Controls.Add(this.TXB_CodeClasse);
@@ -1020,9 +1007,45 @@
             this.GBX_FormClasse.TabStop = false;
             this.GBX_FormClasse.Text = "Formulaire Classe";
             // 
+            // TXB_NomClasse
+            // 
+            this.TXB_NomClasse.Location = new System.Drawing.Point(74, 30);
+            this.TXB_NomClasse.Name = "TXB_NomClasse";
+            this.TXB_NomClasse.Size = new System.Drawing.Size(102, 20);
+            this.TXB_NomClasse.TabIndex = 10;
+            // 
+            // LBL_NomClasse
+            // 
+            this.LBL_NomClasse.AutoSize = true;
+            this.LBL_NomClasse.Location = new System.Drawing.Point(39, 33);
+            this.LBL_NomClasse.Name = "LBL_NomClasse";
+            this.LBL_NomClasse.Size = new System.Drawing.Size(29, 13);
+            this.LBL_NomClasse.TabIndex = 9;
+            this.LBL_NomClasse.Text = "Nom";
+            // 
+            // CBX_CycleClasse
+            // 
+            this.CBX_CycleClasse.FormattingEnabled = true;
+            this.CBX_CycleClasse.Items.AddRange(new object[] {
+            "1",
+            "2"});
+            this.CBX_CycleClasse.Location = new System.Drawing.Point(401, 29);
+            this.CBX_CycleClasse.Name = "CBX_CycleClasse";
+            this.CBX_CycleClasse.Size = new System.Drawing.Size(121, 21);
+            this.CBX_CycleClasse.TabIndex = 8;
+            // 
+            // LBL_CycleClasse
+            // 
+            this.LBL_CycleClasse.AutoSize = true;
+            this.LBL_CycleClasse.Location = new System.Drawing.Point(362, 32);
+            this.LBL_CycleClasse.Name = "LBL_CycleClasse";
+            this.LBL_CycleClasse.Size = new System.Drawing.Size(33, 13);
+            this.LBL_CycleClasse.TabIndex = 6;
+            this.LBL_CycleClasse.Text = "Cycle";
+            // 
             // TXB_DescriptionClasse
             // 
-            this.TXB_DescriptionClasse.Location = new System.Drawing.Point(307, 30);
+            this.TXB_DescriptionClasse.Location = new System.Drawing.Point(598, 29);
             this.TXB_DescriptionClasse.Name = "TXB_DescriptionClasse";
             this.TXB_DescriptionClasse.Size = new System.Drawing.Size(102, 20);
             this.TXB_DescriptionClasse.TabIndex = 5;
@@ -1030,7 +1053,7 @@
             // LBL_DescriptionClasse
             // 
             this.LBL_DescriptionClasse.AutoSize = true;
-            this.LBL_DescriptionClasse.Location = new System.Drawing.Point(237, 33);
+            this.LBL_DescriptionClasse.Location = new System.Drawing.Point(528, 32);
             this.LBL_DescriptionClasse.Name = "LBL_DescriptionClasse";
             this.LBL_DescriptionClasse.Size = new System.Drawing.Size(60, 13);
             this.LBL_DescriptionClasse.TabIndex = 4;
@@ -1038,7 +1061,7 @@
             // 
             // TXB_CodeClasse
             // 
-            this.TXB_CodeClasse.Location = new System.Drawing.Point(109, 30);
+            this.TXB_CodeClasse.Location = new System.Drawing.Point(254, 29);
             this.TXB_CodeClasse.Name = "TXB_CodeClasse";
             this.TXB_CodeClasse.Size = new System.Drawing.Size(102, 20);
             this.TXB_CodeClasse.TabIndex = 3;
@@ -1046,7 +1069,7 @@
             // LBL_CodeClasse
             // 
             this.LBL_CodeClasse.AutoSize = true;
-            this.LBL_CodeClasse.Location = new System.Drawing.Point(39, 33);
+            this.LBL_CodeClasse.Location = new System.Drawing.Point(216, 32);
             this.LBL_CodeClasse.Name = "LBL_CodeClasse";
             this.LBL_CodeClasse.Size = new System.Drawing.Size(32, 13);
             this.LBL_CodeClasse.TabIndex = 2;
@@ -1844,23 +1867,6 @@
             this.BTN_EtatReseau.Text = "Etat du Reseau";
             this.BTN_EtatReseau.UseVisualStyleBackColor = true;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(446, 30);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Cycle";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(485, 27);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 8;
-            // 
             // Admistrateur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1962,7 +1968,7 @@
         private System.Windows.Forms.Button BTN_SupprimerMatiere;
         private System.Windows.Forms.Button BTN_EnregisterMatiere;
         private System.Windows.Forms.GroupBox GBX_RechecheMatiere;
-        private System.Windows.Forms.TextBox TBX_RechercheMatiere;
+        private System.Windows.Forms.TextBox TXB_RechercheMatiere;
         private System.Windows.Forms.Button BTN_RechercheMatiere;
         private System.Windows.Forms.GroupBox GBX_ListeMatiere;
         private System.Windows.Forms.GroupBox GBX_FormMatiere;
@@ -2054,7 +2060,6 @@
         private System.Windows.Forms.Label LBL_NomMatiere;
         private System.Windows.Forms.TextBox TXB_CodeMatiere;
         private System.Windows.Forms.Label LBL_CodeMatiere;
-        private System.Windows.Forms.Label LBL_SelectCycle;
         private System.Windows.Forms.DataGridView DGV_ListeCycle;
         private System.Windows.Forms.TextBox TXB_DescriptionCycle;
         private System.Windows.Forms.Label LBL_DescriptionCycle;
@@ -2097,7 +2102,6 @@
         private System.Windows.Forms.DataGridView DGV_MatiereProf;
         private System.Windows.Forms.ComboBox CBX_TypeUtil;
         private System.Windows.Forms.Label LBL_TypeUtil;
-        private System.Windows.Forms.ComboBox CBX_FormMatiere;
         private System.Windows.Forms.ComboBox CBX_HeureDebutProg;
         private System.Windows.Forms.ComboBox CBX_HeureFinProg;
         private System.Windows.Forms.TextBox TXB_HeureFinPres;
@@ -2107,7 +2111,9 @@
         private System.Windows.Forms.Button BTN_Empreinte2;
         private System.Windows.Forms.Button BTN_Empreinte1;
         private System.Windows.Forms.DateTimePicker DTP_Recrutement;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox CBX_CycleClasse;
+        private System.Windows.Forms.Label LBL_CycleClasse;
+        private System.Windows.Forms.TextBox TXB_NomClasse;
+        private System.Windows.Forms.Label LBL_NomClasse;
     }
 }

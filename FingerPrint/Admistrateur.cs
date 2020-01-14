@@ -24,7 +24,7 @@ namespace FingerPrint
     {
         string connectionString = @"Server=localhost;Database=presence_db;Uid=root;Pwd='';";
         public int adminID = 0;
-        int cycleID = 0;
+        //int cycleID = 0;
         int classeID = 0;
         int professeurID = 0;
         int matiereID = 0;
@@ -37,13 +37,13 @@ namespace FingerPrint
         private void Admistrateur_Load(object sender, EventArgs e)
         {
             GridFill("AdminViewAll", DGV_ListeAdmin);
-            GridFill("CycleViewAll", DGV_ListeCycle);
+            //GridFill("CycleViewAll", DGV_ListeCycle);
             GridFill("ClasseViewAll", DGV_ListeClasse);
             GridFill("ProfViewAll", DGV_ListeProf);
 
-            GridFill("MAtiereViewAll", DGV_ListeMatiere);
+            GridFill("MatiereViewAll", DGV_ListeMatiere);
 
-            ComboFill("MatiereCycleComboViewAll", ref CBX_FormMatiere, "cycle", "idCycle");
+            //ComboFill("MatiereCycleComboViewAll", ref CBX_FormMatiere, "cycle", "idCycle");
 
             //Cedric: Ajout fichier TXT pout lecture des hauraires.
             try
@@ -97,7 +97,7 @@ namespace FingerPrint
 
         private void BTN_AnnulerAdmin_Click(object sender, EventArgs e)
         {
-            cleanForm(GBX_FormAdmin);
+            cleanForm(GBX_FormAdmin,ref adminID, BTN_EnregisterAdmin);
         }
 
         void GridFill(String procedure, DataGridView dataGrid)
@@ -116,14 +116,14 @@ namespace FingerPrint
             }
         }
 
-        public void cleanForm(GroupBox groupBox)
+        public void cleanForm(GroupBox groupBox,ref int id,Button enregistrerButton)
         {
             foreach (Control oControlFormulaire in groupBox.Controls)
                 if (oControlFormulaire is TextBox)
                     oControlFormulaire.Text = String.Empty;
-            adminID = 0;
+            id = 0;
 
-            BTN_EnregisterAdmin.Text = "Enregistrer";
+            enregistrerButton.Text = "Enregistrer";
 
         }
         #endregion
@@ -142,6 +142,7 @@ namespace FingerPrint
                     mySqlCmd.Parameters.AddWithValue("_ClasseID", classeID);
                     mySqlCmd.Parameters.AddWithValue("_ClasseNom", TXB_NomClasse.Text.Trim());
                     mySqlCmd.Parameters.AddWithValue("_ClasseCode", TXB_CodeClasse.Text.Trim());
+                    mySqlCmd.Parameters.AddWithValue("_ClasseCycle", CBX_CycleClasse.Text.Trim());
                     mySqlCmd.Parameters.AddWithValue("_ClasseDescription", TXB_DescriptionClasse.Text.Trim());
                     mySqlCmd.ExecuteNonQuery();
                     MessageBox.Show("Submited successfully");
@@ -162,7 +163,8 @@ namespace FingerPrint
 
                 TXB_NomClasse.Text = DGV_ListeClasse.CurrentRow.Cells[1].Value.ToString();
                 TXB_CodeClasse.Text = DGV_ListeClasse.CurrentRow.Cells[2].Value.ToString();
-                TXB_DescriptionClasse.Text = DGV_ListeClasse.CurrentRow.Cells[3].Value.ToString();
+                CBX_CycleClasse.SelectedIndex = CBX_CycleClasse.FindStringExact(DGV_ListeClasse.CurrentRow.Cells[3].Value.ToString());
+                TXB_DescriptionClasse.Text = DGV_ListeClasse.CurrentRow.Cells[4].Value.ToString();                
 
                 classeID = Convert.ToInt32(DGV_ListeClasse.CurrentRow.Cells[0].Value.ToString());
                 BTN_EnregisterClasse.Text = "Modifier";
@@ -202,7 +204,7 @@ namespace FingerPrint
                     mySqlCmd.Parameters.AddWithValue("_MatiereID", matiereID);
                     mySqlCmd.Parameters.AddWithValue("_MatiereCode", TXB_CodeMatiere.Text.Trim());
                     mySqlCmd.Parameters.AddWithValue("_MatiereNom", TXB_NomMatiere.Text.Trim());
-                    mySqlCmd.Parameters.AddWithValue("_CycleID_Cycle", CBX_FormMatiere.SelectedValue.ToString());    // Jonathan : Ce paramètre manquait
+                    //mySqlCmd.Parameters.AddWithValue("_CycleID_Cycle", CBX_FormMatiere.SelectedValue.ToString());    // Jonathan : Ce paramètre manquait
                    
                     mySqlCmd.ExecuteNonQuery();
                     MessageBox.Show("Submited successfully");
@@ -223,7 +225,7 @@ namespace FingerPrint
                 TXB_CodeMatiere.Text = DGV_ListeMatiere.CurrentRow.Cells[1].Value.ToString();
                 TXB_NomMatiere.Text = DGV_ListeMatiere.CurrentRow.Cells[2].Value.ToString();
 
-                CBX_FormMatiere.SelectedIndex = CBX_FormMatiere.FindStringExact(DGV_ListeMatiere.CurrentRow.Cells[3].Value.ToString());
+                //CBX_FormMatiere.SelectedIndex = CBX_FormMatiere.FindStringExact(DGV_ListeMatiere.CurrentRow.Cells[3].Value.ToString());
 
 
                 matiereID = Convert.ToInt32(DGV_ListeMatiere.CurrentRow.Cells[0].Value.ToString());
@@ -233,43 +235,43 @@ namespace FingerPrint
 
 
 
-        private void BTN_EnregisterCycle_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
-                {
-                    mySqlCon.Open();
-                    MySqlCommand mySqlCmd = new MySqlCommand("CycleAddOrEdit", mySqlCon);
-                    mySqlCmd.CommandType = CommandType.StoredProcedure;
-                    mySqlCmd.Parameters.AddWithValue("_CycleID", cycleID);
-                    mySqlCmd.Parameters.AddWithValue("_CycleNumero", TXB_NumCycle.Text.Trim());
-                    mySqlCmd.Parameters.AddWithValue("_CycleDescription", TXB_DescriptionCycle.Text.Trim());
-                    mySqlCmd.ExecuteNonQuery();
-                    MessageBox.Show("Submited successfully");
-                    GridFill("CycleViewAll", DGV_ListeCycle);
-                    BTN_EnregisterCycle.Text = "Modifier";
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error Message ");
+        //private void BTN_EnregisterCycle_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+        //        {
+        //            mySqlCon.Open();
+        //            MySqlCommand mySqlCmd = new MySqlCommand("CycleAddOrEdit", mySqlCon);
+        //            mySqlCmd.CommandType = CommandType.StoredProcedure;
+        //            mySqlCmd.Parameters.AddWithValue("_CycleID", cycleID);
+        //            mySqlCmd.Parameters.AddWithValue("_CycleNumero", TXB_NumCycle.Text.Trim());
+        //            mySqlCmd.Parameters.AddWithValue("_CycleDescription", TXB_DescriptionCycle.Text.Trim());
+        //            mySqlCmd.ExecuteNonQuery();
+        //            MessageBox.Show("Submited successfully");
+        //            GridFill("CycleViewAll", DGV_ListeCycle);
+        //            BTN_EnregisterCycle.Text = "Modifier";
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message, "Error Message ");
 
-            }
-        }
+        //    }
+        //}
 
-        private void DGV_ListeCycle_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (DGV_ListeCycle.CurrentRow.Index != -1)
-            {
-                TXB_NumCycle.Text = DGV_ListeCycle.CurrentRow.Cells[1].Value.ToString();
-                TXB_DescriptionCycle.Text = DGV_ListeCycle.CurrentRow.Cells[2].Value.ToString();
+        //private void DGV_ListeCycle_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    if (DGV_ListeCycle.CurrentRow.Index != -1)
+        //    {
+        //        TXB_NumCycle.Text = DGV_ListeCycle.CurrentRow.Cells[1].Value.ToString();
+        //        TXB_DescriptionCycle.Text = DGV_ListeCycle.CurrentRow.Cells[2].Value.ToString();
 
-                cycleID = Convert.ToInt32(DGV_ListeCycle.CurrentRow.Cells[0].Value.ToString());
-                BTN_EnregisterCycle.Text = "Modifier";
+        //        cycleID = Convert.ToInt32(DGV_ListeCycle.CurrentRow.Cells[0].Value.ToString());
+        //        BTN_EnregisterCycle.Text = "Modifier";
 
-            }
-        }
+        //    }
+        //}
 
 
 
@@ -384,7 +386,7 @@ namespace FingerPrint
                 mySqlCmd.Parameters.AddWithValue("_ProfID", professeurID);
                 mySqlCmd.ExecuteNonQuery();
                 MessageBox.Show("Deleted successfully");
-                cleanForm(GBX_FormProfesseur);
+                cleanForm(GBX_FormProfesseur,ref professeurID,BTN_EnregistrerProf);
                 GridFill("ProfViewAll", DGV_ListeProf);
 
             }
@@ -422,6 +424,47 @@ namespace FingerPrint
             }
         }
 
+        private void BTN_RechercheMatiere_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+            {
+                mySqlCon.Open();
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter("MatiereSearchByValue", mySqlCon);
+                sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sqlDa.SelectCommand.Parameters.AddWithValue("_SearchValue", TXB_RechercheMatiere.Text.Trim());
+                DataTable dtb = new DataTable();
+                sqlDa.Fill(dtb);
+                DGV_ListeMatiere.DataSource = dtb;
+                DGV_ListeMatiere.Columns[0].Visible = false;
+                DGV_ListeMatiere.Columns[DGV_ListeClasse.Columns.Count - 1].Visible = false;
+            }
+            
+        }
+
+        private void TXB_RechercheMatiere_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+                {
+                    mySqlCon.Open();
+                    MySqlDataAdapter sqlDa = new MySqlDataAdapter("MatiereSearchByValue", mySqlCon);
+                    sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    sqlDa.SelectCommand.Parameters.AddWithValue("_SearchValue", TXB_RechercheMatiere.Text.Trim());
+                    DataTable dtb = new DataTable();
+                    sqlDa.Fill(dtb);
+                    DGV_ListeMatiere.DataSource = dtb;
+                    DGV_ListeMatiere.Columns[0].Visible = false;
+                    DGV_ListeMatiere.Columns[DGV_ListeMatiere.Columns.Count - 1].Visible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
         private void BTN_RechercheCycle_Click(object sender, EventArgs e)
         {
             using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
@@ -448,7 +491,7 @@ namespace FingerPrint
                 mySqlCmd.Parameters.AddWithValue("_ClasseID", classeID);
                 mySqlCmd.ExecuteNonQuery();
                 MessageBox.Show("Deleted successfully");
-                cleanForm(GBX_FormClasse);
+                cleanForm(GBX_FormClasse, ref classeID, BTN_EnregisterClasse);
                 GridFill("ClasseViewAll", DGV_ListeClasse);
             }
         }
@@ -463,25 +506,25 @@ namespace FingerPrint
                 mySqlCmd.Parameters.AddWithValue("_AdminID", adminID);
                 mySqlCmd.ExecuteNonQuery();
                 MessageBox.Show("Deleted successfully");
-                cleanForm(GBX_FormAdmin);
+                cleanForm(GBX_FormAdmin,ref adminID,BTN_EnregisterAdmin);
                 GridFill("AdminViewAll", DGV_ListeAdmin);
             }
         }
 
-        private void BTN_SupprimerModifierCycle_Click(object sender, EventArgs e)
-        {
-            using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
-            {
-                mySqlCon.Open();
-                MySqlCommand mySqlCmd = new MySqlCommand("CycleDeleteByID", mySqlCon);
-                mySqlCmd.CommandType = CommandType.StoredProcedure;
-                mySqlCmd.Parameters.AddWithValue("_CycleID", cycleID);
-                mySqlCmd.ExecuteNonQuery();
-                MessageBox.Show("Deleted successfully");
-                cleanForm(GBX_FormCycle);
-                GridFill("CycleViewAll", DGV_ListeCycle);
-            }
-        }
+        //private void BTN_SupprimerModifierCycle_Click(object sender, EventArgs e)
+        //{
+        //    using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+        //    {
+        //        mySqlCon.Open();
+        //        MySqlCommand mySqlCmd = new MySqlCommand("CycleDeleteByID", mySqlCon);
+        //        mySqlCmd.CommandType = CommandType.StoredProcedure;
+        //        mySqlCmd.Parameters.AddWithValue("_CycleID", cycleID);
+        //        mySqlCmd.ExecuteNonQuery();
+        //        MessageBox.Show("Deleted successfully");
+        //        cleanForm(GBX_FormCycle);
+        //        GridFill("CycleViewAll", DGV_ListeCycle);
+        //    }
+        //}
 
         // Methode pour le combobox
         private void ComboFill(string procedure, ref ComboBox oComboBox, string displayMember, string valueMember)
@@ -502,14 +545,42 @@ namespace FingerPrint
             }
         }
 
-        private void TCL_Admin_SelectedIndexChanged(object sender, EventArgs e)
+        private void BTN_SupprimerClasse_Click_1(object sender, EventArgs e)
         {
-
+            using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+            {
+                mySqlCon.Open();
+                MySqlCommand mySqlCmd = new MySqlCommand("ClasseDeleteByID", mySqlCon);
+                mySqlCmd.CommandType = CommandType.StoredProcedure;
+                mySqlCmd.Parameters.AddWithValue("_ClasseID", classeID);
+                mySqlCmd.ExecuteNonQuery();
+                MessageBox.Show("Deleted successfully");
+                cleanForm(GBX_FormClasse, ref classeID, BTN_EnregisterClasse);
+                GridFill("ClasseViewAll", DGV_ListeClasse);
+            }
         }
 
-        private void CBX_SelectProf_SelectedIndexChanged(object sender, EventArgs e)
+        private void BTN_AnnulerClasse_Click(object sender, EventArgs e)
+        {
+            cleanForm(GBX_FormClasse, ref classeID, BTN_EnregisterClasse);
+        }
+
+        private void BTN_SupprimerMatiere_Click(object sender, EventArgs e)
         {
 
+            using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+            {
+                mySqlCon.Open();
+                MySqlCommand mySqlCmd = new MySqlCommand("MatiereDeleteByID", mySqlCon);
+                mySqlCmd.CommandType = CommandType.StoredProcedure;
+                mySqlCmd.Parameters.AddWithValue("_MatiereID", matiereID);
+                mySqlCmd.ExecuteNonQuery();
+                MessageBox.Show("Deleted successfully");
+                cleanForm(GBX_FormMatiere, ref matiereID, BTN_EnregisterMatiere);
+                GridFill("MatiereViewAll", DGV_ListeMatiere);
+            }
         }
+
+       
     }
 }
