@@ -194,6 +194,8 @@
             this.BTN_Rapports = new System.Windows.Forms.Button();
             this.BTN_Horaires = new System.Windows.Forms.Button();
             this.BTN_EtatReseau = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.TCL_Admin.SuspendLayout();
             this.TPG_Professeur.SuspendLayout();
             this.GBX_RechercheProf.SuspendLayout();
@@ -1005,6 +1007,8 @@
             // 
             // GBX_FormClasse
             // 
+            this.GBX_FormClasse.Controls.Add(this.comboBox1);
+            this.GBX_FormClasse.Controls.Add(this.label3);
             this.GBX_FormClasse.Controls.Add(this.TXB_DescriptionClasse);
             this.GBX_FormClasse.Controls.Add(this.LBL_DescriptionClasse);
             this.GBX_FormClasse.Controls.Add(this.TXB_CodeClasse);
@@ -1018,7 +1022,7 @@
             // 
             // TXB_DescriptionClasse
             // 
-            this.TXB_DescriptionClasse.Location = new System.Drawing.Point(478, 30);
+            this.TXB_DescriptionClasse.Location = new System.Drawing.Point(307, 30);
             this.TXB_DescriptionClasse.Name = "TXB_DescriptionClasse";
             this.TXB_DescriptionClasse.Size = new System.Drawing.Size(102, 20);
             this.TXB_DescriptionClasse.TabIndex = 5;
@@ -1026,7 +1030,7 @@
             // LBL_DescriptionClasse
             // 
             this.LBL_DescriptionClasse.AutoSize = true;
-            this.LBL_DescriptionClasse.Location = new System.Drawing.Point(408, 33);
+            this.LBL_DescriptionClasse.Location = new System.Drawing.Point(237, 33);
             this.LBL_DescriptionClasse.Name = "LBL_DescriptionClasse";
             this.LBL_DescriptionClasse.Size = new System.Drawing.Size(60, 13);
             this.LBL_DescriptionClasse.TabIndex = 4;
@@ -1034,7 +1038,7 @@
             // 
             // TXB_CodeClasse
             // 
-            this.TXB_CodeClasse.Location = new System.Drawing.Point(282, 30);
+            this.TXB_CodeClasse.Location = new System.Drawing.Point(109, 30);
             this.TXB_CodeClasse.Name = "TXB_CodeClasse";
             this.TXB_CodeClasse.Size = new System.Drawing.Size(102, 20);
             this.TXB_CodeClasse.TabIndex = 3;
@@ -1042,7 +1046,7 @@
             // LBL_CodeClasse
             // 
             this.LBL_CodeClasse.AutoSize = true;
-            this.LBL_CodeClasse.Location = new System.Drawing.Point(212, 33);
+            this.LBL_CodeClasse.Location = new System.Drawing.Point(39, 33);
             this.LBL_CodeClasse.Name = "LBL_CodeClasse";
             this.LBL_CodeClasse.Size = new System.Drawing.Size(32, 13);
             this.LBL_CodeClasse.TabIndex = 2;
@@ -1840,6 +1844,23 @@
             this.BTN_EtatReseau.Text = "Etat du Reseau";
             this.BTN_EtatReseau.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(446, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(33, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Cycle";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(485, 27);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 8;
+            // 
             // Admistrateur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2086,5 +2107,7 @@
         private System.Windows.Forms.Button BTN_Empreinte2;
         private System.Windows.Forms.Button BTN_Empreinte1;
         private System.Windows.Forms.DateTimePicker DTP_Recrutement;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label3;
     }
 }
