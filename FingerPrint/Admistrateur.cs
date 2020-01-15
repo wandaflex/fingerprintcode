@@ -231,7 +231,7 @@ namespace FingerPrint
 
 
                 matiereID = Convert.ToInt32(DGV_ListeMatiere.CurrentRow.Cells[0].Value.ToString());
-                BTN_EnregisterCycle.Text = "Modifier";
+                BTN_EnregisterMatiere.Text = "Modifier";
             }
         }
 
@@ -342,7 +342,7 @@ namespace FingerPrint
                     mySqlCmd.ExecuteNonQuery();
                     MessageBox.Show("Submited successfully");
                     GridFill("ProfViewAll", DGV_ListeProf);
-                    BTN_EnregisterCycle.Text = "Modifier";
+                    BTN_EnregisterProg.Text = "Modifier";
                 }
             }
             catch (Exception ex)
@@ -467,21 +467,21 @@ namespace FingerPrint
             }
         }
 
-        private void BTN_RechercheCycle_Click(object sender, EventArgs e)
-        {
-            using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
-            {
-                mySqlCon.Open();
-                MySqlDataAdapter sqlDa = new MySqlDataAdapter("CycleSearchByValue", mySqlCon);
-                sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
-                sqlDa.SelectCommand.Parameters.AddWithValue("_SearchValue", TXB_RechercheCycle.Text.Trim());
-                DataTable dtb = new DataTable();
-                sqlDa.Fill(dtb);
-                DGV_ListeCycle.DataSource = dtb;
-                DGV_ListeCycle.Columns[0].Visible = false;
-                DGV_ListeCycle.Columns[DGV_ListeCycle.Columns.Count - 1].Visible = false;
-            }
-        }
+        //private void BTN_RechercheCycle_Click(object sender, EventArgs e)
+        //{
+        //    using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+        //    {
+        //        mySqlCon.Open();
+        //        MySqlDataAdapter sqlDa = new MySqlDataAdapter("CycleSearchByValue", mySqlCon);
+        //        sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
+        //        sqlDa.SelectCommand.Parameters.AddWithValue("_SearchValue", TXB_RechercheCycle.Text.Trim());
+        //        DataTable dtb = new DataTable();
+        //        sqlDa.Fill(dtb);
+        //        DGV_ListeCycle.DataSource = dtb;
+        //        DGV_ListeCycle.Columns[0].Visible = false;
+        //        DGV_ListeCycle.Columns[DGV_ListeCycle.Columns.Count - 1].Visible = false;
+        //    }
+        //}
 
         private void BTN_SupprimerClasse_Click(object sender, EventArgs e)
         {
