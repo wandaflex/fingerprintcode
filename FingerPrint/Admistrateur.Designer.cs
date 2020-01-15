@@ -1684,6 +1684,7 @@
             this.BTN_AnnulerProf.TabIndex = 5;
             this.BTN_AnnulerProf.Text = "Annuler";
             this.BTN_AnnulerProf.UseVisualStyleBackColor = true;
+            this.BTN_AnnulerProf.Click += new System.EventHandler(this.BTN_AnnulerProf_Click);
             // 
             // label2
             // 

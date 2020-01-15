@@ -438,7 +438,7 @@ namespace FingerPrint
                 sqlDa.Fill(dtb);
                 DGV_ListeMatiere.DataSource = dtb;
                 DGV_ListeMatiere.Columns[0].Visible = false;
-                DGV_ListeMatiere.Columns[DGV_ListeClasse.Columns.Count - 1].Visible = false;
+                DGV_ListeMatiere.Columns[DGV_ListeMatiere.Columns.Count - 1].Visible = false;
             }
             
         }
@@ -583,6 +583,9 @@ namespace FingerPrint
             }
         }
 
-       
+        private void BTN_AnnulerProf_Click(object sender, EventArgs e)
+        {
+            cleanForm(GBX_FormProfesseur, ref professeurID, BTN_EnregistrerProf);
+        }
     }
 }
