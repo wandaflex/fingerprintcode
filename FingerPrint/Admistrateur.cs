@@ -6,7 +6,6 @@
  */
 
 
-
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -43,7 +42,10 @@ namespace FingerPrint
 
             GridFill("MatiereViewAll", DGV_ListeMatiere);
 
-            //ComboFill("MatiereCycleComboViewAll", ref CBX_FormMatiere, "cycle", "idCycle");
+            ComboFill("ProgrammeClasseComboViewAll", ref CBX_SelectClasse, "nom", "idClasse");
+            ComboFill("ProgrammeProfComboViewAll", ref CBX_SelectProgProf, "Professeur", "idProfesseur");
+            ComboFill("ProgrammeMatiereComboViewAll", ref CBX_SelectProgMatiere, "Matiere", "idMatiere");
+
 
             //Cedric: Ajout fichier TXT pout lecture des hauraires.
             try
