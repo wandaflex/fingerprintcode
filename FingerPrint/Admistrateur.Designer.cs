@@ -35,189 +35,185 @@
             this.BTN_Horaires = new System.Windows.Forms.Button();
             this.BTN_EtatReseau = new System.Windows.Forms.Button();
             this.TPG_MatiereProf = new System.Windows.Forms.TabPage();
+            this.GBX_FormMatiereProf = new System.Windows.Forms.GroupBox();
+            this.CBX_SelectMatiere = new System.Windows.Forms.ComboBox();
+            this.CBX_SelectProf = new System.Windows.Forms.ComboBox();
+            this.LBL_Matiere = new System.Windows.Forms.Label();
+            this.LBL_Prof = new System.Windows.Forms.Label();
+            this.BTN_AnnulerMatProf = new System.Windows.Forms.Button();
+            this.BTN_SupprimerMatProf = new System.Windows.Forms.Button();
+            this.BTN_EnregistrerMatProf = new System.Windows.Forms.Button();
+            this.GBX_RechMatiereProf = new System.Windows.Forms.GroupBox();
+            this.TXB_RechMatiereProf = new System.Windows.Forms.TextBox();
+            this.BTN_RechMatiereProf = new System.Windows.Forms.Button();
             this.GBX_ListeMatiereProf = new System.Windows.Forms.GroupBox();
             this.DGV_MatiereProf = new System.Windows.Forms.DataGridView();
-            this.GBX_RechMatiereProf = new System.Windows.Forms.GroupBox();
-            this.BTN_RechMatiereProf = new System.Windows.Forms.Button();
-            this.TXB_RechMatiereProf = new System.Windows.Forms.TextBox();
-            this.BTN_EnregistrerMatProf = new System.Windows.Forms.Button();
-            this.BTN_SupprimerMatProf = new System.Windows.Forms.Button();
-            this.BTN_AnnulerMatProf = new System.Windows.Forms.Button();
-            this.GBX_FormMatiereProf = new System.Windows.Forms.GroupBox();
-            this.LBL_Prof = new System.Windows.Forms.Label();
-            this.LBL_Matiere = new System.Windows.Forms.Label();
-            this.CBX_SelectProf = new System.Windows.Forms.ComboBox();
-            this.CBX_SelectMatiere = new System.Windows.Forms.ComboBox();
             this.TPG_Presence = new System.Windows.Forms.TabPage();
-            this.GBX_FormPresence = new System.Windows.Forms.GroupBox();
-            this.LBL_SelectNomProg = new System.Windows.Forms.Label();
-            this.LBL_HeureDebutPresence = new System.Windows.Forms.Label();
-            this.LBL_HeureFinPresence = new System.Windows.Forms.Label();
-            this.LBL_DatePres = new System.Windows.Forms.Label();
-            this.DTP_Presence = new System.Windows.Forms.DateTimePicker();
-            this.CBX_SelectNomProg = new System.Windows.Forms.ComboBox();
-            this.TXB_HeureDebutPres = new System.Windows.Forms.TextBox();
-            this.TXB_HeureFinPres = new System.Windows.Forms.TextBox();
+            this.BTN_AnnulerPresence = new System.Windows.Forms.Button();
+            this.BTN_SupprimerPresence = new System.Windows.Forms.Button();
+            this.BTN_EnregisterPresence = new System.Windows.Forms.Button();
+            this.GBX_RecherchePresence = new System.Windows.Forms.GroupBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.BTN_RecherchePresence = new System.Windows.Forms.Button();
             this.GBX_ListePresence = new System.Windows.Forms.GroupBox();
             this.DGV_ListePresence = new System.Windows.Forms.DataGridView();
-            this.GBX_RecherchePresence = new System.Windows.Forms.GroupBox();
-            this.BTN_RecherchePresence = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.BTN_EnregisterPresence = new System.Windows.Forms.Button();
-            this.BTN_SupprimerPresence = new System.Windows.Forms.Button();
-            this.BTN_AnnulerPresence = new System.Windows.Forms.Button();
+            this.GBX_FormPresence = new System.Windows.Forms.GroupBox();
+            this.TXB_HeureFinPres = new System.Windows.Forms.TextBox();
+            this.TXB_HeureDebutPres = new System.Windows.Forms.TextBox();
+            this.CBX_SelectNomProg = new System.Windows.Forms.ComboBox();
+            this.DTP_Presence = new System.Windows.Forms.DateTimePicker();
+            this.LBL_DatePres = new System.Windows.Forms.Label();
+            this.LBL_HeureFinPresence = new System.Windows.Forms.Label();
+            this.LBL_HeureDebutPresence = new System.Windows.Forms.Label();
+            this.LBL_SelectNomProg = new System.Windows.Forms.Label();
             this.TPG_Programme = new System.Windows.Forms.TabPage();
-            this.GBX_FormProg = new System.Windows.Forms.GroupBox();
-            this.LBL_SelectClasse = new System.Windows.Forms.Label();
-            this.LBL_SelectProf = new System.Windows.Forms.Label();
-            this.LBL_Selectmatiere = new System.Windows.Forms.Label();
-            this.LBL_DateProg = new System.Windows.Forms.Label();
-            this.DTP_Programme = new System.Windows.Forms.DateTimePicker();
-            this.LBL_HeureDebutProg = new System.Windows.Forms.Label();
-            this.LBL_HeureFinProg = new System.Windows.Forms.Label();
-            this.LBL_NomProgramme = new System.Windows.Forms.Label();
-            this.TXB_NomProgramme = new System.Windows.Forms.TextBox();
-            this.CBX_SelectClasse = new System.Windows.Forms.ComboBox();
-            this.CBX_SelectProgProf = new System.Windows.Forms.ComboBox();
-            this.CBX_SelectProgMatiere = new System.Windows.Forms.ComboBox();
-            this.CBX_HeureDebutProg = new System.Windows.Forms.ComboBox();
-            this.CBX_HeureFinProg = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.BTN_AnnulerProg = new System.Windows.Forms.Button();
+            this.BTN_SupprimerProg = new System.Windows.Forms.Button();
+            this.BTN_EnregisterProg = new System.Windows.Forms.Button();
+            this.GBX_RechercheProg = new System.Windows.Forms.GroupBox();
+            this.TXB_RechercheProg = new System.Windows.Forms.TextBox();
+            this.BTN_RechercheProg = new System.Windows.Forms.Button();
             this.GBX_ListeProg = new System.Windows.Forms.GroupBox();
             this.DGV_ListeProgramme = new System.Windows.Forms.DataGridView();
-            this.GBX_RechercheProg = new System.Windows.Forms.GroupBox();
-            this.BTN_RechercheProg = new System.Windows.Forms.Button();
-            this.TXB_RechercheProg = new System.Windows.Forms.TextBox();
-            this.BTN_EnregisterProg = new System.Windows.Forms.Button();
-            this.BTN_SupprimerProg = new System.Windows.Forms.Button();
-            this.BTN_AnnulerProg = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.GBX_FormProg = new System.Windows.Forms.GroupBox();
+            this.CBX_HeureFinProg = new System.Windows.Forms.ComboBox();
+            this.CBX_HeureDebutProg = new System.Windows.Forms.ComboBox();
+            this.CBX_SelectProgProfMatiere = new System.Windows.Forms.ComboBox();
+            this.CBX_SelectClasse = new System.Windows.Forms.ComboBox();
+            this.LBL_HeureFinProg = new System.Windows.Forms.Label();
+            this.LBL_HeureDebutProg = new System.Windows.Forms.Label();
+            this.DTP_Programme = new System.Windows.Forms.DateTimePicker();
+            this.LBL_DateProg = new System.Windows.Forms.Label();
+            this.LBL_SelectProf = new System.Windows.Forms.Label();
+            this.LBL_SelectClasse = new System.Windows.Forms.Label();
             this.TPG_Administrateur = new System.Windows.Forms.TabPage();
-            this.GBX_FormAdmin = new System.Windows.Forms.GroupBox();
-            this.LBL_NomAdmin = new System.Windows.Forms.Label();
-            this.TXB_NomAdmin = new System.Windows.Forms.TextBox();
-            this.LBL_PrenomAdmin = new System.Windows.Forms.Label();
-            this.TXB_PrenomAdmin = new System.Windows.Forms.TextBox();
-            this.LBL_LoginAdmin = new System.Windows.Forms.Label();
-            this.TXB_LoginAdmin = new System.Windows.Forms.TextBox();
-            this.LBL_MotDePasseAdmin = new System.Windows.Forms.Label();
-            this.TXB_MotDePasseAdmin = new System.Windows.Forms.TextBox();
-            this.LBL_TypeUtil = new System.Windows.Forms.Label();
-            this.CBX_TypeUtil = new System.Windows.Forms.ComboBox();
+            this.BTN_AnnulerAdmin = new System.Windows.Forms.Button();
+            this.BTN_SupprimerAdmin = new System.Windows.Forms.Button();
+            this.BTN_EnregisterAdmin = new System.Windows.Forms.Button();
+            this.GBX_RechercheAdmin = new System.Windows.Forms.GroupBox();
+            this.TXB_RechercheAdmin = new System.Windows.Forms.TextBox();
+            this.BTN_RechercheAdmin = new System.Windows.Forms.Button();
             this.GBX_ListeAdmin = new System.Windows.Forms.GroupBox();
             this.DGV_ListeAdmin = new System.Windows.Forms.DataGridView();
-            this.GBX_RechercheAdmin = new System.Windows.Forms.GroupBox();
-            this.BTN_RechercheAdmin = new System.Windows.Forms.Button();
-            this.TXB_RechercheAdmin = new System.Windows.Forms.TextBox();
-            this.BTN_EnregisterAdmin = new System.Windows.Forms.Button();
-            this.BTN_SupprimerAdmin = new System.Windows.Forms.Button();
-            this.BTN_AnnulerAdmin = new System.Windows.Forms.Button();
+            this.GBX_FormAdmin = new System.Windows.Forms.GroupBox();
+            this.CBX_TypeUtil = new System.Windows.Forms.ComboBox();
+            this.LBL_TypeUtil = new System.Windows.Forms.Label();
+            this.TXB_MotDePasseAdmin = new System.Windows.Forms.TextBox();
+            this.LBL_MotDePasseAdmin = new System.Windows.Forms.Label();
+            this.TXB_LoginAdmin = new System.Windows.Forms.TextBox();
+            this.LBL_LoginAdmin = new System.Windows.Forms.Label();
+            this.TXB_PrenomAdmin = new System.Windows.Forms.TextBox();
+            this.LBL_PrenomAdmin = new System.Windows.Forms.Label();
+            this.TXB_NomAdmin = new System.Windows.Forms.TextBox();
+            this.LBL_NomAdmin = new System.Windows.Forms.Label();
             this.TPG_Classe = new System.Windows.Forms.TabPage();
-            this.GBX_FormClasse = new System.Windows.Forms.GroupBox();
-            this.LBL_CodeClasse = new System.Windows.Forms.Label();
-            this.TXB_CodeClasse = new System.Windows.Forms.TextBox();
-            this.LBL_DescriptionClasse = new System.Windows.Forms.Label();
-            this.TXB_DescriptionClasse = new System.Windows.Forms.TextBox();
-            this.LBL_CycleClasse = new System.Windows.Forms.Label();
-            this.CBX_CycleClasse = new System.Windows.Forms.ComboBox();
-            this.LBL_NomClasse = new System.Windows.Forms.Label();
-            this.TXB_NomClasse = new System.Windows.Forms.TextBox();
+            this.BTN_AnnulerClasse = new System.Windows.Forms.Button();
+            this.BTN_SupprimerClasse = new System.Windows.Forms.Button();
+            this.BTN_EnregisterClasse = new System.Windows.Forms.Button();
+            this.GBX_RechercheClasse = new System.Windows.Forms.GroupBox();
+            this.TXB_RechercheClasse = new System.Windows.Forms.TextBox();
+            this.BTN_RechercheClasse = new System.Windows.Forms.Button();
             this.GBX_ListeClasse = new System.Windows.Forms.GroupBox();
             this.DGV_ListeClasse = new System.Windows.Forms.DataGridView();
-            this.GBX_RechercheClasse = new System.Windows.Forms.GroupBox();
-            this.BTN_RechercheClasse = new System.Windows.Forms.Button();
-            this.TXB_RechercheClasse = new System.Windows.Forms.TextBox();
-            this.BTN_EnregisterClasse = new System.Windows.Forms.Button();
-            this.BTN_SupprimerClasse = new System.Windows.Forms.Button();
-            this.BTN_AnnulerClasse = new System.Windows.Forms.Button();
+            this.GBX_FormClasse = new System.Windows.Forms.GroupBox();
+            this.TXB_NomClasse = new System.Windows.Forms.TextBox();
+            this.LBL_NomClasse = new System.Windows.Forms.Label();
+            this.CBX_CycleClasse = new System.Windows.Forms.ComboBox();
+            this.LBL_CycleClasse = new System.Windows.Forms.Label();
+            this.TXB_DescriptionClasse = new System.Windows.Forms.TextBox();
+            this.LBL_DescriptionClasse = new System.Windows.Forms.Label();
+            this.TXB_CodeClasse = new System.Windows.Forms.TextBox();
+            this.LBL_CodeClasse = new System.Windows.Forms.Label();
             this.TPG_Matiere = new System.Windows.Forms.TabPage();
-            this.GBX_FormMatiere = new System.Windows.Forms.GroupBox();
-            this.LBL_CodeMatiere = new System.Windows.Forms.Label();
-            this.TXB_CodeMatiere = new System.Windows.Forms.TextBox();
-            this.LBL_NomMatiere = new System.Windows.Forms.Label();
-            this.TXB_NomMatiere = new System.Windows.Forms.TextBox();
+            this.BTN_AnnulerMatiere = new System.Windows.Forms.Button();
+            this.BTN_SupprimerMatiere = new System.Windows.Forms.Button();
+            this.BTN_EnregisterMatiere = new System.Windows.Forms.Button();
+            this.GBX_RechecheMatiere = new System.Windows.Forms.GroupBox();
+            this.TXB_RechercheMatiere = new System.Windows.Forms.TextBox();
+            this.BTN_RechercheMatiere = new System.Windows.Forms.Button();
             this.GBX_ListeMatiere = new System.Windows.Forms.GroupBox();
             this.DGV_ListeMatiere = new System.Windows.Forms.DataGridView();
-            this.GBX_RechecheMatiere = new System.Windows.Forms.GroupBox();
-            this.BTN_RechercheMatiere = new System.Windows.Forms.Button();
-            this.TXB_RechercheMatiere = new System.Windows.Forms.TextBox();
-            this.BTN_EnregisterMatiere = new System.Windows.Forms.Button();
-            this.BTN_SupprimerMatiere = new System.Windows.Forms.Button();
-            this.BTN_AnnulerMatiere = new System.Windows.Forms.Button();
+            this.GBX_FormMatiere = new System.Windows.Forms.GroupBox();
+            this.TXB_NomMatiere = new System.Windows.Forms.TextBox();
+            this.LBL_NomMatiere = new System.Windows.Forms.Label();
+            this.TXB_CodeMatiere = new System.Windows.Forms.TextBox();
+            this.LBL_CodeMatiere = new System.Windows.Forms.Label();
             this.TPG_Professeur = new System.Windows.Forms.TabPage();
-            this.GBX_FormProfesseur = new System.Windows.Forms.GroupBox();
-            this.PBX_Professeur = new System.Windows.Forms.PictureBox();
-            this.TXB_NomProf = new System.Windows.Forms.TextBox();
-            this.LBL_NomProf = new System.Windows.Forms.Label();
-            this.TXB_Telephone2Prof = new System.Windows.Forms.TextBox();
-            this.LBL_Telephone2Prof = new System.Windows.Forms.Label();
-            this.TXB_PrenomProf = new System.Windows.Forms.TextBox();
-            this.LBL_PrenomProf = new System.Windows.Forms.Label();
-            this.TXB_DiplomeProf = new System.Windows.Forms.TextBox();
-            this.LBL_DiplomeProf = new System.Windows.Forms.Label();
-            this.TXB_TelephoneProf = new System.Windows.Forms.TextBox();
-            this.LBL_TelephoneProf = new System.Windows.Forms.Label();
-            this.TXB_TypeProf = new System.Windows.Forms.TextBox();
-            this.LBL_TypeProf = new System.Windows.Forms.Label();
-            this.LBL_EtatServiceProf = new System.Windows.Forms.Label();
-            this.TXB_Taux1ierCycleProf = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.TXB_DescriptionProf = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.TXB_Empreinte1Prof = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.TXB_Taux2iemeCycleProf = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.TXB_Empreinte2Prof = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.BTN_Empreinte1 = new System.Windows.Forms.Button();
-            this.BTN_Empreinte2 = new System.Windows.Forms.Button();
-            this.DTP_Recrutement = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.BTN_AnnulerProf = new System.Windows.Forms.Button();
+            this.BTN_SupprimerProf = new System.Windows.Forms.Button();
+            this.BTN_EnregistrerProf = new System.Windows.Forms.Button();
+            this.GBX_RechercheProf = new System.Windows.Forms.GroupBox();
+            this.TBX_RecherchePof = new System.Windows.Forms.TextBox();
+            this.BTN_RechercheProf = new System.Windows.Forms.Button();
             this.GBX_ListeProfesseur = new System.Windows.Forms.GroupBox();
             this.DGV_ListeProf = new System.Windows.Forms.DataGridView();
-            this.GBX_RechercheProf = new System.Windows.Forms.GroupBox();
-            this.BTN_RechercheProf = new System.Windows.Forms.Button();
-            this.TBX_RecherchePof = new System.Windows.Forms.TextBox();
-            this.BTN_EnregistrerProf = new System.Windows.Forms.Button();
-            this.BTN_SupprimerProf = new System.Windows.Forms.Button();
-            this.BTN_AnnulerProf = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.GBX_FormProfesseur = new System.Windows.Forms.GroupBox();
+            this.DTP_Recrutement = new System.Windows.Forms.DateTimePicker();
+            this.BTN_Empreinte2 = new System.Windows.Forms.Button();
+            this.BTN_Empreinte1 = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.TXB_Empreinte2Prof = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.TXB_Taux2iemeCycleProf = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.TXB_Empreinte1Prof = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.TXB_DescriptionProf = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.TXB_Taux1ierCycleProf = new System.Windows.Forms.TextBox();
+            this.LBL_EtatServiceProf = new System.Windows.Forms.Label();
+            this.LBL_TypeProf = new System.Windows.Forms.Label();
+            this.TXB_TypeProf = new System.Windows.Forms.TextBox();
+            this.LBL_TelephoneProf = new System.Windows.Forms.Label();
+            this.TXB_TelephoneProf = new System.Windows.Forms.TextBox();
+            this.LBL_DiplomeProf = new System.Windows.Forms.Label();
+            this.TXB_DiplomeProf = new System.Windows.Forms.TextBox();
+            this.LBL_PrenomProf = new System.Windows.Forms.Label();
+            this.TXB_PrenomProf = new System.Windows.Forms.TextBox();
+            this.LBL_Telephone2Prof = new System.Windows.Forms.Label();
+            this.TXB_Telephone2Prof = new System.Windows.Forms.TextBox();
+            this.LBL_NomProf = new System.Windows.Forms.Label();
+            this.TXB_NomProf = new System.Windows.Forms.TextBox();
+            this.PBX_Professeur = new System.Windows.Forms.PictureBox();
             this.TCL_Admin = new System.Windows.Forms.TabControl();
             this.TPG_MatiereProf.SuspendLayout();
+            this.GBX_FormMatiereProf.SuspendLayout();
+            this.GBX_RechMatiereProf.SuspendLayout();
             this.GBX_ListeMatiereProf.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_MatiereProf)).BeginInit();
-            this.GBX_RechMatiereProf.SuspendLayout();
-            this.GBX_FormMatiereProf.SuspendLayout();
             this.TPG_Presence.SuspendLayout();
-            this.GBX_FormPresence.SuspendLayout();
+            this.GBX_RecherchePresence.SuspendLayout();
             this.GBX_ListePresence.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_ListePresence)).BeginInit();
-            this.GBX_RecherchePresence.SuspendLayout();
+            this.GBX_FormPresence.SuspendLayout();
             this.TPG_Programme.SuspendLayout();
-            this.GBX_FormProg.SuspendLayout();
+            this.GBX_RechercheProg.SuspendLayout();
             this.GBX_ListeProg.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_ListeProgramme)).BeginInit();
-            this.GBX_RechercheProg.SuspendLayout();
+            this.GBX_FormProg.SuspendLayout();
             this.TPG_Administrateur.SuspendLayout();
-            this.GBX_FormAdmin.SuspendLayout();
+            this.GBX_RechercheAdmin.SuspendLayout();
             this.GBX_ListeAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_ListeAdmin)).BeginInit();
-            this.GBX_RechercheAdmin.SuspendLayout();
+            this.GBX_FormAdmin.SuspendLayout();
             this.TPG_Classe.SuspendLayout();
-            this.GBX_FormClasse.SuspendLayout();
+            this.GBX_RechercheClasse.SuspendLayout();
             this.GBX_ListeClasse.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_ListeClasse)).BeginInit();
-            this.GBX_RechercheClasse.SuspendLayout();
+            this.GBX_FormClasse.SuspendLayout();
             this.TPG_Matiere.SuspendLayout();
-            this.GBX_FormMatiere.SuspendLayout();
+            this.GBX_RechecheMatiere.SuspendLayout();
             this.GBX_ListeMatiere.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_ListeMatiere)).BeginInit();
-            this.GBX_RechecheMatiere.SuspendLayout();
+            this.GBX_FormMatiere.SuspendLayout();
             this.TPG_Professeur.SuspendLayout();
-            this.GBX_FormProfesseur.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PBX_Professeur)).BeginInit();
+            this.GBX_RechercheProf.SuspendLayout();
             this.GBX_ListeProfesseur.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_ListeProf)).BeginInit();
-            this.GBX_RechercheProf.SuspendLayout();
+            this.GBX_FormProfesseur.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PBX_Professeur)).BeginInit();
             this.TCL_Admin.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -282,6 +278,107 @@
             this.TPG_MatiereProf.Text = "Mariere Professeur";
             this.TPG_MatiereProf.UseVisualStyleBackColor = true;
             // 
+            // GBX_FormMatiereProf
+            // 
+            this.GBX_FormMatiereProf.Controls.Add(this.CBX_SelectMatiere);
+            this.GBX_FormMatiereProf.Controls.Add(this.CBX_SelectProf);
+            this.GBX_FormMatiereProf.Controls.Add(this.LBL_Matiere);
+            this.GBX_FormMatiereProf.Controls.Add(this.LBL_Prof);
+            this.GBX_FormMatiereProf.Location = new System.Drawing.Point(14, 14);
+            this.GBX_FormMatiereProf.Name = "GBX_FormMatiereProf";
+            this.GBX_FormMatiereProf.Size = new System.Drawing.Size(706, 82);
+            this.GBX_FormMatiereProf.TabIndex = 12;
+            this.GBX_FormMatiereProf.TabStop = false;
+            this.GBX_FormMatiereProf.Text = "Formulaire Matiere Professeur";
+            // 
+            // CBX_SelectMatiere
+            // 
+            this.CBX_SelectMatiere.FormattingEnabled = true;
+            this.CBX_SelectMatiere.Location = new System.Drawing.Point(510, 35);
+            this.CBX_SelectMatiere.Name = "CBX_SelectMatiere";
+            this.CBX_SelectMatiere.Size = new System.Drawing.Size(121, 21);
+            this.CBX_SelectMatiere.TabIndex = 4;
+            // 
+            // CBX_SelectProf
+            // 
+            this.CBX_SelectProf.FormattingEnabled = true;
+            this.CBX_SelectProf.Location = new System.Drawing.Point(123, 35);
+            this.CBX_SelectProf.Name = "CBX_SelectProf";
+            this.CBX_SelectProf.Size = new System.Drawing.Size(121, 21);
+            this.CBX_SelectProf.TabIndex = 3;
+            // 
+            // LBL_Matiere
+            // 
+            this.LBL_Matiere.AutoSize = true;
+            this.LBL_Matiere.Location = new System.Drawing.Point(398, 36);
+            this.LBL_Matiere.Name = "LBL_Matiere";
+            this.LBL_Matiere.Size = new System.Drawing.Size(86, 13);
+            this.LBL_Matiere.TabIndex = 2;
+            this.LBL_Matiere.Text = "Matiere de cours";
+            // 
+            // LBL_Prof
+            // 
+            this.LBL_Prof.AutoSize = true;
+            this.LBL_Prof.Location = new System.Drawing.Point(16, 33);
+            this.LBL_Prof.Name = "LBL_Prof";
+            this.LBL_Prof.Size = new System.Drawing.Size(82, 13);
+            this.LBL_Prof.TabIndex = 0;
+            this.LBL_Prof.Text = "Nom Professeur";
+            // 
+            // BTN_AnnulerMatProf
+            // 
+            this.BTN_AnnulerMatProf.Location = new System.Drawing.Point(740, 185);
+            this.BTN_AnnulerMatProf.Name = "BTN_AnnulerMatProf";
+            this.BTN_AnnulerMatProf.Size = new System.Drawing.Size(120, 41);
+            this.BTN_AnnulerMatProf.TabIndex = 17;
+            this.BTN_AnnulerMatProf.Text = "Annuler";
+            this.BTN_AnnulerMatProf.UseVisualStyleBackColor = true;
+            // 
+            // BTN_SupprimerMatProf
+            // 
+            this.BTN_SupprimerMatProf.Location = new System.Drawing.Point(740, 117);
+            this.BTN_SupprimerMatProf.Name = "BTN_SupprimerMatProf";
+            this.BTN_SupprimerMatProf.Size = new System.Drawing.Size(120, 41);
+            this.BTN_SupprimerMatProf.TabIndex = 16;
+            this.BTN_SupprimerMatProf.Text = "Supprimer";
+            this.BTN_SupprimerMatProf.UseVisualStyleBackColor = true;
+            // 
+            // BTN_EnregistrerMatProf
+            // 
+            this.BTN_EnregistrerMatProf.Location = new System.Drawing.Point(740, 55);
+            this.BTN_EnregistrerMatProf.Name = "BTN_EnregistrerMatProf";
+            this.BTN_EnregistrerMatProf.Size = new System.Drawing.Size(120, 41);
+            this.BTN_EnregistrerMatProf.TabIndex = 15;
+            this.BTN_EnregistrerMatProf.Text = "Enregistrer";
+            this.BTN_EnregistrerMatProf.UseVisualStyleBackColor = true;
+            // 
+            // GBX_RechMatiereProf
+            // 
+            this.GBX_RechMatiereProf.Controls.Add(this.TXB_RechMatiereProf);
+            this.GBX_RechMatiereProf.Controls.Add(this.BTN_RechMatiereProf);
+            this.GBX_RechMatiereProf.Location = new System.Drawing.Point(14, 121);
+            this.GBX_RechMatiereProf.Name = "GBX_RechMatiereProf";
+            this.GBX_RechMatiereProf.Size = new System.Drawing.Size(701, 46);
+            this.GBX_RechMatiereProf.TabIndex = 14;
+            this.GBX_RechMatiereProf.TabStop = false;
+            this.GBX_RechMatiereProf.Text = "Recherche";
+            // 
+            // TXB_RechMatiereProf
+            // 
+            this.TXB_RechMatiereProf.Location = new System.Drawing.Point(17, 18);
+            this.TXB_RechMatiereProf.Name = "TXB_RechMatiereProf";
+            this.TXB_RechMatiereProf.Size = new System.Drawing.Size(537, 20);
+            this.TXB_RechMatiereProf.TabIndex = 7;
+            // 
+            // BTN_RechMatiereProf
+            // 
+            this.BTN_RechMatiereProf.Location = new System.Drawing.Point(575, 12);
+            this.BTN_RechMatiereProf.Name = "BTN_RechMatiereProf";
+            this.BTN_RechMatiereProf.Size = new System.Drawing.Size(120, 28);
+            this.BTN_RechMatiereProf.TabIndex = 6;
+            this.BTN_RechMatiereProf.Text = "Recherche";
+            this.BTN_RechMatiereProf.UseVisualStyleBackColor = true;
+            // 
             // GBX_ListeMatiereProf
             // 
             this.GBX_ListeMatiereProf.Controls.Add(this.DGV_MatiereProf);
@@ -301,107 +398,6 @@
             this.DGV_MatiereProf.Size = new System.Drawing.Size(681, 386);
             this.DGV_MatiereProf.TabIndex = 0;
             // 
-            // GBX_RechMatiereProf
-            // 
-            this.GBX_RechMatiereProf.Controls.Add(this.TXB_RechMatiereProf);
-            this.GBX_RechMatiereProf.Controls.Add(this.BTN_RechMatiereProf);
-            this.GBX_RechMatiereProf.Location = new System.Drawing.Point(14, 121);
-            this.GBX_RechMatiereProf.Name = "GBX_RechMatiereProf";
-            this.GBX_RechMatiereProf.Size = new System.Drawing.Size(701, 46);
-            this.GBX_RechMatiereProf.TabIndex = 14;
-            this.GBX_RechMatiereProf.TabStop = false;
-            this.GBX_RechMatiereProf.Text = "Recherche";
-            // 
-            // BTN_RechMatiereProf
-            // 
-            this.BTN_RechMatiereProf.Location = new System.Drawing.Point(575, 12);
-            this.BTN_RechMatiereProf.Name = "BTN_RechMatiereProf";
-            this.BTN_RechMatiereProf.Size = new System.Drawing.Size(120, 28);
-            this.BTN_RechMatiereProf.TabIndex = 6;
-            this.BTN_RechMatiereProf.Text = "Recherche";
-            this.BTN_RechMatiereProf.UseVisualStyleBackColor = true;
-            // 
-            // TXB_RechMatiereProf
-            // 
-            this.TXB_RechMatiereProf.Location = new System.Drawing.Point(17, 18);
-            this.TXB_RechMatiereProf.Name = "TXB_RechMatiereProf";
-            this.TXB_RechMatiereProf.Size = new System.Drawing.Size(537, 20);
-            this.TXB_RechMatiereProf.TabIndex = 7;
-            // 
-            // BTN_EnregistrerMatProf
-            // 
-            this.BTN_EnregistrerMatProf.Location = new System.Drawing.Point(740, 55);
-            this.BTN_EnregistrerMatProf.Name = "BTN_EnregistrerMatProf";
-            this.BTN_EnregistrerMatProf.Size = new System.Drawing.Size(120, 41);
-            this.BTN_EnregistrerMatProf.TabIndex = 15;
-            this.BTN_EnregistrerMatProf.Text = "Enregistrer";
-            this.BTN_EnregistrerMatProf.UseVisualStyleBackColor = true;
-            // 
-            // BTN_SupprimerMatProf
-            // 
-            this.BTN_SupprimerMatProf.Location = new System.Drawing.Point(740, 117);
-            this.BTN_SupprimerMatProf.Name = "BTN_SupprimerMatProf";
-            this.BTN_SupprimerMatProf.Size = new System.Drawing.Size(120, 41);
-            this.BTN_SupprimerMatProf.TabIndex = 16;
-            this.BTN_SupprimerMatProf.Text = "Supprimer";
-            this.BTN_SupprimerMatProf.UseVisualStyleBackColor = true;
-            // 
-            // BTN_AnnulerMatProf
-            // 
-            this.BTN_AnnulerMatProf.Location = new System.Drawing.Point(740, 185);
-            this.BTN_AnnulerMatProf.Name = "BTN_AnnulerMatProf";
-            this.BTN_AnnulerMatProf.Size = new System.Drawing.Size(120, 41);
-            this.BTN_AnnulerMatProf.TabIndex = 17;
-            this.BTN_AnnulerMatProf.Text = "Annuler";
-            this.BTN_AnnulerMatProf.UseVisualStyleBackColor = true;
-            // 
-            // GBX_FormMatiereProf
-            // 
-            this.GBX_FormMatiereProf.Controls.Add(this.CBX_SelectMatiere);
-            this.GBX_FormMatiereProf.Controls.Add(this.CBX_SelectProf);
-            this.GBX_FormMatiereProf.Controls.Add(this.LBL_Matiere);
-            this.GBX_FormMatiereProf.Controls.Add(this.LBL_Prof);
-            this.GBX_FormMatiereProf.Location = new System.Drawing.Point(14, 14);
-            this.GBX_FormMatiereProf.Name = "GBX_FormMatiereProf";
-            this.GBX_FormMatiereProf.Size = new System.Drawing.Size(706, 82);
-            this.GBX_FormMatiereProf.TabIndex = 12;
-            this.GBX_FormMatiereProf.TabStop = false;
-            this.GBX_FormMatiereProf.Text = "Formulaire Matiere Professeur";
-            // 
-            // LBL_Prof
-            // 
-            this.LBL_Prof.AutoSize = true;
-            this.LBL_Prof.Location = new System.Drawing.Point(16, 33);
-            this.LBL_Prof.Name = "LBL_Prof";
-            this.LBL_Prof.Size = new System.Drawing.Size(82, 13);
-            this.LBL_Prof.TabIndex = 0;
-            this.LBL_Prof.Text = "Nom Professeur";
-            // 
-            // LBL_Matiere
-            // 
-            this.LBL_Matiere.AutoSize = true;
-            this.LBL_Matiere.Location = new System.Drawing.Point(398, 36);
-            this.LBL_Matiere.Name = "LBL_Matiere";
-            this.LBL_Matiere.Size = new System.Drawing.Size(86, 13);
-            this.LBL_Matiere.TabIndex = 2;
-            this.LBL_Matiere.Text = "Matiere de cours";
-            // 
-            // CBX_SelectProf
-            // 
-            this.CBX_SelectProf.FormattingEnabled = true;
-            this.CBX_SelectProf.Location = new System.Drawing.Point(123, 35);
-            this.CBX_SelectProf.Name = "CBX_SelectProf";
-            this.CBX_SelectProf.Size = new System.Drawing.Size(121, 21);
-            this.CBX_SelectProf.TabIndex = 3;
-            // 
-            // CBX_SelectMatiere
-            // 
-            this.CBX_SelectMatiere.FormattingEnabled = true;
-            this.CBX_SelectMatiere.Location = new System.Drawing.Point(510, 35);
-            this.CBX_SelectMatiere.Name = "CBX_SelectMatiere";
-            this.CBX_SelectMatiere.Size = new System.Drawing.Size(121, 21);
-            this.CBX_SelectMatiere.TabIndex = 4;
-            // 
             // TPG_Presence
             // 
             this.TPG_Presence.Controls.Add(this.BTN_AnnulerPresence);
@@ -418,87 +414,59 @@
             this.TPG_Presence.Text = "Presence";
             this.TPG_Presence.UseVisualStyleBackColor = true;
             // 
-            // GBX_FormPresence
+            // BTN_AnnulerPresence
             // 
-            this.GBX_FormPresence.Controls.Add(this.TXB_HeureFinPres);
-            this.GBX_FormPresence.Controls.Add(this.TXB_HeureDebutPres);
-            this.GBX_FormPresence.Controls.Add(this.CBX_SelectNomProg);
-            this.GBX_FormPresence.Controls.Add(this.DTP_Presence);
-            this.GBX_FormPresence.Controls.Add(this.LBL_DatePres);
-            this.GBX_FormPresence.Controls.Add(this.LBL_HeureFinPresence);
-            this.GBX_FormPresence.Controls.Add(this.LBL_HeureDebutPresence);
-            this.GBX_FormPresence.Controls.Add(this.LBL_SelectNomProg);
-            this.GBX_FormPresence.Location = new System.Drawing.Point(14, 14);
-            this.GBX_FormPresence.Name = "GBX_FormPresence";
-            this.GBX_FormPresence.Size = new System.Drawing.Size(706, 82);
-            this.GBX_FormPresence.TabIndex = 6;
-            this.GBX_FormPresence.TabStop = false;
-            this.GBX_FormPresence.Text = "Formulaire Presence";
+            this.BTN_AnnulerPresence.Location = new System.Drawing.Point(740, 185);
+            this.BTN_AnnulerPresence.Name = "BTN_AnnulerPresence";
+            this.BTN_AnnulerPresence.Size = new System.Drawing.Size(120, 41);
+            this.BTN_AnnulerPresence.TabIndex = 11;
+            this.BTN_AnnulerPresence.Text = "Annuler";
+            this.BTN_AnnulerPresence.UseVisualStyleBackColor = true;
             // 
-            // LBL_SelectNomProg
+            // BTN_SupprimerPresence
             // 
-            this.LBL_SelectNomProg.AutoSize = true;
-            this.LBL_SelectNomProg.Location = new System.Drawing.Point(6, 16);
-            this.LBL_SelectNomProg.Name = "LBL_SelectNomProg";
-            this.LBL_SelectNomProg.Size = new System.Drawing.Size(157, 13);
-            this.LBL_SelectNomProg.TabIndex = 0;
-            this.LBL_SelectNomProg.Text = "Selection Nom des Programmes";
+            this.BTN_SupprimerPresence.Location = new System.Drawing.Point(740, 117);
+            this.BTN_SupprimerPresence.Name = "BTN_SupprimerPresence";
+            this.BTN_SupprimerPresence.Size = new System.Drawing.Size(120, 41);
+            this.BTN_SupprimerPresence.TabIndex = 10;
+            this.BTN_SupprimerPresence.Text = "Supprimer";
+            this.BTN_SupprimerPresence.UseVisualStyleBackColor = true;
             // 
-            // LBL_HeureDebutPresence
+            // BTN_EnregisterPresence
             // 
-            this.LBL_HeureDebutPresence.AutoSize = true;
-            this.LBL_HeureDebutPresence.Location = new System.Drawing.Point(380, 20);
-            this.LBL_HeureDebutPresence.Name = "LBL_HeureDebutPresence";
-            this.LBL_HeureDebutPresence.Size = new System.Drawing.Size(83, 13);
-            this.LBL_HeureDebutPresence.TabIndex = 7;
-            this.LBL_HeureDebutPresence.Text = "Heure de Debut";
+            this.BTN_EnregisterPresence.Location = new System.Drawing.Point(740, 55);
+            this.BTN_EnregisterPresence.Name = "BTN_EnregisterPresence";
+            this.BTN_EnregisterPresence.Size = new System.Drawing.Size(120, 41);
+            this.BTN_EnregisterPresence.TabIndex = 9;
+            this.BTN_EnregisterPresence.Text = "Enregister";
+            this.BTN_EnregisterPresence.UseVisualStyleBackColor = true;
             // 
-            // LBL_HeureFinPresence
+            // GBX_RecherchePresence
             // 
-            this.LBL_HeureFinPresence.AutoSize = true;
-            this.LBL_HeureFinPresence.Location = new System.Drawing.Point(521, 19);
-            this.LBL_HeureFinPresence.Name = "LBL_HeureFinPresence";
-            this.LBL_HeureFinPresence.Size = new System.Drawing.Size(68, 13);
-            this.LBL_HeureFinPresence.TabIndex = 6;
-            this.LBL_HeureFinPresence.Text = "Heure de Fin";
+            this.GBX_RecherchePresence.Controls.Add(this.textBox7);
+            this.GBX_RecherchePresence.Controls.Add(this.BTN_RecherchePresence);
+            this.GBX_RecherchePresence.Location = new System.Drawing.Point(18, 102);
+            this.GBX_RecherchePresence.Name = "GBX_RecherchePresence";
+            this.GBX_RecherchePresence.Size = new System.Drawing.Size(701, 46);
+            this.GBX_RecherchePresence.TabIndex = 8;
+            this.GBX_RecherchePresence.TabStop = false;
+            this.GBX_RecherchePresence.Text = "Recherche";
             // 
-            // LBL_DatePres
+            // textBox7
             // 
-            this.LBL_DatePres.AutoSize = true;
-            this.LBL_DatePres.Location = new System.Drawing.Point(236, 19);
-            this.LBL_DatePres.Name = "LBL_DatePres";
-            this.LBL_DatePres.Size = new System.Drawing.Size(30, 13);
-            this.LBL_DatePres.TabIndex = 10;
-            this.LBL_DatePres.Text = "Date";
+            this.textBox7.Location = new System.Drawing.Point(17, 18);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(537, 20);
+            this.textBox7.TabIndex = 7;
             // 
-            // DTP_Presence
+            // BTN_RecherchePresence
             // 
-            this.DTP_Presence.Location = new System.Drawing.Point(195, 42);
-            this.DTP_Presence.Name = "DTP_Presence";
-            this.DTP_Presence.Size = new System.Drawing.Size(129, 20);
-            this.DTP_Presence.TabIndex = 11;
-            // 
-            // CBX_SelectNomProg
-            // 
-            this.CBX_SelectNomProg.FormattingEnabled = true;
-            this.CBX_SelectNomProg.Location = new System.Drawing.Point(9, 41);
-            this.CBX_SelectNomProg.Name = "CBX_SelectNomProg";
-            this.CBX_SelectNomProg.Size = new System.Drawing.Size(132, 21);
-            this.CBX_SelectNomProg.TabIndex = 12;
-            // 
-            // TXB_HeureDebutPres
-            // 
-            this.TXB_HeureDebutPres.Location = new System.Drawing.Point(383, 45);
-            this.TXB_HeureDebutPres.Name = "TXB_HeureDebutPres";
-            this.TXB_HeureDebutPres.Size = new System.Drawing.Size(99, 20);
-            this.TXB_HeureDebutPres.TabIndex = 16;
-            // 
-            // TXB_HeureFinPres
-            // 
-            this.TXB_HeureFinPres.Location = new System.Drawing.Point(524, 45);
-            this.TXB_HeureFinPres.Name = "TXB_HeureFinPres";
-            this.TXB_HeureFinPres.Size = new System.Drawing.Size(99, 20);
-            this.TXB_HeureFinPres.TabIndex = 17;
+            this.BTN_RecherchePresence.Location = new System.Drawing.Point(575, 12);
+            this.BTN_RecherchePresence.Name = "BTN_RecherchePresence";
+            this.BTN_RecherchePresence.Size = new System.Drawing.Size(120, 28);
+            this.BTN_RecherchePresence.TabIndex = 6;
+            this.BTN_RecherchePresence.Text = "Recherche";
+            this.BTN_RecherchePresence.UseVisualStyleBackColor = true;
             // 
             // GBX_ListePresence
             // 
@@ -519,59 +487,87 @@
             this.DGV_ListePresence.Size = new System.Drawing.Size(683, 417);
             this.DGV_ListePresence.TabIndex = 0;
             // 
-            // GBX_RecherchePresence
+            // GBX_FormPresence
             // 
-            this.GBX_RecherchePresence.Controls.Add(this.textBox7);
-            this.GBX_RecherchePresence.Controls.Add(this.BTN_RecherchePresence);
-            this.GBX_RecherchePresence.Location = new System.Drawing.Point(18, 102);
-            this.GBX_RecherchePresence.Name = "GBX_RecherchePresence";
-            this.GBX_RecherchePresence.Size = new System.Drawing.Size(701, 46);
-            this.GBX_RecherchePresence.TabIndex = 8;
-            this.GBX_RecherchePresence.TabStop = false;
-            this.GBX_RecherchePresence.Text = "Recherche";
+            this.GBX_FormPresence.Controls.Add(this.TXB_HeureFinPres);
+            this.GBX_FormPresence.Controls.Add(this.TXB_HeureDebutPres);
+            this.GBX_FormPresence.Controls.Add(this.CBX_SelectNomProg);
+            this.GBX_FormPresence.Controls.Add(this.DTP_Presence);
+            this.GBX_FormPresence.Controls.Add(this.LBL_DatePres);
+            this.GBX_FormPresence.Controls.Add(this.LBL_HeureFinPresence);
+            this.GBX_FormPresence.Controls.Add(this.LBL_HeureDebutPresence);
+            this.GBX_FormPresence.Controls.Add(this.LBL_SelectNomProg);
+            this.GBX_FormPresence.Location = new System.Drawing.Point(14, 14);
+            this.GBX_FormPresence.Name = "GBX_FormPresence";
+            this.GBX_FormPresence.Size = new System.Drawing.Size(706, 82);
+            this.GBX_FormPresence.TabIndex = 6;
+            this.GBX_FormPresence.TabStop = false;
+            this.GBX_FormPresence.Text = "Formulaire Presence";
             // 
-            // BTN_RecherchePresence
+            // TXB_HeureFinPres
             // 
-            this.BTN_RecherchePresence.Location = new System.Drawing.Point(575, 12);
-            this.BTN_RecherchePresence.Name = "BTN_RecherchePresence";
-            this.BTN_RecherchePresence.Size = new System.Drawing.Size(120, 28);
-            this.BTN_RecherchePresence.TabIndex = 6;
-            this.BTN_RecherchePresence.Text = "Recherche";
-            this.BTN_RecherchePresence.UseVisualStyleBackColor = true;
+            this.TXB_HeureFinPres.Location = new System.Drawing.Point(524, 45);
+            this.TXB_HeureFinPres.Name = "TXB_HeureFinPres";
+            this.TXB_HeureFinPres.Size = new System.Drawing.Size(99, 20);
+            this.TXB_HeureFinPres.TabIndex = 17;
             // 
-            // textBox7
+            // TXB_HeureDebutPres
             // 
-            this.textBox7.Location = new System.Drawing.Point(17, 18);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(537, 20);
-            this.textBox7.TabIndex = 7;
+            this.TXB_HeureDebutPres.Location = new System.Drawing.Point(383, 45);
+            this.TXB_HeureDebutPres.Name = "TXB_HeureDebutPres";
+            this.TXB_HeureDebutPres.Size = new System.Drawing.Size(99, 20);
+            this.TXB_HeureDebutPres.TabIndex = 16;
             // 
-            // BTN_EnregisterPresence
+            // CBX_SelectNomProg
             // 
-            this.BTN_EnregisterPresence.Location = new System.Drawing.Point(740, 55);
-            this.BTN_EnregisterPresence.Name = "BTN_EnregisterPresence";
-            this.BTN_EnregisterPresence.Size = new System.Drawing.Size(120, 41);
-            this.BTN_EnregisterPresence.TabIndex = 9;
-            this.BTN_EnregisterPresence.Text = "Enregister";
-            this.BTN_EnregisterPresence.UseVisualStyleBackColor = true;
+            this.CBX_SelectNomProg.FormattingEnabled = true;
+            this.CBX_SelectNomProg.Location = new System.Drawing.Point(9, 41);
+            this.CBX_SelectNomProg.Name = "CBX_SelectNomProg";
+            this.CBX_SelectNomProg.Size = new System.Drawing.Size(132, 21);
+            this.CBX_SelectNomProg.TabIndex = 12;
             // 
-            // BTN_SupprimerPresence
+            // DTP_Presence
             // 
-            this.BTN_SupprimerPresence.Location = new System.Drawing.Point(740, 117);
-            this.BTN_SupprimerPresence.Name = "BTN_SupprimerPresence";
-            this.BTN_SupprimerPresence.Size = new System.Drawing.Size(120, 41);
-            this.BTN_SupprimerPresence.TabIndex = 10;
-            this.BTN_SupprimerPresence.Text = "Supprimer";
-            this.BTN_SupprimerPresence.UseVisualStyleBackColor = true;
+            this.DTP_Presence.Location = new System.Drawing.Point(195, 42);
+            this.DTP_Presence.Name = "DTP_Presence";
+            this.DTP_Presence.Size = new System.Drawing.Size(129, 20);
+            this.DTP_Presence.TabIndex = 11;
             // 
-            // BTN_AnnulerPresence
+            // LBL_DatePres
             // 
-            this.BTN_AnnulerPresence.Location = new System.Drawing.Point(740, 185);
-            this.BTN_AnnulerPresence.Name = "BTN_AnnulerPresence";
-            this.BTN_AnnulerPresence.Size = new System.Drawing.Size(120, 41);
-            this.BTN_AnnulerPresence.TabIndex = 11;
-            this.BTN_AnnulerPresence.Text = "Annuler";
-            this.BTN_AnnulerPresence.UseVisualStyleBackColor = true;
+            this.LBL_DatePres.AutoSize = true;
+            this.LBL_DatePres.Location = new System.Drawing.Point(236, 19);
+            this.LBL_DatePres.Name = "LBL_DatePres";
+            this.LBL_DatePres.Size = new System.Drawing.Size(30, 13);
+            this.LBL_DatePres.TabIndex = 10;
+            this.LBL_DatePres.Text = "Date";
+            // 
+            // LBL_HeureFinPresence
+            // 
+            this.LBL_HeureFinPresence.AutoSize = true;
+            this.LBL_HeureFinPresence.Location = new System.Drawing.Point(521, 19);
+            this.LBL_HeureFinPresence.Name = "LBL_HeureFinPresence";
+            this.LBL_HeureFinPresence.Size = new System.Drawing.Size(68, 13);
+            this.LBL_HeureFinPresence.TabIndex = 6;
+            this.LBL_HeureFinPresence.Text = "Heure de Fin";
+            // 
+            // LBL_HeureDebutPresence
+            // 
+            this.LBL_HeureDebutPresence.AutoSize = true;
+            this.LBL_HeureDebutPresence.Location = new System.Drawing.Point(380, 20);
+            this.LBL_HeureDebutPresence.Name = "LBL_HeureDebutPresence";
+            this.LBL_HeureDebutPresence.Size = new System.Drawing.Size(83, 13);
+            this.LBL_HeureDebutPresence.TabIndex = 7;
+            this.LBL_HeureDebutPresence.Text = "Heure de Debut";
+            // 
+            // LBL_SelectNomProg
+            // 
+            this.LBL_SelectNomProg.AutoSize = true;
+            this.LBL_SelectNomProg.Location = new System.Drawing.Point(6, 16);
+            this.LBL_SelectNomProg.Name = "LBL_SelectNomProg";
+            this.LBL_SelectNomProg.Size = new System.Drawing.Size(157, 13);
+            this.LBL_SelectNomProg.TabIndex = 0;
+            this.LBL_SelectNomProg.Text = "Selection Nom des Programmes";
             // 
             // TPG_Programme
             // 
@@ -590,145 +586,69 @@
             this.TPG_Programme.Text = "Programme";
             this.TPG_Programme.UseVisualStyleBackColor = true;
             // 
-            // GBX_FormProg
+            // label1
             // 
-            this.GBX_FormProg.Controls.Add(this.CBX_HeureFinProg);
-            this.GBX_FormProg.Controls.Add(this.CBX_HeureDebutProg);
-            this.GBX_FormProg.Controls.Add(this.CBX_SelectProgMatiere);
-            this.GBX_FormProg.Controls.Add(this.CBX_SelectProgProf);
-            this.GBX_FormProg.Controls.Add(this.CBX_SelectClasse);
-            this.GBX_FormProg.Controls.Add(this.TXB_NomProgramme);
-            this.GBX_FormProg.Controls.Add(this.LBL_NomProgramme);
-            this.GBX_FormProg.Controls.Add(this.LBL_HeureFinProg);
-            this.GBX_FormProg.Controls.Add(this.LBL_HeureDebutProg);
-            this.GBX_FormProg.Controls.Add(this.DTP_Programme);
-            this.GBX_FormProg.Controls.Add(this.LBL_DateProg);
-            this.GBX_FormProg.Controls.Add(this.LBL_Selectmatiere);
-            this.GBX_FormProg.Controls.Add(this.LBL_SelectProf);
-            this.GBX_FormProg.Controls.Add(this.LBL_SelectClasse);
-            this.GBX_FormProg.Location = new System.Drawing.Point(14, 14);
-            this.GBX_FormProg.Name = "GBX_FormProg";
-            this.GBX_FormProg.Size = new System.Drawing.Size(706, 129);
-            this.GBX_FormProg.TabIndex = 6;
-            this.GBX_FormProg.TabStop = false;
-            this.GBX_FormProg.Text = "Formulaire Programme";
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(725, 260);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(137, 143);
+            this.label1.TabIndex = 12;
+            this.label1.Text = resources.GetString("label1.Text");
             // 
-            // LBL_SelectClasse
+            // BTN_AnnulerProg
             // 
-            this.LBL_SelectClasse.AutoSize = true;
-            this.LBL_SelectClasse.Location = new System.Drawing.Point(18, 16);
-            this.LBL_SelectClasse.Name = "LBL_SelectClasse";
-            this.LBL_SelectClasse.Size = new System.Drawing.Size(85, 13);
-            this.LBL_SelectClasse.TabIndex = 0;
-            this.LBL_SelectClasse.Text = "Selection Classe";
+            this.BTN_AnnulerProg.Location = new System.Drawing.Point(740, 185);
+            this.BTN_AnnulerProg.Name = "BTN_AnnulerProg";
+            this.BTN_AnnulerProg.Size = new System.Drawing.Size(120, 41);
+            this.BTN_AnnulerProg.TabIndex = 11;
+            this.BTN_AnnulerProg.Text = "Annuler";
+            this.BTN_AnnulerProg.UseVisualStyleBackColor = true;
             // 
-            // LBL_SelectProf
+            // BTN_SupprimerProg
             // 
-            this.LBL_SelectProf.AutoSize = true;
-            this.LBL_SelectProf.Location = new System.Drawing.Point(184, 16);
-            this.LBL_SelectProf.Name = "LBL_SelectProf";
-            this.LBL_SelectProf.Size = new System.Drawing.Size(104, 13);
-            this.LBL_SelectProf.TabIndex = 0;
-            this.LBL_SelectProf.Text = "Selection Professeur";
+            this.BTN_SupprimerProg.Location = new System.Drawing.Point(740, 117);
+            this.BTN_SupprimerProg.Name = "BTN_SupprimerProg";
+            this.BTN_SupprimerProg.Size = new System.Drawing.Size(120, 41);
+            this.BTN_SupprimerProg.TabIndex = 10;
+            this.BTN_SupprimerProg.Text = "Supprimer";
+            this.BTN_SupprimerProg.UseVisualStyleBackColor = true;
             // 
-            // LBL_Selectmatiere
+            // BTN_EnregisterProg
             // 
-            this.LBL_Selectmatiere.AutoSize = true;
-            this.LBL_Selectmatiere.Location = new System.Drawing.Point(345, 12);
-            this.LBL_Selectmatiere.Name = "LBL_Selectmatiere";
-            this.LBL_Selectmatiere.Size = new System.Drawing.Size(89, 13);
-            this.LBL_Selectmatiere.TabIndex = 0;
-            this.LBL_Selectmatiere.Text = "Selection Matiere";
+            this.BTN_EnregisterProg.Location = new System.Drawing.Point(740, 55);
+            this.BTN_EnregisterProg.Name = "BTN_EnregisterProg";
+            this.BTN_EnregisterProg.Size = new System.Drawing.Size(120, 41);
+            this.BTN_EnregisterProg.TabIndex = 9;
+            this.BTN_EnregisterProg.Text = "Enregistrer";
+            this.BTN_EnregisterProg.UseVisualStyleBackColor = true;
             // 
-            // LBL_DateProg
+            // GBX_RechercheProg
             // 
-            this.LBL_DateProg.AutoSize = true;
-            this.LBL_DateProg.Location = new System.Drawing.Point(17, 74);
-            this.LBL_DateProg.Name = "LBL_DateProg";
-            this.LBL_DateProg.Size = new System.Drawing.Size(30, 13);
-            this.LBL_DateProg.TabIndex = 2;
-            this.LBL_DateProg.Text = "Date";
+            this.GBX_RechercheProg.Controls.Add(this.TXB_RechercheProg);
+            this.GBX_RechercheProg.Controls.Add(this.BTN_RechercheProg);
+            this.GBX_RechercheProg.Location = new System.Drawing.Point(18, 149);
+            this.GBX_RechercheProg.Name = "GBX_RechercheProg";
+            this.GBX_RechercheProg.Size = new System.Drawing.Size(701, 46);
+            this.GBX_RechercheProg.TabIndex = 8;
+            this.GBX_RechercheProg.TabStop = false;
+            this.GBX_RechercheProg.Text = "Recherche";
             // 
-            // DTP_Programme
+            // TXB_RechercheProg
             // 
-            this.DTP_Programme.Location = new System.Drawing.Point(20, 90);
-            this.DTP_Programme.Name = "DTP_Programme";
-            this.DTP_Programme.Size = new System.Drawing.Size(129, 20);
-            this.DTP_Programme.TabIndex = 3;
+            this.TXB_RechercheProg.Location = new System.Drawing.Point(17, 18);
+            this.TXB_RechercheProg.Name = "TXB_RechercheProg";
+            this.TXB_RechercheProg.Size = new System.Drawing.Size(537, 20);
+            this.TXB_RechercheProg.TabIndex = 7;
             // 
-            // LBL_HeureDebutProg
+            // BTN_RechercheProg
             // 
-            this.LBL_HeureDebutProg.AutoSize = true;
-            this.LBL_HeureDebutProg.Location = new System.Drawing.Point(184, 73);
-            this.LBL_HeureDebutProg.Name = "LBL_HeureDebutProg";
-            this.LBL_HeureDebutProg.Size = new System.Drawing.Size(83, 13);
-            this.LBL_HeureDebutProg.TabIndex = 4;
-            this.LBL_HeureDebutProg.Text = "Heure de Debut";
-            // 
-            // LBL_HeureFinProg
-            // 
-            this.LBL_HeureFinProg.AutoSize = true;
-            this.LBL_HeureFinProg.Location = new System.Drawing.Point(345, 73);
-            this.LBL_HeureFinProg.Name = "LBL_HeureFinProg";
-            this.LBL_HeureFinProg.Size = new System.Drawing.Size(68, 13);
-            this.LBL_HeureFinProg.TabIndex = 4;
-            this.LBL_HeureFinProg.Text = "Heure de Fin";
-            // 
-            // LBL_NomProgramme
-            // 
-            this.LBL_NomProgramme.AutoSize = true;
-            this.LBL_NomProgramme.Location = new System.Drawing.Point(547, 45);
-            this.LBL_NomProgramme.Name = "LBL_NomProgramme";
-            this.LBL_NomProgramme.Size = new System.Drawing.Size(85, 13);
-            this.LBL_NomProgramme.TabIndex = 6;
-            this.LBL_NomProgramme.Text = "Nom Programme";
-            // 
-            // TXB_NomProgramme
-            // 
-            this.TXB_NomProgramme.Location = new System.Drawing.Point(552, 72);
-            this.TXB_NomProgramme.Name = "TXB_NomProgramme";
-            this.TXB_NomProgramme.Size = new System.Drawing.Size(112, 20);
-            this.TXB_NomProgramme.TabIndex = 7;
-            // 
-            // CBX_SelectClasse
-            // 
-            this.CBX_SelectClasse.FormattingEnabled = true;
-            this.CBX_SelectClasse.Location = new System.Drawing.Point(21, 41);
-            this.CBX_SelectClasse.Name = "CBX_SelectClasse";
-            this.CBX_SelectClasse.Size = new System.Drawing.Size(126, 21);
-            this.CBX_SelectClasse.TabIndex = 8;
-            // 
-            // CBX_SelectProgProf
-            // 
-            this.CBX_SelectProgProf.FormattingEnabled = true;
-            this.CBX_SelectProgProf.Location = new System.Drawing.Point(187, 41);
-            this.CBX_SelectProgProf.Name = "CBX_SelectProgProf";
-            this.CBX_SelectProgProf.Size = new System.Drawing.Size(126, 21);
-            this.CBX_SelectProgProf.TabIndex = 9;
-            // 
-            // CBX_SelectProgMatiere
-            // 
-            this.CBX_SelectProgMatiere.FormattingEnabled = true;
-            this.CBX_SelectProgMatiere.Location = new System.Drawing.Point(348, 37);
-            this.CBX_SelectProgMatiere.Name = "CBX_SelectProgMatiere";
-            this.CBX_SelectProgMatiere.Size = new System.Drawing.Size(126, 21);
-            this.CBX_SelectProgMatiere.TabIndex = 10;
-            // 
-            // CBX_HeureDebutProg
-            // 
-            this.CBX_HeureDebutProg.FormattingEnabled = true;
-            this.CBX_HeureDebutProg.Location = new System.Drawing.Point(187, 89);
-            this.CBX_HeureDebutProg.Name = "CBX_HeureDebutProg";
-            this.CBX_HeureDebutProg.Size = new System.Drawing.Size(132, 21);
-            this.CBX_HeureDebutProg.TabIndex = 14;
-            // 
-            // CBX_HeureFinProg
-            // 
-            this.CBX_HeureFinProg.FormattingEnabled = true;
-            this.CBX_HeureFinProg.Location = new System.Drawing.Point(348, 89);
-            this.CBX_HeureFinProg.Name = "CBX_HeureFinProg";
-            this.CBX_HeureFinProg.Size = new System.Drawing.Size(132, 21);
-            this.CBX_HeureFinProg.TabIndex = 15;
+            this.BTN_RechercheProg.Location = new System.Drawing.Point(575, 12);
+            this.BTN_RechercheProg.Name = "BTN_RechercheProg";
+            this.BTN_RechercheProg.Size = new System.Drawing.Size(120, 28);
+            this.BTN_RechercheProg.TabIndex = 6;
+            this.BTN_RechercheProg.Text = "Recherche";
+            this.BTN_RechercheProg.UseVisualStyleBackColor = true;
             // 
             // GBX_ListeProg
             // 
@@ -749,69 +669,108 @@
             this.DGV_ListeProgramme.Size = new System.Drawing.Size(680, 375);
             this.DGV_ListeProgramme.TabIndex = 0;
             // 
-            // GBX_RechercheProg
+            // GBX_FormProg
             // 
-            this.GBX_RechercheProg.Controls.Add(this.TXB_RechercheProg);
-            this.GBX_RechercheProg.Controls.Add(this.BTN_RechercheProg);
-            this.GBX_RechercheProg.Location = new System.Drawing.Point(18, 149);
-            this.GBX_RechercheProg.Name = "GBX_RechercheProg";
-            this.GBX_RechercheProg.Size = new System.Drawing.Size(701, 46);
-            this.GBX_RechercheProg.TabIndex = 8;
-            this.GBX_RechercheProg.TabStop = false;
-            this.GBX_RechercheProg.Text = "Recherche";
+            this.GBX_FormProg.Controls.Add(this.CBX_HeureFinProg);
+            this.GBX_FormProg.Controls.Add(this.CBX_HeureDebutProg);
+            this.GBX_FormProg.Controls.Add(this.CBX_SelectProgProfMatiere);
+            this.GBX_FormProg.Controls.Add(this.CBX_SelectClasse);
+            this.GBX_FormProg.Controls.Add(this.LBL_HeureFinProg);
+            this.GBX_FormProg.Controls.Add(this.LBL_HeureDebutProg);
+            this.GBX_FormProg.Controls.Add(this.DTP_Programme);
+            this.GBX_FormProg.Controls.Add(this.LBL_DateProg);
+            this.GBX_FormProg.Controls.Add(this.LBL_SelectProf);
+            this.GBX_FormProg.Controls.Add(this.LBL_SelectClasse);
+            this.GBX_FormProg.Location = new System.Drawing.Point(14, 14);
+            this.GBX_FormProg.Name = "GBX_FormProg";
+            this.GBX_FormProg.Size = new System.Drawing.Size(706, 129);
+            this.GBX_FormProg.TabIndex = 6;
+            this.GBX_FormProg.TabStop = false;
+            this.GBX_FormProg.Text = "Formulaire Programme";
             // 
-            // BTN_RechercheProg
+            // CBX_HeureFinProg
             // 
-            this.BTN_RechercheProg.Location = new System.Drawing.Point(575, 12);
-            this.BTN_RechercheProg.Name = "BTN_RechercheProg";
-            this.BTN_RechercheProg.Size = new System.Drawing.Size(120, 28);
-            this.BTN_RechercheProg.TabIndex = 6;
-            this.BTN_RechercheProg.Text = "Recherche";
-            this.BTN_RechercheProg.UseVisualStyleBackColor = true;
+            this.CBX_HeureFinProg.FormattingEnabled = true;
+            this.CBX_HeureFinProg.Location = new System.Drawing.Point(348, 89);
+            this.CBX_HeureFinProg.Name = "CBX_HeureFinProg";
+            this.CBX_HeureFinProg.Size = new System.Drawing.Size(132, 21);
+            this.CBX_HeureFinProg.TabIndex = 15;
             // 
-            // TXB_RechercheProg
+            // CBX_HeureDebutProg
             // 
-            this.TXB_RechercheProg.Location = new System.Drawing.Point(17, 18);
-            this.TXB_RechercheProg.Name = "TXB_RechercheProg";
-            this.TXB_RechercheProg.Size = new System.Drawing.Size(537, 20);
-            this.TXB_RechercheProg.TabIndex = 7;
+            this.CBX_HeureDebutProg.FormattingEnabled = true;
+            this.CBX_HeureDebutProg.Location = new System.Drawing.Point(187, 89);
+            this.CBX_HeureDebutProg.Name = "CBX_HeureDebutProg";
+            this.CBX_HeureDebutProg.Size = new System.Drawing.Size(132, 21);
+            this.CBX_HeureDebutProg.TabIndex = 14;
             // 
-            // BTN_EnregisterProg
+            // CBX_SelectProgProfMatiere
             // 
-            this.BTN_EnregisterProg.Location = new System.Drawing.Point(740, 55);
-            this.BTN_EnregisterProg.Name = "BTN_EnregisterProg";
-            this.BTN_EnregisterProg.Size = new System.Drawing.Size(120, 41);
-            this.BTN_EnregisterProg.TabIndex = 9;
-            this.BTN_EnregisterProg.Text = "Enregistrer";
-            this.BTN_EnregisterProg.UseVisualStyleBackColor = true;
+            this.CBX_SelectProgProfMatiere.FormattingEnabled = true;
+            this.CBX_SelectProgProfMatiere.Location = new System.Drawing.Point(187, 41);
+            this.CBX_SelectProgProfMatiere.Name = "CBX_SelectProgProfMatiere";
+            this.CBX_SelectProgProfMatiere.Size = new System.Drawing.Size(293, 21);
+            this.CBX_SelectProgProfMatiere.TabIndex = 9;
             // 
-            // BTN_SupprimerProg
+            // CBX_SelectClasse
             // 
-            this.BTN_SupprimerProg.Location = new System.Drawing.Point(740, 117);
-            this.BTN_SupprimerProg.Name = "BTN_SupprimerProg";
-            this.BTN_SupprimerProg.Size = new System.Drawing.Size(120, 41);
-            this.BTN_SupprimerProg.TabIndex = 10;
-            this.BTN_SupprimerProg.Text = "Supprimer";
-            this.BTN_SupprimerProg.UseVisualStyleBackColor = true;
+            this.CBX_SelectClasse.FormattingEnabled = true;
+            this.CBX_SelectClasse.Location = new System.Drawing.Point(21, 41);
+            this.CBX_SelectClasse.Name = "CBX_SelectClasse";
+            this.CBX_SelectClasse.Size = new System.Drawing.Size(126, 21);
+            this.CBX_SelectClasse.TabIndex = 8;
             // 
-            // BTN_AnnulerProg
+            // LBL_HeureFinProg
             // 
-            this.BTN_AnnulerProg.Location = new System.Drawing.Point(740, 185);
-            this.BTN_AnnulerProg.Name = "BTN_AnnulerProg";
-            this.BTN_AnnulerProg.Size = new System.Drawing.Size(120, 41);
-            this.BTN_AnnulerProg.TabIndex = 11;
-            this.BTN_AnnulerProg.Text = "Annuler";
-            this.BTN_AnnulerProg.UseVisualStyleBackColor = true;
+            this.LBL_HeureFinProg.AutoSize = true;
+            this.LBL_HeureFinProg.Location = new System.Drawing.Point(345, 73);
+            this.LBL_HeureFinProg.Name = "LBL_HeureFinProg";
+            this.LBL_HeureFinProg.Size = new System.Drawing.Size(68, 13);
+            this.LBL_HeureFinProg.TabIndex = 4;
+            this.LBL_HeureFinProg.Text = "Heure de Fin";
             // 
-            // label1
+            // LBL_HeureDebutProg
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(725, 260);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 143);
-            this.label1.TabIndex = 12;
-            this.label1.Text = resources.GetString("label1.Text");
+            this.LBL_HeureDebutProg.AutoSize = true;
+            this.LBL_HeureDebutProg.Location = new System.Drawing.Point(184, 73);
+            this.LBL_HeureDebutProg.Name = "LBL_HeureDebutProg";
+            this.LBL_HeureDebutProg.Size = new System.Drawing.Size(83, 13);
+            this.LBL_HeureDebutProg.TabIndex = 4;
+            this.LBL_HeureDebutProg.Text = "Heure de Debut";
+            // 
+            // DTP_Programme
+            // 
+            this.DTP_Programme.Location = new System.Drawing.Point(20, 90);
+            this.DTP_Programme.Name = "DTP_Programme";
+            this.DTP_Programme.Size = new System.Drawing.Size(129, 20);
+            this.DTP_Programme.TabIndex = 3;
+            // 
+            // LBL_DateProg
+            // 
+            this.LBL_DateProg.AutoSize = true;
+            this.LBL_DateProg.Location = new System.Drawing.Point(17, 74);
+            this.LBL_DateProg.Name = "LBL_DateProg";
+            this.LBL_DateProg.Size = new System.Drawing.Size(30, 13);
+            this.LBL_DateProg.TabIndex = 2;
+            this.LBL_DateProg.Text = "Date";
+            // 
+            // LBL_SelectProf
+            // 
+            this.LBL_SelectProf.AutoSize = true;
+            this.LBL_SelectProf.Location = new System.Drawing.Point(184, 16);
+            this.LBL_SelectProf.Name = "LBL_SelectProf";
+            this.LBL_SelectProf.Size = new System.Drawing.Size(142, 13);
+            this.LBL_SelectProf.TabIndex = 0;
+            this.LBL_SelectProf.Text = "Selection Professeur Matiere";
+            // 
+            // LBL_SelectClasse
+            // 
+            this.LBL_SelectClasse.AutoSize = true;
+            this.LBL_SelectClasse.Location = new System.Drawing.Point(18, 16);
+            this.LBL_SelectClasse.Name = "LBL_SelectClasse";
+            this.LBL_SelectClasse.Size = new System.Drawing.Size(85, 13);
+            this.LBL_SelectClasse.TabIndex = 0;
+            this.LBL_SelectClasse.Text = "Selection Classe";
             // 
             // TPG_Administrateur
             // 
@@ -829,108 +788,63 @@
             this.TPG_Administrateur.Text = "Administrateur";
             this.TPG_Administrateur.UseVisualStyleBackColor = true;
             // 
-            // GBX_FormAdmin
+            // BTN_AnnulerAdmin
             // 
-            this.GBX_FormAdmin.Controls.Add(this.CBX_TypeUtil);
-            this.GBX_FormAdmin.Controls.Add(this.LBL_TypeUtil);
-            this.GBX_FormAdmin.Controls.Add(this.TXB_MotDePasseAdmin);
-            this.GBX_FormAdmin.Controls.Add(this.LBL_MotDePasseAdmin);
-            this.GBX_FormAdmin.Controls.Add(this.TXB_LoginAdmin);
-            this.GBX_FormAdmin.Controls.Add(this.LBL_LoginAdmin);
-            this.GBX_FormAdmin.Controls.Add(this.TXB_PrenomAdmin);
-            this.GBX_FormAdmin.Controls.Add(this.LBL_PrenomAdmin);
-            this.GBX_FormAdmin.Controls.Add(this.TXB_NomAdmin);
-            this.GBX_FormAdmin.Controls.Add(this.LBL_NomAdmin);
-            this.GBX_FormAdmin.Location = new System.Drawing.Point(14, 14);
-            this.GBX_FormAdmin.Name = "GBX_FormAdmin";
-            this.GBX_FormAdmin.Size = new System.Drawing.Size(706, 119);
-            this.GBX_FormAdmin.TabIndex = 6;
-            this.GBX_FormAdmin.TabStop = false;
-            this.GBX_FormAdmin.Text = "Formulaire Administrateur";
+            this.BTN_AnnulerAdmin.Location = new System.Drawing.Point(740, 185);
+            this.BTN_AnnulerAdmin.Name = "BTN_AnnulerAdmin";
+            this.BTN_AnnulerAdmin.Size = new System.Drawing.Size(120, 41);
+            this.BTN_AnnulerAdmin.TabIndex = 11;
+            this.BTN_AnnulerAdmin.Text = "Annuler";
+            this.BTN_AnnulerAdmin.UseVisualStyleBackColor = true;
+            this.BTN_AnnulerAdmin.Click += new System.EventHandler(this.BTN_AnnulerAdmin_Click);
             // 
-            // LBL_NomAdmin
+            // BTN_SupprimerAdmin
             // 
-            this.LBL_NomAdmin.AutoSize = true;
-            this.LBL_NomAdmin.Location = new System.Drawing.Point(25, 34);
-            this.LBL_NomAdmin.Name = "LBL_NomAdmin";
-            this.LBL_NomAdmin.Size = new System.Drawing.Size(29, 13);
-            this.LBL_NomAdmin.TabIndex = 0;
-            this.LBL_NomAdmin.Text = "Nom";
+            this.BTN_SupprimerAdmin.Location = new System.Drawing.Point(740, 117);
+            this.BTN_SupprimerAdmin.Name = "BTN_SupprimerAdmin";
+            this.BTN_SupprimerAdmin.Size = new System.Drawing.Size(120, 41);
+            this.BTN_SupprimerAdmin.TabIndex = 10;
+            this.BTN_SupprimerAdmin.Text = "Supprimer";
+            this.BTN_SupprimerAdmin.UseVisualStyleBackColor = true;
+            this.BTN_SupprimerAdmin.Click += new System.EventHandler(this.BTN_SupprimerAdmin_Click);
             // 
-            // TXB_NomAdmin
+            // BTN_EnregisterAdmin
             // 
-            this.TXB_NomAdmin.Location = new System.Drawing.Point(121, 32);
-            this.TXB_NomAdmin.Name = "TXB_NomAdmin";
-            this.TXB_NomAdmin.Size = new System.Drawing.Size(114, 20);
-            this.TXB_NomAdmin.TabIndex = 1;
+            this.BTN_EnregisterAdmin.Location = new System.Drawing.Point(740, 55);
+            this.BTN_EnregisterAdmin.Name = "BTN_EnregisterAdmin";
+            this.BTN_EnregisterAdmin.Size = new System.Drawing.Size(120, 41);
+            this.BTN_EnregisterAdmin.TabIndex = 9;
+            this.BTN_EnregisterAdmin.Text = "Enregistrer";
+            this.BTN_EnregisterAdmin.UseVisualStyleBackColor = true;
+            this.BTN_EnregisterAdmin.Click += new System.EventHandler(this.BTN_EnregisterAdmin_Click);
             // 
-            // LBL_PrenomAdmin
+            // GBX_RechercheAdmin
             // 
-            this.LBL_PrenomAdmin.AutoSize = true;
-            this.LBL_PrenomAdmin.Location = new System.Drawing.Point(25, 75);
-            this.LBL_PrenomAdmin.Name = "LBL_PrenomAdmin";
-            this.LBL_PrenomAdmin.Size = new System.Drawing.Size(43, 13);
-            this.LBL_PrenomAdmin.TabIndex = 2;
-            this.LBL_PrenomAdmin.Text = "Prenom";
+            this.GBX_RechercheAdmin.Controls.Add(this.TXB_RechercheAdmin);
+            this.GBX_RechercheAdmin.Controls.Add(this.BTN_RechercheAdmin);
+            this.GBX_RechercheAdmin.Location = new System.Drawing.Point(18, 139);
+            this.GBX_RechercheAdmin.Name = "GBX_RechercheAdmin";
+            this.GBX_RechercheAdmin.Size = new System.Drawing.Size(701, 46);
+            this.GBX_RechercheAdmin.TabIndex = 8;
+            this.GBX_RechercheAdmin.TabStop = false;
+            this.GBX_RechercheAdmin.Text = "Recherche";
             // 
-            // TXB_PrenomAdmin
+            // TXB_RechercheAdmin
             // 
-            this.TXB_PrenomAdmin.Location = new System.Drawing.Point(121, 73);
-            this.TXB_PrenomAdmin.Name = "TXB_PrenomAdmin";
-            this.TXB_PrenomAdmin.Size = new System.Drawing.Size(114, 20);
-            this.TXB_PrenomAdmin.TabIndex = 3;
+            this.TXB_RechercheAdmin.Location = new System.Drawing.Point(17, 18);
+            this.TXB_RechercheAdmin.Name = "TXB_RechercheAdmin";
+            this.TXB_RechercheAdmin.Size = new System.Drawing.Size(537, 20);
+            this.TXB_RechercheAdmin.TabIndex = 7;
             // 
-            // LBL_LoginAdmin
+            // BTN_RechercheAdmin
             // 
-            this.LBL_LoginAdmin.AutoSize = true;
-            this.LBL_LoginAdmin.Location = new System.Drawing.Point(483, 34);
-            this.LBL_LoginAdmin.Name = "LBL_LoginAdmin";
-            this.LBL_LoginAdmin.Size = new System.Drawing.Size(33, 13);
-            this.LBL_LoginAdmin.TabIndex = 4;
-            this.LBL_LoginAdmin.Text = "Login";
-            // 
-            // TXB_LoginAdmin
-            // 
-            this.TXB_LoginAdmin.Location = new System.Drawing.Point(579, 32);
-            this.TXB_LoginAdmin.Name = "TXB_LoginAdmin";
-            this.TXB_LoginAdmin.Size = new System.Drawing.Size(114, 20);
-            this.TXB_LoginAdmin.TabIndex = 5;
-            // 
-            // LBL_MotDePasseAdmin
-            // 
-            this.LBL_MotDePasseAdmin.AutoSize = true;
-            this.LBL_MotDePasseAdmin.Location = new System.Drawing.Point(483, 75);
-            this.LBL_MotDePasseAdmin.Name = "LBL_MotDePasseAdmin";
-            this.LBL_MotDePasseAdmin.Size = new System.Drawing.Size(74, 13);
-            this.LBL_MotDePasseAdmin.TabIndex = 6;
-            this.LBL_MotDePasseAdmin.Text = "Mot De Passe";
-            // 
-            // TXB_MotDePasseAdmin
-            // 
-            this.TXB_MotDePasseAdmin.Location = new System.Drawing.Point(579, 73);
-            this.TXB_MotDePasseAdmin.Name = "TXB_MotDePasseAdmin";
-            this.TXB_MotDePasseAdmin.Size = new System.Drawing.Size(114, 20);
-            this.TXB_MotDePasseAdmin.TabIndex = 7;
-            // 
-            // LBL_TypeUtil
-            // 
-            this.LBL_TypeUtil.AutoSize = true;
-            this.LBL_TypeUtil.Location = new System.Drawing.Point(317, 34);
-            this.LBL_TypeUtil.Name = "LBL_TypeUtil";
-            this.LBL_TypeUtil.Size = new System.Drawing.Size(80, 13);
-            this.LBL_TypeUtil.TabIndex = 8;
-            this.LBL_TypeUtil.Text = "Type Utilisateur";
-            // 
-            // CBX_TypeUtil
-            // 
-            this.CBX_TypeUtil.FormattingEnabled = true;
-            this.CBX_TypeUtil.Items.AddRange(new object[] {
-            "Administrateur",
-            "Utilisateur"});
-            this.CBX_TypeUtil.Location = new System.Drawing.Point(291, 60);
-            this.CBX_TypeUtil.Name = "CBX_TypeUtil";
-            this.CBX_TypeUtil.Size = new System.Drawing.Size(167, 21);
-            this.CBX_TypeUtil.TabIndex = 9;
+            this.BTN_RechercheAdmin.Location = new System.Drawing.Point(575, 12);
+            this.BTN_RechercheAdmin.Name = "BTN_RechercheAdmin";
+            this.BTN_RechercheAdmin.Size = new System.Drawing.Size(120, 28);
+            this.BTN_RechercheAdmin.TabIndex = 6;
+            this.BTN_RechercheAdmin.Text = "Recherche";
+            this.BTN_RechercheAdmin.UseVisualStyleBackColor = true;
+            this.BTN_RechercheAdmin.Click += new System.EventHandler(this.BTN_RechercheAdmin_Click);
             // 
             // GBX_ListeAdmin
             // 
@@ -955,63 +869,108 @@
             this.DGV_ListeAdmin.TabIndex = 0;
             this.DGV_ListeAdmin.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_ListeAdmin_CellContentDoubleClick);
             // 
-            // GBX_RechercheAdmin
+            // GBX_FormAdmin
             // 
-            this.GBX_RechercheAdmin.Controls.Add(this.TXB_RechercheAdmin);
-            this.GBX_RechercheAdmin.Controls.Add(this.BTN_RechercheAdmin);
-            this.GBX_RechercheAdmin.Location = new System.Drawing.Point(18, 139);
-            this.GBX_RechercheAdmin.Name = "GBX_RechercheAdmin";
-            this.GBX_RechercheAdmin.Size = new System.Drawing.Size(701, 46);
-            this.GBX_RechercheAdmin.TabIndex = 8;
-            this.GBX_RechercheAdmin.TabStop = false;
-            this.GBX_RechercheAdmin.Text = "Recherche";
+            this.GBX_FormAdmin.Controls.Add(this.CBX_TypeUtil);
+            this.GBX_FormAdmin.Controls.Add(this.LBL_TypeUtil);
+            this.GBX_FormAdmin.Controls.Add(this.TXB_MotDePasseAdmin);
+            this.GBX_FormAdmin.Controls.Add(this.LBL_MotDePasseAdmin);
+            this.GBX_FormAdmin.Controls.Add(this.TXB_LoginAdmin);
+            this.GBX_FormAdmin.Controls.Add(this.LBL_LoginAdmin);
+            this.GBX_FormAdmin.Controls.Add(this.TXB_PrenomAdmin);
+            this.GBX_FormAdmin.Controls.Add(this.LBL_PrenomAdmin);
+            this.GBX_FormAdmin.Controls.Add(this.TXB_NomAdmin);
+            this.GBX_FormAdmin.Controls.Add(this.LBL_NomAdmin);
+            this.GBX_FormAdmin.Location = new System.Drawing.Point(14, 14);
+            this.GBX_FormAdmin.Name = "GBX_FormAdmin";
+            this.GBX_FormAdmin.Size = new System.Drawing.Size(706, 119);
+            this.GBX_FormAdmin.TabIndex = 6;
+            this.GBX_FormAdmin.TabStop = false;
+            this.GBX_FormAdmin.Text = "Formulaire Administrateur";
             // 
-            // BTN_RechercheAdmin
+            // CBX_TypeUtil
             // 
-            this.BTN_RechercheAdmin.Location = new System.Drawing.Point(575, 12);
-            this.BTN_RechercheAdmin.Name = "BTN_RechercheAdmin";
-            this.BTN_RechercheAdmin.Size = new System.Drawing.Size(120, 28);
-            this.BTN_RechercheAdmin.TabIndex = 6;
-            this.BTN_RechercheAdmin.Text = "Recherche";
-            this.BTN_RechercheAdmin.UseVisualStyleBackColor = true;
-            this.BTN_RechercheAdmin.Click += new System.EventHandler(this.BTN_RechercheAdmin_Click);
+            this.CBX_TypeUtil.FormattingEnabled = true;
+            this.CBX_TypeUtil.Items.AddRange(new object[] {
+            "Administrateur",
+            "Utilisateur"});
+            this.CBX_TypeUtil.Location = new System.Drawing.Point(291, 60);
+            this.CBX_TypeUtil.Name = "CBX_TypeUtil";
+            this.CBX_TypeUtil.Size = new System.Drawing.Size(167, 21);
+            this.CBX_TypeUtil.TabIndex = 9;
             // 
-            // TXB_RechercheAdmin
+            // LBL_TypeUtil
             // 
-            this.TXB_RechercheAdmin.Location = new System.Drawing.Point(17, 18);
-            this.TXB_RechercheAdmin.Name = "TXB_RechercheAdmin";
-            this.TXB_RechercheAdmin.Size = new System.Drawing.Size(537, 20);
-            this.TXB_RechercheAdmin.TabIndex = 7;
+            this.LBL_TypeUtil.AutoSize = true;
+            this.LBL_TypeUtil.Location = new System.Drawing.Point(317, 34);
+            this.LBL_TypeUtil.Name = "LBL_TypeUtil";
+            this.LBL_TypeUtil.Size = new System.Drawing.Size(80, 13);
+            this.LBL_TypeUtil.TabIndex = 8;
+            this.LBL_TypeUtil.Text = "Type Utilisateur";
             // 
-            // BTN_EnregisterAdmin
+            // TXB_MotDePasseAdmin
             // 
-            this.BTN_EnregisterAdmin.Location = new System.Drawing.Point(740, 55);
-            this.BTN_EnregisterAdmin.Name = "BTN_EnregisterAdmin";
-            this.BTN_EnregisterAdmin.Size = new System.Drawing.Size(120, 41);
-            this.BTN_EnregisterAdmin.TabIndex = 9;
-            this.BTN_EnregisterAdmin.Text = "Enregistrer";
-            this.BTN_EnregisterAdmin.UseVisualStyleBackColor = true;
-            this.BTN_EnregisterAdmin.Click += new System.EventHandler(this.BTN_EnregisterAdmin_Click);
+            this.TXB_MotDePasseAdmin.Location = new System.Drawing.Point(579, 73);
+            this.TXB_MotDePasseAdmin.Name = "TXB_MotDePasseAdmin";
+            this.TXB_MotDePasseAdmin.Size = new System.Drawing.Size(114, 20);
+            this.TXB_MotDePasseAdmin.TabIndex = 7;
             // 
-            // BTN_SupprimerAdmin
+            // LBL_MotDePasseAdmin
             // 
-            this.BTN_SupprimerAdmin.Location = new System.Drawing.Point(740, 117);
-            this.BTN_SupprimerAdmin.Name = "BTN_SupprimerAdmin";
-            this.BTN_SupprimerAdmin.Size = new System.Drawing.Size(120, 41);
-            this.BTN_SupprimerAdmin.TabIndex = 10;
-            this.BTN_SupprimerAdmin.Text = "Supprimer";
-            this.BTN_SupprimerAdmin.UseVisualStyleBackColor = true;
-            this.BTN_SupprimerAdmin.Click += new System.EventHandler(this.BTN_SupprimerAdmin_Click);
+            this.LBL_MotDePasseAdmin.AutoSize = true;
+            this.LBL_MotDePasseAdmin.Location = new System.Drawing.Point(483, 75);
+            this.LBL_MotDePasseAdmin.Name = "LBL_MotDePasseAdmin";
+            this.LBL_MotDePasseAdmin.Size = new System.Drawing.Size(74, 13);
+            this.LBL_MotDePasseAdmin.TabIndex = 6;
+            this.LBL_MotDePasseAdmin.Text = "Mot De Passe";
             // 
-            // BTN_AnnulerAdmin
+            // TXB_LoginAdmin
             // 
-            this.BTN_AnnulerAdmin.Location = new System.Drawing.Point(740, 185);
-            this.BTN_AnnulerAdmin.Name = "BTN_AnnulerAdmin";
-            this.BTN_AnnulerAdmin.Size = new System.Drawing.Size(120, 41);
-            this.BTN_AnnulerAdmin.TabIndex = 11;
-            this.BTN_AnnulerAdmin.Text = "Annuler";
-            this.BTN_AnnulerAdmin.UseVisualStyleBackColor = true;
-            this.BTN_AnnulerAdmin.Click += new System.EventHandler(this.BTN_AnnulerAdmin_Click);
+            this.TXB_LoginAdmin.Location = new System.Drawing.Point(579, 32);
+            this.TXB_LoginAdmin.Name = "TXB_LoginAdmin";
+            this.TXB_LoginAdmin.Size = new System.Drawing.Size(114, 20);
+            this.TXB_LoginAdmin.TabIndex = 5;
+            // 
+            // LBL_LoginAdmin
+            // 
+            this.LBL_LoginAdmin.AutoSize = true;
+            this.LBL_LoginAdmin.Location = new System.Drawing.Point(483, 34);
+            this.LBL_LoginAdmin.Name = "LBL_LoginAdmin";
+            this.LBL_LoginAdmin.Size = new System.Drawing.Size(33, 13);
+            this.LBL_LoginAdmin.TabIndex = 4;
+            this.LBL_LoginAdmin.Text = "Login";
+            // 
+            // TXB_PrenomAdmin
+            // 
+            this.TXB_PrenomAdmin.Location = new System.Drawing.Point(121, 73);
+            this.TXB_PrenomAdmin.Name = "TXB_PrenomAdmin";
+            this.TXB_PrenomAdmin.Size = new System.Drawing.Size(114, 20);
+            this.TXB_PrenomAdmin.TabIndex = 3;
+            // 
+            // LBL_PrenomAdmin
+            // 
+            this.LBL_PrenomAdmin.AutoSize = true;
+            this.LBL_PrenomAdmin.Location = new System.Drawing.Point(25, 75);
+            this.LBL_PrenomAdmin.Name = "LBL_PrenomAdmin";
+            this.LBL_PrenomAdmin.Size = new System.Drawing.Size(43, 13);
+            this.LBL_PrenomAdmin.TabIndex = 2;
+            this.LBL_PrenomAdmin.Text = "Prenom";
+            // 
+            // TXB_NomAdmin
+            // 
+            this.TXB_NomAdmin.Location = new System.Drawing.Point(121, 32);
+            this.TXB_NomAdmin.Name = "TXB_NomAdmin";
+            this.TXB_NomAdmin.Size = new System.Drawing.Size(114, 20);
+            this.TXB_NomAdmin.TabIndex = 1;
+            // 
+            // LBL_NomAdmin
+            // 
+            this.LBL_NomAdmin.AutoSize = true;
+            this.LBL_NomAdmin.Location = new System.Drawing.Point(25, 34);
+            this.LBL_NomAdmin.Name = "LBL_NomAdmin";
+            this.LBL_NomAdmin.Size = new System.Drawing.Size(29, 13);
+            this.LBL_NomAdmin.TabIndex = 0;
+            this.LBL_NomAdmin.Text = "Nom";
             // 
             // TPG_Classe
             // 
@@ -1029,90 +988,63 @@
             this.TPG_Classe.Text = "Classe";
             this.TPG_Classe.UseVisualStyleBackColor = true;
             // 
-            // GBX_FormClasse
+            // BTN_AnnulerClasse
             // 
-            this.GBX_FormClasse.Controls.Add(this.TXB_NomClasse);
-            this.GBX_FormClasse.Controls.Add(this.LBL_NomClasse);
-            this.GBX_FormClasse.Controls.Add(this.CBX_CycleClasse);
-            this.GBX_FormClasse.Controls.Add(this.LBL_CycleClasse);
-            this.GBX_FormClasse.Controls.Add(this.TXB_DescriptionClasse);
-            this.GBX_FormClasse.Controls.Add(this.LBL_DescriptionClasse);
-            this.GBX_FormClasse.Controls.Add(this.TXB_CodeClasse);
-            this.GBX_FormClasse.Controls.Add(this.LBL_CodeClasse);
-            this.GBX_FormClasse.Location = new System.Drawing.Point(14, 14);
-            this.GBX_FormClasse.Name = "GBX_FormClasse";
-            this.GBX_FormClasse.Size = new System.Drawing.Size(706, 73);
-            this.GBX_FormClasse.TabIndex = 6;
-            this.GBX_FormClasse.TabStop = false;
-            this.GBX_FormClasse.Text = "Formulaire Classe";
+            this.BTN_AnnulerClasse.Location = new System.Drawing.Point(740, 185);
+            this.BTN_AnnulerClasse.Name = "BTN_AnnulerClasse";
+            this.BTN_AnnulerClasse.Size = new System.Drawing.Size(120, 41);
+            this.BTN_AnnulerClasse.TabIndex = 11;
+            this.BTN_AnnulerClasse.Text = "Annuler";
+            this.BTN_AnnulerClasse.UseVisualStyleBackColor = true;
+            this.BTN_AnnulerClasse.Click += new System.EventHandler(this.BTN_AnnulerClasse_Click);
             // 
-            // LBL_CodeClasse
+            // BTN_SupprimerClasse
             // 
-            this.LBL_CodeClasse.AutoSize = true;
-            this.LBL_CodeClasse.Location = new System.Drawing.Point(216, 32);
-            this.LBL_CodeClasse.Name = "LBL_CodeClasse";
-            this.LBL_CodeClasse.Size = new System.Drawing.Size(32, 13);
-            this.LBL_CodeClasse.TabIndex = 2;
-            this.LBL_CodeClasse.Text = "Code";
+            this.BTN_SupprimerClasse.Location = new System.Drawing.Point(740, 117);
+            this.BTN_SupprimerClasse.Name = "BTN_SupprimerClasse";
+            this.BTN_SupprimerClasse.Size = new System.Drawing.Size(120, 41);
+            this.BTN_SupprimerClasse.TabIndex = 10;
+            this.BTN_SupprimerClasse.Text = "Supprimer";
+            this.BTN_SupprimerClasse.UseVisualStyleBackColor = true;
+            this.BTN_SupprimerClasse.Click += new System.EventHandler(this.BTN_SupprimerClasse_Click_1);
             // 
-            // TXB_CodeClasse
+            // BTN_EnregisterClasse
             // 
-            this.TXB_CodeClasse.Location = new System.Drawing.Point(254, 29);
-            this.TXB_CodeClasse.Name = "TXB_CodeClasse";
-            this.TXB_CodeClasse.Size = new System.Drawing.Size(102, 20);
-            this.TXB_CodeClasse.TabIndex = 3;
+            this.BTN_EnregisterClasse.Location = new System.Drawing.Point(740, 55);
+            this.BTN_EnregisterClasse.Name = "BTN_EnregisterClasse";
+            this.BTN_EnregisterClasse.Size = new System.Drawing.Size(120, 41);
+            this.BTN_EnregisterClasse.TabIndex = 9;
+            this.BTN_EnregisterClasse.Text = "Enregistrer";
+            this.BTN_EnregisterClasse.UseVisualStyleBackColor = true;
+            this.BTN_EnregisterClasse.Click += new System.EventHandler(this.BTN_EnregisterClasse_Click);
             // 
-            // LBL_DescriptionClasse
+            // GBX_RechercheClasse
             // 
-            this.LBL_DescriptionClasse.AutoSize = true;
-            this.LBL_DescriptionClasse.Location = new System.Drawing.Point(528, 32);
-            this.LBL_DescriptionClasse.Name = "LBL_DescriptionClasse";
-            this.LBL_DescriptionClasse.Size = new System.Drawing.Size(60, 13);
-            this.LBL_DescriptionClasse.TabIndex = 4;
-            this.LBL_DescriptionClasse.Text = "Description";
+            this.GBX_RechercheClasse.Controls.Add(this.TXB_RechercheClasse);
+            this.GBX_RechercheClasse.Controls.Add(this.BTN_RechercheClasse);
+            this.GBX_RechercheClasse.Location = new System.Drawing.Point(14, 93);
+            this.GBX_RechercheClasse.Name = "GBX_RechercheClasse";
+            this.GBX_RechercheClasse.Size = new System.Drawing.Size(701, 46);
+            this.GBX_RechercheClasse.TabIndex = 8;
+            this.GBX_RechercheClasse.TabStop = false;
+            this.GBX_RechercheClasse.Text = "Recherche";
             // 
-            // TXB_DescriptionClasse
+            // TXB_RechercheClasse
             // 
-            this.TXB_DescriptionClasse.Location = new System.Drawing.Point(598, 29);
-            this.TXB_DescriptionClasse.Name = "TXB_DescriptionClasse";
-            this.TXB_DescriptionClasse.Size = new System.Drawing.Size(102, 20);
-            this.TXB_DescriptionClasse.TabIndex = 5;
+            this.TXB_RechercheClasse.Location = new System.Drawing.Point(17, 18);
+            this.TXB_RechercheClasse.Name = "TXB_RechercheClasse";
+            this.TXB_RechercheClasse.Size = new System.Drawing.Size(537, 20);
+            this.TXB_RechercheClasse.TabIndex = 7;
             // 
-            // LBL_CycleClasse
+            // BTN_RechercheClasse
             // 
-            this.LBL_CycleClasse.AutoSize = true;
-            this.LBL_CycleClasse.Location = new System.Drawing.Point(362, 32);
-            this.LBL_CycleClasse.Name = "LBL_CycleClasse";
-            this.LBL_CycleClasse.Size = new System.Drawing.Size(33, 13);
-            this.LBL_CycleClasse.TabIndex = 6;
-            this.LBL_CycleClasse.Text = "Cycle";
-            // 
-            // CBX_CycleClasse
-            // 
-            this.CBX_CycleClasse.FormattingEnabled = true;
-            this.CBX_CycleClasse.Items.AddRange(new object[] {
-            "1",
-            "2"});
-            this.CBX_CycleClasse.Location = new System.Drawing.Point(401, 29);
-            this.CBX_CycleClasse.Name = "CBX_CycleClasse";
-            this.CBX_CycleClasse.Size = new System.Drawing.Size(121, 21);
-            this.CBX_CycleClasse.TabIndex = 8;
-            // 
-            // LBL_NomClasse
-            // 
-            this.LBL_NomClasse.AutoSize = true;
-            this.LBL_NomClasse.Location = new System.Drawing.Point(39, 33);
-            this.LBL_NomClasse.Name = "LBL_NomClasse";
-            this.LBL_NomClasse.Size = new System.Drawing.Size(29, 13);
-            this.LBL_NomClasse.TabIndex = 9;
-            this.LBL_NomClasse.Text = "Nom";
-            // 
-            // TXB_NomClasse
-            // 
-            this.TXB_NomClasse.Location = new System.Drawing.Point(74, 30);
-            this.TXB_NomClasse.Name = "TXB_NomClasse";
-            this.TXB_NomClasse.Size = new System.Drawing.Size(102, 20);
-            this.TXB_NomClasse.TabIndex = 10;
+            this.BTN_RechercheClasse.Location = new System.Drawing.Point(575, 12);
+            this.BTN_RechercheClasse.Name = "BTN_RechercheClasse";
+            this.BTN_RechercheClasse.Size = new System.Drawing.Size(120, 28);
+            this.BTN_RechercheClasse.TabIndex = 6;
+            this.BTN_RechercheClasse.Text = "Recherche";
+            this.BTN_RechercheClasse.UseVisualStyleBackColor = true;
+            this.BTN_RechercheClasse.Click += new System.EventHandler(this.BTN_RechercheClasse_Click);
             // 
             // GBX_ListeClasse
             // 
@@ -1137,63 +1069,90 @@
             this.DGV_ListeClasse.TabIndex = 0;
             this.DGV_ListeClasse.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_ListeClasse_CellContentDoubleClick);
             // 
-            // GBX_RechercheClasse
+            // GBX_FormClasse
             // 
-            this.GBX_RechercheClasse.Controls.Add(this.TXB_RechercheClasse);
-            this.GBX_RechercheClasse.Controls.Add(this.BTN_RechercheClasse);
-            this.GBX_RechercheClasse.Location = new System.Drawing.Point(14, 93);
-            this.GBX_RechercheClasse.Name = "GBX_RechercheClasse";
-            this.GBX_RechercheClasse.Size = new System.Drawing.Size(701, 46);
-            this.GBX_RechercheClasse.TabIndex = 8;
-            this.GBX_RechercheClasse.TabStop = false;
-            this.GBX_RechercheClasse.Text = "Recherche";
+            this.GBX_FormClasse.Controls.Add(this.TXB_NomClasse);
+            this.GBX_FormClasse.Controls.Add(this.LBL_NomClasse);
+            this.GBX_FormClasse.Controls.Add(this.CBX_CycleClasse);
+            this.GBX_FormClasse.Controls.Add(this.LBL_CycleClasse);
+            this.GBX_FormClasse.Controls.Add(this.TXB_DescriptionClasse);
+            this.GBX_FormClasse.Controls.Add(this.LBL_DescriptionClasse);
+            this.GBX_FormClasse.Controls.Add(this.TXB_CodeClasse);
+            this.GBX_FormClasse.Controls.Add(this.LBL_CodeClasse);
+            this.GBX_FormClasse.Location = new System.Drawing.Point(14, 14);
+            this.GBX_FormClasse.Name = "GBX_FormClasse";
+            this.GBX_FormClasse.Size = new System.Drawing.Size(706, 73);
+            this.GBX_FormClasse.TabIndex = 6;
+            this.GBX_FormClasse.TabStop = false;
+            this.GBX_FormClasse.Text = "Formulaire Classe";
             // 
-            // BTN_RechercheClasse
+            // TXB_NomClasse
             // 
-            this.BTN_RechercheClasse.Location = new System.Drawing.Point(575, 12);
-            this.BTN_RechercheClasse.Name = "BTN_RechercheClasse";
-            this.BTN_RechercheClasse.Size = new System.Drawing.Size(120, 28);
-            this.BTN_RechercheClasse.TabIndex = 6;
-            this.BTN_RechercheClasse.Text = "Recherche";
-            this.BTN_RechercheClasse.UseVisualStyleBackColor = true;
-            this.BTN_RechercheClasse.Click += new System.EventHandler(this.BTN_RechercheClasse_Click);
+            this.TXB_NomClasse.Location = new System.Drawing.Point(74, 30);
+            this.TXB_NomClasse.Name = "TXB_NomClasse";
+            this.TXB_NomClasse.Size = new System.Drawing.Size(102, 20);
+            this.TXB_NomClasse.TabIndex = 10;
             // 
-            // TXB_RechercheClasse
+            // LBL_NomClasse
             // 
-            this.TXB_RechercheClasse.Location = new System.Drawing.Point(17, 18);
-            this.TXB_RechercheClasse.Name = "TXB_RechercheClasse";
-            this.TXB_RechercheClasse.Size = new System.Drawing.Size(537, 20);
-            this.TXB_RechercheClasse.TabIndex = 7;
+            this.LBL_NomClasse.AutoSize = true;
+            this.LBL_NomClasse.Location = new System.Drawing.Point(39, 33);
+            this.LBL_NomClasse.Name = "LBL_NomClasse";
+            this.LBL_NomClasse.Size = new System.Drawing.Size(29, 13);
+            this.LBL_NomClasse.TabIndex = 9;
+            this.LBL_NomClasse.Text = "Nom";
             // 
-            // BTN_EnregisterClasse
+            // CBX_CycleClasse
             // 
-            this.BTN_EnregisterClasse.Location = new System.Drawing.Point(740, 55);
-            this.BTN_EnregisterClasse.Name = "BTN_EnregisterClasse";
-            this.BTN_EnregisterClasse.Size = new System.Drawing.Size(120, 41);
-            this.BTN_EnregisterClasse.TabIndex = 9;
-            this.BTN_EnregisterClasse.Text = "Enregistrer";
-            this.BTN_EnregisterClasse.UseVisualStyleBackColor = true;
-            this.BTN_EnregisterClasse.Click += new System.EventHandler(this.BTN_EnregisterClasse_Click);
+            this.CBX_CycleClasse.FormattingEnabled = true;
+            this.CBX_CycleClasse.Items.AddRange(new object[] {
+            "1",
+            "2"});
+            this.CBX_CycleClasse.Location = new System.Drawing.Point(401, 29);
+            this.CBX_CycleClasse.Name = "CBX_CycleClasse";
+            this.CBX_CycleClasse.Size = new System.Drawing.Size(121, 21);
+            this.CBX_CycleClasse.TabIndex = 8;
             // 
-            // BTN_SupprimerClasse
+            // LBL_CycleClasse
             // 
-            this.BTN_SupprimerClasse.Location = new System.Drawing.Point(740, 117);
-            this.BTN_SupprimerClasse.Name = "BTN_SupprimerClasse";
-            this.BTN_SupprimerClasse.Size = new System.Drawing.Size(120, 41);
-            this.BTN_SupprimerClasse.TabIndex = 10;
-            this.BTN_SupprimerClasse.Text = "Supprimer";
-            this.BTN_SupprimerClasse.UseVisualStyleBackColor = true;
-            this.BTN_SupprimerClasse.Click += new System.EventHandler(this.BTN_SupprimerClasse_Click_1);
+            this.LBL_CycleClasse.AutoSize = true;
+            this.LBL_CycleClasse.Location = new System.Drawing.Point(362, 32);
+            this.LBL_CycleClasse.Name = "LBL_CycleClasse";
+            this.LBL_CycleClasse.Size = new System.Drawing.Size(33, 13);
+            this.LBL_CycleClasse.TabIndex = 6;
+            this.LBL_CycleClasse.Text = "Cycle";
             // 
-            // BTN_AnnulerClasse
+            // TXB_DescriptionClasse
             // 
-            this.BTN_AnnulerClasse.Location = new System.Drawing.Point(740, 185);
-            this.BTN_AnnulerClasse.Name = "BTN_AnnulerClasse";
-            this.BTN_AnnulerClasse.Size = new System.Drawing.Size(120, 41);
-            this.BTN_AnnulerClasse.TabIndex = 11;
-            this.BTN_AnnulerClasse.Text = "Annuler";
-            this.BTN_AnnulerClasse.UseVisualStyleBackColor = true;
-            this.BTN_AnnulerClasse.Click += new System.EventHandler(this.BTN_AnnulerClasse_Click);
+            this.TXB_DescriptionClasse.Location = new System.Drawing.Point(598, 29);
+            this.TXB_DescriptionClasse.Name = "TXB_DescriptionClasse";
+            this.TXB_DescriptionClasse.Size = new System.Drawing.Size(102, 20);
+            this.TXB_DescriptionClasse.TabIndex = 5;
+            // 
+            // LBL_DescriptionClasse
+            // 
+            this.LBL_DescriptionClasse.AutoSize = true;
+            this.LBL_DescriptionClasse.Location = new System.Drawing.Point(528, 32);
+            this.LBL_DescriptionClasse.Name = "LBL_DescriptionClasse";
+            this.LBL_DescriptionClasse.Size = new System.Drawing.Size(60, 13);
+            this.LBL_DescriptionClasse.TabIndex = 4;
+            this.LBL_DescriptionClasse.Text = "Description";
+            // 
+            // TXB_CodeClasse
+            // 
+            this.TXB_CodeClasse.Location = new System.Drawing.Point(254, 29);
+            this.TXB_CodeClasse.Name = "TXB_CodeClasse";
+            this.TXB_CodeClasse.Size = new System.Drawing.Size(102, 20);
+            this.TXB_CodeClasse.TabIndex = 3;
+            // 
+            // LBL_CodeClasse
+            // 
+            this.LBL_CodeClasse.AutoSize = true;
+            this.LBL_CodeClasse.Location = new System.Drawing.Point(216, 32);
+            this.LBL_CodeClasse.Name = "LBL_CodeClasse";
+            this.LBL_CodeClasse.Size = new System.Drawing.Size(32, 13);
+            this.LBL_CodeClasse.TabIndex = 2;
+            this.LBL_CodeClasse.Text = "Code";
             // 
             // TPG_Matiere
             // 
@@ -1211,50 +1170,63 @@
             this.TPG_Matiere.Text = "Matiere";
             this.TPG_Matiere.UseVisualStyleBackColor = true;
             // 
-            // GBX_FormMatiere
+            // BTN_AnnulerMatiere
             // 
-            this.GBX_FormMatiere.Controls.Add(this.TXB_NomMatiere);
-            this.GBX_FormMatiere.Controls.Add(this.LBL_NomMatiere);
-            this.GBX_FormMatiere.Controls.Add(this.TXB_CodeMatiere);
-            this.GBX_FormMatiere.Controls.Add(this.LBL_CodeMatiere);
-            this.GBX_FormMatiere.Location = new System.Drawing.Point(14, 14);
-            this.GBX_FormMatiere.Name = "GBX_FormMatiere";
-            this.GBX_FormMatiere.Size = new System.Drawing.Size(706, 65);
-            this.GBX_FormMatiere.TabIndex = 6;
-            this.GBX_FormMatiere.TabStop = false;
-            this.GBX_FormMatiere.Text = "Formulaire Matiere";
+            this.BTN_AnnulerMatiere.Location = new System.Drawing.Point(740, 185);
+            this.BTN_AnnulerMatiere.Name = "BTN_AnnulerMatiere";
+            this.BTN_AnnulerMatiere.Size = new System.Drawing.Size(120, 41);
+            this.BTN_AnnulerMatiere.TabIndex = 11;
+            this.BTN_AnnulerMatiere.Text = "Annuler";
+            this.BTN_AnnulerMatiere.UseVisualStyleBackColor = true;
             // 
-            // LBL_CodeMatiere
+            // BTN_SupprimerMatiere
             // 
-            this.LBL_CodeMatiere.AutoSize = true;
-            this.LBL_CodeMatiere.Location = new System.Drawing.Point(270, 29);
-            this.LBL_CodeMatiere.Name = "LBL_CodeMatiere";
-            this.LBL_CodeMatiere.Size = new System.Drawing.Size(70, 13);
-            this.LBL_CodeMatiere.TabIndex = 0;
-            this.LBL_CodeMatiere.Text = "Code Matiere";
+            this.BTN_SupprimerMatiere.Location = new System.Drawing.Point(740, 117);
+            this.BTN_SupprimerMatiere.Name = "BTN_SupprimerMatiere";
+            this.BTN_SupprimerMatiere.Size = new System.Drawing.Size(120, 41);
+            this.BTN_SupprimerMatiere.TabIndex = 10;
+            this.BTN_SupprimerMatiere.Text = "Supprimer";
+            this.BTN_SupprimerMatiere.UseVisualStyleBackColor = true;
+            this.BTN_SupprimerMatiere.Click += new System.EventHandler(this.BTN_SupprimerMatiere_Click);
             // 
-            // TXB_CodeMatiere
+            // BTN_EnregisterMatiere
             // 
-            this.TXB_CodeMatiere.Location = new System.Drawing.Point(346, 26);
-            this.TXB_CodeMatiere.Name = "TXB_CodeMatiere";
-            this.TXB_CodeMatiere.Size = new System.Drawing.Size(94, 20);
-            this.TXB_CodeMatiere.TabIndex = 1;
+            this.BTN_EnregisterMatiere.Location = new System.Drawing.Point(740, 55);
+            this.BTN_EnregisterMatiere.Name = "BTN_EnregisterMatiere";
+            this.BTN_EnregisterMatiere.Size = new System.Drawing.Size(120, 41);
+            this.BTN_EnregisterMatiere.TabIndex = 9;
+            this.BTN_EnregisterMatiere.Text = "Enregistrer";
+            this.BTN_EnregisterMatiere.UseVisualStyleBackColor = true;
+            this.BTN_EnregisterMatiere.Click += new System.EventHandler(this.BTN_EnregisterMatiere_Click);
             // 
-            // LBL_NomMatiere
+            // GBX_RechecheMatiere
             // 
-            this.LBL_NomMatiere.AutoSize = true;
-            this.LBL_NomMatiere.Location = new System.Drawing.Point(479, 29);
-            this.LBL_NomMatiere.Name = "LBL_NomMatiere";
-            this.LBL_NomMatiere.Size = new System.Drawing.Size(67, 13);
-            this.LBL_NomMatiere.TabIndex = 0;
-            this.LBL_NomMatiere.Text = "Nom Matiere";
+            this.GBX_RechecheMatiere.Controls.Add(this.TXB_RechercheMatiere);
+            this.GBX_RechecheMatiere.Controls.Add(this.BTN_RechercheMatiere);
+            this.GBX_RechecheMatiere.Location = new System.Drawing.Point(19, 97);
+            this.GBX_RechecheMatiere.Name = "GBX_RechecheMatiere";
+            this.GBX_RechecheMatiere.Size = new System.Drawing.Size(701, 46);
+            this.GBX_RechecheMatiere.TabIndex = 8;
+            this.GBX_RechecheMatiere.TabStop = false;
+            this.GBX_RechecheMatiere.Text = "Recherche";
             // 
-            // TXB_NomMatiere
+            // TXB_RechercheMatiere
             // 
-            this.TXB_NomMatiere.Location = new System.Drawing.Point(552, 26);
-            this.TXB_NomMatiere.Name = "TXB_NomMatiere";
-            this.TXB_NomMatiere.Size = new System.Drawing.Size(94, 20);
-            this.TXB_NomMatiere.TabIndex = 1;
+            this.TXB_RechercheMatiere.Location = new System.Drawing.Point(17, 18);
+            this.TXB_RechercheMatiere.Name = "TXB_RechercheMatiere";
+            this.TXB_RechercheMatiere.Size = new System.Drawing.Size(537, 20);
+            this.TXB_RechercheMatiere.TabIndex = 7;
+            this.TXB_RechercheMatiere.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TXB_RechercheMatiere_KeyPress);
+            // 
+            // BTN_RechercheMatiere
+            // 
+            this.BTN_RechercheMatiere.Location = new System.Drawing.Point(575, 12);
+            this.BTN_RechercheMatiere.Name = "BTN_RechercheMatiere";
+            this.BTN_RechercheMatiere.Size = new System.Drawing.Size(120, 28);
+            this.BTN_RechercheMatiere.TabIndex = 6;
+            this.BTN_RechercheMatiere.Text = "Recherche";
+            this.BTN_RechercheMatiere.UseVisualStyleBackColor = true;
+            this.BTN_RechercheMatiere.Click += new System.EventHandler(this.BTN_RechercheMatiere_Click);
             // 
             // GBX_ListeMatiere
             // 
@@ -1276,63 +1248,50 @@
             this.DGV_ListeMatiere.TabIndex = 0;
             this.DGV_ListeMatiere.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_ListeMatiere_CellContentDoubleClick);
             // 
-            // GBX_RechecheMatiere
+            // GBX_FormMatiere
             // 
-            this.GBX_RechecheMatiere.Controls.Add(this.TXB_RechercheMatiere);
-            this.GBX_RechecheMatiere.Controls.Add(this.BTN_RechercheMatiere);
-            this.GBX_RechecheMatiere.Location = new System.Drawing.Point(19, 97);
-            this.GBX_RechecheMatiere.Name = "GBX_RechecheMatiere";
-            this.GBX_RechecheMatiere.Size = new System.Drawing.Size(701, 46);
-            this.GBX_RechecheMatiere.TabIndex = 8;
-            this.GBX_RechecheMatiere.TabStop = false;
-            this.GBX_RechecheMatiere.Text = "Recherche";
+            this.GBX_FormMatiere.Controls.Add(this.TXB_NomMatiere);
+            this.GBX_FormMatiere.Controls.Add(this.LBL_NomMatiere);
+            this.GBX_FormMatiere.Controls.Add(this.TXB_CodeMatiere);
+            this.GBX_FormMatiere.Controls.Add(this.LBL_CodeMatiere);
+            this.GBX_FormMatiere.Location = new System.Drawing.Point(14, 14);
+            this.GBX_FormMatiere.Name = "GBX_FormMatiere";
+            this.GBX_FormMatiere.Size = new System.Drawing.Size(706, 65);
+            this.GBX_FormMatiere.TabIndex = 6;
+            this.GBX_FormMatiere.TabStop = false;
+            this.GBX_FormMatiere.Text = "Formulaire Matiere";
             // 
-            // BTN_RechercheMatiere
+            // TXB_NomMatiere
             // 
-            this.BTN_RechercheMatiere.Location = new System.Drawing.Point(575, 12);
-            this.BTN_RechercheMatiere.Name = "BTN_RechercheMatiere";
-            this.BTN_RechercheMatiere.Size = new System.Drawing.Size(120, 28);
-            this.BTN_RechercheMatiere.TabIndex = 6;
-            this.BTN_RechercheMatiere.Text = "Recherche";
-            this.BTN_RechercheMatiere.UseVisualStyleBackColor = true;
-            this.BTN_RechercheMatiere.Click += new System.EventHandler(this.BTN_RechercheMatiere_Click);
+            this.TXB_NomMatiere.Location = new System.Drawing.Point(552, 26);
+            this.TXB_NomMatiere.Name = "TXB_NomMatiere";
+            this.TXB_NomMatiere.Size = new System.Drawing.Size(94, 20);
+            this.TXB_NomMatiere.TabIndex = 1;
             // 
-            // TXB_RechercheMatiere
+            // LBL_NomMatiere
             // 
-            this.TXB_RechercheMatiere.Location = new System.Drawing.Point(17, 18);
-            this.TXB_RechercheMatiere.Name = "TXB_RechercheMatiere";
-            this.TXB_RechercheMatiere.Size = new System.Drawing.Size(537, 20);
-            this.TXB_RechercheMatiere.TabIndex = 7;
-            this.TXB_RechercheMatiere.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TXB_RechercheMatiere_KeyPress);
+            this.LBL_NomMatiere.AutoSize = true;
+            this.LBL_NomMatiere.Location = new System.Drawing.Point(479, 29);
+            this.LBL_NomMatiere.Name = "LBL_NomMatiere";
+            this.LBL_NomMatiere.Size = new System.Drawing.Size(67, 13);
+            this.LBL_NomMatiere.TabIndex = 0;
+            this.LBL_NomMatiere.Text = "Nom Matiere";
             // 
-            // BTN_EnregisterMatiere
+            // TXB_CodeMatiere
             // 
-            this.BTN_EnregisterMatiere.Location = new System.Drawing.Point(740, 55);
-            this.BTN_EnregisterMatiere.Name = "BTN_EnregisterMatiere";
-            this.BTN_EnregisterMatiere.Size = new System.Drawing.Size(120, 41);
-            this.BTN_EnregisterMatiere.TabIndex = 9;
-            this.BTN_EnregisterMatiere.Text = "Enregistrer";
-            this.BTN_EnregisterMatiere.UseVisualStyleBackColor = true;
-            this.BTN_EnregisterMatiere.Click += new System.EventHandler(this.BTN_EnregisterMatiere_Click);
+            this.TXB_CodeMatiere.Location = new System.Drawing.Point(346, 26);
+            this.TXB_CodeMatiere.Name = "TXB_CodeMatiere";
+            this.TXB_CodeMatiere.Size = new System.Drawing.Size(94, 20);
+            this.TXB_CodeMatiere.TabIndex = 1;
             // 
-            // BTN_SupprimerMatiere
+            // LBL_CodeMatiere
             // 
-            this.BTN_SupprimerMatiere.Location = new System.Drawing.Point(740, 117);
-            this.BTN_SupprimerMatiere.Name = "BTN_SupprimerMatiere";
-            this.BTN_SupprimerMatiere.Size = new System.Drawing.Size(120, 41);
-            this.BTN_SupprimerMatiere.TabIndex = 10;
-            this.BTN_SupprimerMatiere.Text = "Supprimer";
-            this.BTN_SupprimerMatiere.UseVisualStyleBackColor = true;
-            this.BTN_SupprimerMatiere.Click += new System.EventHandler(this.BTN_SupprimerMatiere_Click);
-            // 
-            // BTN_AnnulerMatiere
-            // 
-            this.BTN_AnnulerMatiere.Location = new System.Drawing.Point(740, 185);
-            this.BTN_AnnulerMatiere.Name = "BTN_AnnulerMatiere";
-            this.BTN_AnnulerMatiere.Size = new System.Drawing.Size(120, 41);
-            this.BTN_AnnulerMatiere.TabIndex = 11;
-            this.BTN_AnnulerMatiere.Text = "Annuler";
-            this.BTN_AnnulerMatiere.UseVisualStyleBackColor = true;
+            this.LBL_CodeMatiere.AutoSize = true;
+            this.LBL_CodeMatiere.Location = new System.Drawing.Point(270, 29);
+            this.LBL_CodeMatiere.Name = "LBL_CodeMatiere";
+            this.LBL_CodeMatiere.Size = new System.Drawing.Size(70, 13);
+            this.LBL_CodeMatiere.TabIndex = 0;
+            this.LBL_CodeMatiere.Text = "Code Matiere";
             // 
             // TPG_Professeur
             // 
@@ -1350,6 +1309,95 @@
             this.TPG_Professeur.TabIndex = 0;
             this.TPG_Professeur.Text = "Professeur";
             this.TPG_Professeur.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(733, 242);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(142, 78);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Note: \r\nSuprimer \'Etat de service\r\nFace ID 1 et 2,\r\n\r\n\r\nAjouter \'Date de recrutem" +
+    "ent\r\n";
+            // 
+            // BTN_AnnulerProf
+            // 
+            this.BTN_AnnulerProf.Location = new System.Drawing.Point(736, 189);
+            this.BTN_AnnulerProf.Name = "BTN_AnnulerProf";
+            this.BTN_AnnulerProf.Size = new System.Drawing.Size(120, 41);
+            this.BTN_AnnulerProf.TabIndex = 5;
+            this.BTN_AnnulerProf.Text = "Annuler";
+            this.BTN_AnnulerProf.UseVisualStyleBackColor = true;
+            this.BTN_AnnulerProf.Click += new System.EventHandler(this.BTN_AnnulerProf_Click);
+            // 
+            // BTN_SupprimerProf
+            // 
+            this.BTN_SupprimerProf.Location = new System.Drawing.Point(736, 121);
+            this.BTN_SupprimerProf.Name = "BTN_SupprimerProf";
+            this.BTN_SupprimerProf.Size = new System.Drawing.Size(120, 41);
+            this.BTN_SupprimerProf.TabIndex = 4;
+            this.BTN_SupprimerProf.Text = "Supprimer";
+            this.BTN_SupprimerProf.UseVisualStyleBackColor = true;
+            this.BTN_SupprimerProf.Click += new System.EventHandler(this.BTN_SupprimerProf_Click);
+            // 
+            // BTN_EnregistrerProf
+            // 
+            this.BTN_EnregistrerProf.Location = new System.Drawing.Point(736, 59);
+            this.BTN_EnregistrerProf.Name = "BTN_EnregistrerProf";
+            this.BTN_EnregistrerProf.Size = new System.Drawing.Size(120, 41);
+            this.BTN_EnregistrerProf.TabIndex = 3;
+            this.BTN_EnregistrerProf.Text = "Enregistrer";
+            this.BTN_EnregistrerProf.UseVisualStyleBackColor = true;
+            this.BTN_EnregistrerProf.Click += new System.EventHandler(this.BTN_EnregistrerProf_Click);
+            // 
+            // GBX_RechercheProf
+            // 
+            this.GBX_RechercheProf.Controls.Add(this.TBX_RecherchePof);
+            this.GBX_RechercheProf.Controls.Add(this.BTN_RechercheProf);
+            this.GBX_RechercheProf.Location = new System.Drawing.Point(10, 293);
+            this.GBX_RechercheProf.Name = "GBX_RechercheProf";
+            this.GBX_RechercheProf.Size = new System.Drawing.Size(712, 46);
+            this.GBX_RechercheProf.TabIndex = 2;
+            this.GBX_RechercheProf.TabStop = false;
+            this.GBX_RechercheProf.Text = "Recherche";
+            // 
+            // TBX_RecherchePof
+            // 
+            this.TBX_RecherchePof.Location = new System.Drawing.Point(17, 18);
+            this.TBX_RecherchePof.Name = "TBX_RecherchePof";
+            this.TBX_RecherchePof.Size = new System.Drawing.Size(533, 20);
+            this.TBX_RecherchePof.TabIndex = 7;
+            // 
+            // BTN_RechercheProf
+            // 
+            this.BTN_RechercheProf.Location = new System.Drawing.Point(575, 13);
+            this.BTN_RechercheProf.Name = "BTN_RechercheProf";
+            this.BTN_RechercheProf.Size = new System.Drawing.Size(120, 28);
+            this.BTN_RechercheProf.TabIndex = 6;
+            this.BTN_RechercheProf.Text = "Recherche";
+            this.BTN_RechercheProf.UseVisualStyleBackColor = true;
+            // 
+            // GBX_ListeProfesseur
+            // 
+            this.GBX_ListeProfesseur.Controls.Add(this.DGV_ListeProf);
+            this.GBX_ListeProfesseur.Location = new System.Drawing.Point(15, 345);
+            this.GBX_ListeProfesseur.Name = "GBX_ListeProfesseur";
+            this.GBX_ListeProfesseur.Size = new System.Drawing.Size(841, 261);
+            this.GBX_ListeProfesseur.TabIndex = 1;
+            this.GBX_ListeProfesseur.TabStop = false;
+            this.GBX_ListeProfesseur.Text = "Liste Professeur";
+            // 
+            // DGV_ListeProf
+            // 
+            this.DGV_ListeProf.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_ListeProf.Location = new System.Drawing.Point(11, 20);
+            this.DGV_ListeProf.Name = "DGV_ListeProf";
+            this.DGV_ListeProf.ReadOnly = true;
+            this.DGV_ListeProf.RowHeadersWidth = 51;
+            this.DGV_ListeProf.Size = new System.Drawing.Size(824, 235);
+            this.DGV_ListeProf.TabIndex = 0;
+            this.DGV_ListeProf.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_ListeProf_CellContentDoubleClick);
             // 
             // GBX_FormProfesseur
             // 
@@ -1387,109 +1435,112 @@
             this.GBX_FormProfesseur.TabStop = false;
             this.GBX_FormProfesseur.Text = "Formulaire Professeur";
             // 
-            // PBX_Professeur
+            // DTP_Recrutement
             // 
-            this.PBX_Professeur.Location = new System.Drawing.Point(13, 21);
-            this.PBX_Professeur.Name = "PBX_Professeur";
-            this.PBX_Professeur.Size = new System.Drawing.Size(95, 82);
-            this.PBX_Professeur.TabIndex = 0;
-            this.PBX_Professeur.TabStop = false;
+            this.DTP_Recrutement.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DTP_Recrutement.Location = new System.Drawing.Point(557, 55);
+            this.DTP_Recrutement.Name = "DTP_Recrutement";
+            this.DTP_Recrutement.Size = new System.Drawing.Size(129, 20);
+            this.DTP_Recrutement.TabIndex = 36;
             // 
-            // TXB_NomProf
+            // BTN_Empreinte2
             // 
-            this.TXB_NomProf.Location = new System.Drawing.Point(191, 20);
-            this.TXB_NomProf.Name = "TXB_NomProf";
-            this.TXB_NomProf.Size = new System.Drawing.Size(99, 20);
-            this.TXB_NomProf.TabIndex = 1;
+            this.BTN_Empreinte2.Location = new System.Drawing.Point(223, 178);
+            this.BTN_Empreinte2.Name = "BTN_Empreinte2";
+            this.BTN_Empreinte2.Size = new System.Drawing.Size(90, 23);
+            this.BTN_Empreinte2.TabIndex = 34;
+            this.BTN_Empreinte2.Text = "Empreinte 2 >>";
+            this.BTN_Empreinte2.UseVisualStyleBackColor = true;
             // 
-            // LBL_NomProf
+            // BTN_Empreinte1
             // 
-            this.LBL_NomProf.AutoSize = true;
-            this.LBL_NomProf.Location = new System.Drawing.Point(127, 23);
-            this.LBL_NomProf.Name = "LBL_NomProf";
-            this.LBL_NomProf.Size = new System.Drawing.Size(29, 13);
-            this.LBL_NomProf.TabIndex = 2;
-            this.LBL_NomProf.Text = "Nom";
+            this.BTN_Empreinte1.Location = new System.Drawing.Point(223, 135);
+            this.BTN_Empreinte1.Name = "BTN_Empreinte1";
+            this.BTN_Empreinte1.Size = new System.Drawing.Size(90, 23);
+            this.BTN_Empreinte1.TabIndex = 33;
+            this.BTN_Empreinte1.Text = "Empreinte 1 >>";
+            this.BTN_Empreinte1.UseVisualStyleBackColor = true;
             // 
-            // TXB_Telephone2Prof
+            // label15
             // 
-            this.TXB_Telephone2Prof.Location = new System.Drawing.Point(392, 22);
-            this.TXB_Telephone2Prof.Name = "TXB_Telephone2Prof";
-            this.TXB_Telephone2Prof.Size = new System.Drawing.Size(99, 20);
-            this.TXB_Telephone2Prof.TabIndex = 3;
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(11, 183);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(63, 13);
+            this.label15.TabIndex = 26;
+            this.label15.Text = "Empreinte 2";
             // 
-            // LBL_Telephone2Prof
+            // TXB_Empreinte2Prof
             // 
-            this.LBL_Telephone2Prof.AutoSize = true;
-            this.LBL_Telephone2Prof.Location = new System.Drawing.Point(305, 22);
-            this.LBL_Telephone2Prof.Name = "LBL_Telephone2Prof";
-            this.LBL_Telephone2Prof.Size = new System.Drawing.Size(67, 13);
-            this.LBL_Telephone2Prof.TabIndex = 4;
-            this.LBL_Telephone2Prof.Text = "Telephone 2";
+            this.TXB_Empreinte2Prof.Location = new System.Drawing.Point(98, 180);
+            this.TXB_Empreinte2Prof.Name = "TXB_Empreinte2Prof";
+            this.TXB_Empreinte2Prof.Size = new System.Drawing.Size(99, 20);
+            this.TXB_Empreinte2Prof.TabIndex = 25;
             // 
-            // TXB_PrenomProf
+            // label11
             // 
-            this.TXB_PrenomProf.Location = new System.Drawing.Point(191, 52);
-            this.TXB_PrenomProf.Name = "TXB_PrenomProf";
-            this.TXB_PrenomProf.Size = new System.Drawing.Size(99, 20);
-            this.TXB_PrenomProf.TabIndex = 5;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(525, 131);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(128, 13);
+            this.label11.TabIndex = 22;
+            this.label11.Text = "Taux Horaire 2ieme Cycle";
             // 
-            // LBL_PrenomProf
+            // TXB_Taux2iemeCycleProf
             // 
-            this.LBL_PrenomProf.AutoSize = true;
-            this.LBL_PrenomProf.Location = new System.Drawing.Point(127, 55);
-            this.LBL_PrenomProf.Name = "LBL_PrenomProf";
-            this.LBL_PrenomProf.Size = new System.Drawing.Size(43, 13);
-            this.LBL_PrenomProf.TabIndex = 6;
-            this.LBL_PrenomProf.Text = "Prenom";
+            this.TXB_Taux2iemeCycleProf.Location = new System.Drawing.Point(538, 149);
+            this.TXB_Taux2iemeCycleProf.Name = "TXB_Taux2iemeCycleProf";
+            this.TXB_Taux2iemeCycleProf.Size = new System.Drawing.Size(99, 20);
+            this.TXB_Taux2iemeCycleProf.TabIndex = 21;
             // 
-            // TXB_DiplomeProf
+            // label12
             // 
-            this.TXB_DiplomeProf.Location = new System.Drawing.Point(392, 52);
-            this.TXB_DiplomeProf.Name = "TXB_DiplomeProf";
-            this.TXB_DiplomeProf.Size = new System.Drawing.Size(99, 20);
-            this.TXB_DiplomeProf.TabIndex = 7;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(11, 140);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(63, 13);
+            this.label12.TabIndex = 20;
+            this.label12.Text = "Empreinte 1";
             // 
-            // LBL_DiplomeProf
+            // TXB_Empreinte1Prof
             // 
-            this.LBL_DiplomeProf.AutoSize = true;
-            this.LBL_DiplomeProf.Location = new System.Drawing.Point(305, 55);
-            this.LBL_DiplomeProf.Name = "LBL_DiplomeProf";
-            this.LBL_DiplomeProf.Size = new System.Drawing.Size(45, 13);
-            this.LBL_DiplomeProf.TabIndex = 8;
-            this.LBL_DiplomeProf.Text = "Diplome";
+            this.TXB_Empreinte1Prof.Location = new System.Drawing.Point(98, 137);
+            this.TXB_Empreinte1Prof.Name = "TXB_Empreinte1Prof";
+            this.TXB_Empreinte1Prof.Size = new System.Drawing.Size(99, 20);
+            this.TXB_Empreinte1Prof.TabIndex = 19;
             // 
-            // TXB_TelephoneProf
+            // label9
             // 
-            this.TXB_TelephoneProf.Location = new System.Drawing.Point(191, 83);
-            this.TXB_TelephoneProf.Name = "TXB_TelephoneProf";
-            this.TXB_TelephoneProf.Size = new System.Drawing.Size(99, 20);
-            this.TXB_TelephoneProf.TabIndex = 9;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(348, 199);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(60, 13);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Description";
             // 
-            // LBL_TelephoneProf
+            // TXB_DescriptionProf
             // 
-            this.LBL_TelephoneProf.AutoSize = true;
-            this.LBL_TelephoneProf.Location = new System.Drawing.Point(127, 86);
-            this.LBL_TelephoneProf.Name = "LBL_TelephoneProf";
-            this.LBL_TelephoneProf.Size = new System.Drawing.Size(58, 13);
-            this.LBL_TelephoneProf.TabIndex = 10;
-            this.LBL_TelephoneProf.Text = "Telephone";
+            this.TXB_DescriptionProf.Location = new System.Drawing.Point(414, 184);
+            this.TXB_DescriptionProf.Multiline = true;
+            this.TXB_DescriptionProf.Name = "TXB_DescriptionProf";
+            this.TXB_DescriptionProf.Size = new System.Drawing.Size(286, 61);
+            this.TXB_DescriptionProf.TabIndex = 17;
             // 
-            // TXB_TypeProf
+            // label7
             // 
-            this.TXB_TypeProf.Location = new System.Drawing.Point(392, 83);
-            this.TXB_TypeProf.Name = "TXB_TypeProf";
-            this.TXB_TypeProf.Size = new System.Drawing.Size(99, 20);
-            this.TXB_TypeProf.TabIndex = 11;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(365, 131);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(117, 13);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Taux Horaire 1ier Cycle";
             // 
-            // LBL_TypeProf
+            // TXB_Taux1ierCycleProf
             // 
-            this.LBL_TypeProf.AutoSize = true;
-            this.LBL_TypeProf.Location = new System.Drawing.Point(305, 86);
-            this.LBL_TypeProf.Name = "LBL_TypeProf";
-            this.LBL_TypeProf.Size = new System.Drawing.Size(84, 13);
-            this.LBL_TypeProf.TabIndex = 12;
-            this.LBL_TypeProf.Text = "Type Professeur";
+            this.TXB_Taux1ierCycleProf.Location = new System.Drawing.Point(377, 151);
+            this.TXB_Taux1ierCycleProf.Name = "TXB_Taux1ierCycleProf";
+            this.TXB_Taux1ierCycleProf.Size = new System.Drawing.Size(99, 20);
+            this.TXB_Taux1ierCycleProf.TabIndex = 15;
             // 
             // LBL_EtatServiceProf
             // 
@@ -1501,201 +1552,109 @@
             this.LBL_EtatServiceProf.TabIndex = 14;
             this.LBL_EtatServiceProf.Text = "Date de Recrutement";
             // 
-            // TXB_Taux1ierCycleProf
+            // LBL_TypeProf
             // 
-            this.TXB_Taux1ierCycleProf.Location = new System.Drawing.Point(377, 151);
-            this.TXB_Taux1ierCycleProf.Name = "TXB_Taux1ierCycleProf";
-            this.TXB_Taux1ierCycleProf.Size = new System.Drawing.Size(99, 20);
-            this.TXB_Taux1ierCycleProf.TabIndex = 15;
+            this.LBL_TypeProf.AutoSize = true;
+            this.LBL_TypeProf.Location = new System.Drawing.Point(305, 86);
+            this.LBL_TypeProf.Name = "LBL_TypeProf";
+            this.LBL_TypeProf.Size = new System.Drawing.Size(84, 13);
+            this.LBL_TypeProf.TabIndex = 12;
+            this.LBL_TypeProf.Text = "Type Professeur";
             // 
-            // label7
+            // TXB_TypeProf
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(365, 131);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(117, 13);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "Taux Horaire 1ier Cycle";
+            this.TXB_TypeProf.Location = new System.Drawing.Point(392, 83);
+            this.TXB_TypeProf.Name = "TXB_TypeProf";
+            this.TXB_TypeProf.Size = new System.Drawing.Size(99, 20);
+            this.TXB_TypeProf.TabIndex = 11;
             // 
-            // TXB_DescriptionProf
+            // LBL_TelephoneProf
             // 
-            this.TXB_DescriptionProf.Location = new System.Drawing.Point(414, 184);
-            this.TXB_DescriptionProf.Multiline = true;
-            this.TXB_DescriptionProf.Name = "TXB_DescriptionProf";
-            this.TXB_DescriptionProf.Size = new System.Drawing.Size(286, 61);
-            this.TXB_DescriptionProf.TabIndex = 17;
+            this.LBL_TelephoneProf.AutoSize = true;
+            this.LBL_TelephoneProf.Location = new System.Drawing.Point(127, 86);
+            this.LBL_TelephoneProf.Name = "LBL_TelephoneProf";
+            this.LBL_TelephoneProf.Size = new System.Drawing.Size(58, 13);
+            this.LBL_TelephoneProf.TabIndex = 10;
+            this.LBL_TelephoneProf.Text = "Telephone";
             // 
-            // label9
+            // TXB_TelephoneProf
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(348, 199);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(60, 13);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "Description";
+            this.TXB_TelephoneProf.Location = new System.Drawing.Point(191, 83);
+            this.TXB_TelephoneProf.Name = "TXB_TelephoneProf";
+            this.TXB_TelephoneProf.Size = new System.Drawing.Size(99, 20);
+            this.TXB_TelephoneProf.TabIndex = 9;
             // 
-            // TXB_Empreinte1Prof
+            // LBL_DiplomeProf
             // 
-            this.TXB_Empreinte1Prof.Location = new System.Drawing.Point(98, 137);
-            this.TXB_Empreinte1Prof.Name = "TXB_Empreinte1Prof";
-            this.TXB_Empreinte1Prof.Size = new System.Drawing.Size(99, 20);
-            this.TXB_Empreinte1Prof.TabIndex = 19;
+            this.LBL_DiplomeProf.AutoSize = true;
+            this.LBL_DiplomeProf.Location = new System.Drawing.Point(305, 55);
+            this.LBL_DiplomeProf.Name = "LBL_DiplomeProf";
+            this.LBL_DiplomeProf.Size = new System.Drawing.Size(45, 13);
+            this.LBL_DiplomeProf.TabIndex = 8;
+            this.LBL_DiplomeProf.Text = "Diplome";
             // 
-            // label12
+            // TXB_DiplomeProf
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(11, 140);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(63, 13);
-            this.label12.TabIndex = 20;
-            this.label12.Text = "Empreinte 1";
+            this.TXB_DiplomeProf.Location = new System.Drawing.Point(392, 52);
+            this.TXB_DiplomeProf.Name = "TXB_DiplomeProf";
+            this.TXB_DiplomeProf.Size = new System.Drawing.Size(99, 20);
+            this.TXB_DiplomeProf.TabIndex = 7;
             // 
-            // TXB_Taux2iemeCycleProf
+            // LBL_PrenomProf
             // 
-            this.TXB_Taux2iemeCycleProf.Location = new System.Drawing.Point(538, 149);
-            this.TXB_Taux2iemeCycleProf.Name = "TXB_Taux2iemeCycleProf";
-            this.TXB_Taux2iemeCycleProf.Size = new System.Drawing.Size(99, 20);
-            this.TXB_Taux2iemeCycleProf.TabIndex = 21;
+            this.LBL_PrenomProf.AutoSize = true;
+            this.LBL_PrenomProf.Location = new System.Drawing.Point(127, 55);
+            this.LBL_PrenomProf.Name = "LBL_PrenomProf";
+            this.LBL_PrenomProf.Size = new System.Drawing.Size(43, 13);
+            this.LBL_PrenomProf.TabIndex = 6;
+            this.LBL_PrenomProf.Text = "Prenom";
             // 
-            // label11
+            // TXB_PrenomProf
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(525, 131);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(128, 13);
-            this.label11.TabIndex = 22;
-            this.label11.Text = "Taux Horaire 2ieme Cycle";
+            this.TXB_PrenomProf.Location = new System.Drawing.Point(191, 52);
+            this.TXB_PrenomProf.Name = "TXB_PrenomProf";
+            this.TXB_PrenomProf.Size = new System.Drawing.Size(99, 20);
+            this.TXB_PrenomProf.TabIndex = 5;
             // 
-            // TXB_Empreinte2Prof
+            // LBL_Telephone2Prof
             // 
-            this.TXB_Empreinte2Prof.Location = new System.Drawing.Point(98, 180);
-            this.TXB_Empreinte2Prof.Name = "TXB_Empreinte2Prof";
-            this.TXB_Empreinte2Prof.Size = new System.Drawing.Size(99, 20);
-            this.TXB_Empreinte2Prof.TabIndex = 25;
+            this.LBL_Telephone2Prof.AutoSize = true;
+            this.LBL_Telephone2Prof.Location = new System.Drawing.Point(305, 22);
+            this.LBL_Telephone2Prof.Name = "LBL_Telephone2Prof";
+            this.LBL_Telephone2Prof.Size = new System.Drawing.Size(67, 13);
+            this.LBL_Telephone2Prof.TabIndex = 4;
+            this.LBL_Telephone2Prof.Text = "Telephone 2";
             // 
-            // label15
+            // TXB_Telephone2Prof
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(11, 183);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(63, 13);
-            this.label15.TabIndex = 26;
-            this.label15.Text = "Empreinte 2";
+            this.TXB_Telephone2Prof.Location = new System.Drawing.Point(392, 22);
+            this.TXB_Telephone2Prof.Name = "TXB_Telephone2Prof";
+            this.TXB_Telephone2Prof.Size = new System.Drawing.Size(99, 20);
+            this.TXB_Telephone2Prof.TabIndex = 3;
             // 
-            // BTN_Empreinte1
+            // LBL_NomProf
             // 
-            this.BTN_Empreinte1.Location = new System.Drawing.Point(223, 135);
-            this.BTN_Empreinte1.Name = "BTN_Empreinte1";
-            this.BTN_Empreinte1.Size = new System.Drawing.Size(90, 23);
-            this.BTN_Empreinte1.TabIndex = 33;
-            this.BTN_Empreinte1.Text = "Empreinte 1 >>";
-            this.BTN_Empreinte1.UseVisualStyleBackColor = true;
+            this.LBL_NomProf.AutoSize = true;
+            this.LBL_NomProf.Location = new System.Drawing.Point(127, 23);
+            this.LBL_NomProf.Name = "LBL_NomProf";
+            this.LBL_NomProf.Size = new System.Drawing.Size(29, 13);
+            this.LBL_NomProf.TabIndex = 2;
+            this.LBL_NomProf.Text = "Nom";
             // 
-            // BTN_Empreinte2
+            // TXB_NomProf
             // 
-            this.BTN_Empreinte2.Location = new System.Drawing.Point(223, 178);
-            this.BTN_Empreinte2.Name = "BTN_Empreinte2";
-            this.BTN_Empreinte2.Size = new System.Drawing.Size(90, 23);
-            this.BTN_Empreinte2.TabIndex = 34;
-            this.BTN_Empreinte2.Text = "Empreinte 2 >>";
-            this.BTN_Empreinte2.UseVisualStyleBackColor = true;
+            this.TXB_NomProf.Location = new System.Drawing.Point(191, 20);
+            this.TXB_NomProf.Name = "TXB_NomProf";
+            this.TXB_NomProf.Size = new System.Drawing.Size(99, 20);
+            this.TXB_NomProf.TabIndex = 1;
             // 
-            // DTP_Recrutement
+            // PBX_Professeur
             // 
-            this.DTP_Recrutement.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTP_Recrutement.Location = new System.Drawing.Point(557, 55);
-            this.DTP_Recrutement.Name = "DTP_Recrutement";
-            this.DTP_Recrutement.Size = new System.Drawing.Size(129, 20);
-            this.DTP_Recrutement.TabIndex = 36;
-            // 
-            // GBX_ListeProfesseur
-            // 
-            this.GBX_ListeProfesseur.Controls.Add(this.DGV_ListeProf);
-            this.GBX_ListeProfesseur.Location = new System.Drawing.Point(15, 345);
-            this.GBX_ListeProfesseur.Name = "GBX_ListeProfesseur";
-            this.GBX_ListeProfesseur.Size = new System.Drawing.Size(841, 261);
-            this.GBX_ListeProfesseur.TabIndex = 1;
-            this.GBX_ListeProfesseur.TabStop = false;
-            this.GBX_ListeProfesseur.Text = "Liste Professeur";
-            // 
-            // DGV_ListeProf
-            // 
-            this.DGV_ListeProf.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_ListeProf.Location = new System.Drawing.Point(11, 20);
-            this.DGV_ListeProf.Name = "DGV_ListeProf";
-            this.DGV_ListeProf.ReadOnly = true;
-            this.DGV_ListeProf.RowHeadersWidth = 51;
-            this.DGV_ListeProf.Size = new System.Drawing.Size(824, 235);
-            this.DGV_ListeProf.TabIndex = 0;
-            this.DGV_ListeProf.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_ListeProf_CellContentDoubleClick);
-            // 
-            // GBX_RechercheProf
-            // 
-            this.GBX_RechercheProf.Controls.Add(this.TBX_RecherchePof);
-            this.GBX_RechercheProf.Controls.Add(this.BTN_RechercheProf);
-            this.GBX_RechercheProf.Location = new System.Drawing.Point(10, 293);
-            this.GBX_RechercheProf.Name = "GBX_RechercheProf";
-            this.GBX_RechercheProf.Size = new System.Drawing.Size(712, 46);
-            this.GBX_RechercheProf.TabIndex = 2;
-            this.GBX_RechercheProf.TabStop = false;
-            this.GBX_RechercheProf.Text = "Recherche";
-            // 
-            // BTN_RechercheProf
-            // 
-            this.BTN_RechercheProf.Location = new System.Drawing.Point(575, 13);
-            this.BTN_RechercheProf.Name = "BTN_RechercheProf";
-            this.BTN_RechercheProf.Size = new System.Drawing.Size(120, 28);
-            this.BTN_RechercheProf.TabIndex = 6;
-            this.BTN_RechercheProf.Text = "Recherche";
-            this.BTN_RechercheProf.UseVisualStyleBackColor = true;
-            // 
-            // TBX_RecherchePof
-            // 
-            this.TBX_RecherchePof.Location = new System.Drawing.Point(17, 18);
-            this.TBX_RecherchePof.Name = "TBX_RecherchePof";
-            this.TBX_RecherchePof.Size = new System.Drawing.Size(533, 20);
-            this.TBX_RecherchePof.TabIndex = 7;
-            // 
-            // BTN_EnregistrerProf
-            // 
-            this.BTN_EnregistrerProf.Location = new System.Drawing.Point(736, 59);
-            this.BTN_EnregistrerProf.Name = "BTN_EnregistrerProf";
-            this.BTN_EnregistrerProf.Size = new System.Drawing.Size(120, 41);
-            this.BTN_EnregistrerProf.TabIndex = 3;
-            this.BTN_EnregistrerProf.Text = "Enregistrer";
-            this.BTN_EnregistrerProf.UseVisualStyleBackColor = true;
-            this.BTN_EnregistrerProf.Click += new System.EventHandler(this.BTN_EnregistrerProf_Click);
-            // 
-            // BTN_SupprimerProf
-            // 
-            this.BTN_SupprimerProf.Location = new System.Drawing.Point(736, 121);
-            this.BTN_SupprimerProf.Name = "BTN_SupprimerProf";
-            this.BTN_SupprimerProf.Size = new System.Drawing.Size(120, 41);
-            this.BTN_SupprimerProf.TabIndex = 4;
-            this.BTN_SupprimerProf.Text = "Supprimer";
-            this.BTN_SupprimerProf.UseVisualStyleBackColor = true;
-            this.BTN_SupprimerProf.Click += new System.EventHandler(this.BTN_SupprimerProf_Click);
-            // 
-            // BTN_AnnulerProf
-            // 
-            this.BTN_AnnulerProf.Location = new System.Drawing.Point(736, 189);
-            this.BTN_AnnulerProf.Name = "BTN_AnnulerProf";
-            this.BTN_AnnulerProf.Size = new System.Drawing.Size(120, 41);
-            this.BTN_AnnulerProf.TabIndex = 5;
-            this.BTN_AnnulerProf.Text = "Annuler";
-            this.BTN_AnnulerProf.UseVisualStyleBackColor = true;
-            this.BTN_AnnulerProf.Click += new System.EventHandler(this.BTN_AnnulerProf_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(733, 242);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(142, 78);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Note: \r\nSuprimer \'Etat de service\r\nFace ID 1 et 2,\r\n\r\n\r\nAjouter \'Date de recrutem" +
-    "ent\r\n";
+            this.PBX_Professeur.Location = new System.Drawing.Point(13, 21);
+            this.PBX_Professeur.Name = "PBX_Professeur";
+            this.PBX_Professeur.Size = new System.Drawing.Size(95, 82);
+            this.PBX_Professeur.TabIndex = 0;
+            this.PBX_Professeur.TabStop = false;
             // 
             // TCL_Admin
             // 
@@ -1728,57 +1687,57 @@
             this.Text = "Admistrateur";
             this.Load += new System.EventHandler(this.Admistrateur_Load);
             this.TPG_MatiereProf.ResumeLayout(false);
-            this.GBX_ListeMatiereProf.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_MatiereProf)).EndInit();
-            this.GBX_RechMatiereProf.ResumeLayout(false);
-            this.GBX_RechMatiereProf.PerformLayout();
             this.GBX_FormMatiereProf.ResumeLayout(false);
             this.GBX_FormMatiereProf.PerformLayout();
+            this.GBX_RechMatiereProf.ResumeLayout(false);
+            this.GBX_RechMatiereProf.PerformLayout();
+            this.GBX_ListeMatiereProf.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_MatiereProf)).EndInit();
             this.TPG_Presence.ResumeLayout(false);
-            this.GBX_FormPresence.ResumeLayout(false);
-            this.GBX_FormPresence.PerformLayout();
-            this.GBX_ListePresence.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_ListePresence)).EndInit();
             this.GBX_RecherchePresence.ResumeLayout(false);
             this.GBX_RecherchePresence.PerformLayout();
+            this.GBX_ListePresence.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_ListePresence)).EndInit();
+            this.GBX_FormPresence.ResumeLayout(false);
+            this.GBX_FormPresence.PerformLayout();
             this.TPG_Programme.ResumeLayout(false);
             this.TPG_Programme.PerformLayout();
-            this.GBX_FormProg.ResumeLayout(false);
-            this.GBX_FormProg.PerformLayout();
-            this.GBX_ListeProg.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_ListeProgramme)).EndInit();
             this.GBX_RechercheProg.ResumeLayout(false);
             this.GBX_RechercheProg.PerformLayout();
+            this.GBX_ListeProg.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_ListeProgramme)).EndInit();
+            this.GBX_FormProg.ResumeLayout(false);
+            this.GBX_FormProg.PerformLayout();
             this.TPG_Administrateur.ResumeLayout(false);
-            this.GBX_FormAdmin.ResumeLayout(false);
-            this.GBX_FormAdmin.PerformLayout();
-            this.GBX_ListeAdmin.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_ListeAdmin)).EndInit();
             this.GBX_RechercheAdmin.ResumeLayout(false);
             this.GBX_RechercheAdmin.PerformLayout();
+            this.GBX_ListeAdmin.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_ListeAdmin)).EndInit();
+            this.GBX_FormAdmin.ResumeLayout(false);
+            this.GBX_FormAdmin.PerformLayout();
             this.TPG_Classe.ResumeLayout(false);
-            this.GBX_FormClasse.ResumeLayout(false);
-            this.GBX_FormClasse.PerformLayout();
-            this.GBX_ListeClasse.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_ListeClasse)).EndInit();
             this.GBX_RechercheClasse.ResumeLayout(false);
             this.GBX_RechercheClasse.PerformLayout();
+            this.GBX_ListeClasse.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_ListeClasse)).EndInit();
+            this.GBX_FormClasse.ResumeLayout(false);
+            this.GBX_FormClasse.PerformLayout();
             this.TPG_Matiere.ResumeLayout(false);
-            this.GBX_FormMatiere.ResumeLayout(false);
-            this.GBX_FormMatiere.PerformLayout();
-            this.GBX_ListeMatiere.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_ListeMatiere)).EndInit();
             this.GBX_RechecheMatiere.ResumeLayout(false);
             this.GBX_RechecheMatiere.PerformLayout();
+            this.GBX_ListeMatiere.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_ListeMatiere)).EndInit();
+            this.GBX_FormMatiere.ResumeLayout(false);
+            this.GBX_FormMatiere.PerformLayout();
             this.TPG_Professeur.ResumeLayout(false);
             this.TPG_Professeur.PerformLayout();
+            this.GBX_RechercheProf.ResumeLayout(false);
+            this.GBX_RechercheProf.PerformLayout();
+            this.GBX_ListeProfesseur.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_ListeProf)).EndInit();
             this.GBX_FormProfesseur.ResumeLayout(false);
             this.GBX_FormProfesseur.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Professeur)).EndInit();
-            this.GBX_ListeProfesseur.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_ListeProf)).EndInit();
-            this.GBX_RechercheProf.ResumeLayout(false);
-            this.GBX_RechercheProf.PerformLayout();
             this.TCL_Admin.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -1835,16 +1794,12 @@
         private System.Windows.Forms.GroupBox GBX_FormProg;
         private System.Windows.Forms.ComboBox CBX_HeureFinProg;
         private System.Windows.Forms.ComboBox CBX_HeureDebutProg;
-        private System.Windows.Forms.ComboBox CBX_SelectProgMatiere;
-        private System.Windows.Forms.ComboBox CBX_SelectProgProf;
+        private System.Windows.Forms.ComboBox CBX_SelectProgProfMatiere;
         private System.Windows.Forms.ComboBox CBX_SelectClasse;
-        private System.Windows.Forms.TextBox TXB_NomProgramme;
-        private System.Windows.Forms.Label LBL_NomProgramme;
         private System.Windows.Forms.Label LBL_HeureFinProg;
         private System.Windows.Forms.Label LBL_HeureDebutProg;
         private System.Windows.Forms.DateTimePicker DTP_Programme;
         private System.Windows.Forms.Label LBL_DateProg;
-        private System.Windows.Forms.Label LBL_Selectmatiere;
         private System.Windows.Forms.Label LBL_SelectProf;
         private System.Windows.Forms.Label LBL_SelectClasse;
         private System.Windows.Forms.TabPage TPG_Administrateur;

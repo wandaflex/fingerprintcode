@@ -43,8 +43,8 @@ namespace FingerPrint
             GridFill("MatiereViewAll", DGV_ListeMatiere);
 
             ComboFill("ProgrammeClasseComboViewAll", ref CBX_SelectClasse, "nom", "idClasse");
-            ComboFill("ProgrammeProfComboViewAll", ref CBX_SelectProgProf, "Professeur", "idProfesseur");
-            ComboFill("ProgrammeMatiereComboViewAll", ref CBX_SelectProgMatiere, "Matiere", "idMatiere");
+            ComboFill("ProgrammeMatiereComboViewAll", ref CBX_SelectProgProfMatiere, "ProfMatiere", "idPROFESSEUR_MATIERE");
+            //ComboFill("ProgrammeMatiereComboViewAll", ref CBX_SelectProgMatiere, "Matiere", "idMatiere");
 
 
             //Cedric: Ajout fichier TXT pout lecture des hauraires.
