@@ -605,8 +605,28 @@ namespace FingerPrint
 
 
         private void WandaMessageCallBack(IAsyncResult aResult)
-        { 
-            
+        {
+            try
+            {
+                int size = WandaUDP.EndReceiveFrom(aResult, ref WandaRemote);
+                if (size > 0)
+                {
+                    byte[] receiveData = new byte[1464];
+                    receiveData = (byte[])aResult.AsyncState;
+                    ASCIIEncoding eEncoding = new ASCIIEncoding();
+                    string receivedmessage = eEncoding.GetString(receiveData);
+
+                    LSV_Reseau.Items.Add(receivedmessage);
+
+                }
+                byte[] buffer = new byte[1500];
+                WandaUDP.BeginReceiveFrom(buffer, 0, buffer.Length, SocketFlags.None, ref WandaRemote, new AsyncCallback(WandaMessageCallBack), buffer);
+
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.ToString());
+            }
         }
         private void BTN_EtatReseau_Click(object sender, EventArgs e)
         {
@@ -620,6 +640,11 @@ namespace FingerPrint
 
                 byte[] buffer = new byte[1500];
                 WandaUDP.BeginReceiveFrom(buffer, 0, buffer.Length, SocketFlags.None, ref WandaRemote, new AsyncCallback(WandaMessageCallBack), buffer);
+
+                BTN_EtatReseau.Text = "Connected";
+                BTN_EtatReseau.Enabled = false;
+                BTN_FermerConnection.Enabled = true;
+
             }
             catch (Exception exp)
             {
@@ -627,9 +652,35 @@ namespace FingerPrint
             }
         }
 
+        private string GetFingerID()
+        {
+            int FingerID = 0;
+            int nb_Min = 1;
+            int nb_Max = 126;
+            Random num = new Random();
+
+            FingerID = num.Next(nb_Min, nb_Max);
+
+            return Convert.ToString(FingerID);
+        }
         private void BTN_Empreinte1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                System.Text.ASCIIEncoding enc = new System.Text.ASCIIEncoding();
+                byte[] msg = new byte[1500];
+                msg = enc.GetBytes("WDF_ENREOLL_"+ GetFingerID());
+                WandaUDP.Send(msg);
 
+                LSV_Reseau.Items.Add("ID Empreinte envoyer : " + GetFingerID());
+
+
+                BTN_Empreinte2.Enabled = true;
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.ToString());
+            }
         }
     }
 }

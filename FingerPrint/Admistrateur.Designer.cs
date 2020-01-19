@@ -179,6 +179,7 @@
             this.PBX_Professeur = new System.Windows.Forms.PictureBox();
             this.TCL_Admin = new System.Windows.Forms.TabControl();
             this.BTN_FermerConnection = new System.Windows.Forms.Button();
+            this.LSV_Reseau = new System.Windows.Forms.ListView();
             this.TPG_MatiereProf.SuspendLayout();
             this.GBX_FormMatiereProf.SuspendLayout();
             this.GBX_RechMatiereProf.SuspendLayout();
@@ -1447,6 +1448,7 @@
             // 
             // BTN_Empreinte2
             // 
+            this.BTN_Empreinte2.Enabled = false;
             this.BTN_Empreinte2.Location = new System.Drawing.Point(223, 178);
             this.BTN_Empreinte2.Name = "BTN_Empreinte2";
             this.BTN_Empreinte2.Size = new System.Drawing.Size(90, 23);
@@ -1676,6 +1678,7 @@
             // 
             // BTN_FermerConnection
             // 
+            this.BTN_FermerConnection.Enabled = false;
             this.BTN_FermerConnection.Location = new System.Drawing.Point(901, 217);
             this.BTN_FermerConnection.Name = "BTN_FermerConnection";
             this.BTN_FermerConnection.Size = new System.Drawing.Size(132, 34);
@@ -1683,11 +1686,21 @@
             this.BTN_FermerConnection.Text = "Fermer Connection";
             this.BTN_FermerConnection.UseVisualStyleBackColor = true;
             // 
+            // LSV_Reseau
+            // 
+            this.LSV_Reseau.HideSelection = false;
+            this.LSV_Reseau.Location = new System.Drawing.Point(906, 283);
+            this.LSV_Reseau.Name = "LSV_Reseau";
+            this.LSV_Reseau.Size = new System.Drawing.Size(127, 181);
+            this.LSV_Reseau.TabIndex = 7;
+            this.LSV_Reseau.UseCompatibleStateImageBehavior = false;
+            // 
             // Admistrateur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1045, 635);
+            this.Controls.Add(this.LSV_Reseau);
             this.Controls.Add(this.BTN_FermerConnection);
             this.Controls.Add(this.BTN_EtatReseau);
             this.Controls.Add(this.BTN_Horaires);
@@ -1907,5 +1920,6 @@
         private System.Windows.Forms.PictureBox PBX_Professeur;
         private System.Windows.Forms.TabControl TCL_Admin;
         private System.Windows.Forms.Button BTN_FermerConnection;
+        private System.Windows.Forms.ListView LSV_Reseau;
     }
 }
