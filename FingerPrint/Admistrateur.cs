@@ -663,6 +663,27 @@ namespace FingerPrint
 
             return Convert.ToString(FingerID);
         }
+
+        private void BTN_Empreinte2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Text.ASCIIEncoding enc = new System.Text.ASCIIEncoding();
+                byte[] msg = new byte[1500];
+                msg = enc.GetBytes("WDF_ENREOLL_" + GetFingerID());
+                WandaUDP.Send(msg);
+
+                LSV_Reseau.Items.Add("ID Empreinte 2 envoyer : " + GetFingerID());
+
+
+                BTN_Empreinte2.Enabled = false;
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.ToString());
+            }
+        }
+
         private void BTN_Empreinte1_Click(object sender, EventArgs e)
         {
             try
@@ -672,10 +693,11 @@ namespace FingerPrint
                 msg = enc.GetBytes("WDF_ENREOLL_"+ GetFingerID());
                 WandaUDP.Send(msg);
 
-                LSV_Reseau.Items.Add("ID Empreinte envoyer : " + GetFingerID());
+                LSV_Reseau.Items.Add("ID Empreinte 1 envoyer : " + GetFingerID());
 
 
                 BTN_Empreinte2.Enabled = true;
+                BTN_Empreinte1.Enabled = false;
             }
             catch (Exception exp)
             {

@@ -1455,6 +1455,7 @@
             this.BTN_Empreinte2.TabIndex = 34;
             this.BTN_Empreinte2.Text = "Empreinte 2 >>";
             this.BTN_Empreinte2.UseVisualStyleBackColor = true;
+            this.BTN_Empreinte2.Click += new System.EventHandler(this.BTN_Empreinte2_Click);
             // 
             // BTN_Empreinte1
             // 
