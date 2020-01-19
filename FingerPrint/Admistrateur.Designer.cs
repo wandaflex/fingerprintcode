@@ -178,6 +178,7 @@
             this.TXB_NomProf = new System.Windows.Forms.TextBox();
             this.PBX_Professeur = new System.Windows.Forms.PictureBox();
             this.TCL_Admin = new System.Windows.Forms.TabControl();
+            this.BTN_FermerConnection = new System.Windows.Forms.Button();
             this.TPG_MatiereProf.SuspendLayout();
             this.GBX_FormMatiereProf.SuspendLayout();
             this.GBX_RechMatiereProf.SuspendLayout();
@@ -261,6 +262,7 @@
             this.BTN_EtatReseau.TabIndex = 5;
             this.BTN_EtatReseau.Text = "Etat du Reseau";
             this.BTN_EtatReseau.UseVisualStyleBackColor = true;
+            this.BTN_EtatReseau.Click += new System.EventHandler(this.BTN_EtatReseau_Click);
             // 
             // TPG_MatiereProf
             // 
@@ -1460,6 +1462,7 @@
             this.BTN_Empreinte1.TabIndex = 33;
             this.BTN_Empreinte1.Text = "Empreinte 1 >>";
             this.BTN_Empreinte1.UseVisualStyleBackColor = true;
+            this.BTN_Empreinte1.Click += new System.EventHandler(this.BTN_Empreinte1_Click);
             // 
             // label15
             // 
@@ -1671,11 +1674,21 @@
             this.TCL_Admin.Size = new System.Drawing.Size(883, 638);
             this.TCL_Admin.TabIndex = 0;
             // 
+            // BTN_FermerConnection
+            // 
+            this.BTN_FermerConnection.Location = new System.Drawing.Point(901, 217);
+            this.BTN_FermerConnection.Name = "BTN_FermerConnection";
+            this.BTN_FermerConnection.Size = new System.Drawing.Size(132, 34);
+            this.BTN_FermerConnection.TabIndex = 6;
+            this.BTN_FermerConnection.Text = "Fermer Connection";
+            this.BTN_FermerConnection.UseVisualStyleBackColor = true;
+            // 
             // Admistrateur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 609);
+            this.ClientSize = new System.Drawing.Size(1045, 635);
+            this.Controls.Add(this.BTN_FermerConnection);
             this.Controls.Add(this.BTN_EtatReseau);
             this.Controls.Add(this.BTN_Horaires);
             this.Controls.Add(this.BTN_Rapports);
@@ -1893,5 +1906,6 @@
         private System.Windows.Forms.TextBox TXB_NomProf;
         private System.Windows.Forms.PictureBox PBX_Professeur;
         private System.Windows.Forms.TabControl TCL_Admin;
+        private System.Windows.Forms.Button BTN_FermerConnection;
     }
 }

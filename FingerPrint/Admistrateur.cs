@@ -16,6 +16,8 @@ using System.Text;
 using System.IO;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Net;
+using System.Net.Sockets;
 
 namespace FingerPrint
 {
@@ -23,13 +25,26 @@ namespace FingerPrint
     {
         string connectionString = @"Server=localhost;Database=presence_db;Uid=root;Pwd='';";
         public int adminID = 0;
+
+        Socket WandaUDP;
+        EndPoint WandaLocal, WandaRemote;
+        string IP_Adrress_PC = "192.168.0.116";
+        string port_PC = "2500";
+
+        string IP_Adrress_Client = "192.168.0.200";
+        string port_Client = "2500";
+
         //int cycleID = 0;
         int classeID = 0;
         int professeurID = 0;
         int matiereID = 0;
+
         public Admistrateur()
         {
             InitializeComponent();
+            WandaUDP = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
+            WandaUDP.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.ReuseAddress, true);
+
         }
 
         #region Initialisation du formulaire principal
@@ -586,6 +601,35 @@ namespace FingerPrint
         private void BTN_AnnulerProf_Click(object sender, EventArgs e)
         {
             cleanForm(GBX_FormProfesseur, ref professeurID, BTN_EnregistrerProf);
+        }
+
+
+        private void WandaMessageCallBack(IAsyncResult aResult)
+        { 
+            
+        }
+        private void BTN_EtatReseau_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                WandaLocal = new IPEndPoint(IPAddress.Parse(IP_Adrress_PC), Convert.ToInt32(port_PC));
+                WandaUDP.Bind(WandaLocal); //This is the server  -- Address IP of the PC
+
+                WandaRemote = new IPEndPoint(IPAddress.Parse(IP_Adrress_Client), Convert.ToInt32(port_Client));
+                WandaUDP.Bind(WandaRemote); //This is the Client  -- Address IP of the Master FinguerPrint
+
+                byte[] buffer = new byte[1500];
+                WandaUDP.BeginReceiveFrom(buffer, 0, buffer.Length, SocketFlags.None, ref WandaRemote, new AsyncCallback(WandaMessageCallBack), buffer);
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.ToString());
+            }
+        }
+
+        private void BTN_Empreinte1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
