@@ -351,6 +351,7 @@
             this.BTN_EnregistrerMatProf.TabIndex = 15;
             this.BTN_EnregistrerMatProf.Text = "Enregistrer";
             this.BTN_EnregistrerMatProf.UseVisualStyleBackColor = true;
+            this.BTN_EnregistrerMatProf.Click += new System.EventHandler(this.BTN_EnregistrerMatProf_Click);
             // 
             // GBX_RechMatiereProf
             // 
@@ -391,11 +392,16 @@
             // 
             // DGV_MatiereProf
             // 
+            this.DGV_MatiereProf.AllowUserToAddRows = false;
+            this.DGV_MatiereProf.AllowUserToDeleteRows = false;
+            this.DGV_MatiereProf.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGV_MatiereProf.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_MatiereProf.Location = new System.Drawing.Point(11, 21);
+            this.DGV_MatiereProf.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGV_MatiereProf.Location = new System.Drawing.Point(3, 16);
             this.DGV_MatiereProf.Name = "DGV_MatiereProf";
+            this.DGV_MatiereProf.ReadOnly = true;
             this.DGV_MatiereProf.RowHeadersWidth = 51;
-            this.DGV_MatiereProf.Size = new System.Drawing.Size(681, 386);
+            this.DGV_MatiereProf.Size = new System.Drawing.Size(694, 394);
             this.DGV_MatiereProf.TabIndex = 0;
             // 
             // TPG_Presence
@@ -480,11 +486,16 @@
             // 
             // DGV_ListePresence
             // 
+            this.DGV_ListePresence.AllowUserToAddRows = false;
+            this.DGV_ListePresence.AllowUserToDeleteRows = false;
+            this.DGV_ListePresence.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGV_ListePresence.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_ListePresence.Location = new System.Drawing.Point(9, 21);
+            this.DGV_ListePresence.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGV_ListePresence.Location = new System.Drawing.Point(3, 16);
             this.DGV_ListePresence.Name = "DGV_ListePresence";
+            this.DGV_ListePresence.ReadOnly = true;
             this.DGV_ListePresence.RowHeadersWidth = 51;
-            this.DGV_ListePresence.Size = new System.Drawing.Size(683, 417);
+            this.DGV_ListePresence.Size = new System.Drawing.Size(694, 425);
             this.DGV_ListePresence.TabIndex = 0;
             // 
             // GBX_FormPresence
@@ -622,6 +633,7 @@
             this.BTN_EnregisterProg.TabIndex = 9;
             this.BTN_EnregisterProg.Text = "Enregistrer";
             this.BTN_EnregisterProg.UseVisualStyleBackColor = true;
+            this.BTN_EnregisterProg.Click += new System.EventHandler(this.BTN_EnregisterProg_Click);
             // 
             // GBX_RechercheProg
             // 
@@ -653,21 +665,27 @@
             // GBX_ListeProg
             // 
             this.GBX_ListeProg.Controls.Add(this.DGV_ListeProgramme);
-            this.GBX_ListeProg.Location = new System.Drawing.Point(19, 201);
+            this.GBX_ListeProg.Location = new System.Drawing.Point(18, 195);
             this.GBX_ListeProg.Name = "GBX_ListeProg";
-            this.GBX_ListeProg.Size = new System.Drawing.Size(700, 397);
+            this.GBX_ListeProg.Size = new System.Drawing.Size(701, 264);
             this.GBX_ListeProg.TabIndex = 7;
             this.GBX_ListeProg.TabStop = false;
             this.GBX_ListeProg.Text = "Liste Programme";
             // 
             // DGV_ListeProgramme
             // 
+            this.DGV_ListeProgramme.AllowUserToAddRows = false;
+            this.DGV_ListeProgramme.AllowUserToDeleteRows = false;
+            this.DGV_ListeProgramme.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGV_ListeProgramme.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_ListeProgramme.Location = new System.Drawing.Point(12, 16);
+            this.DGV_ListeProgramme.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGV_ListeProgramme.Location = new System.Drawing.Point(3, 16);
             this.DGV_ListeProgramme.Name = "DGV_ListeProgramme";
+            this.DGV_ListeProgramme.ReadOnly = true;
             this.DGV_ListeProgramme.RowHeadersWidth = 51;
-            this.DGV_ListeProgramme.Size = new System.Drawing.Size(680, 375);
+            this.DGV_ListeProgramme.Size = new System.Drawing.Size(695, 245);
             this.DGV_ListeProgramme.TabIndex = 0;
+            this.DGV_ListeProgramme.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_ListeProgramme_CellContentDoubleClick);
             // 
             // GBX_FormProg
             // 
@@ -860,12 +878,14 @@
             // 
             this.DGV_ListeAdmin.AllowUserToAddRows = false;
             this.DGV_ListeAdmin.AllowUserToDeleteRows = false;
+            this.DGV_ListeAdmin.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGV_ListeAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_ListeAdmin.Location = new System.Drawing.Point(6, 19);
+            this.DGV_ListeAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGV_ListeAdmin.Location = new System.Drawing.Point(3, 16);
             this.DGV_ListeAdmin.Name = "DGV_ListeAdmin";
             this.DGV_ListeAdmin.ReadOnly = true;
             this.DGV_ListeAdmin.RowHeadersWidth = 51;
-            this.DGV_ListeAdmin.Size = new System.Drawing.Size(687, 382);
+            this.DGV_ListeAdmin.Size = new System.Drawing.Size(694, 388);
             this.DGV_ListeAdmin.TabIndex = 0;
             this.DGV_ListeAdmin.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_ListeAdmin_CellContentDoubleClick);
             // 
@@ -1060,12 +1080,14 @@
             // 
             this.DGV_ListeClasse.AllowUserToAddRows = false;
             this.DGV_ListeClasse.AllowUserToDeleteRows = false;
+            this.DGV_ListeClasse.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGV_ListeClasse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_ListeClasse.Location = new System.Drawing.Point(11, 21);
+            this.DGV_ListeClasse.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGV_ListeClasse.Location = new System.Drawing.Point(3, 16);
             this.DGV_ListeClasse.Name = "DGV_ListeClasse";
             this.DGV_ListeClasse.ReadOnly = true;
             this.DGV_ListeClasse.RowHeadersWidth = 51;
-            this.DGV_ListeClasse.Size = new System.Drawing.Size(681, 430);
+            this.DGV_ListeClasse.Size = new System.Drawing.Size(694, 438);
             this.DGV_ListeClasse.TabIndex = 0;
             this.DGV_ListeClasse.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_ListeClasse_CellContentDoubleClick);
             // 
@@ -1240,11 +1262,16 @@
             // 
             // DGV_ListeMatiere
             // 
+            this.DGV_ListeMatiere.AllowUserToAddRows = false;
+            this.DGV_ListeMatiere.AllowUserToDeleteRows = false;
+            this.DGV_ListeMatiere.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGV_ListeMatiere.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_ListeMatiere.Location = new System.Drawing.Point(10, 17);
+            this.DGV_ListeMatiere.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGV_ListeMatiere.Location = new System.Drawing.Point(3, 16);
             this.DGV_ListeMatiere.Name = "DGV_ListeMatiere";
+            this.DGV_ListeMatiere.ReadOnly = true;
             this.DGV_ListeMatiere.RowHeadersWidth = 51;
-            this.DGV_ListeMatiere.Size = new System.Drawing.Size(682, 426);
+            this.DGV_ListeMatiere.Size = new System.Drawing.Size(694, 430);
             this.DGV_ListeMatiere.TabIndex = 0;
             this.DGV_ListeMatiere.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_ListeMatiere_CellContentDoubleClick);
             // 
@@ -1314,7 +1341,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(733, 242);
+            this.label2.Location = new System.Drawing.Point(733, 230);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(142, 78);
             this.label2.TabIndex = 13;
@@ -1355,9 +1382,9 @@
             // 
             this.GBX_RechercheProf.Controls.Add(this.TBX_RecherchePof);
             this.GBX_RechercheProf.Controls.Add(this.BTN_RechercheProf);
-            this.GBX_RechercheProf.Location = new System.Drawing.Point(10, 293);
+            this.GBX_RechercheProf.Location = new System.Drawing.Point(10, 259);
             this.GBX_RechercheProf.Name = "GBX_RechercheProf";
-            this.GBX_RechercheProf.Size = new System.Drawing.Size(712, 46);
+            this.GBX_RechercheProf.Size = new System.Drawing.Size(717, 46);
             this.GBX_RechercheProf.TabIndex = 2;
             this.GBX_RechercheProf.TabStop = false;
             this.GBX_RechercheProf.Text = "Recherche";
@@ -1381,21 +1408,25 @@
             // GBX_ListeProfesseur
             // 
             this.GBX_ListeProfesseur.Controls.Add(this.DGV_ListeProf);
-            this.GBX_ListeProfesseur.Location = new System.Drawing.Point(15, 345);
+            this.GBX_ListeProfesseur.Location = new System.Drawing.Point(6, 307);
             this.GBX_ListeProfesseur.Name = "GBX_ListeProfesseur";
-            this.GBX_ListeProfesseur.Size = new System.Drawing.Size(841, 261);
+            this.GBX_ListeProfesseur.Size = new System.Drawing.Size(841, 239);
             this.GBX_ListeProfesseur.TabIndex = 1;
             this.GBX_ListeProfesseur.TabStop = false;
             this.GBX_ListeProfesseur.Text = "Liste Professeur";
             // 
             // DGV_ListeProf
             // 
+            this.DGV_ListeProf.AllowUserToAddRows = false;
+            this.DGV_ListeProf.AllowUserToDeleteRows = false;
+            this.DGV_ListeProf.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGV_ListeProf.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_ListeProf.Location = new System.Drawing.Point(11, 20);
+            this.DGV_ListeProf.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGV_ListeProf.Location = new System.Drawing.Point(3, 16);
             this.DGV_ListeProf.Name = "DGV_ListeProf";
             this.DGV_ListeProf.ReadOnly = true;
             this.DGV_ListeProf.RowHeadersWidth = 51;
-            this.DGV_ListeProf.Size = new System.Drawing.Size(824, 235);
+            this.DGV_ListeProf.Size = new System.Drawing.Size(835, 220);
             this.DGV_ListeProf.TabIndex = 0;
             this.DGV_ListeProf.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_ListeProf_CellContentDoubleClick);
             // 
@@ -1430,7 +1461,7 @@
             this.GBX_FormProfesseur.Controls.Add(this.PBX_Professeur);
             this.GBX_FormProfesseur.Location = new System.Drawing.Point(10, 18);
             this.GBX_FormProfesseur.Name = "GBX_FormProfesseur";
-            this.GBX_FormProfesseur.Size = new System.Drawing.Size(717, 260);
+            this.GBX_FormProfesseur.Size = new System.Drawing.Size(717, 242);
             this.GBX_FormProfesseur.TabIndex = 0;
             this.GBX_FormProfesseur.TabStop = false;
             this.GBX_FormProfesseur.Text = "Formulaire Professeur";
@@ -1512,7 +1543,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(348, 199);
+            this.label9.Location = new System.Drawing.Point(348, 189);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(60, 13);
             this.label9.TabIndex = 18;
@@ -1520,7 +1551,7 @@
             // 
             // TXB_DescriptionProf
             // 
-            this.TXB_DescriptionProf.Location = new System.Drawing.Point(414, 184);
+            this.TXB_DescriptionProf.Location = new System.Drawing.Point(414, 174);
             this.TXB_DescriptionProf.Multiline = true;
             this.TXB_DescriptionProf.Name = "TXB_DescriptionProf";
             this.TXB_DescriptionProf.Size = new System.Drawing.Size(286, 61);
@@ -1675,7 +1706,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 609);
+            this.ClientSize = new System.Drawing.Size(1028, 532);
             this.Controls.Add(this.BTN_EtatReseau);
             this.Controls.Add(this.BTN_Horaires);
             this.Controls.Add(this.BTN_Rapports);

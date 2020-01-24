@@ -27,6 +27,7 @@ namespace FingerPrint
         int classeID = 0;
         int professeurID = 0;
         int matiereID = 0;
+        int programmeID = 0;
         public Admistrateur()
         {
             InitializeComponent();
@@ -44,7 +45,9 @@ namespace FingerPrint
 
             ComboFill("ProgrammeClasseComboViewAll", ref CBX_SelectClasse, "nom", "idClasse");
             ComboFill("ProgrammeMatiereComboViewAll", ref CBX_SelectProgProfMatiere, "ProfMatiere", "idPROFESSEUR_MATIERE");
-            //ComboFill("ProgrammeMatiereComboViewAll", ref CBX_SelectProgMatiere, "Matiere", "idMatiere");
+            ComboFill("MatiereProfMatiereComboViewAll", ref CBX_SelectMatiere, "Matiere", "idMatiere");
+            ComboFill("MatiereProfProfComboViewAll", ref CBX_SelectProf, "Professeur", "idProfesseur");
+            GridFill("ProgrammesViewAll", DGV_ListeProgramme);
 
 
             //Cedric: Ajout fichier TXT pout lecture des hauraires.
@@ -229,7 +232,6 @@ namespace FingerPrint
 
                 //CBX_FormMatiere.SelectedIndex = CBX_FormMatiere.FindStringExact(DGV_ListeMatiere.CurrentRow.Cells[3].Value.ToString());
 
-
                 matiereID = Convert.ToInt32(DGV_ListeMatiere.CurrentRow.Cells[0].Value.ToString());
                 BTN_EnregisterMatiere.Text = "Modifier";
             }
@@ -292,8 +294,6 @@ namespace FingerPrint
                 DGV_ListeAdmin.Columns[0].Visible = false;
                 DGV_ListeAdmin.Columns[DGV_ListeAdmin.Columns.Count - 1].Visible = false;
             }
-
-
             /*
             try
             {
@@ -587,5 +587,89 @@ namespace FingerPrint
         {
             cleanForm(GBX_FormProfesseur, ref professeurID, BTN_EnregistrerProf);
         }
+
+        private void BTN_EnregisterProg_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+                {
+                    mySqlCon.Open();
+                    MySqlCommand mySqlCmd = new MySqlCommand("ProgrammeAddOrEdit", mySqlCon);
+                    mySqlCmd.CommandType = CommandType.StoredProcedure;
+                    mySqlCmd.Parameters.AddWithValue("_ProgrammesID", programmeID);
+                    mySqlCmd.Parameters.AddWithValue("_ProgrammeDate", DTP_Programme.Value);
+                    mySqlCmd.Parameters.AddWithValue("_ProgrammeHeureDebut", CBX_HeureDebutProg.SelectedItem.ToString());
+                    mySqlCmd.Parameters.AddWithValue("_ProgrammeHeureFin", CBX_HeureFinProg.SelectedItem.ToString());
+                    mySqlCmd.Parameters.AddWithValue("_ProgrammeIDClasse", CBX_SelectClasse.SelectedValue.ToString());
+                    mySqlCmd.Parameters.AddWithValue("_ProgrammeIDAdmin", "1");
+                    mySqlCmd.Parameters.AddWithValue("_ProgrammeIDProfMatiere", CBX_SelectProgProfMatiere.SelectedValue.ToString());
+                    mySqlCmd.ExecuteNonQuery();
+                    MessageBox.Show("Submited successfully");
+                    cleanForm(GBX_FormProg, ref programmeID, BTN_EnregisterProg);
+                    GridFill("ProgrammesViewAll", DGV_ListeProgramme);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error Message ");
+            }
+        }
+
+        private void DGV_ListeProgramme_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (DGV_ListeProgramme.CurrentRow.Index != -1)
+            {
+                //DTP_Programme.Value = DGV_ListeProgramme.CurrentRow.Cells[1].Value.ToString();
+
+                CBX_HeureDebutProg.Text = DGV_ListeProgramme.CurrentRow.Cells[2].Value.ToString();
+                CBX_HeureFinProg.Text = DGV_ListeProgramme.CurrentRow.Cells[3].Value.ToString();
+                programmeID = Convert.ToInt32(DGV_ListeProgramme.CurrentRow.Cells[0].Value.ToString());
+                
+                //BTN_EnregisterCycle.Text = "Modifier";
+            }
+
+        }
+
+        private void BTN_EnregistrerMatProf_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //private void BTN_EnregisterCycle_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+        //        {
+        //            mySqlCon.Open();
+        //            MySqlCommand mySqlCmd = new MySqlCommand("CycleAddOrEdit", mySqlCon);
+        //            mySqlCmd.CommandType = CommandType.StoredProcedure;
+        //            mySqlCmd.Parameters.AddWithValue("_CycleID", cycleID);
+        //            mySqlCmd.Parameters.AddWithValue("_CycleNumero", TXB_NumCycle.Text.Trim());
+        //            mySqlCmd.Parameters.AddWithValue("_CycleDescription", TXB_DescriptionCycle.Text.Trim());
+        //            mySqlCmd.ExecuteNonQuery();
+        //            MessageBox.Show("Submited successfully");
+        //            GridFill("CycleViewAll", DGV_ListeCycle);
+        //            BTN_EnregisterCycle.Text = "Modifier";
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message, "Error Message ");
+        //    }
+        //}
+
+        //private void DGV_ListeCycle_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    if (DGV_ListeCycle.CurrentRow.Index != -1)
+        //    {
+        //        TXB_NumCycle.Text = DGV_ListeCycle.CurrentRow.Cells[1].Value.ToString();
+        //        TXB_DescriptionCycle.Text = DGV_ListeCycle.CurrentRow.Cells[2].Value.ToString();
+        //        cycleID = Convert.ToInt32(DGV_ListeCycle.CurrentRow.Cells[0].Value.ToString());
+        //        BTN_EnregisterCycle.Text = "Modifier";
+        //    }
+        //}
+
     }
 }
