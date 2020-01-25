@@ -16,6 +16,7 @@ using System.Text;
 using System.IO;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using MySql.Data;
 
 namespace FingerPrint
 {
@@ -36,18 +37,10 @@ namespace FingerPrint
         #region Initialisation du formulaire principal
         private void Admistrateur_Load(object sender, EventArgs e)
         {
-            GridFill("AdminViewAll", DGV_ListeAdmin);
-            //GridFill("CycleViewAll", DGV_ListeCycle);
-            GridFill("ClasseViewAll", DGV_ListeClasse);
-            GridFill("ProfViewAll", DGV_ListeProf);
 
-            GridFill("MatiereViewAll", DGV_ListeMatiere);
+            initCombo();
 
-            ComboFill("ProgrammeClasseComboViewAll", ref CBX_SelectClasse, "nom", "idClasse");
-            ComboFill("ProgrammeMatiereComboViewAll", ref CBX_SelectProgProfMatiere, "ProfMatiere", "idPROFESSEUR_MATIERE");
-            ComboFill("MatiereProfMatiereComboViewAll", ref CBX_SelectMatiere, "Matiere", "idMatiere");
-            ComboFill("MatiereProfProfComboViewAll", ref CBX_SelectProf, "Professeur", "idProfesseur");
-            GridFill("ProgrammesViewAll", DGV_ListeProgramme);
+          
 
 
             //Cedric: Ajout fichier TXT pout lecture des hauraires.
@@ -68,6 +61,22 @@ namespace FingerPrint
             {
                 MessageBox.Show("Error : " + ex.Message);
             }
+        }
+
+        private void initCombo()
+        {
+            GridFill("AdminViewAll", DGV_ListeAdmin);
+            //GridFill("CycleViewAll", DGV_ListeCycle);
+            GridFill("ClasseViewAll", DGV_ListeClasse);
+            GridFill("ProfViewAll", DGV_ListeProf);
+
+            GridFill("MatiereViewAll", DGV_ListeMatiere);
+
+            ComboFill("ProgrammeClasseComboViewAll", ref CBX_SelectClasse, "nom", "idClasse");
+            ComboFill("ProgrammeMatiereComboViewAll", ref CBX_SelectProgProfMatiere, "ProfMatiere", "idPROFESSEUR_MATIERE");
+            ComboFill("MatiereProfMatiereComboViewAll", ref CBX_SelectMatiere, "Matiere", "idMatiere");
+            ComboFill("MatiereProfProfComboViewAll", ref CBX_SelectProf, "Professeur", "idProfesseur");
+            GridFill("ProgrammesViewAll", DGV_ListeProgramme);
         }
 
         #endregion
@@ -260,7 +269,6 @@ namespace FingerPrint
         //    catch (Exception ex)
         //    {
         //        MessageBox.Show(ex.Message, "Error Message ");
-
         //    }
         //}
 
@@ -635,6 +643,14 @@ namespace FingerPrint
         {
 
         }
+
+        private void TCL_Admin_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            initCombo();
+
+        }
+
+
 
         //private void BTN_EnregisterCycle_Click(object sender, EventArgs e)
         //{
