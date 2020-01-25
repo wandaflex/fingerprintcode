@@ -1701,6 +1701,7 @@
             this.TCL_Admin.SelectedIndex = 0;
             this.TCL_Admin.Size = new System.Drawing.Size(883, 638);
             this.TCL_Admin.TabIndex = 0;
+            this.TCL_Admin.SelectedIndexChanged += new System.EventHandler(this.TCL_Admin_SelectedIndexChanged);
             // 
             // Admistrateur
             // 
