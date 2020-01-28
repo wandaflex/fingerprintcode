@@ -58,3 +58,4 @@ C:\Users\Raoul\Documents\wandaflexcode\fingerprintcode\FingerPrint\obj\x86\Debug
 C:\Users\Raoul\Documents\wandaflexcode\fingerprintcode\FingerPrint\obj\x86\Debug\FingerPrint.csproj.CopyComplete
 C:\Users\Raoul\Documents\wandaflexcode\fingerprintcode\FingerPrint\obj\x86\Debug\FingerPrint.exe
 C:\Users\Raoul\Documents\wandaflexcode\fingerprintcode\FingerPrint\obj\x86\Debug\FingerPrint.pdb
+C:\Users\USer\Documents\ProjetGit\fingerprintcode\FingerPrint\obj\x86\Debug\FingerPrint.Rapports.resources

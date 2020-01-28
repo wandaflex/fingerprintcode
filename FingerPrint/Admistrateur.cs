@@ -650,6 +650,12 @@ namespace FingerPrint
 
         }
 
+        private void BTN_Rapports_Click(object sender, EventArgs e)
+        {
+            Rapports openForm = new Rapports();
+            openForm.Show();
+        }
+
 
 
         //private void BTN_EnregisterCycle_Click(object sender, EventArgs e)
