@@ -1419,7 +1419,6 @@
             // 
             this.DGV_ListeProf.AllowUserToAddRows = false;
             this.DGV_ListeProf.AllowUserToDeleteRows = false;
-            this.DGV_ListeProf.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGV_ListeProf.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_ListeProf.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGV_ListeProf.Location = new System.Drawing.Point(3, 16);
@@ -1707,7 +1706,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 532);
+            this.ClientSize = new System.Drawing.Size(1028, 653);
             this.Controls.Add(this.BTN_EtatReseau);
             this.Controls.Add(this.BTN_Horaires);
             this.Controls.Add(this.BTN_Rapports);
