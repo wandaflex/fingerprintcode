@@ -243,6 +243,7 @@
             this.BTN_Rapports.TabIndex = 3;
             this.BTN_Rapports.Text = "Rapports";
             this.BTN_Rapports.UseVisualStyleBackColor = true;
+            this.BTN_Rapports.Click += new System.EventHandler(this.BTN_Rapports_Click);
             // 
             // BTN_Horaires
             // 
@@ -667,7 +668,7 @@
             this.GBX_ListeProg.Controls.Add(this.DGV_ListeProgramme);
             this.GBX_ListeProg.Location = new System.Drawing.Point(18, 195);
             this.GBX_ListeProg.Name = "GBX_ListeProg";
-            this.GBX_ListeProg.Size = new System.Drawing.Size(701, 264);
+            this.GBX_ListeProg.Size = new System.Drawing.Size(702, 411);
             this.GBX_ListeProg.TabIndex = 7;
             this.GBX_ListeProg.TabStop = false;
             this.GBX_ListeProg.Text = "Liste Programme";
@@ -683,7 +684,7 @@
             this.DGV_ListeProgramme.Name = "DGV_ListeProgramme";
             this.DGV_ListeProgramme.ReadOnly = true;
             this.DGV_ListeProgramme.RowHeadersWidth = 51;
-            this.DGV_ListeProgramme.Size = new System.Drawing.Size(695, 245);
+            this.DGV_ListeProgramme.Size = new System.Drawing.Size(696, 392);
             this.DGV_ListeProgramme.TabIndex = 0;
             this.DGV_ListeProgramme.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_ListeProgramme_CellContentDoubleClick);
             // 
@@ -1410,7 +1411,7 @@
             this.GBX_ListeProfesseur.Controls.Add(this.DGV_ListeProf);
             this.GBX_ListeProfesseur.Location = new System.Drawing.Point(6, 307);
             this.GBX_ListeProfesseur.Name = "GBX_ListeProfesseur";
-            this.GBX_ListeProfesseur.Size = new System.Drawing.Size(841, 239);
+            this.GBX_ListeProfesseur.Size = new System.Drawing.Size(863, 295);
             this.GBX_ListeProfesseur.TabIndex = 1;
             this.GBX_ListeProfesseur.TabStop = false;
             this.GBX_ListeProfesseur.Text = "Liste Professeur";
@@ -1419,13 +1420,14 @@
             // 
             this.DGV_ListeProf.AllowUserToAddRows = false;
             this.DGV_ListeProf.AllowUserToDeleteRows = false;
+            this.DGV_ListeProf.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGV_ListeProf.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_ListeProf.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGV_ListeProf.Location = new System.Drawing.Point(3, 16);
             this.DGV_ListeProf.Name = "DGV_ListeProf";
             this.DGV_ListeProf.ReadOnly = true;
             this.DGV_ListeProf.RowHeadersWidth = 51;
-            this.DGV_ListeProf.Size = new System.Drawing.Size(835, 220);
+            this.DGV_ListeProf.Size = new System.Drawing.Size(857, 276);
             this.DGV_ListeProf.TabIndex = 0;
             this.DGV_ListeProf.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_ListeProf_CellContentDoubleClick);
             // 
@@ -1559,7 +1561,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(365, 131);
+            this.label7.Location = new System.Drawing.Point(380, 129);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(117, 13);
             this.label7.TabIndex = 16;
@@ -1567,7 +1569,7 @@
             // 
             // TXB_Taux1ierCycleProf
             // 
-            this.TXB_Taux1ierCycleProf.Location = new System.Drawing.Point(377, 151);
+            this.TXB_Taux1ierCycleProf.Location = new System.Drawing.Point(392, 149);
             this.TXB_Taux1ierCycleProf.Name = "TXB_Taux1ierCycleProf";
             this.TXB_Taux1ierCycleProf.Size = new System.Drawing.Size(99, 20);
             this.TXB_Taux1ierCycleProf.TabIndex = 15;
@@ -1706,7 +1708,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 653);
+            this.ClientSize = new System.Drawing.Size(1055, 671);
             this.Controls.Add(this.BTN_EtatReseau);
             this.Controls.Add(this.BTN_Horaires);
             this.Controls.Add(this.BTN_Rapports);
