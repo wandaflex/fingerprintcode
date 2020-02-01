@@ -1512,7 +1512,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(525, 131);
+            this.label11.Location = new System.Drawing.Point(525, 118);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(128, 13);
             this.label11.TabIndex = 22;
@@ -1520,7 +1520,7 @@
             // 
             // TXB_Taux2iemeCycleProf
             // 
-            this.TXB_Taux2iemeCycleProf.Location = new System.Drawing.Point(538, 149);
+            this.TXB_Taux2iemeCycleProf.Location = new System.Drawing.Point(538, 136);
             this.TXB_Taux2iemeCycleProf.Name = "TXB_Taux2iemeCycleProf";
             this.TXB_Taux2iemeCycleProf.Size = new System.Drawing.Size(99, 20);
             this.TXB_Taux2iemeCycleProf.TabIndex = 21;
@@ -1561,7 +1561,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(380, 129);
+            this.label7.Location = new System.Drawing.Point(380, 116);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(117, 13);
             this.label7.TabIndex = 16;
@@ -1569,7 +1569,7 @@
             // 
             // TXB_Taux1ierCycleProf
             // 
-            this.TXB_Taux1ierCycleProf.Location = new System.Drawing.Point(392, 149);
+            this.TXB_Taux1ierCycleProf.Location = new System.Drawing.Point(392, 136);
             this.TXB_Taux1ierCycleProf.Name = "TXB_Taux1ierCycleProf";
             this.TXB_Taux1ierCycleProf.Size = new System.Drawing.Size(99, 20);
             this.TXB_Taux1ierCycleProf.TabIndex = 15;
