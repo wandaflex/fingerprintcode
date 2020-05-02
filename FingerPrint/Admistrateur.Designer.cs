@@ -305,8 +305,9 @@
             this.CBX_SelectProf.FormattingEnabled = true;
             this.CBX_SelectProf.Location = new System.Drawing.Point(123, 35);
             this.CBX_SelectProf.Name = "CBX_SelectProf";
-            this.CBX_SelectProf.Size = new System.Drawing.Size(121, 21);
+            this.CBX_SelectProf.Size = new System.Drawing.Size(269, 21);
             this.CBX_SelectProf.TabIndex = 3;
+            this.CBX_SelectProf.SelectedIndexChanged += new System.EventHandler(this.CBX_SelectProf_SelectedIndexChanged);
             // 
             // LBL_Matiere
             // 

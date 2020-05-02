@@ -656,6 +656,11 @@ namespace FingerPrint
             openForm.Show();
         }
 
+        private void CBX_SelectProf_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
 
         //private void BTN_EnregisterCycle_Click(object sender, EventArgs e)
