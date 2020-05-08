@@ -76,6 +76,7 @@ namespace FingerPrint
             ComboFill("ProgrammeMatiereComboViewAll", ref CBX_SelectProgProfMatiere, "ProfMatiere", "idPROFESSEUR_MATIERE");
             ComboFill("MatiereProfMatiereComboViewAll", ref CBX_SelectMatiere, "Matiere", "idMatiere");
             ComboFill("MatiereProfProfComboViewAll", ref CBX_SelectProf, "Professeur", "idProfesseur");
+            
             GridFill("ProgrammeViewFrorein", DGV_ListeProgramme);
         }
 
@@ -153,8 +154,10 @@ namespace FingerPrint
                     mySqlCon.Open();
                     MySqlCommand mySqlCmd = new MySqlCommand("ClasseAddOrEdit", mySqlCon);
                     mySqlCmd.CommandType = CommandType.StoredProcedure;
+
                     mySqlCmd.Parameters.AddWithValue("_ClasseID", classeID);
                     mySqlCmd.Parameters.AddWithValue("_ClasseNom", TXB_NomClasse.Text.Trim());
+                    
                     mySqlCmd.Parameters.AddWithValue("_ClasseCode", TXB_CodeClasse.Text.Trim());
                     mySqlCmd.Parameters.AddWithValue("_ClasseCycle", CBX_CycleClasse.Text.Trim());
                     mySqlCmd.Parameters.AddWithValue("_ClasseDescription", TXB_DescriptionClasse.Text.Trim());
