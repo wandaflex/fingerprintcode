@@ -72,13 +72,15 @@ namespace FingerPrint
             GridFill("ProfViewAll", DGV_ListeProf);
 
             GridFill("MatiereViewAll", DGV_ListeMatiere);
+            GridFill("ProgrammeViewFrorein", DGV_ListeProgramme);
+            GridFill("ProfMatiereViewFrorein", DGV_MatiereProf);
 
             ComboFill("ProgrammeClasseComboViewAll", ref CBX_SelectClasse, "nom", "idClasse");
             ComboFill("ProgrammeMatiereComboViewAll", ref CBX_SelectProgProfMatiere, "ProfMatiere", "idPROFESSEUR_MATIERE");
             ComboFill("MatiereProfMatiereComboViewAll", ref CBX_SelectMatiere, "Matiere", "idMatiere");
-            ComboFill("MatiereProfProfComboViewAll", ref CBX_SelectProf, "Professeur", "idProfesseur");           
-            GridFill("ProgrammeViewFrorein", DGV_ListeProgramme);
-            GridFill("ProfMatiereViewFrorein", DGV_MatiereProf);
+            ComboFill("MatiereProfProfComboViewAll", ref CBX_SelectProf, "Professeur", "idProfesseur");
+            ComboFill("PresenceProgrammeComboViewAll", ref CBX_SelectNomProg, "nomProgramme", "idPROGRAMMES");
+
         }
 
         #endregion
@@ -675,6 +677,21 @@ namespace FingerPrint
         {
             Rapports openForm = new Rapports();
             openForm.Show();
+        }
+
+        private void TBX_RecherchePof_KeyDown(object sender, KeyEventArgs e)
+        {
+            //BTN_RechercheProf_Click(null, null);
+        }
+
+        private void TXB_RechercheClasse_TextChanged(object sender, EventArgs e)
+        {
+            BTN_RechercheClasse_Click(null, null);
+        }
+
+        private void GBX_FormProfesseur_TextChanged(object sender, EventArgs e)
+        {
+            BTN_RechercheProf_Click(null, null);
         }
 
         //private void BTN_EnregisterCycle_Click(object sender, EventArgs e)
