@@ -511,38 +511,39 @@
             this.GBX_FormPresence.Controls.Add(this.LBL_HeureFinPresence);
             this.GBX_FormPresence.Controls.Add(this.LBL_HeureDebutPresence);
             this.GBX_FormPresence.Controls.Add(this.LBL_SelectNomProg);
-            this.GBX_FormPresence.Location = new System.Drawing.Point(14, 14);
+            this.GBX_FormPresence.Location = new System.Drawing.Point(14, 6);
             this.GBX_FormPresence.Name = "GBX_FormPresence";
-            this.GBX_FormPresence.Size = new System.Drawing.Size(706, 82);
+            this.GBX_FormPresence.Size = new System.Drawing.Size(706, 90);
             this.GBX_FormPresence.TabIndex = 6;
             this.GBX_FormPresence.TabStop = false;
             this.GBX_FormPresence.Text = "Formulaire Presence";
             // 
             // TXB_HeureFinPres
             // 
-            this.TXB_HeureFinPres.Location = new System.Drawing.Point(524, 45);
+            this.TXB_HeureFinPres.Location = new System.Drawing.Point(364, 60);
             this.TXB_HeureFinPres.Name = "TXB_HeureFinPres";
             this.TXB_HeureFinPres.Size = new System.Drawing.Size(99, 20);
             this.TXB_HeureFinPres.TabIndex = 17;
             // 
             // TXB_HeureDebutPres
             // 
-            this.TXB_HeureDebutPres.Location = new System.Drawing.Point(383, 45);
+            this.TXB_HeureDebutPres.Location = new System.Drawing.Point(170, 62);
             this.TXB_HeureDebutPres.Name = "TXB_HeureDebutPres";
             this.TXB_HeureDebutPres.Size = new System.Drawing.Size(99, 20);
             this.TXB_HeureDebutPres.TabIndex = 16;
             // 
             // CBX_SelectNomProg
             // 
+            this.CBX_SelectNomProg.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.CBX_SelectNomProg.FormattingEnabled = true;
-            this.CBX_SelectNomProg.Location = new System.Drawing.Point(9, 41);
+            this.CBX_SelectNomProg.Location = new System.Drawing.Point(192, 13);
             this.CBX_SelectNomProg.Name = "CBX_SelectNomProg";
-            this.CBX_SelectNomProg.Size = new System.Drawing.Size(132, 21);
+            this.CBX_SelectNomProg.Size = new System.Drawing.Size(514, 21);
             this.CBX_SelectNomProg.TabIndex = 12;
             // 
             // DTP_Presence
             // 
-            this.DTP_Presence.Location = new System.Drawing.Point(195, 42);
+            this.DTP_Presence.Location = new System.Drawing.Point(12, 62);
             this.DTP_Presence.Name = "DTP_Presence";
             this.DTP_Presence.Size = new System.Drawing.Size(129, 20);
             this.DTP_Presence.TabIndex = 11;
@@ -550,7 +551,7 @@
             // LBL_DatePres
             // 
             this.LBL_DatePres.AutoSize = true;
-            this.LBL_DatePres.Location = new System.Drawing.Point(236, 19);
+            this.LBL_DatePres.Location = new System.Drawing.Point(15, 39);
             this.LBL_DatePres.Name = "LBL_DatePres";
             this.LBL_DatePres.Size = new System.Drawing.Size(30, 13);
             this.LBL_DatePres.TabIndex = 10;
@@ -559,7 +560,7 @@
             // LBL_HeureFinPresence
             // 
             this.LBL_HeureFinPresence.AutoSize = true;
-            this.LBL_HeureFinPresence.Location = new System.Drawing.Point(521, 19);
+            this.LBL_HeureFinPresence.Location = new System.Drawing.Point(367, 40);
             this.LBL_HeureFinPresence.Name = "LBL_HeureFinPresence";
             this.LBL_HeureFinPresence.Size = new System.Drawing.Size(68, 13);
             this.LBL_HeureFinPresence.TabIndex = 6;
@@ -568,7 +569,7 @@
             // LBL_HeureDebutPresence
             // 
             this.LBL_HeureDebutPresence.AutoSize = true;
-            this.LBL_HeureDebutPresence.Location = new System.Drawing.Point(380, 20);
+            this.LBL_HeureDebutPresence.Location = new System.Drawing.Point(168, 40);
             this.LBL_HeureDebutPresence.Name = "LBL_HeureDebutPresence";
             this.LBL_HeureDebutPresence.Size = new System.Drawing.Size(83, 13);
             this.LBL_HeureDebutPresence.TabIndex = 7;
@@ -1058,6 +1059,7 @@
             this.TXB_RechercheClasse.Name = "TXB_RechercheClasse";
             this.TXB_RechercheClasse.Size = new System.Drawing.Size(537, 20);
             this.TXB_RechercheClasse.TabIndex = 7;
+            this.TXB_RechercheClasse.TextChanged += new System.EventHandler(this.TXB_RechercheClasse_TextChanged);
             // 
             // BTN_RechercheClasse
             // 
@@ -1398,6 +1400,7 @@
             this.TBX_RecherchePof.Name = "TBX_RecherchePof";
             this.TBX_RecherchePof.Size = new System.Drawing.Size(533, 20);
             this.TBX_RecherchePof.TabIndex = 7;
+            this.TBX_RecherchePof.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TBX_RecherchePof_KeyDown);
             // 
             // BTN_RechercheProf
             // 
@@ -1407,6 +1410,7 @@
             this.BTN_RechercheProf.TabIndex = 6;
             this.BTN_RechercheProf.Text = "Recherche";
             this.BTN_RechercheProf.UseVisualStyleBackColor = true;
+            this.BTN_RechercheProf.Click += new System.EventHandler(this.BTN_RechercheProf_Click);
             // 
             // GBX_ListeProfesseur
             // 
@@ -1468,6 +1472,7 @@
             this.GBX_FormProfesseur.TabIndex = 0;
             this.GBX_FormProfesseur.TabStop = false;
             this.GBX_FormProfesseur.Text = "Formulaire Professeur";
+            this.GBX_FormProfesseur.TextChanged += new System.EventHandler(this.GBX_FormProfesseur_TextChanged);
             // 
             // DTP_Recrutement
             // 

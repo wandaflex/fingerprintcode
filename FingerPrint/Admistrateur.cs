@@ -29,6 +29,7 @@ namespace FingerPrint
         int professeurID = 0;
         int matiereID = 0;
         int programmeID = 0;
+        int profMatiereID = 0;
         public Admistrateur()
         {
             InitializeComponent();
@@ -71,12 +72,15 @@ namespace FingerPrint
             GridFill("ProfViewAll", DGV_ListeProf);
 
             GridFill("MatiereViewAll", DGV_ListeMatiere);
+            GridFill("ProgrammeViewFrorein", DGV_ListeProgramme);
+            GridFill("ProfMatiereViewFrorein", DGV_MatiereProf);
 
             ComboFill("ProgrammeClasseComboViewAll", ref CBX_SelectClasse, "nom", "idClasse");
             ComboFill("ProgrammeMatiereComboViewAll", ref CBX_SelectProgProfMatiere, "ProfMatiere", "idPROFESSEUR_MATIERE");
             ComboFill("MatiereProfMatiereComboViewAll", ref CBX_SelectMatiere, "Matiere", "idMatiere");
             ComboFill("MatiereProfProfComboViewAll", ref CBX_SelectProf, "Professeur", "idProfesseur");
-            GridFill("ProgrammeViewFrorein", DGV_ListeProgramme);
+            ComboFill("PresenceProgrammeComboViewAll", ref CBX_SelectNomProg, "nomProgramme", "idPROGRAMMES");
+
         }
 
         #endregion
@@ -153,8 +157,10 @@ namespace FingerPrint
                     mySqlCon.Open();
                     MySqlCommand mySqlCmd = new MySqlCommand("ClasseAddOrEdit", mySqlCon);
                     mySqlCmd.CommandType = CommandType.StoredProcedure;
+
                     mySqlCmd.Parameters.AddWithValue("_ClasseID", classeID);
                     mySqlCmd.Parameters.AddWithValue("_ClasseNom", TXB_NomClasse.Text.Trim());
+                    
                     mySqlCmd.Parameters.AddWithValue("_ClasseCode", TXB_CodeClasse.Text.Trim());
                     mySqlCmd.Parameters.AddWithValue("_ClasseCycle", CBX_CycleClasse.Text.Trim());
                     mySqlCmd.Parameters.AddWithValue("_ClasseDescription", TXB_DescriptionClasse.Text.Trim());
@@ -645,19 +651,15 @@ namespace FingerPrint
                 using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
                 {
                     mySqlCon.Open();
-                    MySqlCommand mySqlCmd = new MySqlCommand("ProgrammeAddOrEdit", mySqlCon);
+                    MySqlCommand mySqlCmd = new MySqlCommand("ProfMatiereAddOrEdit", mySqlCon);
                     mySqlCmd.CommandType = CommandType.StoredProcedure;
-                    mySqlCmd.Parameters.AddWithValue("_ProgrammesID", programmeID);
-                    mySqlCmd.Parameters.AddWithValue("_ProgrammeDate", DTP_Programme.Value);
-                    mySqlCmd.Parameters.AddWithValue("_ProgrammeHeureDebut", CBX_HeureDebutProg.SelectedItem.ToString());
-                    mySqlCmd.Parameters.AddWithValue("_ProgrammeHeureFin", CBX_HeureFinProg.SelectedItem.ToString());
-                    mySqlCmd.Parameters.AddWithValue("_ProgrammeIDClasse", CBX_SelectClasse.SelectedValue.ToString());
-                    mySqlCmd.Parameters.AddWithValue("_ProgrammeIDAdmin", "1");
-                    mySqlCmd.Parameters.AddWithValue("_ProgrammeIDProfMatiere", CBX_SelectProgProfMatiere.SelectedValue.ToString());
+                    mySqlCmd.Parameters.AddWithValue("_idProfMatiere", profMatiereID);
+                    mySqlCmd.Parameters.AddWithValue("_idProf", CBX_SelectProf.SelectedValue.ToString());
+                    mySqlCmd.Parameters.AddWithValue("_idMatiere", CBX_SelectMatiere.SelectedValue.ToString());
                     mySqlCmd.ExecuteNonQuery();
                     MessageBox.Show("Submited successfully");
-                    cleanForm(GBX_FormProg, ref programmeID, BTN_EnregisterProg);
-                    GridFill("ProgrammeViewFrorein", DGV_ListeProgramme);
+                    cleanForm(GBX_FormMatiereProf, ref profMatiereID, BTN_EnregistrerMatProf);
+                    GridFill("ProfMatiereViewFrorein", DGV_MatiereProf);
                 }
             }
             catch (Exception ex)
@@ -677,14 +679,19 @@ namespace FingerPrint
             openForm.Show();
         }
 
-        private void GBX_FormMatiereProf_Enter(object sender, EventArgs e)
+        private void TBX_RecherchePof_KeyDown(object sender, KeyEventArgs e)
         {
-
+            //BTN_RechercheProf_Click(null, null);
         }
 
-        private void CBX_SelectProf_SelectedIndexChanged(object sender, EventArgs e)
+        private void TXB_RechercheClasse_TextChanged(object sender, EventArgs e)
         {
+            BTN_RechercheClasse_Click(null, null);
+        }
 
+        private void GBX_FormProfesseur_TextChanged(object sender, EventArgs e)
+        {
+            BTN_RechercheProf_Click(null, null);
         }
 
         //private void BTN_EnregisterCycle_Click(object sender, EventArgs e)
