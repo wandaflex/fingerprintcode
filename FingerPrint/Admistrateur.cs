@@ -76,7 +76,7 @@ namespace FingerPrint
             ComboFill("ProgrammeMatiereComboViewAll", ref CBX_SelectProgProfMatiere, "ProfMatiere", "idPROFESSEUR_MATIERE");
             ComboFill("MatiereProfMatiereComboViewAll", ref CBX_SelectMatiere, "Matiere", "idMatiere");
             ComboFill("MatiereProfProfComboViewAll", ref CBX_SelectProf, "Professeur", "idProfesseur");
-            GridFill("ProgrammesViewAll", DGV_ListeProgramme);
+            GridFill("ProgrammeViewFrorein", DGV_ListeProgramme);
         }
 
         #endregion
@@ -289,7 +289,6 @@ namespace FingerPrint
 
         private void BTN_RechercheAdmin_Click(object sender, EventArgs e)
         {
-
             using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
             {
                 mySqlCon.Open();
@@ -615,7 +614,7 @@ namespace FingerPrint
                     mySqlCmd.ExecuteNonQuery();
                     MessageBox.Show("Submited successfully");
                     cleanForm(GBX_FormProg, ref programmeID, BTN_EnregisterProg);
-                    GridFill("ProgrammesViewAll", DGV_ListeProgramme);
+                    GridFill("ProgrammeViewFrorein", DGV_ListeProgramme);
                 }
             }
             catch (Exception ex)
@@ -632,7 +631,7 @@ namespace FingerPrint
 
                 CBX_HeureDebutProg.Text = DGV_ListeProgramme.CurrentRow.Cells[2].Value.ToString();
                 CBX_HeureFinProg.Text = DGV_ListeProgramme.CurrentRow.Cells[3].Value.ToString();
-                programmeID = Convert.ToInt32(DGV_ListeProgramme.CurrentRow.Cells[0].Value.ToString());
+                //programmeID = Convert.ToInt32(DGV_ListeProgramme.CurrentRow.Cells[0].Value.ToString());
                 
                 //BTN_EnregisterCycle.Text = "Modifier";
             }
@@ -641,13 +640,35 @@ namespace FingerPrint
 
         private void BTN_EnregistrerMatProf_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+                {
+                    mySqlCon.Open();
+                    MySqlCommand mySqlCmd = new MySqlCommand("ProgrammeAddOrEdit", mySqlCon);
+                    mySqlCmd.CommandType = CommandType.StoredProcedure;
+                    mySqlCmd.Parameters.AddWithValue("_ProgrammesID", programmeID);
+                    mySqlCmd.Parameters.AddWithValue("_ProgrammeDate", DTP_Programme.Value);
+                    mySqlCmd.Parameters.AddWithValue("_ProgrammeHeureDebut", CBX_HeureDebutProg.SelectedItem.ToString());
+                    mySqlCmd.Parameters.AddWithValue("_ProgrammeHeureFin", CBX_HeureFinProg.SelectedItem.ToString());
+                    mySqlCmd.Parameters.AddWithValue("_ProgrammeIDClasse", CBX_SelectClasse.SelectedValue.ToString());
+                    mySqlCmd.Parameters.AddWithValue("_ProgrammeIDAdmin", "1");
+                    mySqlCmd.Parameters.AddWithValue("_ProgrammeIDProfMatiere", CBX_SelectProgProfMatiere.SelectedValue.ToString());
+                    mySqlCmd.ExecuteNonQuery();
+                    MessageBox.Show("Submited successfully");
+                    cleanForm(GBX_FormProg, ref programmeID, BTN_EnregisterProg);
+                    GridFill("ProgrammeViewFrorein", DGV_ListeProgramme);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error Message ");
+            }
         }
 
         private void TCL_Admin_SelectedIndexChanged(object sender, EventArgs e)
         {
             initCombo();
-
         }
 
         private void BTN_Rapports_Click(object sender, EventArgs e)
@@ -655,13 +676,6 @@ namespace FingerPrint
             Rapports openForm = new Rapports();
             openForm.Show();
         }
-
-        private void CBX_SelectProf_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
 
         //private void BTN_EnregisterCycle_Click(object sender, EventArgs e)
         //{
