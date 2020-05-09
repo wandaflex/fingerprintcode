@@ -449,6 +449,7 @@
             this.BTN_EnregisterPresence.TabIndex = 9;
             this.BTN_EnregisterPresence.Text = "Enregister";
             this.BTN_EnregisterPresence.UseVisualStyleBackColor = true;
+            this.BTN_EnregisterPresence.Click += new System.EventHandler(this.BTN_EnregisterPresence_Click);
             // 
             // GBX_RecherchePresence
             // 
@@ -1400,6 +1401,7 @@
             this.TBX_RecherchePof.Name = "TBX_RecherchePof";
             this.TBX_RecherchePof.Size = new System.Drawing.Size(533, 20);
             this.TBX_RecherchePof.TabIndex = 7;
+            this.TBX_RecherchePof.TextChanged += new System.EventHandler(this.TBX_RecherchePof_TextChanged);
             this.TBX_RecherchePof.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TBX_RecherchePof_KeyDown);
             // 
             // BTN_RechercheProf

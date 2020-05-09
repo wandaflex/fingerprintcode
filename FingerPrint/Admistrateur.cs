@@ -30,6 +30,7 @@ namespace FingerPrint
         int matiereID = 0;
         int programmeID = 0;
         int profMatiereID = 0;
+        int presenceID = 0;
         public Admistrateur()
         {
             InitializeComponent();
@@ -74,6 +75,7 @@ namespace FingerPrint
             GridFill("MatiereViewAll", DGV_ListeMatiere);
             GridFill("ProgrammeViewFrorein", DGV_ListeProgramme);
             GridFill("ProfMatiereViewFrorein", DGV_MatiereProf);
+            GridFill("PresenceProgrammeViewAll", DGV_ListePresence);
 
             ComboFill("ProgrammeClasseComboViewAll", ref CBX_SelectClasse, "nom", "idClasse");
             ComboFill("ProgrammeMatiereComboViewAll", ref CBX_SelectProgProfMatiere, "ProfMatiere", "idPROFESSEUR_MATIERE");
@@ -693,6 +695,39 @@ namespace FingerPrint
         {
             BTN_RechercheProf_Click(null, null);
         }
+
+        private void TBX_RecherchePof_TextChanged(object sender, EventArgs e)
+        {
+            BTN_RechercheProf_Click(null, null);
+        }
+
+        private void BTN_EnregisterPresence_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+                {
+                    mySqlCon.Open();
+                    MySqlCommand mySqlCmd = new MySqlCommand("PresenceAddOrEdit", mySqlCon);
+                    mySqlCmd.CommandType = CommandType.StoredProcedure;
+                    mySqlCmd.Parameters.AddWithValue("_PresenceID", presenceID);
+                    mySqlCmd.Parameters.AddWithValue("_ProgrammesID", CBX_SelectNomProg.SelectedValue.ToString());
+                    mySqlCmd.Parameters.AddWithValue("_PresenceDate", DTP_Presence.Value);
+                    mySqlCmd.Parameters.AddWithValue("_PresenceHeureDebut", TXB_HeureDebutPres.Text.Trim().ToString());
+                    mySqlCmd.Parameters.AddWithValue("_PresenceHeureFin", TXB_HeureFinPres.Text.Trim().ToString());
+                    mySqlCmd.ExecuteNonQuery();
+                    MessageBox.Show("Submited successfully");
+                    cleanForm(GBX_FormPresence, ref presenceID, BTN_EnregisterPresence);
+                    GridFill("PresenceProgrammeViewAll", DGV_ListePresence);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error Message ");
+            }
+        }
+
+
 
         //private void BTN_EnregisterCycle_Click(object sender, EventArgs e)
         //{
