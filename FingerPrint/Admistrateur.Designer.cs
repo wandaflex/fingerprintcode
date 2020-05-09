@@ -291,6 +291,7 @@
             this.GBX_FormMatiereProf.TabIndex = 12;
             this.GBX_FormMatiereProf.TabStop = false;
             this.GBX_FormMatiereProf.Text = "Formulaire Matiere Professeur";
+            this.GBX_FormMatiereProf.Enter += new System.EventHandler(this.GBX_FormMatiereProf_Enter);
             // 
             // CBX_SelectMatiere
             // 
