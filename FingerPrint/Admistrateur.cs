@@ -30,6 +30,7 @@ namespace FingerPrint
         int matiereID = 0;
         int programmeID = 0;
         int profMatiereID = 0;
+        int presenceID = 0;
         public Admistrateur()
         {
             InitializeComponent();
@@ -72,13 +73,16 @@ namespace FingerPrint
             GridFill("ProfViewAll", DGV_ListeProf);
 
             GridFill("MatiereViewAll", DGV_ListeMatiere);
+            GridFill("ProgrammeViewFrorein", DGV_ListeProgramme);
+            GridFill("ProfMatiereViewFrorein", DGV_MatiereProf);
+            GridFill("PresenceProgrammeViewAll", DGV_ListePresence);
 
             ComboFill("ProgrammeClasseComboViewAll", ref CBX_SelectClasse, "nom", "idClasse");
             ComboFill("ProgrammeMatiereComboViewAll", ref CBX_SelectProgProfMatiere, "ProfMatiere", "idPROFESSEUR_MATIERE");
             ComboFill("MatiereProfMatiereComboViewAll", ref CBX_SelectMatiere, "Matiere", "idMatiere");
-            ComboFill("MatiereProfProfComboViewAll", ref CBX_SelectProf, "Professeur", "idProfesseur");           
-            GridFill("ProgrammeViewFrorein", DGV_ListeProgramme);
-            GridFill("ProfMatiereViewFrorein", DGV_MatiereProf);
+            ComboFill("MatiereProfProfComboViewAll", ref CBX_SelectProf, "Professeur", "idProfesseur");
+            ComboFill("PresenceProgrammeComboViewAll", ref CBX_SelectNomProg, "nomProgramme", "idPROGRAMMES");
+
         }
 
         #endregion
@@ -677,6 +681,26 @@ namespace FingerPrint
             openForm.Show();
         }
 
+        private void TBX_RecherchePof_KeyDown(object sender, KeyEventArgs e)
+        {
+            //BTN_RechercheProf_Click(null, null);
+        }
+
+        private void TXB_RechercheClasse_TextChanged(object sender, EventArgs e)
+        {
+            BTN_RechercheClasse_Click(null, null);
+        }
+
+        private void GBX_FormProfesseur_TextChanged(object sender, EventArgs e)
+        {
+            BTN_RechercheProf_Click(null, null);
+        }
+
+        private void TBX_RecherchePof_TextChanged(object sender, EventArgs e)
+        {
+            BTN_RechercheProf_Click(null, null);
+        }
+
         private void BTN_EnregisterPresence_Click(object sender, EventArgs e)
         {
             try
@@ -684,15 +708,17 @@ namespace FingerPrint
                 using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
                 {
                     mySqlCon.Open();
-                    MySqlCommand mySqlCmd = new MySqlCommand("ProfMatiereAddOrEdit", mySqlCon);
+                    MySqlCommand mySqlCmd = new MySqlCommand("PresenceAddOrEdit", mySqlCon);
                     mySqlCmd.CommandType = CommandType.StoredProcedure;
-                    mySqlCmd.Parameters.AddWithValue("_idProfMatiere", profMatiereID);
-                    mySqlCmd.Parameters.AddWithValue("_idProf", CBX_SelectProf.SelectedValue.ToString());
-                    mySqlCmd.Parameters.AddWithValue("_idMatiere", CBX_SelectMatiere.SelectedValue.ToString());
+                    mySqlCmd.Parameters.AddWithValue("_PresenceID", presenceID);
+                    mySqlCmd.Parameters.AddWithValue("_ProgrammesID", CBX_SelectNomProg.SelectedValue.ToString());
+                    mySqlCmd.Parameters.AddWithValue("_PresenceDate", DTP_Presence.Value);
+                    mySqlCmd.Parameters.AddWithValue("_PresenceHeureDebut", TXB_HeureDebutPres.Text.Trim().ToString());
+                    mySqlCmd.Parameters.AddWithValue("_PresenceHeureFin", TXB_HeureFinPres.Text.Trim().ToString());
                     mySqlCmd.ExecuteNonQuery();
                     MessageBox.Show("Submited successfully");
-                    cleanForm(GBX_FormMatiereProf, ref profMatiereID, BTN_EnregistrerMatProf);
-                    GridFill("ProfMatiereViewFrorein", DGV_MatiereProf);
+                    cleanForm(GBX_FormPresence, ref presenceID, BTN_EnregisterPresence);
+                    GridFill("PresenceProgrammeViewAll", DGV_ListePresence);
                 }
             }
             catch (Exception ex)
@@ -700,6 +726,8 @@ namespace FingerPrint
                 MessageBox.Show(ex.Message, "Error Message ");
             }
         }
+
+
 
         //private void BTN_EnregisterCycle_Click(object sender, EventArgs e)
         //{
