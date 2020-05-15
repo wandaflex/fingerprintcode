@@ -677,6 +677,30 @@ namespace FingerPrint
             openForm.Show();
         }
 
+        private void BTN_EnregisterPresence_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+                {
+                    mySqlCon.Open();
+                    MySqlCommand mySqlCmd = new MySqlCommand("ProfMatiereAddOrEdit", mySqlCon);
+                    mySqlCmd.CommandType = CommandType.StoredProcedure;
+                    mySqlCmd.Parameters.AddWithValue("_idProfMatiere", profMatiereID);
+                    mySqlCmd.Parameters.AddWithValue("_idProf", CBX_SelectProf.SelectedValue.ToString());
+                    mySqlCmd.Parameters.AddWithValue("_idMatiere", CBX_SelectMatiere.SelectedValue.ToString());
+                    mySqlCmd.ExecuteNonQuery();
+                    MessageBox.Show("Submited successfully");
+                    cleanForm(GBX_FormMatiereProf, ref profMatiereID, BTN_EnregistrerMatProf);
+                    GridFill("ProfMatiereViewFrorein", DGV_MatiereProf);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error Message ");
+            }
+        }
+
         //private void BTN_EnregisterCycle_Click(object sender, EventArgs e)
         //{
         //    try

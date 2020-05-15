@@ -447,6 +447,7 @@
             this.BTN_EnregisterPresence.TabIndex = 9;
             this.BTN_EnregisterPresence.Text = "Enregister";
             this.BTN_EnregisterPresence.UseVisualStyleBackColor = true;
+            this.BTN_EnregisterPresence.Click += new System.EventHandler(this.BTN_EnregisterPresence_Click);
             // 
             // GBX_RecherchePresence
             // 
