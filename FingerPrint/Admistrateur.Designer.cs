@@ -1686,6 +1686,7 @@
             this.BTN_FermerConnection.TabIndex = 6;
             this.BTN_FermerConnection.Text = "Fermer Connection";
             this.BTN_FermerConnection.UseVisualStyleBackColor = true;
+            this.BTN_FermerConnection.Click += new System.EventHandler(this.BTN_FermerConnection_Click);
             // 
             // LSV_Reseau
             // 
@@ -1695,6 +1696,7 @@
             this.LSV_Reseau.Size = new System.Drawing.Size(127, 181);
             this.LSV_Reseau.TabIndex = 7;
             this.LSV_Reseau.UseCompatibleStateImageBehavior = false;
+            this.LSV_Reseau.View = System.Windows.Forms.View.List;
             // 
             // Admistrateur
             // 

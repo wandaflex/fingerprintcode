@@ -28,11 +28,11 @@ namespace FingerPrint
 
         Socket WandaUDP;
         EndPoint WandaLocal, WandaRemote;
-        string IP_Adrress_PC = "192.168.0.116";
-        string port_PC = "2500";
+        string IP_Adrress_PC = "192.168.1.100";
+        int port_PC = 2500;
 
-        string IP_Adrress_Client = "192.168.0.200";
-        string port_Client = "2500";
+        string IP_Adrress_Client = "192.168.1.200";
+        int port_Client = 2500;
 
         //int cycleID = 0;
         int classeID = 0;
@@ -636,7 +636,7 @@ namespace FingerPrint
                 WandaUDP.Bind(WandaLocal); //This is the server  -- Address IP of the PC
 
                 WandaRemote = new IPEndPoint(IPAddress.Parse(IP_Adrress_Client), Convert.ToInt32(port_Client));
-                WandaUDP.Bind(WandaRemote); //This is the Client  -- Address IP of the Master FinguerPrint
+                WandaUDP.Connect(WandaRemote); //This is the Client  -- Address IP of the Master FinguerPrint
 
                 byte[] buffer = new byte[1500];
                 WandaUDP.BeginReceiveFrom(buffer, 0, buffer.Length, SocketFlags.None, ref WandaRemote, new AsyncCallback(WandaMessageCallBack), buffer);
@@ -670,10 +670,10 @@ namespace FingerPrint
             {
                 System.Text.ASCIIEncoding enc = new System.Text.ASCIIEncoding();
                 byte[] msg = new byte[1500];
-                msg = enc.GetBytes("WDF_ENREOLL_" + GetFingerID());
+                msg = enc.GetBytes("WANDA_ENROLL_" + GetFingerID());
                 WandaUDP.Send(msg);
 
-                LSV_Reseau.Items.Add("ID Empreinte 2 envoyer : " + GetFingerID());
+                LSV_Reseau.Items.Add("ID 2 Sent : " + GetFingerID());
 
 
                 BTN_Empreinte2.Enabled = false;
@@ -684,16 +684,21 @@ namespace FingerPrint
             }
         }
 
+        private void BTN_FermerConnection_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void BTN_Empreinte1_Click(object sender, EventArgs e)
         {
             try
             {
                 System.Text.ASCIIEncoding enc = new System.Text.ASCIIEncoding();
                 byte[] msg = new byte[1500];
-                msg = enc.GetBytes("WDF_ENREOLL_"+ GetFingerID());
+                msg = enc.GetBytes("WANDA_ENROLL_"+ GetFingerID());
                 WandaUDP.Send(msg);
 
-                LSV_Reseau.Items.Add("ID Empreinte 1 envoyer : " + GetFingerID());
+                LSV_Reseau.Items.Add("ID 1 Sent : " + GetFingerID());
 
 
                 BTN_Empreinte2.Enabled = true;
