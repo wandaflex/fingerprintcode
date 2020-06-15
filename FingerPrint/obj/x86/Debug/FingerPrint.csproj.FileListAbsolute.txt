@@ -93,3 +93,4 @@ C:\Users\Raoul\Documents\NewFingerPRint\FingerPrint\obj\x86\Debug\FingerPrint.cs
 C:\Users\Raoul\Documents\NewFingerPRint\FingerPrint\obj\x86\Debug\FingerPrint.csproj.CopyComplete
 C:\Users\Raoul\Documents\NewFingerPRint\FingerPrint\obj\x86\Debug\FingerPrint.exe
 C:\Users\Raoul\Documents\NewFingerPRint\FingerPrint\obj\x86\Debug\FingerPrint.pdb
+C:\Users\Raoul\Documents\NewFingerPRint\FingerPrint\obj\x86\Debug\FingerPrint.csprojAssemblyReference.cache

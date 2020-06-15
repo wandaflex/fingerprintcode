@@ -94,23 +94,55 @@ namespace FingerPrint
             {
                 using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
                 {
+
                     mySqlCon.Open();
                     MySqlCommand mySqlCmd = new MySqlCommand("AdminAddOrEdit", mySqlCon);
                     mySqlCmd.CommandType = CommandType.StoredProcedure;
                     mySqlCmd.Parameters.AddWithValue("_AdminID", adminID);
-                    mySqlCmd.Parameters.AddWithValue("_AdminNom", TXB_NomAdmin.Text.Trim());
-                    mySqlCmd.Parameters.AddWithValue("_AdminPremon", TXB_PrenomAdmin.Text.Trim());
-                    mySqlCmd.Parameters.AddWithValue("_AdminType", CBX_TypeUtil.SelectedItem.ToString().Trim());    // Jonathan : Ce paramètre manquait
-                    mySqlCmd.Parameters.AddWithValue("_AdminLogin", TXB_LoginAdmin.Text.Trim());
-                    mySqlCmd.Parameters.AddWithValue("_AdminPwd", TXB_MotDePasseAdmin.Text.Trim());
-                    mySqlCmd.ExecuteNonQuery();
-                    MessageBox.Show("Submited successfully");
-                    GridFill("AdminViewAll", DGV_ListeAdmin);
+
+                    if (TXB_NomAdmin.Text == "")
+                    {
+                        MessageBox.Show("Le nom est obligatoire.");
+                        TXB_NomAdmin.Focus();
+                        TXB_NomAdmin.BackColor = Color.Red;
+                    }else
+                    if (CBX_TypeUtil.Text == "")
+                    {
+                        MessageBox.Show("Veuillez selectionner un type d'utilisateur.");
+                        CBX_TypeUtil.BackColor = Color.Red;
+                        CBX_TypeUtil.Focus();
+                    }
+
+                    else if (TXB_LoginAdmin.Text == "")
+                    {
+                        MessageBox.Show("Veuillez entrer votre identifiant(Login).");
+                        TXB_LoginAdmin.Focus();
+                        TXB_LoginAdmin.BackColor = Color.Red;
+                    }
+
+                    else if (TXB_MotDePasseAdmin.Text == "")
+                    {
+                        MessageBox.Show("Veuillez entrer votre mot de passe.");
+                        TXB_MotDePasseAdmin.Focus();
+                        TXB_MotDePasseAdmin.BackColor = Color.Red;
+                    }
+                    
+                    else
+                    {
+                        mySqlCmd.Parameters.AddWithValue("_AdminPwd", TXB_MotDePasseAdmin.Text.Trim());
+                        mySqlCmd.Parameters.AddWithValue("_AdminType", CBX_TypeUtil.Text.Trim());
+                        mySqlCmd.Parameters.AddWithValue("_AdminLogin", TXB_LoginAdmin.Text.Trim());
+                        mySqlCmd.Parameters.AddWithValue("_AdminNom", TXB_NomAdmin.Text.Trim());
+                        mySqlCmd.Parameters.AddWithValue("_AdminPremon", TXB_PrenomAdmin.Text.Trim());
+                        mySqlCmd.ExecuteNonQuery();
+                        MessageBox.Show("Submited successfully");
+                        GridFill("AdminViewAll", DGV_ListeAdmin);
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error Message ");
+                MessageBox.Show("Une Erreur est survenue, Veuillez contacter un programmeur." + Environment.NewLine + ex.Message);
             }
 
         }
@@ -138,10 +170,14 @@ namespace FingerPrint
 
         public void cleanForm(GroupBox groupBox,ref int id,Button enregistrerButton)
         {
-            foreach (Control oControlFormulaire in groupBox.Controls)
+            foreach (Control oControlFormulaire in groupBox.Controls) {
                 if (oControlFormulaire is TextBox)
                     oControlFormulaire.Text = String.Empty;
-            id = 0;
+                if (oControlFormulaire is ComboBox)
+                    (oControlFormulaire as ComboBox).SelectedIndex = -1;
+            }
+
+                id = 0;
 
             enregistrerButton.Text = "Enregistrer";
 
@@ -161,20 +197,43 @@ namespace FingerPrint
                     mySqlCmd.CommandType = CommandType.StoredProcedure;
 
                     mySqlCmd.Parameters.AddWithValue("_ClasseID", classeID);
-                    mySqlCmd.Parameters.AddWithValue("_ClasseNom", TXB_NomClasse.Text.Trim());
+
+                    if (TXB_NomClasse.Text == "")
+                    {
+                        MessageBox.Show("Le nom de la classe est obligatoire.");
+                        TXB_NomClasse.Focus();
+                        TXB_NomClasse.BackColor = Color.Red;
+                    }else
+
+                    if (TXB_CodeClasse.Text == "")
+                    {
+                        MessageBox.Show("Le code de la classe est obligatoire");
+                        TXB_CodeClasse.Focus();
+                        TXB_CodeClasse.BackColor = Color.Red;
+                    }else
+
+                    if (CBX_CycleClasse.Text == "")
+                    {
+                        MessageBox.Show("Veuillez selectionner un cycle.");
+                        CBX_CycleClasse.Focus();
+                        CBX_CycleClasse.BackColor = Color.Red;
+                    }
                     
-                    mySqlCmd.Parameters.AddWithValue("_ClasseCode", TXB_CodeClasse.Text.Trim());
-                    mySqlCmd.Parameters.AddWithValue("_ClasseCycle", CBX_CycleClasse.Text.Trim());
-                    mySqlCmd.Parameters.AddWithValue("_ClasseDescription", TXB_DescriptionClasse.Text.Trim());
-                    mySqlCmd.ExecuteNonQuery();
-                    MessageBox.Show("Submited successfully");
-                    GridFill("ClasseViewAll", DGV_ListeClasse);
+                    else
+                    {
+                        mySqlCmd.Parameters.AddWithValue("_ClasseNom", TXB_NomClasse.Text.Trim());
+                        mySqlCmd.Parameters.AddWithValue("_ClasseCycle", CBX_CycleClasse.Text.Trim());
+                        mySqlCmd.Parameters.AddWithValue("_ClasseDescription", TXB_DescriptionClasse.Text.Trim());
+                        mySqlCmd.Parameters.AddWithValue("_ClasseCode", TXB_CodeClasse.Text.Trim());
+                        mySqlCmd.ExecuteNonQuery();
+                        MessageBox.Show("Submited successfully");
+                        GridFill("ClasseViewAll", DGV_ListeClasse);
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error Message ");
-
+                MessageBox.Show("Une Erreur est survenue, Veuillez contacter un programmeur." + Environment.NewLine + ex.Message);
             }
         }
 
@@ -216,6 +275,8 @@ namespace FingerPrint
         {
             //MessageBox.Show(CBX_FormMatiere.SelectedValue.ToString());
 
+            //MessageBox.Show(CBX_FormMatiere.SelectedValue.ToString());
+
             try
             {
                 using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
@@ -224,19 +285,35 @@ namespace FingerPrint
                     MySqlCommand mySqlCmd = new MySqlCommand("MatiereAddOrEdit", mySqlCon);
                     mySqlCmd.CommandType = CommandType.StoredProcedure;
                     mySqlCmd.Parameters.AddWithValue("_MatiereID", matiereID);
-                    mySqlCmd.Parameters.AddWithValue("_MatiereCode", TXB_CodeMatiere.Text.Trim());
-                    mySqlCmd.Parameters.AddWithValue("_MatiereNom", TXB_NomMatiere.Text.Trim());
-                    //mySqlCmd.Parameters.AddWithValue("_CycleID_Cycle", CBX_FormMatiere.SelectedValue.ToString());    // Jonathan : Ce paramètre manquait
-                   
-                    mySqlCmd.ExecuteNonQuery();
-                    MessageBox.Show("Submited successfully");
-                    GridFill("MAtiereViewAll", DGV_ListeMatiere);
+
+                    if (TXB_CodeMatiere.Text == "")
+                    {
+                        MessageBox.Show("Veuillez entrer le code de la matière.");
+                        TXB_CodeMatiere.Focus();
+                        TXB_CodeMatiere.BackColor = Color.Red;
+                    }
+                    else if (TXB_NomMatiere.Text == "")
+                    {
+                        MessageBox.Show("Veuillez entrer le nom de la matière.");
+                        TXB_NomMatiere.Focus();
+                        TXB_NomMatiere.BackColor = Color.Red;
+                    }
+                    
+                    else
+                    {
+                        mySqlCmd.Parameters.AddWithValue("_MatiereCode", TXB_CodeMatiere.Text.Trim());
+                        mySqlCmd.Parameters.AddWithValue("_MatiereNom", TXB_NomMatiere.Text.Trim());
+                        mySqlCmd.ExecuteNonQuery();
+                        MessageBox.Show("Submited successfully");
+                        GridFill("MAtiereViewAll", DGV_ListeMatiere);
+                    }
+
+                    //mySqlCmd.Parameters.AddWithValue("_CycleID_Cycle", CBX_FormMatiere.SelectedValue.ToString());    // Jonathan : Ce paramètre manquait   
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error Message ");
-
+                MessageBox.Show("Une Erreur est survenue, Veuillez contacter un programmeur." + Environment.NewLine + ex.Message);
             }
         }
 
@@ -341,28 +418,75 @@ namespace FingerPrint
                     MySqlCommand mySqlCmd = new MySqlCommand("ProfAddOrEdit", mySqlCon);
                     mySqlCmd.CommandType = CommandType.StoredProcedure;
                     mySqlCmd.Parameters.AddWithValue("_ProfID", professeurID);
-                    mySqlCmd.Parameters.AddWithValue("_ProfNom", TXB_NomProf.Text.Trim());
-                    mySqlCmd.Parameters.AddWithValue("_ProfPrenom", TXB_PrenomProf.Text.Trim());
-                    mySqlCmd.Parameters.AddWithValue("_ProfTel_1", TXB_TelephoneProf.Text.Trim());
-                    mySqlCmd.Parameters.AddWithValue("_ProfTel_2", TXB_Telephone2Prof.Text.Trim());
-                    mySqlCmd.Parameters.AddWithValue("_Diplome", TXB_DiplomeProf.Text.Trim());
-                    mySqlCmd.Parameters.AddWithValue("_ProfType", TXB_TypeProf.Text.Trim());
-                    mySqlCmd.Parameters.AddWithValue("_ProfEmpreinte_1", TXB_Empreinte1Prof.Text.Trim());
-                    mySqlCmd.Parameters.AddWithValue("_ProfEmpreinte_2", TXB_Empreinte2Prof.Text.Trim());
-                    mySqlCmd.Parameters.AddWithValue("_ProfProfil", "Profil IMG");
-                    mySqlCmd.Parameters.AddWithValue("_ProfETaux_Horaire_1", TXB_Taux1ierCycleProf.Text.Trim());
-                    mySqlCmd.Parameters.AddWithValue("_ProfETaux_Horaire_2", TXB_Taux2iemeCycleProf.Text.Trim());
-                    mySqlCmd.Parameters.AddWithValue("_profDate_recrutement", DTP_Recrutement.Value);
-                    mySqlCmd.Parameters.AddWithValue("_Description", TXB_DescriptionProf.Text.Trim());
-                    mySqlCmd.ExecuteNonQuery();
-                    MessageBox.Show("Submited successfully");
-                    GridFill("ProfViewAll", DGV_ListeProf);
+
+                    if (TXB_NomProf.Text == "")
+                    {
+                        TXB_NomProf.BackColor = Color.Red;
+                        MessageBox.Show("Veuillez entrer un nom.");
+                        TXB_NomProf.Focus();
+                    }
+                    else if (TXB_TelephoneProf.Text == "")
+                    {
+                        TXB_TelephoneProf.BackColor = Color.Red;
+                        MessageBox.Show("Veuillez entrer un numero de telephone.");
+                        TXB_TelephoneProf.Focus();
+                    }
+                    
+                    else if (TXB_DiplomeProf.Text == "")
+                    {
+                        TXB_DiplomeProf.BackColor = Color.Red;
+                        MessageBox.Show("Veuillez entrer le diplome du professeur.");
+                        TXB_DiplomeProf.Focus();
+                    }
+                    else if (TXB_TypeProf.Text == "")
+                    {
+                        TXB_TypeProf.BackColor = Color.Red;
+                        MessageBox.Show("Veuillez entrer le type de professeur.");
+                        TXB_TypeProf.Focus();
+                    }
+                    else if (TXB_Taux1ierCycleProf.Text == "")
+                    {
+                        TXB_Taux1ierCycleProf.BackColor = Color.Red;
+                        MessageBox.Show("Veuillez entrer le taux horaire du premier cycle.");
+                        TXB_Taux1ierCycleProf.Focus();
+                    }
+                    else if (TXB_Taux2iemeCycleProf.Text == "")
+                    {
+                        TXB_Taux2iemeCycleProf.BackColor = Color.Red;
+                        MessageBox.Show("Veuillez entrer le taux horaire du deuxieme cycle.");
+                        TXB_Taux2iemeCycleProf.Focus();
+                    }             
+
+                    else
+                    {
+                        mySqlCmd.Parameters.AddWithValue("_ProfETaux_Horaire_1", TXB_Taux1ierCycleProf.Text.Trim());
+                        mySqlCmd.Parameters.AddWithValue("_ProfETaux_Horaire_2", TXB_Taux2iemeCycleProf.Text.Trim());
+                        mySqlCmd.Parameters.AddWithValue("_ProfType", TXB_TypeProf.Text.Trim());
+                        mySqlCmd.Parameters.AddWithValue("_Diplome", TXB_DiplomeProf.Text.Trim());
+                        mySqlCmd.Parameters.AddWithValue("_ProfTel_1", TXB_TelephoneProf.Text.Trim());
+                        mySqlCmd.Parameters.AddWithValue("_ProfNom", TXB_NomProf.Text.Trim());
+                        mySqlCmd.Parameters.AddWithValue("_ProfPrenom", TXB_PrenomProf.Text.Trim());
+
+                        mySqlCmd.Parameters.AddWithValue("_ProfTel_2", TXB_Telephone2Prof.Text.Trim());
+                        mySqlCmd.Parameters.AddWithValue("_ProfEmpreinte_1", TXB_Empreinte1Prof.Text.Trim());
+                        mySqlCmd.Parameters.AddWithValue("_ProfEmpreinte_2", TXB_Empreinte2Prof.Text.Trim());
+                        mySqlCmd.Parameters.AddWithValue("_ProfProfil", "Profil IMG");
+
+                        mySqlCmd.Parameters.AddWithValue("_profDate_recrutement", DTP_Recrutement.Value);
+                        mySqlCmd.Parameters.AddWithValue("_Description", TXB_DescriptionProf.Text.Trim());
+                        mySqlCmd.ExecuteNonQuery();
+                        MessageBox.Show("Submited successfully");
+                        GridFill("ProfViewAll", DGV_ListeProf);
+                    }
+
+
                     BTN_EnregisterProg.Text = "Modifier";
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error Message ");
+                MessageBox.Show("Une erreur est survenue, Veuillez contacter un programmeur" + Environment.NewLine + ex.Message);
+
             }
         }
 
@@ -614,20 +738,35 @@ namespace FingerPrint
                     mySqlCmd.CommandType = CommandType.StoredProcedure;
                     mySqlCmd.Parameters.AddWithValue("_ProgrammesID", programmeID);
                     mySqlCmd.Parameters.AddWithValue("_ProgrammeDate", DTP_Programme.Value);
-                    mySqlCmd.Parameters.AddWithValue("_ProgrammeHeureDebut", CBX_HeureDebutProg.SelectedItem.ToString());
-                    mySqlCmd.Parameters.AddWithValue("_ProgrammeHeureFin", CBX_HeureFinProg.SelectedItem.ToString());
-                    mySqlCmd.Parameters.AddWithValue("_ProgrammeIDClasse", CBX_SelectClasse.SelectedValue.ToString());
-                    mySqlCmd.Parameters.AddWithValue("_ProgrammeIDAdmin", "1");
-                    mySqlCmd.Parameters.AddWithValue("_ProgrammeIDProfMatiere", CBX_SelectProgProfMatiere.SelectedValue.ToString());
-                    mySqlCmd.ExecuteNonQuery();
-                    MessageBox.Show("Submited successfully");
-                    cleanForm(GBX_FormProg, ref programmeID, BTN_EnregisterProg);
-                    GridFill("ProgrammeViewFrorein", DGV_ListeProgramme);
+
+                    if (CBX_HeureDebutProg.SelectedIndex == -1)
+                    {
+                        CBX_HeureDebutProg.BackColor = Color.Red;
+                        MessageBox.Show("Veuillez entrer selectionner une heure de debut");
+                    }else
+                    if (CBX_HeureFinProg.SelectedIndex == -1)
+                    {
+                        CBX_HeureFinProg.BackColor = Color.Red;
+                        MessageBox.Show("Veuillez entrer une heure de fin");
+                    }
+                    
+                    else
+                    {
+                        mySqlCmd.Parameters.AddWithValue("_ProgrammeHeureDebut", CBX_HeureDebutProg.SelectedItem.ToString());
+                        mySqlCmd.Parameters.AddWithValue("_ProgrammeHeureFin", CBX_HeureFinProg.SelectedItem.ToString());
+                        mySqlCmd.Parameters.AddWithValue("_ProgrammeIDClasse", CBX_SelectClasse.SelectedValue.ToString());
+                        mySqlCmd.Parameters.AddWithValue("_ProgrammeIDAdmin", "1");
+                        mySqlCmd.Parameters.AddWithValue("_ProgrammeIDProfMatiere", CBX_SelectProgProfMatiere.SelectedValue.ToString());
+                        mySqlCmd.ExecuteNonQuery();
+                        MessageBox.Show("Submited successfully");
+                        cleanForm(GBX_FormProg, ref programmeID, BTN_EnregisterProg);
+                        GridFill("ProgrammeViewFrorein", DGV_ListeProgramme);
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error Message ");
+                MessageBox.Show("Une Erreur est survenue, Veuillez contacter un programmeur." + Environment.NewLine + ex.Message);
             }
         }
 
@@ -713,18 +852,100 @@ namespace FingerPrint
                     mySqlCmd.Parameters.AddWithValue("_PresenceID", presenceID);
                     mySqlCmd.Parameters.AddWithValue("_ProgrammesID", CBX_SelectNomProg.SelectedValue.ToString());
                     mySqlCmd.Parameters.AddWithValue("_PresenceDate", DTP_Presence.Value);
-                    mySqlCmd.Parameters.AddWithValue("_PresenceHeureDebut", TXB_HeureDebutPres.Text.Trim().ToString());
-                    mySqlCmd.Parameters.AddWithValue("_PresenceHeureFin", TXB_HeureFinPres.Text.Trim().ToString());
-                    mySqlCmd.ExecuteNonQuery();
-                    MessageBox.Show("Submited successfully");
-                    cleanForm(GBX_FormPresence, ref presenceID, BTN_EnregisterPresence);
-                    GridFill("PresenceProgrammeViewAll", DGV_ListePresence);
+
+                    if (TXB_HeureDebutPres.Text == "")
+                    {
+                        TXB_HeureDebutPres.BackColor = Color.Red;
+                        TXB_HeureDebutPres.Focus();
+                        MessageBox.Show("Veuillez entrer une heure de debut");
+                    }else
+                    if (TXB_HeureFinPres.Text == "")
+                    {
+                        TXB_HeureFinPres.BackColor = Color.Red;
+                        TXB_HeureFinPres.Focus();
+                        MessageBox.Show("Veuillez entrer une heure de fin");
+                    }                    
+
+                    else
+                    {
+                        mySqlCmd.Parameters.AddWithValue("_PresenceHeureDebut", TXB_HeureDebutPres.Text.Trim().ToString());
+                        mySqlCmd.Parameters.AddWithValue("_PresenceHeureFin", TXB_HeureFinPres.Text.Trim().ToString());
+                        mySqlCmd.ExecuteNonQuery();
+                        MessageBox.Show("Submited successfully");
+                        cleanForm(GBX_FormPresence, ref presenceID, BTN_EnregisterPresence);
+                        GridFill("PresenceProgrammeViewAll", DGV_ListePresence);
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error Message ");
+                MessageBox.Show("Une Erreur est survenue, Veuillez contacter un programmeur." + Environment.NewLine + ex.Message);
             }
+        }
+
+        private void BTN_Horaires_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BTN_SupprimerProg_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+            {
+                mySqlCon.Open();
+                MySqlCommand mySqlCmd = new MySqlCommand("ProgrammesDeleteByID", mySqlCon);
+                mySqlCmd.CommandType = CommandType.StoredProcedure;
+                mySqlCmd.Parameters.AddWithValue("_ProgrammesID", programmeID);
+                mySqlCmd.ExecuteNonQuery();
+                MessageBox.Show("Deleted successfully");
+                cleanForm(GBX_FormAdmin, ref adminID, BTN_EnregisterProg);
+                GridFill("ProgrammeViewFrorein", DGV_ListeProgramme);
+            }
+        }
+
+        private void BTN_AnnulerProg_Click(object sender, EventArgs e)
+        {
+            cleanForm(GBX_FormAdmin, ref adminID, BTN_EnregisterProg);
+        }
+
+        private void BTN_SupprimerPresence_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+            {
+                mySqlCon.Open();
+                MySqlCommand mySqlCmd = new MySqlCommand("PresenceDeleteByID", mySqlCon);
+                mySqlCmd.CommandType = CommandType.StoredProcedure;
+                mySqlCmd.Parameters.AddWithValue("_PresenceID", presenceID);
+                mySqlCmd.ExecuteNonQuery();
+                MessageBox.Show("Deleted successfully");
+                cleanForm(GBX_FormAdmin, ref adminID, BTN_EnregisterPresence);
+                GridFill("PresenceProgrammeViewAll", DGV_ListePresence);
+            }
+        }
+
+        private void BTN_AnnulerPresence_Click(object sender, EventArgs e)
+        {
+            cleanForm(GBX_FormAdmin, ref adminID, BTN_EnregisterPresence);
+        }
+
+        private void BTN_SupprimerMatProf_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+            {
+                mySqlCon.Open();
+                MySqlCommand mySqlCmd = new MySqlCommand("ProfMatiereDeleteByID", mySqlCon);
+                mySqlCmd.CommandType = CommandType.StoredProcedure;
+                mySqlCmd.Parameters.AddWithValue("_ProfMatiereID", profMatiereID);
+                mySqlCmd.ExecuteNonQuery();
+                MessageBox.Show("Deleted successfully");
+                cleanForm(GBX_FormAdmin, ref adminID, BTN_EnregistrerMatProf);
+                GridFill("ProfMatiereViewFrorein", DGV_MatiereProf);
+            }
+        }
+
+        private void BTN_AnnulerMatProf_Click(object sender, EventArgs e)
+        {
+            cleanForm(GBX_FormAdmin, ref adminID, BTN_EnregistrerMatProf);
         }
 
 

@@ -140,7 +140,6 @@
             this.TXB_CodeMatiere = new System.Windows.Forms.TextBox();
             this.LBL_CodeMatiere = new System.Windows.Forms.Label();
             this.TPG_Professeur = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
             this.BTN_AnnulerProf = new System.Windows.Forms.Button();
             this.BTN_SupprimerProf = new System.Windows.Forms.Button();
             this.BTN_EnregistrerProf = new System.Windows.Forms.Button();
@@ -253,6 +252,7 @@
             this.BTN_Horaires.TabIndex = 4;
             this.BTN_Horaires.Text = "Horaires";
             this.BTN_Horaires.UseVisualStyleBackColor = true;
+            this.BTN_Horaires.Click += new System.EventHandler(this.BTN_Horaires_Click);
             // 
             // BTN_EtatReseau
             // 
@@ -276,7 +276,7 @@
             this.TPG_MatiereProf.Padding = new System.Windows.Forms.Padding(3);
             this.TPG_MatiereProf.Size = new System.Drawing.Size(875, 612);
             this.TPG_MatiereProf.TabIndex = 7;
-            this.TPG_MatiereProf.Text = "Mariere Professeur";
+            this.TPG_MatiereProf.Text = "Matière Professeur";
             this.TPG_MatiereProf.UseVisualStyleBackColor = true;
             // 
             // GBX_FormMatiereProf
@@ -291,7 +291,6 @@
             this.GBX_FormMatiereProf.TabIndex = 12;
             this.GBX_FormMatiereProf.TabStop = false;
             this.GBX_FormMatiereProf.Text = "Formulaire Matiere Professeur";
-            this.GBX_FormMatiereProf.Enter += new System.EventHandler(this.GBX_FormMatiereProf_Enter);
             // 
             // CBX_SelectMatiere
             // 
@@ -308,7 +307,6 @@
             this.CBX_SelectProf.Name = "CBX_SelectProf";
             this.CBX_SelectProf.Size = new System.Drawing.Size(269, 21);
             this.CBX_SelectProf.TabIndex = 3;
-            this.CBX_SelectProf.SelectedIndexChanged += new System.EventHandler(this.CBX_SelectProf_SelectedIndexChanged);
             // 
             // LBL_Matiere
             // 
@@ -336,6 +334,7 @@
             this.BTN_AnnulerMatProf.TabIndex = 17;
             this.BTN_AnnulerMatProf.Text = "Annuler";
             this.BTN_AnnulerMatProf.UseVisualStyleBackColor = true;
+            this.BTN_AnnulerMatProf.Click += new System.EventHandler(this.BTN_AnnulerMatProf_Click);
             // 
             // BTN_SupprimerMatProf
             // 
@@ -345,6 +344,7 @@
             this.BTN_SupprimerMatProf.TabIndex = 16;
             this.BTN_SupprimerMatProf.Text = "Supprimer";
             this.BTN_SupprimerMatProf.UseVisualStyleBackColor = true;
+            this.BTN_SupprimerMatProf.Click += new System.EventHandler(this.BTN_SupprimerMatProf_Click);
             // 
             // BTN_EnregistrerMatProf
             // 
@@ -431,6 +431,7 @@
             this.BTN_AnnulerPresence.TabIndex = 11;
             this.BTN_AnnulerPresence.Text = "Annuler";
             this.BTN_AnnulerPresence.UseVisualStyleBackColor = true;
+            this.BTN_AnnulerPresence.Click += new System.EventHandler(this.BTN_AnnulerPresence_Click);
             // 
             // BTN_SupprimerPresence
             // 
@@ -440,6 +441,7 @@
             this.BTN_SupprimerPresence.TabIndex = 10;
             this.BTN_SupprimerPresence.Text = "Supprimer";
             this.BTN_SupprimerPresence.UseVisualStyleBackColor = true;
+            this.BTN_SupprimerPresence.Click += new System.EventHandler(this.BTN_SupprimerPresence_Click);
             // 
             // BTN_EnregisterPresence
             // 
@@ -620,6 +622,7 @@
             this.BTN_AnnulerProg.TabIndex = 11;
             this.BTN_AnnulerProg.Text = "Annuler";
             this.BTN_AnnulerProg.UseVisualStyleBackColor = true;
+            this.BTN_AnnulerProg.Click += new System.EventHandler(this.BTN_AnnulerProg_Click);
             // 
             // BTN_SupprimerProg
             // 
@@ -629,6 +632,7 @@
             this.BTN_SupprimerProg.TabIndex = 10;
             this.BTN_SupprimerProg.Text = "Supprimer";
             this.BTN_SupprimerProg.UseVisualStyleBackColor = true;
+            this.BTN_SupprimerProg.Click += new System.EventHandler(this.BTN_SupprimerProg_Click);
             // 
             // BTN_EnregisterProg
             // 
@@ -1328,7 +1332,6 @@
             // 
             // TPG_Professeur
             // 
-            this.TPG_Professeur.Controls.Add(this.label2);
             this.TPG_Professeur.Controls.Add(this.BTN_AnnulerProf);
             this.TPG_Professeur.Controls.Add(this.BTN_SupprimerProf);
             this.TPG_Professeur.Controls.Add(this.BTN_EnregistrerProf);
@@ -1342,17 +1345,6 @@
             this.TPG_Professeur.TabIndex = 0;
             this.TPG_Professeur.Text = "Professeur";
             this.TPG_Professeur.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(733, 230);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(142, 78);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Note: \r\nSuprimer \'Etat de service\r\nFace ID 1 et 2,\r\n\r\n\r\nAjouter \'Date de recrutem" +
-    "ent\r\n";
             // 
             // BTN_AnnulerProf
             // 
@@ -1772,7 +1764,6 @@
             this.GBX_FormMatiere.ResumeLayout(false);
             this.GBX_FormMatiere.PerformLayout();
             this.TPG_Professeur.ResumeLayout(false);
-            this.TPG_Professeur.PerformLayout();
             this.GBX_RechercheProf.ResumeLayout(false);
             this.GBX_RechercheProf.PerformLayout();
             this.GBX_ListeProfesseur.ResumeLayout(false);
@@ -1897,7 +1888,6 @@
         private System.Windows.Forms.TextBox TXB_CodeMatiere;
         private System.Windows.Forms.Label LBL_CodeMatiere;
         private System.Windows.Forms.TabPage TPG_Professeur;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button BTN_AnnulerProf;
         private System.Windows.Forms.Button BTN_SupprimerProf;
         private System.Windows.Forms.Button BTN_EnregistrerProf;
