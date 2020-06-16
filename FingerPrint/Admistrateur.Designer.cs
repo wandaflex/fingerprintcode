@@ -178,6 +178,7 @@
             this.TXB_NomProf = new System.Windows.Forms.TextBox();
             this.PBX_Professeur = new System.Windows.Forms.PictureBox();
             this.TCL_Admin = new System.Windows.Forms.TabControl();
+            this.button1 = new System.Windows.Forms.Button();
             this.TPG_MatiereProf.SuspendLayout();
             this.GBX_FormMatiereProf.SuspendLayout();
             this.GBX_RechMatiereProf.SuspendLayout();
@@ -291,7 +292,6 @@
             this.GBX_FormMatiereProf.TabIndex = 12;
             this.GBX_FormMatiereProf.TabStop = false;
             this.GBX_FormMatiereProf.Text = "Formulaire Matiere Professeur";
-//            this.GBX_FormMatiereProf.Enter += new System.EventHandler(this.GBX_FormMatiereProf_Enter);
             // 
             // CBX_SelectMatiere
             // 
@@ -308,7 +308,6 @@
             this.CBX_SelectProf.Name = "CBX_SelectProf";
             this.CBX_SelectProf.Size = new System.Drawing.Size(269, 21);
             this.CBX_SelectProf.TabIndex = 3;
-//            this.CBX_SelectProf.SelectedIndexChanged += new System.EventHandler(this.CBX_SelectProf_SelectedIndexChanged);
             // 
             // LBL_Matiere
             // 
@@ -336,6 +335,7 @@
             this.BTN_AnnulerMatProf.TabIndex = 17;
             this.BTN_AnnulerMatProf.Text = "Annuler";
             this.BTN_AnnulerMatProf.UseVisualStyleBackColor = true;
+            this.BTN_AnnulerMatProf.Click += new System.EventHandler(this.BTN_AnnulerMatProf_Click);
             // 
             // BTN_SupprimerMatProf
             // 
@@ -345,6 +345,7 @@
             this.BTN_SupprimerMatProf.TabIndex = 16;
             this.BTN_SupprimerMatProf.Text = "Supprimer";
             this.BTN_SupprimerMatProf.UseVisualStyleBackColor = true;
+            this.BTN_SupprimerMatProf.Click += new System.EventHandler(this.BTN_SupprimerMatProf_Click);
             // 
             // BTN_EnregistrerMatProf
             // 
@@ -406,6 +407,7 @@
             this.DGV_MatiereProf.RowHeadersWidth = 51;
             this.DGV_MatiereProf.Size = new System.Drawing.Size(694, 394);
             this.DGV_MatiereProf.TabIndex = 0;
+            this.DGV_MatiereProf.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_MatiereProf_CellContentClick);
             // 
             // TPG_Presence
             // 
@@ -431,6 +433,7 @@
             this.BTN_AnnulerPresence.TabIndex = 11;
             this.BTN_AnnulerPresence.Text = "Annuler";
             this.BTN_AnnulerPresence.UseVisualStyleBackColor = true;
+            this.BTN_AnnulerPresence.Click += new System.EventHandler(this.BTN_AnnulerPresence_Click);
             // 
             // BTN_SupprimerPresence
             // 
@@ -440,6 +443,7 @@
             this.BTN_SupprimerPresence.TabIndex = 10;
             this.BTN_SupprimerPresence.Text = "Supprimer";
             this.BTN_SupprimerPresence.UseVisualStyleBackColor = true;
+            this.BTN_SupprimerPresence.Click += new System.EventHandler(this.BTN_SupprimerPresence_Click);
             // 
             // BTN_EnregisterPresence
             // 
@@ -620,6 +624,7 @@
             this.BTN_AnnulerProg.TabIndex = 11;
             this.BTN_AnnulerProg.Text = "Annuler";
             this.BTN_AnnulerProg.UseVisualStyleBackColor = true;
+            this.BTN_AnnulerProg.Click += new System.EventHandler(this.BTN_AnnulerProg_Click);
             // 
             // BTN_SupprimerProg
             // 
@@ -629,6 +634,7 @@
             this.BTN_SupprimerProg.TabIndex = 10;
             this.BTN_SupprimerProg.Text = "Supprimer";
             this.BTN_SupprimerProg.UseVisualStyleBackColor = true;
+            this.BTN_SupprimerProg.Click += new System.EventHandler(this.BTN_SupprimerProg_Click);
             // 
             // BTN_EnregisterProg
             // 
@@ -1328,6 +1334,7 @@
             // 
             // TPG_Professeur
             // 
+            this.TPG_Professeur.Controls.Add(this.button1);
             this.TPG_Professeur.Controls.Add(this.label2);
             this.TPG_Professeur.Controls.Add(this.BTN_AnnulerProf);
             this.TPG_Professeur.Controls.Add(this.BTN_SupprimerProf);
@@ -1366,7 +1373,7 @@
             // 
             // BTN_SupprimerProf
             // 
-            this.BTN_SupprimerProf.Location = new System.Drawing.Point(736, 121);
+            this.BTN_SupprimerProf.Location = new System.Drawing.Point(736, 133);
             this.BTN_SupprimerProf.Name = "BTN_SupprimerProf";
             this.BTN_SupprimerProf.Size = new System.Drawing.Size(120, 41);
             this.BTN_SupprimerProf.TabIndex = 4;
@@ -1376,7 +1383,7 @@
             // 
             // BTN_EnregistrerProf
             // 
-            this.BTN_EnregistrerProf.Location = new System.Drawing.Point(736, 59);
+            this.BTN_EnregistrerProf.Location = new System.Drawing.Point(736, 73);
             this.BTN_EnregistrerProf.Name = "BTN_EnregistrerProf";
             this.BTN_EnregistrerProf.Size = new System.Drawing.Size(120, 41);
             this.BTN_EnregistrerProf.TabIndex = 3;
@@ -1713,6 +1720,16 @@
             this.TCL_Admin.TabIndex = 0;
             this.TCL_Admin.SelectedIndexChanged += new System.EventHandler(this.TCL_Admin_SelectedIndexChanged);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(736, 18);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 42);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Calendrier";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Admistrateur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1935,5 +1952,6 @@
         private System.Windows.Forms.TextBox TXB_NomProf;
         private System.Windows.Forms.PictureBox PBX_Professeur;
         private System.Windows.Forms.TabControl TCL_Admin;
+        private System.Windows.Forms.Button button1;
     }
 }
