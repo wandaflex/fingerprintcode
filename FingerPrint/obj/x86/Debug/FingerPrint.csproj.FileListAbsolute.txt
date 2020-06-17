@@ -69,6 +69,8 @@ C:\Users\Raoul\Documents\NewFingerPRint\FingerPrint\bin\Debug\Ubiety.Dns.Core.dl
 C:\Users\Raoul\Documents\NewFingerPRint\FingerPrint\bin\Debug\Renci.SshNet.dll
 C:\Users\Raoul\Documents\NewFingerPRint\FingerPrint\bin\Debug\MySql.Data.xml
 C:\Users\Raoul\Documents\NewFingerPRint\FingerPrint\obj\x86\Debug\FingerPrint.Admistrateur.resources
+C:\Users\Raoul\Documents\NewFingerPRint\FingerPrint\obj\x86\Debug\FingerPrint.EmploieDeTempsForm.resources
+C:\Users\Raoul\Documents\NewFingerPRint\FingerPrint\obj\x86\Debug\FingerPrint.EmploieDeTempsViewForm.resources
 C:\Users\Raoul\Documents\NewFingerPRint\FingerPrint\obj\x86\Debug\FingerPrint.GestionHoraire.resources
 C:\Users\Raoul\Documents\NewFingerPRint\FingerPrint\obj\x86\Debug\FingerPrint.Login.resources
 C:\Users\Raoul\Documents\NewFingerPRint\FingerPrint\obj\x86\Debug\FingerPrint.Properties.Resources.resources
@@ -78,3 +80,4 @@ C:\Users\Raoul\Documents\NewFingerPRint\FingerPrint\obj\x86\Debug\FingerPrint.cs
 C:\Users\Raoul\Documents\NewFingerPRint\FingerPrint\obj\x86\Debug\FingerPrint.csproj.CopyComplete
 C:\Users\Raoul\Documents\NewFingerPRint\FingerPrint\obj\x86\Debug\FingerPrint.exe
 C:\Users\Raoul\Documents\NewFingerPRint\FingerPrint\obj\x86\Debug\FingerPrint.pdb
+C:\Users\Raoul\Documents\NewFingerPRint\FingerPrint\obj\x86\Debug\FingerPrint.csprojAssemblyReference.cache

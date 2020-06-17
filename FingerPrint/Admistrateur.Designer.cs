@@ -253,7 +253,7 @@
             this.BTN_Horaires.TabIndex = 4;
             this.BTN_Horaires.Text = "Horaires";
             this.BTN_Horaires.UseVisualStyleBackColor = true;
-            this.BTN_Horaires.Click += new System.EventHandler(this.BTN_Horaires_Click);
+            //this.BTN_Horaires.Click += new System.EventHandler(this.BTN_Horaires_Click);
             // 
             // BTN_EtatReseau
             // 
@@ -1335,7 +1335,7 @@
             // TPG_Professeur
             // 
             this.TPG_Professeur.Controls.Add(this.button1);
-            this.TPG_Professeur.Controls.Add(this.label2);
+            //this.TPG_Professeur.Controls.Add(this.label2);
             this.TPG_Professeur.Controls.Add(this.BTN_AnnulerProf);
             this.TPG_Professeur.Controls.Add(this.BTN_SupprimerProf);
             this.TPG_Professeur.Controls.Add(this.BTN_EnregistrerProf);
