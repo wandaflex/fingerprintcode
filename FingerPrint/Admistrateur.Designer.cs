@@ -140,6 +140,7 @@
             this.TXB_CodeMatiere = new System.Windows.Forms.TextBox();
             this.LBL_CodeMatiere = new System.Windows.Forms.Label();
             this.TPG_Professeur = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.BTN_AnnulerProf = new System.Windows.Forms.Button();
             this.BTN_SupprimerProf = new System.Windows.Forms.Button();
             this.BTN_EnregistrerProf = new System.Windows.Forms.Button();
@@ -1346,6 +1347,16 @@
             this.TPG_Professeur.TabIndex = 0;
             this.TPG_Professeur.Text = "Professeur";
             this.TPG_Professeur.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(901, 215);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 42);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Calendrier";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // BTN_AnnulerProf
             // 

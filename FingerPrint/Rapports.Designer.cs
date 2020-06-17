@@ -36,14 +36,14 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.GBX_ListeRapport = new System.Windows.Forms.GroupBox();
-            this.DGV_Rapport = new System.Windows.Forms.DataGridView();
             this.Recherche_Rapport = new System.Windows.Forms.GroupBox();
             this.TBX_RechercheRapport = new System.Windows.Forms.TextBox();
             this.BTN_RechercheRapport = new System.Windows.Forms.Button();
-            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.salairePrintPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
+            this.salairePrintDocument = new System.Drawing.Printing.PrintDocument();
+            this.resultlabel = new System.Windows.Forms.Label();
             this.GBX_FormRapport.SuspendLayout();
             this.GBX_ListeRapport.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_Rapport)).BeginInit();
             this.Recherche_Rapport.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,7 +106,7 @@
             // 
             // GBX_ListeRapport
             // 
-            this.GBX_ListeRapport.Controls.Add(this.DGV_Rapport);
+            this.GBX_ListeRapport.Controls.Add(this.resultlabel);
             this.GBX_ListeRapport.Location = new System.Drawing.Point(13, 189);
             this.GBX_ListeRapport.Name = "GBX_ListeRapport";
             this.GBX_ListeRapport.Size = new System.Drawing.Size(766, 489);
@@ -114,14 +114,6 @@
             this.GBX_ListeRapport.TabStop = false;
             this.GBX_ListeRapport.Text = "Liste Rapport";
             this.GBX_ListeRapport.Enter += new System.EventHandler(this.GBX_ListeRapport_Enter);
-            // 
-            // DGV_Rapport
-            // 
-            this.DGV_Rapport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_Rapport.Location = new System.Drawing.Point(15, 22);
-            this.DGV_Rapport.Name = "DGV_Rapport";
-            this.DGV_Rapport.Size = new System.Drawing.Size(739, 407);
-            this.DGV_Rapport.TabIndex = 0;
             // 
             // Recherche_Rapport
             // 
@@ -150,15 +142,28 @@
             this.BTN_RechercheRapport.Text = "Recherche";
             this.BTN_RechercheRapport.UseVisualStyleBackColor = true;
             // 
-            // printPreviewDialog1
+            // salairePrintPreviewDialog
             // 
-            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreviewDialog1.Enabled = true;
-            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
-            this.printPreviewDialog1.Name = "printPreviewDialog1";
-            this.printPreviewDialog1.Visible = false;
+            this.salairePrintPreviewDialog.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.salairePrintPreviewDialog.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.salairePrintPreviewDialog.ClientSize = new System.Drawing.Size(400, 300);
+            this.salairePrintPreviewDialog.Document = this.salairePrintDocument;
+            this.salairePrintPreviewDialog.Enabled = true;
+            this.salairePrintPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("salairePrintPreviewDialog.Icon")));
+            this.salairePrintPreviewDialog.Name = "printPreviewDialog1";
+            this.salairePrintPreviewDialog.Visible = false;
+            // 
+            // salairePrintDocument
+            // 
+            this.salairePrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.salairePrintDocument_PrintPage);
+            // 
+            // resultlabel
+            // 
+            this.resultlabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.resultlabel.Location = new System.Drawing.Point(6, 16);
+            this.resultlabel.Name = "resultlabel";
+            this.resultlabel.Size = new System.Drawing.Size(694, 365);
+            this.resultlabel.TabIndex = 0;
             // 
             // Rapports
             // 
@@ -173,7 +178,6 @@
             this.GBX_FormRapport.ResumeLayout(false);
             this.GBX_FormRapport.PerformLayout();
             this.GBX_ListeRapport.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_Rapport)).EndInit();
             this.Recherche_Rapport.ResumeLayout(false);
             this.Recherche_Rapport.PerformLayout();
             this.ResumeLayout(false);
@@ -192,7 +196,8 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label LBL_DateFinRapport;
         private System.Windows.Forms.Label LBL_DateDebutRaport;
-        private System.Windows.Forms.DataGridView DGV_Rapport;
-        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.PrintPreviewDialog salairePrintPreviewDialog;
+        private System.Drawing.Printing.PrintDocument salairePrintDocument;
+        private System.Windows.Forms.Label resultlabel;
     }
 }
