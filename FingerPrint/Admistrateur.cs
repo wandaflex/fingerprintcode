@@ -966,6 +966,13 @@ namespace FingerPrint
             this.Close();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            EmploieDeTempsForm btn = new EmploieDeTempsForm();
+            btn.ShowDialog();
+            this.Close();
+        }
+
 
 
         //private void BTN_EnregisterCycle_Click(object sender, EventArgs e)

@@ -177,7 +177,7 @@
             this.TXB_NomProf = new System.Windows.Forms.TextBox();
             this.PBX_Professeur = new System.Windows.Forms.PictureBox();
             this.TCL_Admin = new System.Windows.Forms.TabControl();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.TPG_MatiereProf.SuspendLayout();
             this.GBX_FormMatiereProf.SuspendLayout();
             this.GBX_RechMatiereProf.SuspendLayout();
@@ -253,7 +253,6 @@
             this.BTN_Horaires.TabIndex = 4;
             this.BTN_Horaires.Text = "Horaires";
             this.BTN_Horaires.UseVisualStyleBackColor = true;
-            this.BTN_Horaires.Click += new System.EventHandler(this.BTN_Horaires_Click);
             // 
             // BTN_EtatReseau
             // 
@@ -1334,8 +1333,6 @@
             // 
             // TPG_Professeur
             // 
-            this.TPG_Professeur.Controls.Add(this.button1);
-            this.TPG_Professeur.Controls.Add(this.label2);
             this.TPG_Professeur.Controls.Add(this.BTN_AnnulerProf);
             this.TPG_Professeur.Controls.Add(this.BTN_SupprimerProf);
             this.TPG_Professeur.Controls.Add(this.BTN_EnregistrerProf);
@@ -1709,21 +1706,22 @@
             this.TCL_Admin.TabIndex = 0;
             this.TCL_Admin.SelectedIndexChanged += new System.EventHandler(this.TCL_Admin_SelectedIndexChanged);
             // 
-            // button1
+            // button2
             // 
-            this.button1.Location = new System.Drawing.Point(736, 18);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 42);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Calendrier";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button2.Location = new System.Drawing.Point(901, 220);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(133, 37);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "Calendrier";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Admistrateur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1055, 671);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.BTN_EtatReseau);
             this.Controls.Add(this.BTN_Horaires);
             this.Controls.Add(this.BTN_Rapports);
@@ -1939,6 +1937,6 @@
         private System.Windows.Forms.TextBox TXB_NomProf;
         private System.Windows.Forms.PictureBox PBX_Professeur;
         private System.Windows.Forms.TabControl TCL_Admin;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

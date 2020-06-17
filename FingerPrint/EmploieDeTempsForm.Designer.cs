@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblMonthAndYear = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -45,6 +45,7 @@
             this.f1Days = new System.Windows.Forms.FlowLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.btnToday = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -53,7 +54,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblMonthAndYear);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -61,33 +62,34 @@
             this.panel1.Size = new System.Drawing.Size(928, 54);
             this.panel1.TabIndex = 0;
             // 
-            // label1
+            // lblMonthAndYear
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(176, 39);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Juin, 2020";
+            this.lblMonthAndYear.AutoSize = true;
+            this.lblMonthAndYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMonthAndYear.Location = new System.Drawing.Point(3, 9);
+            this.lblMonthAndYear.Name = "lblMonthAndYear";
+            this.lblMonthAndYear.Size = new System.Drawing.Size(0, 39);
+            this.lblMonthAndYear.TabIndex = 1;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnToday);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button1);
-            this.panel2.Location = new System.Drawing.Point(799, 0);
+            this.panel2.Location = new System.Drawing.Point(732, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(129, 54);
+            this.panel2.Size = new System.Drawing.Size(196, 54);
             this.panel2.TabIndex = 1;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(71, 8);
+            this.button2.Location = new System.Drawing.Point(138, 8);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(46, 39);
             this.button2.TabIndex = 2;
             this.button2.Text = ">";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -97,6 +99,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "<";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel3
             // 
@@ -229,6 +232,16 @@
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Apointment 1";
             // 
+            // btnToday
+            // 
+            this.btnToday.Location = new System.Drawing.Point(75, 8);
+            this.btnToday.Name = "btnToday";
+            this.btnToday.Size = new System.Drawing.Size(46, 39);
+            this.btnToday.TabIndex = 3;
+            this.btnToday.Text = "Today";
+            this.btnToday.UseVisualStyleBackColor = true;
+            this.btnToday.Click += new System.EventHandler(this.btnToday_Click);
+            // 
             // EmploieDeTempsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -237,6 +250,8 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.f1Days);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MinimizeBox = false;
             this.Name = "EmploieDeTempsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EmploieDeTempsForm";
@@ -255,7 +270,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblMonthAndYear;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
@@ -271,5 +286,6 @@
         private System.Windows.Forms.FlowLayoutPanel f1Days;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.Button btnToday;
     }
 }
