@@ -15,5 +15,10 @@ namespace FingerPrint
         {
             InitializeComponent();
         }
+
+        private void BTN_Login_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

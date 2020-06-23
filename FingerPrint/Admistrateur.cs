@@ -39,6 +39,8 @@ namespace FingerPrint
         #region Initialisation du formulaire principal
         private void Admistrateur_Load(object sender, EventArgs e)
         {
+            Login oLogin = new Login();
+            oLogin.ShowDialog();
 
             initCombo();
 
@@ -963,7 +965,7 @@ namespace FingerPrint
         {
             EmploieDeTempsForm btn = new EmploieDeTempsForm();
             btn.ShowDialog();
-            this.Close();
+            //this.Close();
         }
 
 

@@ -50,7 +50,7 @@ namespace FingerPrint
 
         private void BTN_ValiderRapport_Click(object sender, EventArgs e)
         {
-            string titre = String.Format("{0,-60} {1,-60} {2,-60} {3} \n", "nom Professeur","nombre heure premier cycle", " nombre heure second cycle ", "Total a payer");
+            string titre = String.Format("{0,-40} {1,-40} {2,-40} {3} \n", "nom Professeur","nombre heure premier cycle", " nombre heure second cycle ", "Total a payer");
             resultlabel.Text += titre + "\n\t";
             DateTime dateDebut = dateTimePicker1.Value ;
             DateTime dateFin = dateTimePicker2.Value ;
@@ -116,7 +116,7 @@ namespace FingerPrint
 
                                 if (numero_cycle == 1)
                                     nombre_Heure_Cycle1 += nb_heure;
-                                if (numero_cycle == 1)
+                                if (numero_cycle == 2)
                                     nombre_Heure_Cycle2 += nb_heure;
 
                                 nb_heure = 0;
@@ -129,7 +129,7 @@ namespace FingerPrint
                             //Console.WriteLine($"Total a payer prof {profNom}  = "+total_a_payer);
                             if(total_a_payer != 0)
                             {
-                                resultlabel.Text += String.Format("{0,-60} {1,60} {2,60} {3:N0} \n", profNom, Math.Round(nombre_Heure_Cycle1), Math.Round(nombre_Heure_Cycle2), Math.Round(total_a_payer));
+                                resultlabel.Text += String.Format("{0,-60} {1,-50} {2,-50} {3:N0} \n", profNom, Math.Round(nombre_Heure_Cycle1), Math.Round(nombre_Heure_Cycle2), Math.Round(total_a_payer));
                                     //$"{profNom}  = " + Math.Round(total_a_payer) + "\n\t";
                             }
 

@@ -44,6 +44,7 @@
             this.BTN_Login.TabIndex = 0;
             this.BTN_Login.Text = "Connecter";
             this.BTN_Login.UseVisualStyleBackColor = true;
+            this.BTN_Login.Click += new System.EventHandler(this.BTN_Login_Click);
             // 
             // TXT_Utilisateur
             // 
@@ -74,6 +75,7 @@
             // 
             this.TXT_MotDePasse.Location = new System.Drawing.Point(203, 75);
             this.TXT_MotDePasse.Name = "TXT_MotDePasse";
+            this.TXT_MotDePasse.PasswordChar = '*';
             this.TXT_MotDePasse.Size = new System.Drawing.Size(175, 20);
             this.TXT_MotDePasse.TabIndex = 1;
             // 
