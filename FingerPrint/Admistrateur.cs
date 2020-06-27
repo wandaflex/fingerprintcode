@@ -39,8 +39,8 @@ namespace FingerPrint
         #region Initialisation du formulaire principal
         private void Admistrateur_Load(object sender, EventArgs e)
         {
-            Login oLogin = new Login();
-            oLogin.ShowDialog();
+            //Login oLogin = new Login();
+            //oLogin.ShowDialog();
 
             initCombo();
 

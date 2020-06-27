@@ -24,13 +24,13 @@ namespace FingerPrint
         private double nombre_Heure_Cycle2 = 0.0;
         private const int PERIODE = 55;
         private const int TOLLERENCE_ABSENCE = 5;
-        private const String TEMP_PAUSE_1 = "00:15";
-        private const String TEMP_PAUSE_2 = "00:30";
+        private const String TEMP_PAUSE_1 = "00:15:00";
+        private const String TEMP_PAUSE_2 = "00:30:00";
         private const int PENALITE_RETARD = 5;
-        private TimeSpan H_DEBUT_PAUSE_1 = TimeSpan.Parse("10:45");
-        private TimeSpan H_DEBUT_PAUSE_2 = TimeSpan.Parse("12:30");
-        private TimeSpan H_FIN_PAUSE_1 = TimeSpan.Parse("11:00");
-        private TimeSpan H_FIN_PAUSE_2 = TimeSpan.Parse("13:00");
+        private TimeSpan H_DEBUT_PAUSE_1 = TimeSpan.Parse("10:45:00");
+        private TimeSpan H_DEBUT_PAUSE_2 = TimeSpan.Parse("12:30:00");
+        private TimeSpan H_FIN_PAUSE_1 = TimeSpan.Parse("11:00:00");
+        private TimeSpan H_FIN_PAUSE_2 = TimeSpan.Parse("13:00:00");
 
 
         public Rapports()
@@ -162,7 +162,7 @@ namespace FingerPrint
                 nb_minute -= TimeSpan.Parse(PENALITE_RETARD.ToString());
 
             Console.WriteLine(nb_minute.TotalMinutes);
-            return (nb_minute.TotalMinutes)/PERIODE;
+            return (nb_minute.TotalMinutes) / PERIODE;
         }
 
         private void salairePrintDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
