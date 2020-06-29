@@ -40,15 +40,15 @@ namespace FingerPrint
                         {
                             if(reader2.GetString("type_utilisateur") == "Administrateur")
                             {
+                                this.Close();
                                 Admistrateur oAdmistrateur = new Admistrateur();
-                                oAdmistrateur.Show();
-                                //this.Close();
+                                oAdmistrateur.Show();                                
                             }
                             else
                             {
+                                this.Close();
                                 GestionHoraire oGestionHoraire = new GestionHoraire();
-                                oGestionHoraire.Show();
-                                //this.Close();
+                                oGestionHoraire.Show();                                
                             }
                            
 
@@ -58,6 +58,10 @@ namespace FingerPrint
                             MessageBox.Show("Login ou mot de passe incorrect");
                         }
                     }
+                    else
+                    {
+                        MessageBox.Show("Entrez Login ou mot de passe Valide");
+                    }
 
                     
                 }
@@ -66,6 +70,11 @@ namespace FingerPrint
             {
                 MessageBox.Show(ex.ToString(), "Error Message ");
             }
+        }
+
+        private void BTN_Quitter_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

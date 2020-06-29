@@ -87,6 +87,7 @@
             this.BTN_Quitter.TabIndex = 0;
             this.BTN_Quitter.Text = "Quitter";
             this.BTN_Quitter.UseVisualStyleBackColor = true;
+            this.BTN_Quitter.Click += new System.EventHandler(this.BTN_Quitter_Click);
             // 
             // Login
             // 
