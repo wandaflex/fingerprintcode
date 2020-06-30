@@ -129,6 +129,7 @@ namespace FingerPrint
                             //Console.WriteLine($"Total a payer prof {profNom}  = "+total_a_payer);
                             if(total_a_payer != 0)
                             {
+                                resultlabel.Text += String.Format("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
                                 resultlabel.Text += String.Format("{0,-60} {1,-50} {2,-50} {3:N0} \n", profNom, Math.Round(nombre_Heure_Cycle1), Math.Round(nombre_Heure_Cycle2), Math.Round(total_a_payer));
                                     //$"{profNom}  = " + Math.Round(total_a_payer) + "\n\t";
                             }

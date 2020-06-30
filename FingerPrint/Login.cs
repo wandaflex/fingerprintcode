@@ -42,13 +42,13 @@ namespace FingerPrint
                             {
                                 Admistrateur oAdmistrateur = new Admistrateur();
                                 oAdmistrateur.Show();
-                                //this.Close();
+                                this.Hide();
                             }
                             else
                             {
                                 GestionHoraire oGestionHoraire = new GestionHoraire();
                                 oGestionHoraire.Show();
-                                //this.Close();
+                                this.Hide();
                             }
                            
 
@@ -58,8 +58,11 @@ namespace FingerPrint
                             MessageBox.Show("Login ou mot de passe incorrect");
                         }
                     }
+                    else
+                    {
+                        MessageBox.Show("Veillez entrer un Login et mot de passe!!!");
+                    }
 
-                    
                 }
             }
             catch (Exception ex)
