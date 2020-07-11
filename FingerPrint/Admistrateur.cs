@@ -17,12 +17,13 @@ using System.IO;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using MySql.Data;
+using System.Security.Cryptography;
 
 namespace FingerPrint
 {
     public partial class Admistrateur : Form
     {
-        string connectionString = @"Server=localhost;Database=presence_db;Uid=root;Pwd='';";
+        private static string connectionString = @"Server=localhost;Database=presence_db;Uid=root;Pwd='';";
         public int adminID = 0;
         //int cycleID = 0;
         int classeID = 0;
@@ -154,7 +155,7 @@ namespace FingerPrint
             cleanForm(GBX_FormAdmin,ref adminID, BTN_EnregisterAdmin);
         }
 
-        void GridFill(String procedure, DataGridView dataGrid)
+        public void GridFill(String procedure, DataGridView dataGrid)
         {
             using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
             {
@@ -533,7 +534,6 @@ namespace FingerPrint
                 MessageBox.Show("Deleted successfully");
                 cleanForm(GBX_FormProfesseur,ref professeurID,BTN_EnregistrerProf);
                 GridFill("ProfViewAll", DGV_ListeProf);
-
             }
         }
 
@@ -672,7 +672,7 @@ namespace FingerPrint
         //}
 
         // Methode pour le combobox
-        private void ComboFill(string procedure, ref ComboBox oComboBox, string displayMember, string valueMember)
+        public static void ComboFill(string procedure, ref ComboBox oComboBox, string displayMember, string valueMember)
         {
             using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
             {
@@ -973,6 +973,12 @@ namespace FingerPrint
             EmploieDeTempsForm btn = new EmploieDeTempsForm();
             btn.ShowDialog();
             this.Close();
+        }
+
+        private void BTN_Horaires_Click(object sender, EventArgs e)
+        {
+            GestionHoraire oGestionHoraire = new GestionHoraire();
+            oGestionHoraire.ShowDialog();
         }
 
 
