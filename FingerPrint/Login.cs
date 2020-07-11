@@ -43,14 +43,14 @@ namespace FingerPrint
                                 //this.Close();
                                 Admistrateur oAdmistrateur = new Admistrateur();
                                 oAdmistrateur.Show();
-                                this.Hide();
+                                //this.Hide();
                             }
                             else
                             {
                                 //this.Close();
                                 GestionHoraire oGestionHoraire = new GestionHoraire();
                                 oGestionHoraire.Show();
-                                this.Hide();
+                                //this.Hide();
                             }
                            
 
@@ -76,6 +76,11 @@ namespace FingerPrint
         private void BTN_Quitter_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
