@@ -21,7 +21,7 @@ namespace FingerPrint
 
         private void GestionHoraire_Load(object sender, EventArgs e)
         {
-            Admistrateur.ComboFill("ProgrammeClasseComboViewAll", ref CBX_Classe, "nom", "idClasse");
+         //   Admistrateur.ComboFill("ProgrammeClasseComboViewAll", ref CBX_Classe, "nom", "idClasse");
         }
 
         private void BTN_EnregisterProg_Click(object sender, EventArgs e)
