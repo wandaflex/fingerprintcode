@@ -155,7 +155,7 @@ namespace FingerPrint
             cleanForm(GBX_FormAdmin,ref adminID, BTN_EnregisterAdmin);
         }
 
-        public void GridFill(String procedure, DataGridView dataGrid)
+        public static void GridFill(String procedure, DataGridView dataGrid)
         {
             using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
             {

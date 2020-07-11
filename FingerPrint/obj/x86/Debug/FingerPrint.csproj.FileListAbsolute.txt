@@ -95,8 +95,8 @@ C:\Users\Ordi\Documents\FingerPrintClone\FingerPrint\obj\x86\Debug\FingerPrint.c
 C:\Users\Ordi\Documents\FingerPrintClone\FingerPrint\obj\x86\Debug\FingerPrint.csproj.CopyComplete
 C:\Users\Ordi\Documents\FingerPrintClone\FingerPrint\obj\x86\Debug\FingerPrint.exe
 C:\Users\Ordi\Documents\FingerPrintClone\FingerPrint\obj\x86\Debug\FingerPrint.pdb
-C:\Users\Raoul\Documents\NewFingerPRint\FingerPrint\obj\x86\Debug\FingerPrint.csprojAssemblyReference.cache
 C:\Users\Raoul\Documents\NewFingerPRint\FingerPrint\obj\x86\Debug\FingerPrint.EmploieDeTempsForm.resources
 C:\Users\Raoul\Documents\NewFingerPRint\FingerPrint\obj\x86\Debug\FingerPrint.EmploieDeTempsViewForm.resources
 C:\Users\USer\Documents\ProjetGit\fingerprintcode\FingerPrint\obj\x86\Debug\FingerPrint.EmploieDeTempsForm.resources
 C:\Users\USer\Documents\ProjetGit\fingerprintcode\FingerPrint\obj\x86\Debug\FingerPrint.EmploieDeTempsViewForm.resources
+C:\Users\Raoul\Documents\NewFingerPRint\FingerPrint\obj\x86\Debug\FingerPrint.csprojAssemblyReference.cache

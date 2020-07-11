@@ -29,15 +29,18 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.DTP_DateFinProg = new System.Windows.Forms.DateTimePicker();
             this.BTN_EnregisterProg = new System.Windows.Forms.Button();
             this.LbL_DateProg = new System.Windows.Forms.Label();
             this.LBL_Classe = new System.Windows.Forms.Label();
             this.DTP_DateDebutProg = new System.Windows.Forms.DateTimePicker();
             this.CBX_Classe = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.DTP_DateFinProg = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
+            this.DGV_programmeGH = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_programmeGH)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -56,6 +59,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(346, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "label2";
+            // 
+            // DTP_DateFinProg
+            // 
+            this.DTP_DateFinProg.Location = new System.Drawing.Point(340, 51);
+            this.DTP_DateFinProg.Name = "DTP_DateFinProg";
+            this.DTP_DateFinProg.Size = new System.Drawing.Size(200, 20);
+            this.DTP_DateFinProg.TabIndex = 5;
+            // 
             // BTN_EnregisterProg
             // 
             this.BTN_EnregisterProg.Location = new System.Drawing.Point(552, 50);
@@ -64,6 +83,7 @@
             this.BTN_EnregisterProg.TabIndex = 4;
             this.BTN_EnregisterProg.Text = "button1";
             this.BTN_EnregisterProg.UseVisualStyleBackColor = true;
+            this.BTN_EnregisterProg.Click += new System.EventHandler(this.BTN_EnregisterProg_Click);
             // 
             // LbL_DateProg
             // 
@@ -100,6 +120,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.DGV_programmeGH);
             this.groupBox2.Location = new System.Drawing.Point(10, 132);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(690, 343);
@@ -107,21 +128,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
             // 
-            // DTP_DateFinProg
+            // DGV_programmeGH
             // 
-            this.DTP_DateFinProg.Location = new System.Drawing.Point(340, 51);
-            this.DTP_DateFinProg.Name = "DTP_DateFinProg";
-            this.DTP_DateFinProg.Size = new System.Drawing.Size(200, 20);
-            this.DTP_DateFinProg.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(346, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "label2";
+            this.DGV_programmeGH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_programmeGH.Location = new System.Drawing.Point(10, 19);
+            this.DGV_programmeGH.Name = "DGV_programmeGH";
+            this.DGV_programmeGH.Size = new System.Drawing.Size(674, 318);
+            this.DGV_programmeGH.TabIndex = 0;
             // 
             // GestionHoraire
             // 
@@ -137,6 +150,8 @@
             this.Load += new System.EventHandler(this.GestionHoraire_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_programmeGH)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -152,5 +167,6 @@
         private System.Windows.Forms.ComboBox CBX_Classe;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker DTP_DateFinProg;
+        private System.Windows.Forms.DataGridView DGV_programmeGH;
     }
 }
