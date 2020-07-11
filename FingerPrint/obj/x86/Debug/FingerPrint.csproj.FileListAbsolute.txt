@@ -100,3 +100,4 @@ C:\Users\Raoul\Documents\NewFingerPRint\FingerPrint\obj\x86\Debug\FingerPrint.Em
 C:\Users\Raoul\Documents\NewFingerPRint\FingerPrint\obj\x86\Debug\FingerPrint.EmploieDeTempsViewForm.resources
 C:\Users\USer\Documents\ProjetGit\fingerprintcode\FingerPrint\obj\x86\Debug\FingerPrint.EmploieDeTempsForm.resources
 C:\Users\USer\Documents\ProjetGit\fingerprintcode\FingerPrint\obj\x86\Debug\FingerPrint.EmploieDeTempsViewForm.resources
+C:\Users\USer\Documents\ProjetGit\fingerprintcode\FingerPrint\obj\x86\Debug\FingerPrint.PresenceAuto.resources

@@ -40,14 +40,14 @@ namespace FingerPrint
                         {
                             if(reader2.GetString("type_utilisateur") == "Administrateur")
                             {
-                                this.Close();
+                                //this.Close();
                                 Admistrateur oAdmistrateur = new Admistrateur();
                                 oAdmistrateur.Show();
                                 this.Hide();
                             }
                             else
                             {
-                                this.Close();
+                                //this.Close();
                                 GestionHoraire oGestionHoraire = new GestionHoraire();
                                 oGestionHoraire.Show();
                                 this.Hide();
@@ -62,7 +62,7 @@ namespace FingerPrint
                     }
                     else
                     {
-                        MessageBox.Show("Veillez entrer un Login et mot de passe!!!");
+                        MessageBox.Show("Veillez entrer un nom d'utilisater et mot de passe!!!");
                     }
 
                 }
