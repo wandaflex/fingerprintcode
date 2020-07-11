@@ -149,6 +149,7 @@
             this.GBX_ListeProfesseur = new System.Windows.Forms.GroupBox();
             this.DGV_ListeProf = new System.Windows.Forms.DataGridView();
             this.GBX_FormProfesseur = new System.Windows.Forms.GroupBox();
+            this.BTN_Reset = new System.Windows.Forms.Button();
             this.DTP_Recrutement = new System.Windows.Forms.DateTimePicker();
             this.BTN_Empreinte2 = new System.Windows.Forms.Button();
             this.BTN_Empreinte1 = new System.Windows.Forms.Button();
@@ -178,6 +179,9 @@
             this.PBX_Professeur = new System.Windows.Forms.PictureBox();
             this.TCL_Admin = new System.Windows.Forms.TabControl();
             this.button2 = new System.Windows.Forms.Button();
+            this.LSV_RcevAdmin = new System.Windows.Forms.ListView();
+            this.LBL_Connect = new System.Windows.Forms.Label();
+            this.BTN_PresAuto = new System.Windows.Forms.Button();
             this.TPG_MatiereProf.SuspendLayout();
             this.GBX_FormMatiereProf.SuspendLayout();
             this.GBX_RechMatiereProf.SuspendLayout();
@@ -219,21 +223,22 @@
             // 
             // BTN_Aide
             // 
-            this.BTN_Aide.Location = new System.Drawing.Point(901, 549);
+            this.BTN_Aide.Location = new System.Drawing.Point(901, 593);
             this.BTN_Aide.Name = "BTN_Aide";
-            this.BTN_Aide.Size = new System.Drawing.Size(133, 36);
+            this.BTN_Aide.Size = new System.Drawing.Size(133, 23);
             this.BTN_Aide.TabIndex = 1;
             this.BTN_Aide.Text = "Aide";
             this.BTN_Aide.UseVisualStyleBackColor = true;
             // 
             // BTN_Quitter
             // 
-            this.BTN_Quitter.Location = new System.Drawing.Point(901, 603);
+            this.BTN_Quitter.Location = new System.Drawing.Point(901, 622);
             this.BTN_Quitter.Name = "BTN_Quitter";
-            this.BTN_Quitter.Size = new System.Drawing.Size(133, 36);
+            this.BTN_Quitter.Size = new System.Drawing.Size(133, 27);
             this.BTN_Quitter.TabIndex = 2;
             this.BTN_Quitter.Text = "Quitter";
             this.BTN_Quitter.UseVisualStyleBackColor = true;
+            this.BTN_Quitter.Click += new System.EventHandler(this.BTN_Quitter_Click);
             // 
             // BTN_Rapports
             // 
@@ -247,17 +252,17 @@
             // 
             // BTN_Horaires
             // 
-            this.BTN_Horaires.Location = new System.Drawing.Point(901, 96);
+            this.BTN_Horaires.Location = new System.Drawing.Point(900, 87);
             this.BTN_Horaires.Name = "BTN_Horaires";
             this.BTN_Horaires.Size = new System.Drawing.Size(133, 36);
             this.BTN_Horaires.TabIndex = 4;
             this.BTN_Horaires.Text = "Horaires";
             this.BTN_Horaires.UseVisualStyleBackColor = true;
-            this.BTN_Horaires.Click += new System.EventHandler(this.BTN_Horaires_Click);
+//            this.BTN_Horaires.Click += new System.EventHandler(this.BTN_Horaires_Click);
             // 
             // BTN_EtatReseau
             // 
-            this.BTN_EtatReseau.Location = new System.Drawing.Point(901, 158);
+            this.BTN_EtatReseau.Location = new System.Drawing.Point(901, 254);
             this.BTN_EtatReseau.Name = "BTN_EtatReseau";
             this.BTN_EtatReseau.Size = new System.Drawing.Size(133, 36);
             this.BTN_EtatReseau.TabIndex = 5;
@@ -1435,6 +1440,7 @@
             // 
             // GBX_FormProfesseur
             // 
+            this.GBX_FormProfesseur.Controls.Add(this.BTN_Reset);
             this.GBX_FormProfesseur.Controls.Add(this.DTP_Recrutement);
             this.GBX_FormProfesseur.Controls.Add(this.BTN_Empreinte2);
             this.GBX_FormProfesseur.Controls.Add(this.BTN_Empreinte1);
@@ -1470,6 +1476,16 @@
             this.GBX_FormProfesseur.Text = "Formulaire Professeur";
             this.GBX_FormProfesseur.TextChanged += new System.EventHandler(this.GBX_FormProfesseur_TextChanged);
             // 
+            // BTN_Reset
+            // 
+            this.BTN_Reset.Location = new System.Drawing.Point(97, 209);
+            this.BTN_Reset.Name = "BTN_Reset";
+            this.BTN_Reset.Size = new System.Drawing.Size(215, 26);
+            this.BTN_Reset.TabIndex = 37;
+            this.BTN_Reset.Text = "Reset";
+            this.BTN_Reset.UseVisualStyleBackColor = true;
+            this.BTN_Reset.Click += new System.EventHandler(this.BTN_Reset_Click);
+            // 
             // DTP_Recrutement
             // 
             this.DTP_Recrutement.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -1480,12 +1496,14 @@
             // 
             // BTN_Empreinte2
             // 
+            this.BTN_Empreinte2.Enabled = false;
             this.BTN_Empreinte2.Location = new System.Drawing.Point(223, 178);
             this.BTN_Empreinte2.Name = "BTN_Empreinte2";
             this.BTN_Empreinte2.Size = new System.Drawing.Size(90, 23);
             this.BTN_Empreinte2.TabIndex = 34;
             this.BTN_Empreinte2.Text = "Empreinte 2 >>";
             this.BTN_Empreinte2.UseVisualStyleBackColor = true;
+            this.BTN_Empreinte2.Click += new System.EventHandler(this.BTN_Empreinte2_Click);
             // 
             // BTN_Empreinte1
             // 
@@ -1495,6 +1513,7 @@
             this.BTN_Empreinte1.TabIndex = 33;
             this.BTN_Empreinte1.Text = "Empreinte 1 >>";
             this.BTN_Empreinte1.UseVisualStyleBackColor = true;
+            this.BTN_Empreinte1.Click += new System.EventHandler(this.BTN_Empreinte1_Click);
             // 
             // label15
             // 
@@ -1709,7 +1728,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(901, 220);
+            this.button2.Location = new System.Drawing.Point(900, 138);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(133, 37);
             this.button2.TabIndex = 15;
@@ -1717,11 +1736,44 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // LSV_RcevAdmin
+            // 
+            this.LSV_RcevAdmin.HideSelection = false;
+            this.LSV_RcevAdmin.Location = new System.Drawing.Point(897, 328);
+            this.LSV_RcevAdmin.Name = "LSV_RcevAdmin";
+            this.LSV_RcevAdmin.Size = new System.Drawing.Size(154, 259);
+            this.LSV_RcevAdmin.TabIndex = 16;
+            this.LSV_RcevAdmin.UseCompatibleStateImageBehavior = false;
+            this.LSV_RcevAdmin.View = System.Windows.Forms.View.List;
+            // 
+            // LBL_Connect
+            // 
+            this.LBL_Connect.AutoSize = true;
+            this.LBL_Connect.BackColor = System.Drawing.Color.Red;
+            this.LBL_Connect.Location = new System.Drawing.Point(936, 309);
+            this.LBL_Connect.Name = "LBL_Connect";
+            this.LBL_Connect.Size = new System.Drawing.Size(73, 13);
+            this.LBL_Connect.TabIndex = 17;
+            this.LBL_Connect.Text = "Disconnected";
+            // 
+            // BTN_PresAuto
+            // 
+            this.BTN_PresAuto.Location = new System.Drawing.Point(901, 190);
+            this.BTN_PresAuto.Name = "BTN_PresAuto";
+            this.BTN_PresAuto.Size = new System.Drawing.Size(132, 33);
+            this.BTN_PresAuto.TabIndex = 18;
+            this.BTN_PresAuto.Text = "Presence Automatique";
+            this.BTN_PresAuto.UseVisualStyleBackColor = true;
+            this.BTN_PresAuto.Click += new System.EventHandler(this.BTN_PresAuto_Click);
+            // 
             // Admistrateur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1055, 671);
+            this.Controls.Add(this.BTN_PresAuto);
+            this.Controls.Add(this.LBL_Connect);
+            this.Controls.Add(this.LSV_RcevAdmin);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.BTN_EtatReseau);
             this.Controls.Add(this.BTN_Horaires);
@@ -1786,6 +1838,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PBX_Professeur)).EndInit();
             this.TCL_Admin.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1939,5 +1992,9 @@
         private System.Windows.Forms.PictureBox PBX_Professeur;
         private System.Windows.Forms.TabControl TCL_Admin;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ListView LSV_RcevAdmin;
+        private System.Windows.Forms.Button BTN_Reset;
+        private System.Windows.Forms.Label LBL_Connect;
+        private System.Windows.Forms.Button BTN_PresAuto;
     }
 }

@@ -17,13 +17,13 @@ using System.IO;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using MySql.Data;
-using System.Security.Cryptography;
+using System.Threading.Tasks;
 
 namespace FingerPrint
 {
     public partial class Admistrateur : Form
     {
-        private static string connectionString = @"Server=localhost;Database=presence_db;Uid=root;Pwd='';";
+        string connectionString = @"Server=localhost;Database=presence_db;Uid=root;Pwd='';";
         public int adminID = 0;
         //int cycleID = 0;
         int classeID = 0;
@@ -32,6 +32,10 @@ namespace FingerPrint
         int programmeID = 0;
         int profMatiereID = 0;
         int presenceID = 0;
+        public const int PORT = 2500;
+        public const int EMPR12_DISNABLED = 1;
+        public const int EMPR2_ENABLED = 2;
+        public const int EMPR_RESET = 3;
         public Admistrateur()
         {
             InitializeComponent();
@@ -534,6 +538,7 @@ namespace FingerPrint
                 MessageBox.Show("Deleted successfully");
                 cleanForm(GBX_FormProfesseur,ref professeurID,BTN_EnregistrerProf);
                 GridFill("ProfViewAll", DGV_ListeProf);
+
             }
         }
 
@@ -672,7 +677,7 @@ namespace FingerPrint
         //}
 
         // Methode pour le combobox
-        public static void ComboFill(string procedure, ref ComboBox oComboBox, string displayMember, string valueMember)
+        private void ComboFill(string procedure, ref ComboBox oComboBox, string displayMember, string valueMember)
         {
             using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
             {
@@ -975,48 +980,249 @@ namespace FingerPrint
             this.Close();
         }
 
-        private void BTN_Horaires_Click(object sender, EventArgs e)
+
+        private string FingerID()
         {
-            GestionHoraire oGestionHoraire = new GestionHoraire();
-            oGestionHoraire.ShowDialog();
+            int nb_Min = 1;
+            int nb_Max = 126;
+            Random num = new Random();
+
+           int FingerID = num.Next(nb_Min, nb_Max);
+            //string msg = "WANDA_ENROLL_" + FingerID;
+            //verifier que ID nest pas ds la base de donnee
+
+            return Convert.ToString(FingerID);
+
+        }
+
+        int id_send = 1;
+        private int get_sendID()
+        {
+            if (id_send > 2)
+            {
+                id_send = 1;
+            }
+            return id_send;
         }
 
 
+        private void set_BTN_State(int ste)
+        {
+            if (ste == EMPR12_DISNABLED)
+            {
+                BTN_Empreinte2.Enabled = false;
+                BTN_Empreinte1.Enabled = false;
+            }
+            else if (ste == EMPR2_ENABLED)
+            {
+                BTN_Empreinte2.Enabled = true;
+                BTN_Empreinte1.Enabled = false;
+            }
+            else if (ste == EMPR_RESET)
+            {
+                BTN_Empreinte1.Enabled = true;
+                BTN_Empreinte2.Enabled = false;
+            }
+        }
 
-        //private void BTN_EnregisterCycle_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
-        //        {
-        //            mySqlCon.Open();
-        //            MySqlCommand mySqlCmd = new MySqlCommand("CycleAddOrEdit", mySqlCon);
-        //            mySqlCmd.CommandType = CommandType.StoredProcedure;
-        //            mySqlCmd.Parameters.AddWithValue("_CycleID", cycleID);
-        //            mySqlCmd.Parameters.AddWithValue("_CycleNumero", TXB_NumCycle.Text.Trim());
-        //            mySqlCmd.Parameters.AddWithValue("_CycleDescription", TXB_DescriptionCycle.Text.Trim());
-        //            mySqlCmd.ExecuteNonQuery();
-        //            MessageBox.Show("Submited successfully");
-        //            GridFill("CycleViewAll", DGV_ListeCycle);
-        //            BTN_EnregisterCycle.Text = "Modifier";
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message, "Error Message ");
-        //    }
-        //}
+        //public const string connect = "allo";
+        private void BTN_Empreinte1_Click(object sender, EventArgs e)
+        {
+            // create the client 
+            var client_empr1 = UDPUser.ConnectTo("192.168.1.200", PORT);
 
-        //private void DGV_ListeCycle_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    if (DGV_ListeCycle.CurrentRow.Index != -1)
-        //    {
-        //        TXB_NumCycle.Text = DGV_ListeCycle.CurrentRow.Cells[1].Value.ToString();
-        //        TXB_DescriptionCycle.Text = DGV_ListeCycle.CurrentRow.Cells[2].Value.ToString();
-        //        cycleID = Convert.ToInt32(DGV_ListeCycle.CurrentRow.Cells[0].Value.ToString());
-        //        BTN_EnregisterCycle.Text = "Modifier";
-        //    }
-        //}
+            string msge = FingerID(); 
 
+            client_empr1.Send("WANDA_ENROLL_" + msge);
+
+            LSV_RcevAdmin.Items.Add("ID " + get_sendID() + " Sent : " + msge);
+            id_send += 1;
+                      
+
+            Task.Factory.StartNew(async () =>
+            {
+                while (true)
+                {
+                    try
+                    {
+                        var received = await client_empr1.Receive();
+
+                        if (received.Message.Contains("QUIT"))
+                        {// mettre label connection a red
+                            LBL_Connect.Invoke(new MethodInvoker(delegate
+                            {
+                                LBL_Connect.BackColor = Color.Red;
+                                LBL_Connect.Text = "Disconnected";
+                            }
+                            ));
+
+
+                            LSV_RcevAdmin.Invoke(new MethodInvoker(delegate
+                            {
+                                LSV_RcevAdmin.Items.Add("FINGER PRINT disconnected");
+                               
+                            }
+                            ));
+                            break;
+                        }
+                        else if (received.Message.Contains("WDF_GOOD"))
+                        {
+                            LBL_Connect.Invoke(new MethodInvoker(delegate
+                            {
+                                LBL_Connect.BackColor = Color.Green;
+                                LBL_Connect.Text = "Connected";
+                            }
+                            ));
+
+                            LSV_RcevAdmin.Invoke(new MethodInvoker(delegate
+                            {
+                                LSV_RcevAdmin.Items.Add("Connected to FINGER PRINT");
+                                
+                            }
+                            ));
+                        }
+
+                        else if (received.Message.Contains(msge))
+                        {
+
+                            TXB_Empreinte1Prof.Invoke(new MethodInvoker(delegate
+                            {
+                                TXB_Empreinte1Prof.Text = received.Message;   // .Items.Add(received.Message);
+                            }
+                            ));
+                        }
+
+                        else
+                        {
+                            LSV_RcevAdmin.Invoke(new MethodInvoker(delegate
+                            {
+                                LSV_RcevAdmin.Items.Add(received.Message);
+                            }
+                            ));
+
+                        }
+                     
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show(ex.Message, "Error message EMP 1");
+                    }
+                }
+            });
+
+            set_BTN_State(EMPR2_ENABLED);
+
+        }
+
+        private void BTN_Empreinte2_Click(object sender, EventArgs e)
+        {
+            // create the client 
+            var client_empr1 = UDPUser.ConnectTo("192.168.1.200", PORT);
+
+            string msge = FingerID();
+
+            client_empr1.Send("WANDA_ENROLL_" + msge);
+
+            LSV_RcevAdmin.Items.Add("ID " + get_sendID() + " Sent : " + msge);
+            id_send += 1;
+
+
+            Task.Factory.StartNew(async () =>
+            {
+                while (true)
+                {
+                    try
+                    {
+                        var received = await client_empr1.Receive();
+
+                        if (received.Message.Contains("QUIT"))
+                        {// mettre label connection a red
+                            LBL_Connect.Invoke(new MethodInvoker(delegate
+                            {
+                                LBL_Connect.BackColor = Color.Red;
+                                LBL_Connect.Text = "Disconnected";
+                            }
+                            ));
+
+
+                            LSV_RcevAdmin.Invoke(new MethodInvoker(delegate
+                            {
+                                LSV_RcevAdmin.Items.Add("FINGER PRINT disconnected");
+                                
+                            }
+                            ));
+                            break;
+                        }
+                        else if (received.Message.Contains("WDF_GOOD"))
+                        {
+                            LBL_Connect.Invoke(new MethodInvoker(delegate
+                            {
+                                LBL_Connect.BackColor = Color.Green;
+                                LBL_Connect.Text = "Connected";
+                            }
+                            ));
+
+                            LSV_RcevAdmin.Invoke(new MethodInvoker(delegate
+                            {
+                                LSV_RcevAdmin.Items.Add("Connected to FINGER PRINT");
+                                // Ajouter label connection Green
+                            }
+                            ));
+                        }
+
+                        else if (received.Message.Contains(msge))
+                        {
+
+                            TXB_Empreinte2Prof.Invoke(new MethodInvoker(delegate
+                            {
+                                TXB_Empreinte2Prof.Text = received.Message;   // .Items.Add(received.Message);
+                            }
+                            ));
+                        }
+                        else
+                        {
+                            LSV_RcevAdmin.Invoke(new MethodInvoker(delegate
+                            {
+                                LSV_RcevAdmin.Items.Add(received.Message);
+                            }
+                            ));
+
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show(ex.Message, "Error message EMP 1");
+                    }
+                }
+            });
+
+
+            //Emp 1 2 disabled
+            set_BTN_State(EMPR12_DISNABLED);
+        }
+
+        private void BTN_Reset_Click(object sender, EventArgs e)
+        {
+            LSV_RcevAdmin.Items.Clear();
+            set_BTN_State(EMPR_RESET);
+
+
+        }
+
+        private void BTN_PresAuto_Click(object sender, EventArgs e)
+        {
+            PresenceAuto openForm = new PresenceAuto();
+            openForm.Show();
+        }
+
+        private void BTN_Quitter_Click(object sender, EventArgs e)
+        {
+            Login openForm = new Login();
+            openForm.Show();
+            this.Close();
+        }
     }
 }

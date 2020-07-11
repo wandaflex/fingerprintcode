@@ -62,7 +62,7 @@ namespace FingerPrint
                     }
                     else
                     {
-                        MessageBox.Show("Veillez entrer un Login et mot de passe!!!");
+                        MessageBox.Show("Veillez entrer un nom d'utilisater et mot de passe!!!");
                     }
 
                 }
