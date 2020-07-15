@@ -23,7 +23,7 @@ namespace FingerPrint
 {
     public partial class Admistrateur : Form
     {
-        string connectionString = @"Server=localhost;Database=presence_db;Uid=root;Pwd='';";
+        public static string connectionString = @"Server=localhost;Database=presence_db;Uid=root;Pwd='';";
         public int adminID = 0;
         //int cycleID = 0;
         int classeID = 0;
@@ -677,7 +677,7 @@ namespace FingerPrint
         //}
 
         // Methode pour le combobox
-        private void ComboFill(string procedure, ref ComboBox oComboBox, string displayMember, string valueMember)
+        public static void ComboFill(string procedure, ref ComboBox oComboBox, string displayMember, string valueMember)
         {
             using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
             {
