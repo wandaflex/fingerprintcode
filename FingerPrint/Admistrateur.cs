@@ -1208,8 +1208,6 @@ namespace FingerPrint
         {
             LSV_RcevAdmin.Items.Clear();
             set_BTN_State(EMPR_RESET);
-
-
         }
 
         private void BTN_PresAuto_Click(object sender, EventArgs e)
