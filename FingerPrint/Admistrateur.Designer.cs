@@ -258,7 +258,6 @@
             this.BTN_Horaires.TabIndex = 4;
             this.BTN_Horaires.Text = "Horaires";
             this.BTN_Horaires.UseVisualStyleBackColor = true;
-//            this.BTN_Horaires.Click += new System.EventHandler(this.BTN_Horaires_Click);
             // 
             // BTN_EtatReseau
             // 
@@ -304,7 +303,7 @@
             this.CBX_SelectMatiere.Location = new System.Drawing.Point(510, 35);
             this.CBX_SelectMatiere.Name = "CBX_SelectMatiere";
             this.CBX_SelectMatiere.Size = new System.Drawing.Size(121, 21);
-            this.CBX_SelectMatiere.TabIndex = 4;
+            this.CBX_SelectMatiere.TabIndex = 3;
             // 
             // CBX_SelectProf
             // 
@@ -312,7 +311,7 @@
             this.CBX_SelectProf.Location = new System.Drawing.Point(123, 35);
             this.CBX_SelectProf.Name = "CBX_SelectProf";
             this.CBX_SelectProf.Size = new System.Drawing.Size(269, 21);
-            this.CBX_SelectProf.TabIndex = 3;
+            this.CBX_SelectProf.TabIndex = 2;
             // 
             // LBL_Matiere
             // 
@@ -320,7 +319,7 @@
             this.LBL_Matiere.Location = new System.Drawing.Point(398, 36);
             this.LBL_Matiere.Name = "LBL_Matiere";
             this.LBL_Matiere.Size = new System.Drawing.Size(86, 13);
-            this.LBL_Matiere.TabIndex = 2;
+            this.LBL_Matiere.TabIndex = 1;
             this.LBL_Matiere.Text = "Matiere de cours";
             // 
             // LBL_Prof
@@ -533,14 +532,14 @@
             this.TXB_HeureFinPres.Location = new System.Drawing.Point(364, 60);
             this.TXB_HeureFinPres.Name = "TXB_HeureFinPres";
             this.TXB_HeureFinPres.Size = new System.Drawing.Size(99, 20);
-            this.TXB_HeureFinPres.TabIndex = 17;
+            this.TXB_HeureFinPres.TabIndex = 7;
             // 
             // TXB_HeureDebutPres
             // 
             this.TXB_HeureDebutPres.Location = new System.Drawing.Point(170, 62);
             this.TXB_HeureDebutPres.Name = "TXB_HeureDebutPres";
             this.TXB_HeureDebutPres.Size = new System.Drawing.Size(99, 20);
-            this.TXB_HeureDebutPres.TabIndex = 16;
+            this.TXB_HeureDebutPres.TabIndex = 6;
             // 
             // CBX_SelectNomProg
             // 
@@ -549,14 +548,14 @@
             this.CBX_SelectNomProg.Location = new System.Drawing.Point(192, 13);
             this.CBX_SelectNomProg.Name = "CBX_SelectNomProg";
             this.CBX_SelectNomProg.Size = new System.Drawing.Size(514, 21);
-            this.CBX_SelectNomProg.TabIndex = 12;
+            this.CBX_SelectNomProg.TabIndex = 4;
             // 
             // DTP_Presence
             // 
             this.DTP_Presence.Location = new System.Drawing.Point(12, 62);
             this.DTP_Presence.Name = "DTP_Presence";
             this.DTP_Presence.Size = new System.Drawing.Size(129, 20);
-            this.DTP_Presence.TabIndex = 11;
+            this.DTP_Presence.TabIndex = 5;
             // 
             // LBL_DatePres
             // 
@@ -564,7 +563,7 @@
             this.LBL_DatePres.Location = new System.Drawing.Point(15, 39);
             this.LBL_DatePres.Name = "LBL_DatePres";
             this.LBL_DatePres.Size = new System.Drawing.Size(30, 13);
-            this.LBL_DatePres.TabIndex = 10;
+            this.LBL_DatePres.TabIndex = 1;
             this.LBL_DatePres.Text = "Date";
             // 
             // LBL_HeureFinPresence
@@ -573,7 +572,7 @@
             this.LBL_HeureFinPresence.Location = new System.Drawing.Point(367, 40);
             this.LBL_HeureFinPresence.Name = "LBL_HeureFinPresence";
             this.LBL_HeureFinPresence.Size = new System.Drawing.Size(68, 13);
-            this.LBL_HeureFinPresence.TabIndex = 6;
+            this.LBL_HeureFinPresence.TabIndex = 3;
             this.LBL_HeureFinPresence.Text = "Heure de Fin";
             // 
             // LBL_HeureDebutPresence
@@ -582,7 +581,7 @@
             this.LBL_HeureDebutPresence.Location = new System.Drawing.Point(168, 40);
             this.LBL_HeureDebutPresence.Name = "LBL_HeureDebutPresence";
             this.LBL_HeureDebutPresence.Size = new System.Drawing.Size(83, 13);
-            this.LBL_HeureDebutPresence.TabIndex = 7;
+            this.LBL_HeureDebutPresence.TabIndex = 2;
             this.LBL_HeureDebutPresence.Text = "Heure de Debut";
             // 
             // LBL_SelectNomProg
@@ -728,7 +727,7 @@
             this.CBX_HeureFinProg.Location = new System.Drawing.Point(348, 89);
             this.CBX_HeureFinProg.Name = "CBX_HeureFinProg";
             this.CBX_HeureFinProg.Size = new System.Drawing.Size(132, 21);
-            this.CBX_HeureFinProg.TabIndex = 15;
+            this.CBX_HeureFinProg.TabIndex = 9;
             // 
             // CBX_HeureDebutProg
             // 
@@ -736,7 +735,7 @@
             this.CBX_HeureDebutProg.Location = new System.Drawing.Point(187, 89);
             this.CBX_HeureDebutProg.Name = "CBX_HeureDebutProg";
             this.CBX_HeureDebutProg.Size = new System.Drawing.Size(132, 21);
-            this.CBX_HeureDebutProg.TabIndex = 14;
+            this.CBX_HeureDebutProg.TabIndex = 8;
             // 
             // CBX_SelectProgProfMatiere
             // 
@@ -744,7 +743,7 @@
             this.CBX_SelectProgProfMatiere.Location = new System.Drawing.Point(187, 41);
             this.CBX_SelectProgProfMatiere.Name = "CBX_SelectProgProfMatiere";
             this.CBX_SelectProgProfMatiere.Size = new System.Drawing.Size(293, 21);
-            this.CBX_SelectProgProfMatiere.TabIndex = 9;
+            this.CBX_SelectProgProfMatiere.TabIndex = 6;
             // 
             // CBX_SelectClasse
             // 
@@ -752,7 +751,7 @@
             this.CBX_SelectClasse.Location = new System.Drawing.Point(21, 41);
             this.CBX_SelectClasse.Name = "CBX_SelectClasse";
             this.CBX_SelectClasse.Size = new System.Drawing.Size(126, 21);
-            this.CBX_SelectClasse.TabIndex = 8;
+            this.CBX_SelectClasse.TabIndex = 5;
             // 
             // LBL_HeureFinProg
             // 
@@ -769,7 +768,7 @@
             this.LBL_HeureDebutProg.Location = new System.Drawing.Point(184, 73);
             this.LBL_HeureDebutProg.Name = "LBL_HeureDebutProg";
             this.LBL_HeureDebutProg.Size = new System.Drawing.Size(83, 13);
-            this.LBL_HeureDebutProg.TabIndex = 4;
+            this.LBL_HeureDebutProg.TabIndex = 3;
             this.LBL_HeureDebutProg.Text = "Heure de Debut";
             // 
             // DTP_Programme
@@ -777,7 +776,7 @@
             this.DTP_Programme.Location = new System.Drawing.Point(20, 90);
             this.DTP_Programme.Name = "DTP_Programme";
             this.DTP_Programme.Size = new System.Drawing.Size(129, 20);
-            this.DTP_Programme.TabIndex = 3;
+            this.DTP_Programme.TabIndex = 7;
             // 
             // LBL_DateProg
             // 
@@ -794,7 +793,7 @@
             this.LBL_SelectProf.Location = new System.Drawing.Point(184, 16);
             this.LBL_SelectProf.Name = "LBL_SelectProf";
             this.LBL_SelectProf.Size = new System.Drawing.Size(142, 13);
-            this.LBL_SelectProf.TabIndex = 0;
+            this.LBL_SelectProf.TabIndex = 1;
             this.LBL_SelectProf.Text = "Selection Professeur Matiere";
             // 
             // LBL_SelectClasse
@@ -933,7 +932,7 @@
             this.CBX_TypeUtil.Location = new System.Drawing.Point(291, 60);
             this.CBX_TypeUtil.Name = "CBX_TypeUtil";
             this.CBX_TypeUtil.Size = new System.Drawing.Size(167, 21);
-            this.CBX_TypeUtil.TabIndex = 9;
+            this.CBX_TypeUtil.TabIndex = 7;
             // 
             // LBL_TypeUtil
             // 
@@ -941,7 +940,7 @@
             this.LBL_TypeUtil.Location = new System.Drawing.Point(317, 34);
             this.LBL_TypeUtil.Name = "LBL_TypeUtil";
             this.LBL_TypeUtil.Size = new System.Drawing.Size(80, 13);
-            this.LBL_TypeUtil.TabIndex = 8;
+            this.LBL_TypeUtil.TabIndex = 2;
             this.LBL_TypeUtil.Text = "Type Utilisateur";
             // 
             // TXB_MotDePasseAdmin
@@ -949,7 +948,7 @@
             this.TXB_MotDePasseAdmin.Location = new System.Drawing.Point(579, 73);
             this.TXB_MotDePasseAdmin.Name = "TXB_MotDePasseAdmin";
             this.TXB_MotDePasseAdmin.Size = new System.Drawing.Size(114, 20);
-            this.TXB_MotDePasseAdmin.TabIndex = 7;
+            this.TXB_MotDePasseAdmin.TabIndex = 9;
             // 
             // LBL_MotDePasseAdmin
             // 
@@ -957,7 +956,7 @@
             this.LBL_MotDePasseAdmin.Location = new System.Drawing.Point(483, 75);
             this.LBL_MotDePasseAdmin.Name = "LBL_MotDePasseAdmin";
             this.LBL_MotDePasseAdmin.Size = new System.Drawing.Size(74, 13);
-            this.LBL_MotDePasseAdmin.TabIndex = 6;
+            this.LBL_MotDePasseAdmin.TabIndex = 4;
             this.LBL_MotDePasseAdmin.Text = "Mot De Passe";
             // 
             // TXB_LoginAdmin
@@ -965,7 +964,7 @@
             this.TXB_LoginAdmin.Location = new System.Drawing.Point(579, 32);
             this.TXB_LoginAdmin.Name = "TXB_LoginAdmin";
             this.TXB_LoginAdmin.Size = new System.Drawing.Size(114, 20);
-            this.TXB_LoginAdmin.TabIndex = 5;
+            this.TXB_LoginAdmin.TabIndex = 8;
             // 
             // LBL_LoginAdmin
             // 
@@ -973,7 +972,7 @@
             this.LBL_LoginAdmin.Location = new System.Drawing.Point(483, 34);
             this.LBL_LoginAdmin.Name = "LBL_LoginAdmin";
             this.LBL_LoginAdmin.Size = new System.Drawing.Size(33, 13);
-            this.LBL_LoginAdmin.TabIndex = 4;
+            this.LBL_LoginAdmin.TabIndex = 3;
             this.LBL_LoginAdmin.Text = "Login";
             // 
             // TXB_PrenomAdmin
@@ -981,7 +980,7 @@
             this.TXB_PrenomAdmin.Location = new System.Drawing.Point(121, 73);
             this.TXB_PrenomAdmin.Name = "TXB_PrenomAdmin";
             this.TXB_PrenomAdmin.Size = new System.Drawing.Size(114, 20);
-            this.TXB_PrenomAdmin.TabIndex = 3;
+            this.TXB_PrenomAdmin.TabIndex = 6;
             // 
             // LBL_PrenomAdmin
             // 
@@ -989,7 +988,7 @@
             this.LBL_PrenomAdmin.Location = new System.Drawing.Point(25, 75);
             this.LBL_PrenomAdmin.Name = "LBL_PrenomAdmin";
             this.LBL_PrenomAdmin.Size = new System.Drawing.Size(43, 13);
-            this.LBL_PrenomAdmin.TabIndex = 2;
+            this.LBL_PrenomAdmin.TabIndex = 1;
             this.LBL_PrenomAdmin.Text = "Prenom";
             // 
             // TXB_NomAdmin
@@ -997,7 +996,7 @@
             this.TXB_NomAdmin.Location = new System.Drawing.Point(121, 32);
             this.TXB_NomAdmin.Name = "TXB_NomAdmin";
             this.TXB_NomAdmin.Size = new System.Drawing.Size(114, 20);
-            this.TXB_NomAdmin.TabIndex = 1;
+            this.TXB_NomAdmin.TabIndex = 5;
             // 
             // LBL_NomAdmin
             // 
@@ -1130,7 +1129,7 @@
             this.TXB_NomClasse.Location = new System.Drawing.Point(74, 30);
             this.TXB_NomClasse.Name = "TXB_NomClasse";
             this.TXB_NomClasse.Size = new System.Drawing.Size(102, 20);
-            this.TXB_NomClasse.TabIndex = 10;
+            this.TXB_NomClasse.TabIndex = 4;
             // 
             // LBL_NomClasse
             // 
@@ -1138,7 +1137,7 @@
             this.LBL_NomClasse.Location = new System.Drawing.Point(39, 33);
             this.LBL_NomClasse.Name = "LBL_NomClasse";
             this.LBL_NomClasse.Size = new System.Drawing.Size(29, 13);
-            this.LBL_NomClasse.TabIndex = 9;
+            this.LBL_NomClasse.TabIndex = 0;
             this.LBL_NomClasse.Text = "Nom";
             // 
             // CBX_CycleClasse
@@ -1150,7 +1149,7 @@
             this.CBX_CycleClasse.Location = new System.Drawing.Point(401, 29);
             this.CBX_CycleClasse.Name = "CBX_CycleClasse";
             this.CBX_CycleClasse.Size = new System.Drawing.Size(121, 21);
-            this.CBX_CycleClasse.TabIndex = 8;
+            this.CBX_CycleClasse.TabIndex = 6;
             // 
             // LBL_CycleClasse
             // 
@@ -1158,7 +1157,7 @@
             this.LBL_CycleClasse.Location = new System.Drawing.Point(362, 32);
             this.LBL_CycleClasse.Name = "LBL_CycleClasse";
             this.LBL_CycleClasse.Size = new System.Drawing.Size(33, 13);
-            this.LBL_CycleClasse.TabIndex = 6;
+            this.LBL_CycleClasse.TabIndex = 2;
             this.LBL_CycleClasse.Text = "Cycle";
             // 
             // TXB_DescriptionClasse
@@ -1166,7 +1165,7 @@
             this.TXB_DescriptionClasse.Location = new System.Drawing.Point(598, 29);
             this.TXB_DescriptionClasse.Name = "TXB_DescriptionClasse";
             this.TXB_DescriptionClasse.Size = new System.Drawing.Size(102, 20);
-            this.TXB_DescriptionClasse.TabIndex = 5;
+            this.TXB_DescriptionClasse.TabIndex = 7;
             // 
             // LBL_DescriptionClasse
             // 
@@ -1174,7 +1173,7 @@
             this.LBL_DescriptionClasse.Location = new System.Drawing.Point(528, 32);
             this.LBL_DescriptionClasse.Name = "LBL_DescriptionClasse";
             this.LBL_DescriptionClasse.Size = new System.Drawing.Size(60, 13);
-            this.LBL_DescriptionClasse.TabIndex = 4;
+            this.LBL_DescriptionClasse.TabIndex = 3;
             this.LBL_DescriptionClasse.Text = "Description";
             // 
             // TXB_CodeClasse
@@ -1182,7 +1181,7 @@
             this.TXB_CodeClasse.Location = new System.Drawing.Point(254, 29);
             this.TXB_CodeClasse.Name = "TXB_CodeClasse";
             this.TXB_CodeClasse.Size = new System.Drawing.Size(102, 20);
-            this.TXB_CodeClasse.TabIndex = 3;
+            this.TXB_CodeClasse.TabIndex = 5;
             // 
             // LBL_CodeClasse
             // 
@@ -1190,7 +1189,7 @@
             this.LBL_CodeClasse.Location = new System.Drawing.Point(216, 32);
             this.LBL_CodeClasse.Name = "LBL_CodeClasse";
             this.LBL_CodeClasse.Size = new System.Drawing.Size(32, 13);
-            this.LBL_CodeClasse.TabIndex = 2;
+            this.LBL_CodeClasse.TabIndex = 1;
             this.LBL_CodeClasse.Text = "Code";
             // 
             // TPG_Matiere
@@ -1310,7 +1309,7 @@
             this.TXB_NomMatiere.Location = new System.Drawing.Point(552, 26);
             this.TXB_NomMatiere.Name = "TXB_NomMatiere";
             this.TXB_NomMatiere.Size = new System.Drawing.Size(94, 20);
-            this.TXB_NomMatiere.TabIndex = 1;
+            this.TXB_NomMatiere.TabIndex = 3;
             // 
             // LBL_NomMatiere
             // 
@@ -1318,7 +1317,7 @@
             this.LBL_NomMatiere.Location = new System.Drawing.Point(479, 29);
             this.LBL_NomMatiere.Name = "LBL_NomMatiere";
             this.LBL_NomMatiere.Size = new System.Drawing.Size(67, 13);
-            this.LBL_NomMatiere.TabIndex = 0;
+            this.LBL_NomMatiere.TabIndex = 1;
             this.LBL_NomMatiere.Text = "Nom Matiere";
             // 
             // TXB_CodeMatiere
@@ -1326,7 +1325,7 @@
             this.TXB_CodeMatiere.Location = new System.Drawing.Point(346, 26);
             this.TXB_CodeMatiere.Name = "TXB_CodeMatiere";
             this.TXB_CodeMatiere.Size = new System.Drawing.Size(94, 20);
-            this.TXB_CodeMatiere.TabIndex = 1;
+            this.TXB_CodeMatiere.TabIndex = 2;
             // 
             // LBL_CodeMatiere
             // 
@@ -1481,7 +1480,7 @@
             this.BTN_Reset.Location = new System.Drawing.Point(97, 209);
             this.BTN_Reset.Name = "BTN_Reset";
             this.BTN_Reset.Size = new System.Drawing.Size(215, 26);
-            this.BTN_Reset.TabIndex = 37;
+            this.BTN_Reset.TabIndex = 26;
             this.BTN_Reset.Text = "Reset";
             this.BTN_Reset.UseVisualStyleBackColor = true;
             this.BTN_Reset.Click += new System.EventHandler(this.BTN_Reset_Click);
@@ -1492,7 +1491,7 @@
             this.DTP_Recrutement.Location = new System.Drawing.Point(557, 55);
             this.DTP_Recrutement.Name = "DTP_Recrutement";
             this.DTP_Recrutement.Size = new System.Drawing.Size(129, 20);
-            this.DTP_Recrutement.TabIndex = 36;
+            this.DTP_Recrutement.TabIndex = 18;
             // 
             // BTN_Empreinte2
             // 
@@ -1500,7 +1499,7 @@
             this.BTN_Empreinte2.Location = new System.Drawing.Point(223, 178);
             this.BTN_Empreinte2.Name = "BTN_Empreinte2";
             this.BTN_Empreinte2.Size = new System.Drawing.Size(90, 23);
-            this.BTN_Empreinte2.TabIndex = 34;
+            this.BTN_Empreinte2.TabIndex = 25;
             this.BTN_Empreinte2.Text = "Empreinte 2 >>";
             this.BTN_Empreinte2.UseVisualStyleBackColor = true;
             this.BTN_Empreinte2.Click += new System.EventHandler(this.BTN_Empreinte2_Click);
@@ -1510,7 +1509,7 @@
             this.BTN_Empreinte1.Location = new System.Drawing.Point(223, 135);
             this.BTN_Empreinte1.Name = "BTN_Empreinte1";
             this.BTN_Empreinte1.Size = new System.Drawing.Size(90, 23);
-            this.BTN_Empreinte1.TabIndex = 33;
+            this.BTN_Empreinte1.TabIndex = 23;
             this.BTN_Empreinte1.Text = "Empreinte 1 >>";
             this.BTN_Empreinte1.UseVisualStyleBackColor = true;
             this.BTN_Empreinte1.Click += new System.EventHandler(this.BTN_Empreinte1_Click);
@@ -1521,7 +1520,7 @@
             this.label15.Location = new System.Drawing.Point(11, 183);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(63, 13);
-            this.label15.TabIndex = 26;
+            this.label15.TabIndex = 10;
             this.label15.Text = "Empreinte 2";
             // 
             // TXB_Empreinte2Prof
@@ -1529,7 +1528,7 @@
             this.TXB_Empreinte2Prof.Location = new System.Drawing.Point(98, 180);
             this.TXB_Empreinte2Prof.Name = "TXB_Empreinte2Prof";
             this.TXB_Empreinte2Prof.Size = new System.Drawing.Size(99, 20);
-            this.TXB_Empreinte2Prof.TabIndex = 25;
+            this.TXB_Empreinte2Prof.TabIndex = 24;
             // 
             // label11
             // 
@@ -1537,7 +1536,7 @@
             this.label11.Location = new System.Drawing.Point(525, 118);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(128, 13);
-            this.label11.TabIndex = 22;
+            this.label11.TabIndex = 8;
             this.label11.Text = "Taux Horaire 2ieme Cycle";
             // 
             // TXB_Taux2iemeCycleProf
@@ -1545,7 +1544,7 @@
             this.TXB_Taux2iemeCycleProf.Location = new System.Drawing.Point(538, 136);
             this.TXB_Taux2iemeCycleProf.Name = "TXB_Taux2iemeCycleProf";
             this.TXB_Taux2iemeCycleProf.Size = new System.Drawing.Size(99, 20);
-            this.TXB_Taux2iemeCycleProf.TabIndex = 21;
+            this.TXB_Taux2iemeCycleProf.TabIndex = 20;
             // 
             // label12
             // 
@@ -1553,7 +1552,7 @@
             this.label12.Location = new System.Drawing.Point(11, 140);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(63, 13);
-            this.label12.TabIndex = 20;
+            this.label12.TabIndex = 9;
             this.label12.Text = "Empreinte 1";
             // 
             // TXB_Empreinte1Prof
@@ -1561,7 +1560,7 @@
             this.TXB_Empreinte1Prof.Location = new System.Drawing.Point(98, 137);
             this.TXB_Empreinte1Prof.Name = "TXB_Empreinte1Prof";
             this.TXB_Empreinte1Prof.Size = new System.Drawing.Size(99, 20);
-            this.TXB_Empreinte1Prof.TabIndex = 19;
+            this.TXB_Empreinte1Prof.TabIndex = 22;
             // 
             // label9
             // 
@@ -1569,7 +1568,7 @@
             this.label9.Location = new System.Drawing.Point(348, 189);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(60, 13);
-            this.label9.TabIndex = 18;
+            this.label9.TabIndex = 11;
             this.label9.Text = "Description";
             // 
             // TXB_DescriptionProf
@@ -1578,7 +1577,7 @@
             this.TXB_DescriptionProf.Multiline = true;
             this.TXB_DescriptionProf.Name = "TXB_DescriptionProf";
             this.TXB_DescriptionProf.Size = new System.Drawing.Size(286, 61);
-            this.TXB_DescriptionProf.TabIndex = 17;
+            this.TXB_DescriptionProf.TabIndex = 21;
             // 
             // label7
             // 
@@ -1586,7 +1585,7 @@
             this.label7.Location = new System.Drawing.Point(380, 116);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(117, 13);
-            this.label7.TabIndex = 16;
+            this.label7.TabIndex = 7;
             this.label7.Text = "Taux Horaire 1ier Cycle";
             // 
             // TXB_Taux1ierCycleProf
@@ -1594,7 +1593,7 @@
             this.TXB_Taux1ierCycleProf.Location = new System.Drawing.Point(392, 136);
             this.TXB_Taux1ierCycleProf.Name = "TXB_Taux1ierCycleProf";
             this.TXB_Taux1ierCycleProf.Size = new System.Drawing.Size(99, 20);
-            this.TXB_Taux1ierCycleProf.TabIndex = 15;
+            this.TXB_Taux1ierCycleProf.TabIndex = 19;
             // 
             // LBL_EtatServiceProf
             // 
@@ -1603,7 +1602,7 @@
             this.LBL_EtatServiceProf.Location = new System.Drawing.Point(558, 29);
             this.LBL_EtatServiceProf.Name = "LBL_EtatServiceProf";
             this.LBL_EtatServiceProf.Size = new System.Drawing.Size(109, 13);
-            this.LBL_EtatServiceProf.TabIndex = 14;
+            this.LBL_EtatServiceProf.TabIndex = 6;
             this.LBL_EtatServiceProf.Text = "Date de Recrutement";
             // 
             // LBL_TypeProf
@@ -1612,7 +1611,7 @@
             this.LBL_TypeProf.Location = new System.Drawing.Point(305, 86);
             this.LBL_TypeProf.Name = "LBL_TypeProf";
             this.LBL_TypeProf.Size = new System.Drawing.Size(84, 13);
-            this.LBL_TypeProf.TabIndex = 12;
+            this.LBL_TypeProf.TabIndex = 5;
             this.LBL_TypeProf.Text = "Type Professeur";
             // 
             // TXB_TypeProf
@@ -1620,7 +1619,7 @@
             this.TXB_TypeProf.Location = new System.Drawing.Point(392, 83);
             this.TXB_TypeProf.Name = "TXB_TypeProf";
             this.TXB_TypeProf.Size = new System.Drawing.Size(99, 20);
-            this.TXB_TypeProf.TabIndex = 11;
+            this.TXB_TypeProf.TabIndex = 17;
             // 
             // LBL_TelephoneProf
             // 
@@ -1628,7 +1627,7 @@
             this.LBL_TelephoneProf.Location = new System.Drawing.Point(127, 86);
             this.LBL_TelephoneProf.Name = "LBL_TelephoneProf";
             this.LBL_TelephoneProf.Size = new System.Drawing.Size(58, 13);
-            this.LBL_TelephoneProf.TabIndex = 10;
+            this.LBL_TelephoneProf.TabIndex = 2;
             this.LBL_TelephoneProf.Text = "Telephone";
             // 
             // TXB_TelephoneProf
@@ -1636,7 +1635,7 @@
             this.TXB_TelephoneProf.Location = new System.Drawing.Point(191, 83);
             this.TXB_TelephoneProf.Name = "TXB_TelephoneProf";
             this.TXB_TelephoneProf.Size = new System.Drawing.Size(99, 20);
-            this.TXB_TelephoneProf.TabIndex = 9;
+            this.TXB_TelephoneProf.TabIndex = 14;
             // 
             // LBL_DiplomeProf
             // 
@@ -1644,7 +1643,7 @@
             this.LBL_DiplomeProf.Location = new System.Drawing.Point(305, 55);
             this.LBL_DiplomeProf.Name = "LBL_DiplomeProf";
             this.LBL_DiplomeProf.Size = new System.Drawing.Size(45, 13);
-            this.LBL_DiplomeProf.TabIndex = 8;
+            this.LBL_DiplomeProf.TabIndex = 4;
             this.LBL_DiplomeProf.Text = "Diplome";
             // 
             // TXB_DiplomeProf
@@ -1652,7 +1651,7 @@
             this.TXB_DiplomeProf.Location = new System.Drawing.Point(392, 52);
             this.TXB_DiplomeProf.Name = "TXB_DiplomeProf";
             this.TXB_DiplomeProf.Size = new System.Drawing.Size(99, 20);
-            this.TXB_DiplomeProf.TabIndex = 7;
+            this.TXB_DiplomeProf.TabIndex = 16;
             // 
             // LBL_PrenomProf
             // 
@@ -1660,7 +1659,7 @@
             this.LBL_PrenomProf.Location = new System.Drawing.Point(127, 55);
             this.LBL_PrenomProf.Name = "LBL_PrenomProf";
             this.LBL_PrenomProf.Size = new System.Drawing.Size(43, 13);
-            this.LBL_PrenomProf.TabIndex = 6;
+            this.LBL_PrenomProf.TabIndex = 1;
             this.LBL_PrenomProf.Text = "Prenom";
             // 
             // TXB_PrenomProf
@@ -1668,7 +1667,7 @@
             this.TXB_PrenomProf.Location = new System.Drawing.Point(191, 52);
             this.TXB_PrenomProf.Name = "TXB_PrenomProf";
             this.TXB_PrenomProf.Size = new System.Drawing.Size(99, 20);
-            this.TXB_PrenomProf.TabIndex = 5;
+            this.TXB_PrenomProf.TabIndex = 13;
             // 
             // LBL_Telephone2Prof
             // 
@@ -1676,7 +1675,7 @@
             this.LBL_Telephone2Prof.Location = new System.Drawing.Point(305, 22);
             this.LBL_Telephone2Prof.Name = "LBL_Telephone2Prof";
             this.LBL_Telephone2Prof.Size = new System.Drawing.Size(67, 13);
-            this.LBL_Telephone2Prof.TabIndex = 4;
+            this.LBL_Telephone2Prof.TabIndex = 3;
             this.LBL_Telephone2Prof.Text = "Telephone 2";
             // 
             // TXB_Telephone2Prof
@@ -1684,7 +1683,7 @@
             this.TXB_Telephone2Prof.Location = new System.Drawing.Point(392, 22);
             this.TXB_Telephone2Prof.Name = "TXB_Telephone2Prof";
             this.TXB_Telephone2Prof.Size = new System.Drawing.Size(99, 20);
-            this.TXB_Telephone2Prof.TabIndex = 3;
+            this.TXB_Telephone2Prof.TabIndex = 15;
             // 
             // LBL_NomProf
             // 
@@ -1692,7 +1691,7 @@
             this.LBL_NomProf.Location = new System.Drawing.Point(127, 23);
             this.LBL_NomProf.Name = "LBL_NomProf";
             this.LBL_NomProf.Size = new System.Drawing.Size(29, 13);
-            this.LBL_NomProf.TabIndex = 2;
+            this.LBL_NomProf.TabIndex = 0;
             this.LBL_NomProf.Text = "Nom";
             // 
             // TXB_NomProf
@@ -1700,7 +1699,7 @@
             this.TXB_NomProf.Location = new System.Drawing.Point(191, 20);
             this.TXB_NomProf.Name = "TXB_NomProf";
             this.TXB_NomProf.Size = new System.Drawing.Size(99, 20);
-            this.TXB_NomProf.TabIndex = 1;
+            this.TXB_NomProf.TabIndex = 12;
             // 
             // PBX_Professeur
             // 
