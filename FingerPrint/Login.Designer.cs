@@ -41,7 +41,7 @@
             this.BTN_Login.Location = new System.Drawing.Point(127, 117);
             this.BTN_Login.Name = "BTN_Login";
             this.BTN_Login.Size = new System.Drawing.Size(111, 36);
-            this.BTN_Login.TabIndex = 0;
+            this.BTN_Login.TabIndex = 4;
             this.BTN_Login.Text = "Connecter";
             this.BTN_Login.UseVisualStyleBackColor = true;
             this.BTN_Login.Click += new System.EventHandler(this.BTN_Login_Click);
@@ -51,7 +51,7 @@
             this.TXT_Utilisateur.Location = new System.Drawing.Point(203, 34);
             this.TXT_Utilisateur.Name = "TXT_Utilisateur";
             this.TXT_Utilisateur.Size = new System.Drawing.Size(175, 20);
-            this.TXT_Utilisateur.TabIndex = 1;
+            this.TXT_Utilisateur.TabIndex = 2;
             // 
             // label1
             // 
@@ -59,7 +59,7 @@
             this.label1.Location = new System.Drawing.Point(124, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 13);
-            this.label1.TabIndex = 2;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Utilisateur";
             // 
             // label2
@@ -68,7 +68,7 @@
             this.label2.Location = new System.Drawing.Point(124, 79);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 13);
-            this.label2.TabIndex = 2;
+            this.label2.TabIndex = 1;
             this.label2.Text = "Mot de passe";
             // 
             // TXT_MotDePasse
@@ -77,14 +77,14 @@
             this.TXT_MotDePasse.Name = "TXT_MotDePasse";
             this.TXT_MotDePasse.PasswordChar = '*';
             this.TXT_MotDePasse.Size = new System.Drawing.Size(175, 20);
-            this.TXT_MotDePasse.TabIndex = 1;
+            this.TXT_MotDePasse.TabIndex = 3;
             // 
             // BTN_Quitter
             // 
             this.BTN_Quitter.Location = new System.Drawing.Point(267, 117);
             this.BTN_Quitter.Name = "BTN_Quitter";
             this.BTN_Quitter.Size = new System.Drawing.Size(111, 36);
-            this.BTN_Quitter.TabIndex = 0;
+            this.BTN_Quitter.TabIndex = 5;
             this.BTN_Quitter.Text = "Quitter";
             this.BTN_Quitter.UseVisualStyleBackColor = true;
             this.BTN_Quitter.Click += new System.EventHandler(this.BTN_Quitter_Click);

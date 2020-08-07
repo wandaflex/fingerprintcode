@@ -22,7 +22,8 @@ namespace FingerPrint
         {
             // create the client 
             var client = UDPUser.ConnectTo("192.168.1.200", PORT);
-            client.Send("allo_0");
+            client.Send("READY");
+            BTN_Start.Enabled = false;
 
             Task.Factory.StartNew(async () =>
             {
@@ -44,7 +45,7 @@ namespace FingerPrint
                         }
                         ));
 
-                        if (received.Message.Contains("quit"))
+                        if (received.Message.Contains("QUIT"))
                         {
                             LBL_Connect.Invoke(new MethodInvoker(delegate
                             {
@@ -52,8 +53,18 @@ namespace FingerPrint
                                 LBL_Connect.Text = "Disconnected";
                             }
                             ));
-
+                          
                             break;
+                        }
+                        else if (received.Message.Contains("ErrorFlags"))
+                        {
+                            //MessageBox.Show(received.Message);
+                            DialogResult dresult = MessageBox.Show(received.Message, "Alert"
+                              , MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                            if (dresult == DialogResult.OK)
+                            {
+                                client.Send("READY");
+                            }
                         }
                     }
                     catch (Exception ex)
@@ -64,5 +75,7 @@ namespace FingerPrint
                 }
             });
         }
+
+      
     }
 }

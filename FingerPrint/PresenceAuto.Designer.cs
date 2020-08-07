@@ -35,9 +35,9 @@
             // 
             // BTN_Start
             // 
-            this.BTN_Start.Location = new System.Drawing.Point(27, 39);
+            this.BTN_Start.Location = new System.Drawing.Point(12, 38);
             this.BTN_Start.Name = "BTN_Start";
-            this.BTN_Start.Size = new System.Drawing.Size(140, 36);
+            this.BTN_Start.Size = new System.Drawing.Size(90, 36);
             this.BTN_Start.TabIndex = 0;
             this.BTN_Start.Text = "Demarer";
             this.BTN_Start.UseVisualStyleBackColor = true;
