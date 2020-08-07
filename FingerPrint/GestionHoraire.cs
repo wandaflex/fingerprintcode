@@ -46,12 +46,10 @@ namespace FingerPrint
                     MySqlDataReader reader2 = mySqlCommand.ExecuteReader();
                     MySqlConnection mySqlCon2 = new MySqlConnection(connectionString);
                     while (reader2.Read())
-                    {
-                       
+                    {                       
                         Console.WriteLine("skjdkj");
                         String query2 = "INSERT INTO Programmes(Date,Heure_Debut,Heure_Fin,CLASSE_idCLASSE,idADMINISTRATEUR,idPROFESSEUR_MATIERE,visible)"+
                         $" VALUES (DATE_ADD('{reader2.GetString("Date")}',INTERVAL 7 DAY), {reader2.GetString("Heure_Debut")}, {reader2.GetString("Heure_Fin")}, _ProgrammeIDClasse, _ProgrammeIDAdmin, _ProgrammeIDProfMatiere, true); ";
-
                         Console.WriteLine(query2);
                         MySqlCommand mySqlCommand2 = new MySqlCommand(query2, mySqlCon2);
                         mySqlCon2.Open();

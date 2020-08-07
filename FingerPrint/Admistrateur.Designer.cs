@@ -258,7 +258,7 @@
             this.BTN_Horaires.TabIndex = 4;
             this.BTN_Horaires.Text = "Horaires";
             this.BTN_Horaires.UseVisualStyleBackColor = true;
-//            this.BTN_Horaires.Click += new System.EventHandler(this.BTN_Horaires_Click);
+            this.BTN_Horaires.Click += new System.EventHandler(this.BTN_Horaires_Click);
             // 
             // BTN_EtatReseau
             // 
@@ -1764,7 +1764,7 @@
             this.BTN_PresAuto.TabIndex = 18;
             this.BTN_PresAuto.Text = "Presence Automatique";
             this.BTN_PresAuto.UseVisualStyleBackColor = true;
-            this.BTN_PresAuto.Click += new System.EventHandler(this.BTN_PresAuto_Click);
+            //this.BTN_PresAuto.Click += new System.EventHandler(this.BTN_PresAuto_Click);
             // 
             // Admistrateur
             // 

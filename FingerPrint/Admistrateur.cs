@@ -1212,17 +1212,18 @@ namespace FingerPrint
 
         }
 
-        private void BTN_PresAuto_Click(object sender, EventArgs e)
-        {
-            PresenceAuto openForm = new PresenceAuto();
-            openForm.Show();
-        }
-
+       
         private void BTN_Quitter_Click(object sender, EventArgs e)
         {
             Login openForm = new Login();
             openForm.Show();
             this.Close();
+        }
+
+        private void BTN_Horaires_Click(object sender, EventArgs e)
+        {
+            PresenceAuto openForm = new PresenceAuto();
+            openForm.Show();
         }
     }
 }
