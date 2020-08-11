@@ -29,7 +29,7 @@ namespace FingerPrint
         {
             int idClasse = int.Parse(CBX_Classe.SelectedValue.ToString());
             DateTime date_debut = DTP_DateDebutProg.Value;
-            DateTime date_Fin = DTP_DateFinProg.Value;
+            //DateTime date_Fin = DTP_DateFinProg.Value;
 
             try
             {
@@ -43,21 +43,33 @@ namespace FingerPrint
                     MySqlCommand mySqlCommand = new MySqlCommand(query, mySqlCon);
                     mySqlCon.Open();
                     mySqlCommand.CommandType = CommandType.Text;
-                    MySqlDataReader reader2 = mySqlCommand.ExecuteReader();
-                    MySqlConnection mySqlCon2 = new MySqlConnection(connectionString);
-                    while (reader2.Read())
-                    {                       
-                        Console.WriteLine("skjdkj");
-                        String query2 = "INSERT INTO Programmes(Date,Heure_Debut,Heure_Fin,CLASSE_idCLASSE,idADMINISTRATEUR,idPROFESSEUR_MATIERE,visible)"+
-                        $" VALUES (DATE_ADD('{reader2.GetString("Date")}',INTERVAL 7 DAY), {reader2.GetString("Heure_Debut")}, {reader2.GetString("Heure_Fin")}, _ProgrammeIDClasse, _ProgrammeIDAdmin, _ProgrammeIDProfMatiere, true); ";
-                        Console.WriteLine(query2);
-                        MySqlCommand mySqlCommand2 = new MySqlCommand(query2, mySqlCon2);
-                        mySqlCon2.Open();
-                        mySqlCommand2.CommandType = CommandType.Text;
-                        MySqlDataReader reader = mySqlCommand.ExecuteReader();
+                    MySqlDataReader reader1 = mySqlCommand.ExecuteReader();
+
+                    
+                    while (reader1.Read())
+                    {
+                        using (MySqlConnection mySqlCon2 = new MySqlConnection(connectionString))
+                        {
+                            Console.WriteLine("skjdkj");
+                            int classeID = int.Parse(reader1.GetString("CLASSE_idCLASSE"));
+                            int adminID = int.Parse(reader1.GetString("idADMINISTRATEUR"));
+                            int profMAtID = int.Parse(reader1.GetString("idPROFESSEUR_MATIERE"));
+
+                            DateTime date =DateTime.Parse(reader1.GetString("Date"));                           
+
+                            String query2 = "INSERT INTO Programmes(Date,Heure_Debut,Heure_Fin,CLASSE_idCLASSE,idADMINISTRATEUR,idPROFESSEUR_MATIERE,visible)" +
+                            $" VALUES (DATE_ADD('{date.ToString("yyyy-MM-dd")}',INTERVAL 7 DAY), '{reader1.GetString("Heure_Debut")}', '{reader1.GetString("Heure_Fin")}'," +
+                            $" {classeID}, {adminID}, {profMAtID}, true); ";
+                            Console.WriteLine(query2);
+                            MySqlCommand mySqlCommand2 = new MySqlCommand(query2, mySqlCon2);
+                            mySqlCon2.Open();
+                            mySqlCommand2.CommandType = CommandType.Text;
+                            mySqlCommand2.ExecuteReader();
+                        }
+                            
                     }
 
-                    mySqlCon2.Close();
+                   
                 }
 
                 Admistrateur.GridFill("ProgrammeViewFrorein", DGV_programmeGH);

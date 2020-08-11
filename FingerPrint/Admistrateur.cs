@@ -340,8 +340,6 @@ namespace FingerPrint
             }
         }
 
-
-
         //private void BTN_EnregisterCycle_Click(object sender, EventArgs e)
         //{
         //    try
@@ -378,7 +376,6 @@ namespace FingerPrint
 
         //    }
         //}
-
 
 
         private void BTN_RechercheAdmin_Click(object sender, EventArgs e)
@@ -1220,8 +1217,30 @@ namespace FingerPrint
 
         private void BTN_Horaires_Click(object sender, EventArgs e)
         {
-            PresenceAuto openForm = new PresenceAuto();
-            openForm.Show();
+            GestionHoraire oGgestionHoraire = new GestionHoraire();
+            oGgestionHoraire.Show();
+        }
+
+        private void BTN_PresAuto_Click(object sender, EventArgs e)
+        {
+            PresenceAuto oPresAutoForm = new PresenceAuto();
+            oPresAutoForm.Show();
+        }
+
+        private void BTN_RechercheProg_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+            {
+                mySqlCon.Open();
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter("AdminSearchByValue", mySqlCon);
+                sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
+                sqlDa.SelectCommand.Parameters.AddWithValue("_SearchValue", TXB_RechercheAdmin.Text.Trim());
+                DataTable dtb = new DataTable();
+                sqlDa.Fill(dtb);
+                DGV_ListeAdmin.DataSource = dtb;
+                DGV_ListeAdmin.Columns[0].Visible = false;
+                DGV_ListeAdmin.Columns[DGV_ListeAdmin.Columns.Count - 1].Visible = false;
+            }
         }
     }
 }

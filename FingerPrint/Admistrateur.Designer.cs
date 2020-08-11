@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admistrateur));
             this.BTN_Aide = new System.Windows.Forms.Button();
             this.BTN_Quitter = new System.Windows.Forms.Button();
             this.BTN_Rapports = new System.Windows.Forms.Button();
@@ -67,7 +66,6 @@
             this.LBL_HeureDebutPresence = new System.Windows.Forms.Label();
             this.LBL_SelectNomProg = new System.Windows.Forms.Label();
             this.TPG_Programme = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
             this.BTN_AnnulerProg = new System.Windows.Forms.Button();
             this.BTN_SupprimerProg = new System.Windows.Forms.Button();
             this.BTN_EnregisterProg = new System.Windows.Forms.Button();
@@ -596,7 +594,6 @@
             // 
             // TPG_Programme
             // 
-            this.TPG_Programme.Controls.Add(this.label1);
             this.TPG_Programme.Controls.Add(this.BTN_AnnulerProg);
             this.TPG_Programme.Controls.Add(this.BTN_SupprimerProg);
             this.TPG_Programme.Controls.Add(this.BTN_EnregisterProg);
@@ -610,16 +607,6 @@
             this.TPG_Programme.TabIndex = 5;
             this.TPG_Programme.Text = "Programme";
             this.TPG_Programme.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(725, 260);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 143);
-            this.label1.TabIndex = 12;
-            this.label1.Text = resources.GetString("label1.Text");
             // 
             // BTN_AnnulerProg
             // 
@@ -677,6 +664,7 @@
             this.BTN_RechercheProg.TabIndex = 6;
             this.BTN_RechercheProg.Text = "Recherche";
             this.BTN_RechercheProg.UseVisualStyleBackColor = true;
+            this.BTN_RechercheProg.Click += new System.EventHandler(this.BTN_RechercheProg_Click);
             // 
             // GBX_ListeProg
             // 
@@ -1764,7 +1752,7 @@
             this.BTN_PresAuto.TabIndex = 18;
             this.BTN_PresAuto.Text = "Presence Automatique";
             this.BTN_PresAuto.UseVisualStyleBackColor = true;
-            //this.BTN_PresAuto.Click += new System.EventHandler(this.BTN_PresAuto_Click);
+            this.BTN_PresAuto.Click += new System.EventHandler(this.BTN_PresAuto_Click);
             // 
             // Admistrateur
             // 
@@ -1800,7 +1788,6 @@
             this.GBX_FormPresence.ResumeLayout(false);
             this.GBX_FormPresence.PerformLayout();
             this.TPG_Programme.ResumeLayout(false);
-            this.TPG_Programme.PerformLayout();
             this.GBX_RechercheProg.ResumeLayout(false);
             this.GBX_RechercheProg.PerformLayout();
             this.GBX_ListeProg.ResumeLayout(false);
@@ -1881,7 +1868,6 @@
         private System.Windows.Forms.Label LBL_HeureDebutPresence;
         private System.Windows.Forms.Label LBL_SelectNomProg;
         private System.Windows.Forms.TabPage TPG_Programme;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BTN_AnnulerProg;
         private System.Windows.Forms.Button BTN_SupprimerProg;
         private System.Windows.Forms.Button BTN_EnregisterProg;

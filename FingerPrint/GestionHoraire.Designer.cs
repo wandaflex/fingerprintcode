@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.DTP_DateFinProg = new System.Windows.Forms.DateTimePicker();
             this.BTN_EnregisterProg = new System.Windows.Forms.Button();
             this.LbL_DateProg = new System.Windows.Forms.Label();
             this.LBL_Classe = new System.Windows.Forms.Label();
@@ -45,8 +43,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.DTP_DateFinProg);
             this.groupBox1.Controls.Add(this.BTN_EnregisterProg);
             this.groupBox1.Controls.Add(this.LbL_DateProg);
             this.groupBox1.Controls.Add(this.LBL_Classe);
@@ -59,29 +55,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(346, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "label2";
-            // 
-            // DTP_DateFinProg
-            // 
-            this.DTP_DateFinProg.Location = new System.Drawing.Point(340, 51);
-            this.DTP_DateFinProg.Name = "DTP_DateFinProg";
-            this.DTP_DateFinProg.Size = new System.Drawing.Size(200, 20);
-            this.DTP_DateFinProg.TabIndex = 5;
-            // 
             // BTN_EnregisterProg
             // 
-            this.BTN_EnregisterProg.Location = new System.Drawing.Point(552, 50);
+            this.BTN_EnregisterProg.Location = new System.Drawing.Point(495, 50);
             this.BTN_EnregisterProg.Name = "BTN_EnregisterProg";
             this.BTN_EnregisterProg.Size = new System.Drawing.Size(75, 23);
             this.BTN_EnregisterProg.TabIndex = 4;
-            this.BTN_EnregisterProg.Text = "button1";
+            this.BTN_EnregisterProg.Text = "Dupliquer";
             this.BTN_EnregisterProg.UseVisualStyleBackColor = true;
             this.BTN_EnregisterProg.Click += new System.EventHandler(this.BTN_EnregisterProg_Click);
             // 
@@ -90,9 +70,9 @@
             this.LbL_DateProg.AutoSize = true;
             this.LbL_DateProg.Location = new System.Drawing.Point(131, 31);
             this.LbL_DateProg.Name = "LbL_DateProg";
-            this.LbL_DateProg.Size = new System.Drawing.Size(35, 13);
+            this.LbL_DateProg.Size = new System.Drawing.Size(226, 13);
             this.LbL_DateProg.TabIndex = 3;
-            this.LbL_DateProg.Text = "label2";
+            this.LbL_DateProg.Text = "Date semaine a dupliquer (lundi uniquement * )";
             // 
             // LBL_Classe
             // 
@@ -126,7 +106,7 @@
             this.groupBox2.Size = new System.Drawing.Size(690, 343);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.groupBox2.Text = "Programme";
             // 
             // DGV_programmeGH
             // 
@@ -165,8 +145,6 @@
         private System.Windows.Forms.Label LBL_Classe;
         private System.Windows.Forms.DateTimePicker DTP_DateDebutProg;
         private System.Windows.Forms.ComboBox CBX_Classe;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker DTP_DateFinProg;
         private System.Windows.Forms.DataGridView DGV_programmeGH;
     }
 }
