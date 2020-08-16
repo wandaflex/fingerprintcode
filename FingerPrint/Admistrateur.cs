@@ -1232,14 +1232,14 @@ namespace FingerPrint
             using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
             {
                 mySqlCon.Open();
-                MySqlDataAdapter sqlDa = new MySqlDataAdapter("AdminSearchByValue", mySqlCon);
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter("ProgrammesSearchByValue", mySqlCon);
                 sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
-                sqlDa.SelectCommand.Parameters.AddWithValue("_SearchValue", TXB_RechercheAdmin.Text.Trim());
+                sqlDa.SelectCommand.Parameters.AddWithValue("_SearchValue", TXB_RechercheProg.Text.Trim());
                 DataTable dtb = new DataTable();
                 sqlDa.Fill(dtb);
-                DGV_ListeAdmin.DataSource = dtb;
-                DGV_ListeAdmin.Columns[0].Visible = false;
-                DGV_ListeAdmin.Columns[DGV_ListeAdmin.Columns.Count - 1].Visible = false;
+                DGV_ListeProgramme.DataSource = dtb;
+                DGV_ListeProgramme.Columns[0].Visible = false;
+                DGV_ListeProgramme.Columns[DGV_ListeProgramme.Columns.Count - 1].Visible = false;
             }
         }
     }
