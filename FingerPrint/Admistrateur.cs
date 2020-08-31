@@ -745,19 +745,19 @@ namespace FingerPrint
                     mySqlCmd.Parameters.AddWithValue("_ProgrammesID", programmeID);
                     mySqlCmd.Parameters.AddWithValue("_ProgrammeDate", DTP_Programme.Value);
 
-                    if (CBX_HeureDebutProg.SelectedIndex == -1)
-                    {
-                        CBX_HeureDebutProg.BackColor = Color.Red;
-                        MessageBox.Show("Veuillez entrer selectionner une heure de debut");
-                    }else
-                    if (CBX_HeureFinProg.SelectedIndex == -1)
-                    {
-                        CBX_HeureFinProg.BackColor = Color.Red;
-                        MessageBox.Show("Veuillez entrer une heure de fin");
-                    }
+                    //if (CBX_HeureDebutProg.SelectedIndex == -1)
+                    //{
+                    //    CBX_HeureDebutProg.BackColor = Color.Red;
+                    //    MessageBox.Show("Veuillez entrer selectionner une heure de debut");
+                    //}else
+                    //if (CBX_HeureFinProg.SelectedIndex == -1)
+                    //{
+                    //    CBX_HeureFinProg.BackColor = Color.Red;
+                    //    MessageBox.Show("Veuillez entrer une heure de fin");
+                    //}
                     
-                    else
-                    {
+                    //else
+                    //{
                         mySqlCmd.Parameters.AddWithValue("_ProgrammeHeureDebut", CBX_HeureDebutProg.SelectedItem.ToString());
                         mySqlCmd.Parameters.AddWithValue("_ProgrammeHeureFin", CBX_HeureFinProg.SelectedItem.ToString());
                         mySqlCmd.Parameters.AddWithValue("_ProgrammeIDClasse", CBX_SelectClasse.SelectedValue.ToString());
@@ -767,7 +767,7 @@ namespace FingerPrint
                         MessageBox.Show("Submited successfully");
                         cleanForm(GBX_FormProg, ref programmeID, BTN_EnregisterProg);
                         GridFill("ProgrammeViewFrorein", DGV_ListeProgramme);
-                    }
+                    //}
                 }
             }
             catch (Exception ex)
@@ -959,11 +959,11 @@ namespace FingerPrint
             {
                 //DTP_Programme.Value = DGV_ListeProgramme.CurrentRow.Cells[1].Value.ToString();
 
-                CBX_SelectProf.Text = DGV_MatiereProf.CurrentRow.Cells[0].Value.ToString();
-                CBX_SelectMatiere.Text = DGV_MatiereProf.CurrentRow.Cells[1].Value.ToString();
-                //programmeID = Convert.ToInt32(DGV_ListeProgramme.CurrentRow.Cells[0].Value.ToString());
+                CBX_SelectProf.Text = DGV_MatiereProf.CurrentRow.Cells[1].Value.ToString();
+                CBX_SelectMatiere.Text = DGV_MatiereProf.CurrentRow.Cells[2].Value.ToString();
+                profMatiereID = Convert.ToInt32(DGV_MatiereProf.CurrentRow.Cells[0].Value.ToString());
 
-                //BTN_EnregisterCycle.Text = "Modifier";
+                BTN_EnregistrerMatProf.Text = "Modifier";
             }
         }
 
@@ -1233,17 +1233,25 @@ namespace FingerPrint
 
         private void BTN_RechercheProg_Click(object sender, EventArgs e)
         {
-            using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+            try
             {
-                mySqlCon.Open();
-                MySqlDataAdapter sqlDa = new MySqlDataAdapter("ProgrammesSearchByValueForeing", mySqlCon);
-                sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
-                sqlDa.SelectCommand.Parameters.AddWithValue("_SearchValue", TXB_RechercheProg.Text.Trim());
-                DataTable dtb = new DataTable();
-                sqlDa.Fill(dtb);
-                DGV_ListeProgramme.DataSource = dtb;
-                DGV_ListeProgramme.Columns[0].Visible = false;
-                DGV_ListeProgramme.Columns[DGV_ListeProgramme.Columns.Count - 1].Visible = false;
+                using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
+                {
+                    mySqlCon.Open();
+                    MySqlDataAdapter sqlDa = new MySqlDataAdapter("ProgrammesSearchByValueForeing", mySqlCon);
+                    sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    sqlDa.SelectCommand.Parameters.AddWithValue("_SearchValue", TXB_RechercheProg.Text.Trim());
+                    DataTable dtb = new DataTable();
+                    sqlDa.Fill(dtb);
+                    DGV_ListeProgramme.DataSource = dtb;
+                    DGV_ListeProgramme.Columns[0].Visible = false;
+                    DGV_ListeProgramme.Columns[DGV_ListeProgramme.Columns.Count - 1].Visible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error message");
             }
         }
     }

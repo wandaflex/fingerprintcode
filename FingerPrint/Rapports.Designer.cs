@@ -42,6 +42,7 @@
             this.BTN_RechercheRapport = new System.Windows.Forms.Button();
             this.salairePrintPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.salairePrintDocument = new System.Drawing.Printing.PrintDocument();
+            this.button1 = new System.Windows.Forms.Button();
             this.GBX_FormRapport.SuspendLayout();
             this.GBX_ListeRapport.SuspendLayout();
             this.Recherche_Rapport.SuspendLayout();
@@ -49,6 +50,7 @@
             // 
             // GBX_FormRapport
             // 
+            this.GBX_FormRapport.Controls.Add(this.button1);
             this.GBX_FormRapport.Controls.Add(this.LBL_DateFinRapport);
             this.GBX_FormRapport.Controls.Add(this.LBL_DateDebutRaport);
             this.GBX_FormRapport.Controls.Add(this.BTN_ValiderRapport);
@@ -165,6 +167,15 @@
             // 
             this.salairePrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.salairePrintDocument_PrintPage);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(641, 17);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Rapports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -199,5 +210,6 @@
         private System.Windows.Forms.PrintPreviewDialog salairePrintPreviewDialog;
         private System.Drawing.Printing.PrintDocument salairePrintDocument;
         private System.Windows.Forms.Label resultlabel;
+        private System.Windows.Forms.Button button1;
     }
 }
