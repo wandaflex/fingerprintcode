@@ -784,6 +784,10 @@ namespace FingerPrint
 
                 CBX_HeureDebutProg.Text = DGV_ListeProgramme.CurrentRow.Cells[2].Value.ToString();
                 CBX_HeureFinProg.Text = DGV_ListeProgramme.CurrentRow.Cells[3].Value.ToString();
+                DTP_Programme.Value = DateTime.Parse(DGV_ListeProgramme.CurrentRow.Cells[1].Value.ToString());
+                CBX_SelectClasse.Text = DGV_ListeProgramme.CurrentRow.Cells[4].Value.ToString();
+                CBX_SelectProgProfMatiere.Text = DGV_ListeProgramme.CurrentRow.Cells[5].Value.ToString();
+
                 programmeID = Convert.ToInt32(DGV_ListeProgramme.CurrentRow.Cells[0].Value.ToString());
                 
                 //BTN_EnregisterCycle.Text = "Modifier";
@@ -1232,7 +1236,7 @@ namespace FingerPrint
             using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
             {
                 mySqlCon.Open();
-                MySqlDataAdapter sqlDa = new MySqlDataAdapter("ProgrammesSearchByValue", mySqlCon);
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter("ProgrammesSearchByValueForeing", mySqlCon);
                 sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
                 sqlDa.SelectCommand.Parameters.AddWithValue("_SearchValue", TXB_RechercheProg.Text.Trim());
                 DataTable dtb = new DataTable();

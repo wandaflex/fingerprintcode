@@ -118,7 +118,7 @@
             // resultlabel
             // 
             this.resultlabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.resultlabel.Location = new System.Drawing.Point(6, 16);
+            this.resultlabel.Location = new System.Drawing.Point(13, 16);
             this.resultlabel.Name = "resultlabel";
             this.resultlabel.Size = new System.Drawing.Size(740, 431);
             this.resultlabel.TabIndex = 0;
