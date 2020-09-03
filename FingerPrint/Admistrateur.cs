@@ -1149,8 +1149,7 @@ namespace FingerPrint
 
                             LSV_RcevAdmin.Invoke(new MethodInvoker(delegate
                             {
-                                LSV_RcevAdmin.Items.Add("FINGER PRINT disconnected");
-                                
+                                LSV_RcevAdmin.Items.Add("FINGER PRINT disconnected");                                
                             }
                             ));
                             break;

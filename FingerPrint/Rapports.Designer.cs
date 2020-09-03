@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Rapports));
             this.GBX_FormRapport = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.LBL_DateFinRapport = new System.Windows.Forms.Label();
             this.LBL_DateDebutRaport = new System.Windows.Forms.Label();
             this.BTN_ValiderRapport = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@
             this.BTN_RechercheRapport = new System.Windows.Forms.Button();
             this.salairePrintPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.salairePrintDocument = new System.Drawing.Printing.PrintDocument();
-            this.button1 = new System.Windows.Forms.Button();
             this.GBX_FormRapport.SuspendLayout();
             this.GBX_ListeRapport.SuspendLayout();
             this.Recherche_Rapport.SuspendLayout();
@@ -62,6 +62,16 @@
             this.GBX_FormRapport.TabIndex = 0;
             this.GBX_FormRapport.TabStop = false;
             this.GBX_FormRapport.Text = "Formulaire De Rapport";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(641, 17);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // LBL_DateFinRapport
             // 
@@ -162,19 +172,11 @@
             this.salairePrintPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("salairePrintPreviewDialog.Icon")));
             this.salairePrintPreviewDialog.Name = "printPreviewDialog1";
             this.salairePrintPreviewDialog.Visible = false;
+            this.salairePrintPreviewDialog.Load += new System.EventHandler(this.salairePrintPreviewDialog_Load);
             // 
             // salairePrintDocument
             // 
             this.salairePrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.salairePrintDocument_PrintPage);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(641, 17);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // Rapports
             // 

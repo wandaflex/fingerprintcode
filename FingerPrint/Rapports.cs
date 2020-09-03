@@ -130,7 +130,7 @@ namespace FingerPrint
                             if(total_a_payer != 0)
                             {
                                 resultlabel.Text += String.Format("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
-                                resultlabel.Text += String.Format("{0,-60} {1,-50} {2,-50} {3:N0} \n", profNom, Math.Round(nombre_Heure_Cycle1), Math.Round(nombre_Heure_Cycle2), Math.Round(total_a_payer));
+                                resultlabel.Text += String.Format("{0,-60} {1,-50} {2,-40} {3:N0} \n", profNom, Math.Round(nombre_Heure_Cycle1), Math.Round(nombre_Heure_Cycle2), Math.Round(total_a_payer));
                                     //$"{profNom}  = " + Math.Round(total_a_payer) + "\n\t";
                             }
 
@@ -179,7 +179,7 @@ namespace FingerPrint
 
             // Mesurer le titre
 
-            string titreString = "Liste des villes";
+            string titreString = "Des De salaire des enseignants";
             float largeurTitreFloat = e.Graphics.MeasureString(titreString, enteteFont).Width;
 
             // Position initiale du crayon : Coin supérieur gauche à l'intérieur des marges
@@ -200,6 +200,9 @@ namespace FingerPrint
             // Positioner le crayon avant d'imprimer la première ville
 
             yFloat += hauteurPoliceEnteteFloat * 2.0F;
+            xFloat -= e.MarginBounds.X;
+
+            e.Graphics.DrawString(resultlabel.Text, detailFont, Brushes.Black, xFloat, yFloat);
 
 
             //foreach (string villesString in villesComboBox.Items)
@@ -213,6 +216,16 @@ namespace FingerPrint
             //    yFloat += hauteurPoliceDetailFloat;
             //}
 
+        }
+
+        private void salairePrintPreviewDialog_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            salairePrintPreviewDialog.ShowDialog();
         }
     }
 }
