@@ -166,6 +166,7 @@
             // 
             this.salairePrintPreviewDialog.AutoScrollMargin = new System.Drawing.Size(0, 0);
             this.salairePrintPreviewDialog.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.salairePrintPreviewDialog.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.salairePrintPreviewDialog.ClientSize = new System.Drawing.Size(400, 300);
             this.salairePrintPreviewDialog.Document = this.salairePrintDocument;
             this.salairePrintPreviewDialog.Enabled = true;

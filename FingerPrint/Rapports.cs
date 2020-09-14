@@ -50,7 +50,7 @@ namespace FingerPrint
 
         private void BTN_ValiderRapport_Click(object sender, EventArgs e)
         {
-            string titre = String.Format("{0,-40} {1,-40} {2,-40} {3} \n", "nom Professeur","nombre heure premier cycle", " nombre heure second cycle ", "Total a payer");
+            string titre = String.Format("{0,-100} {1,-40} {2,-40} {3} \n", "Nom Professeur","Nombre heure premier cycle", " nombre heure second cycle ", "Total a payer");
             resultlabel.Text += titre + "\n\t";
             DateTime dateDebut = dateTimePicker1.Value ;
             DateTime dateFin = dateTimePicker2.Value ;
@@ -130,7 +130,7 @@ namespace FingerPrint
                             if(total_a_payer != 0)
                             {
                                 resultlabel.Text += String.Format("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
-                                resultlabel.Text += String.Format("{0,-60} {1,-50} {2,-40} {3:N0} \n", profNom, Math.Round(nombre_Heure_Cycle1), Math.Round(nombre_Heure_Cycle2), Math.Round(total_a_payer));
+                                resultlabel.Text += String.Format("{0,-100} {1,-30} {2,-30} {3:N0} \n", profNom, Math.Round(nombre_Heure_Cycle1), Math.Round(nombre_Heure_Cycle2), Math.Round(total_a_payer));
                                     //$"{profNom}  = " + Math.Round(total_a_payer) + "\n\t";
                             }
 
@@ -171,8 +171,8 @@ namespace FingerPrint
             Font enteteFont;
             Font detailFont;
 
-            enteteFont = new Font("Times New Roman", 14.0F, FontStyle.Bold);
-            detailFont = new Font("Times New Roman", 12.0F);
+            enteteFont = new Font("Times New Roman", 12.0F, FontStyle.Bold);
+            detailFont = new Font("Times New Roman", 11.0F);
 
             float hauteurPoliceEnteteFloat = enteteFont.GetHeight();
             float hauteurPoliceDetailFloat = detailFont.GetHeight();
@@ -204,7 +204,7 @@ namespace FingerPrint
 
             e.Graphics.DrawString(resultlabel.Text, detailFont, Brushes.Black, xFloat, yFloat);
 
-
+            //yFloat += 
             //foreach (string villesString in villesComboBox.Items)
             //{
             //    // Imprimer la ville
@@ -216,6 +216,8 @@ namespace FingerPrint
             //    yFloat += hauteurPoliceDetailFloat;
             //}
 
+            e.HasMorePages = true;
+
         }
 
         private void salairePrintPreviewDialog_Load(object sender, EventArgs e)
@@ -225,7 +227,11 @@ namespace FingerPrint
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Console.WriteLine(resultlabel.Text);
+            //salairePrintDocument.DefaultPageSettings.PaperSize = 2;
             salairePrintPreviewDialog.ShowDialog();
+
+            Console.WriteLine(resultlabel.Text);
         }
     }
 }
