@@ -37,7 +37,7 @@ namespace FingerPrint
 
             dateNow = DateTime.Parse(DateTime.Now.ToString("MM-dd-yy HH:mm:ss"));
 
-            MessageBox.Show(dateNow.ToString("HH:mm:ss"));
+            //MessageBox.Show(dateNow.ToString("HH:mm:ss"));
 
             string message;
             
