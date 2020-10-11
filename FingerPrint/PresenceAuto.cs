@@ -107,7 +107,8 @@ namespace FingerPrint
         {
             string[] messages = fp_message.Split('_');
             string finguerID = messages[2];
-
+            Console.WriteLine(finguerID);
+                    
             string message = "";
             bool professeurTrouve = false;
             try
@@ -193,18 +194,18 @@ namespace FingerPrint
                                                                         mySqlCmd3.ExecuteReader();
                                                                     if (heureDebut_Programme > timeNow)
                                                                     {
-                                                                        message = $"OK_{heureDebut_Programme}";
+                                                                        message = $"OK {heureDebut_Programme}";
                                                                     }
                                                                     else
                                                                     {
-                                                                        message = $"Retard_{heureDebut_Programme - timeNow}";
+                                                                        message = $"Retard {heureDebut_Programme - timeNow}";
                                                                     }
                                                                     
                                                                     //MessageBox.Show("heure de debut enregistrer avec succes");
                                                                     }
                                                                     else
                                                                     { //si h de fin fin deja enregistrer                                                                   
-                                                                    message = "Presence_Extiste";
+                                                                    message = "Presence Extiste";
                                                                     //MessageBox.Show("presence exite deja");
                                                                     }
 
@@ -227,12 +228,12 @@ namespace FingerPrint
                                                                             mySqlCmd3.CommandType = CommandType.Text;
                                                                             mySqlCmd3.ExecuteReader();
 
-                                                                            message = "HFin_OK";
+                                                                            message = "HFin OK";
                                                                             //MessageBox.Show("heure fin enregistrer avec succes");
                                                                         }
                                                                         else
                                                                         {
-                                                                            message = "HFin_Extiste";
+                                                                            message = "HFin Extiste";
                                                                             //MessageBox.Show("HEure de fin deja enregistrer exite deja");
                                                                         }
 
