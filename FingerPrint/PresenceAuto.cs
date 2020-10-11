@@ -29,7 +29,8 @@ namespace FingerPrint
 
         private void BTN_Start_Click(object sender, EventArgs e)
         {
-            DateTime dateNow = DateTime.Parse("6/10/2020 07:45:00 AM");
+            //DateTime dateNow = DateTime.Parse("6/10/2020 07:45:00 AM");
+            DateTime dateNow = DateTime.Now;
             string message = "";
 
             //create the client
