@@ -8,7 +8,7 @@ using System.Text;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+//using System.Windows.Forms;
 using System.Data.SqlClient;
 
 namespace FingerPrint
@@ -31,9 +31,17 @@ namespace FingerPrint
         private void BTN_Start_Click(object sender, EventArgs e)
         {
             //DateTime dateNow = DateTime.Parse("6/10/2020 07:45:00 AM");
-            DateTime dateNow = DateTime.Now;
-            string message = "";
 
+
+            DateTime dateNow ;
+
+            dateNow = DateTime.Parse(DateTime.Now.ToString("MM-dd-yy HH:mm:ss"));
+
+            //MessageBox.Show(dateNow.ToString("HH:mm:ss"));
+
+            string message;
+            
+                
             //create the client
             var client = UDPUser.ConnectTo("192.168.1.200", PORT);
             client.Send("READY");
@@ -153,7 +161,7 @@ namespace FingerPrint
                                 while (reader2.Read())
                                 {
 
-                                    TimeSpan timeNow = TimeSpan.Parse(dateNow.ToString("hh:mm"));
+                                    TimeSpan timeNow = TimeSpan.Parse(dateNow.ToString("HH:mm"));
                                     //DateTime 
                                     //double TotalnbH = 0.0;
                                     int progIDProgramme = int.Parse(reader2.GetString("idPROGRAMMES"));
@@ -172,6 +180,7 @@ namespace FingerPrint
                                             {
                                                 if ((heureDebut_Programme - timeNow) <= TimeSpan.Parse("00:40:00"))
                                                 {
+                                                    Console.WriteLine(heureDebut_Programme - timeNow);
                                                     using (MySqlConnection mySqlCon4 = new MySqlConnection(connectionString))
                                                     {
                                                         using (MySqlCommand mySqlCommand = new MySqlCommand( $"SELECT COUNT(*) from presence where PROGRAMMES_idPROGRAMMES = {progIDProgramme} ", mySqlCon4))
@@ -248,11 +257,16 @@ namespace FingerPrint
                                                             }
 
                                                         }
-                                                    }                                                    
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    message = "retard > 40mn";
                                                 }
                                                
                                             }
                                         }
+                                        
                                     }
                                 }
                             }
