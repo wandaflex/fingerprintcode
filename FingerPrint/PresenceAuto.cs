@@ -32,67 +32,66 @@ namespace FingerPrint
             DateTime dateNow = DateTime.Parse("6/10/2020 07:45:00 AM");
 
 
-            presenceAutomatique("aaaa", dateNow);
-            
-            // create the client 
-            //var client = UDPUser.ConnectTo("192.168.1.200", PORT);
-            //client.Send("READY");
-            //BTN_Start.Enabled = false;
+            //create the client
+            var client = UDPUser.ConnectTo("192.168.1.200", PORT);
+            client.Send("READY");
+            BTN_Start.Enabled = false;
 
-            //Task.Factory.StartNew(async () =>
-            //{
-            //    while (true)
-            //    {
-            //        try
-            //        {
-            //            var received = await client.Receive();
+            Task.Factory.StartNew(async () =>
+            {
+                while (true)
+                {
+                    try
+                    {
+                        var received = await client.Receive();
 
-            //            LBL_Connect.Invoke(new MethodInvoker(delegate
-            //            {
-            //                LBL_Connect.BackColor = Color.Green;
-            //                LBL_Connect.Text = "Connected";
-            //            }
-            //            ));
-            //            LSV_Rcev.Invoke(new MethodInvoker(delegate
-            //            {
-            //                LSV_Rcev.Items.Add(received.Message);
+                        LBL_Connect.Invoke(new MethodInvoker(delegate
+                        {
+                            LBL_Connect.BackColor = Color.Green;
+                            LBL_Connect.Text = "Connected";
+                        }
+                        ));
+                        LSV_Rcev.Invoke(new MethodInvoker(delegate
+                        {
+                            LSV_Rcev.Items.Add(received.Message);
 
-            //                //invoca methode prise presence auto\
+                            //invoca methode prise presence auto
+                            //presenceAutomatique("aaaa",DateTime.Now);
 
-            //                //presenceAutomatique("aaaa",DateTime.Now);
+                            presenceAutomatique(received.Message, dateNow);
 
-            //            }
-            //            ));
+                        }
+                        ));
 
-            //            if (received.Message.Contains("QUIT"))
-            //            {
-            //                LBL_Connect.Invoke(new MethodInvoker(delegate
-            //                {
-            //                    LBL_Connect.BackColor = Color.Red;
-            //                    LBL_Connect.Text = "Disconnected";
-            //                }
-            //                ));
+                        if (received.Message.Contains("QUIT"))
+                        {
+                            LBL_Connect.Invoke(new MethodInvoker(delegate
+                            {
+                                LBL_Connect.BackColor = Color.Red;
+                                LBL_Connect.Text = "Disconnected";
+                            }
+                            ));
 
-            //                break;
-            //            }
-            //            else if (received.Message.Contains("ErrorFlags"))
-            //            {
-            //                //MessageBox.Show(received.Message);
-            //                DialogResult dresult = MessageBox.Show(received.Message, "Alert"
-            //                  , MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            //                if (dresult == DialogResult.OK)
-            //                {
-            //                    client.Send("READY");
-            //                }
-            //            }
-            //        }
-            //        catch (Exception ex)
-            //        {
+                            break;
+                        }
+                        else if (received.Message.Contains("ErrorFlags"))
+                        {
+                            //MessageBox.Show(received.Message);
+                            DialogResult dresult = MessageBox.Show(received.Message, "Alert"
+                              , MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                            if (dresult == DialogResult.OK)
+                            {
+                                client.Send("READY");
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
 
-            //            MessageBox.Show(ex.Message, "Error message");
-            //        }
-            //    }
-            //});
+                        MessageBox.Show(ex.Message, "Error message");
+                    }
+                }
+            });
         }
 
         public void presenceAutomatique(String finguerID, DateTime dateNow)
