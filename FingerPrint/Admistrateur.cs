@@ -1003,9 +1003,7 @@ namespace FingerPrint
                     {
                         mySqlCon4.Open();
 
-                        userCount = Convert.ToInt32(mySqlCommand.ExecuteScalar());
-
-                       
+                        userCount = Convert.ToInt32(mySqlCommand.ExecuteScalar());                       
                     }
                 }
 
@@ -1096,8 +1094,7 @@ namespace FingerPrint
 
                             LSV_RcevAdmin.Invoke(new MethodInvoker(delegate
                             {
-                                LSV_RcevAdmin.Items.Add("Connected to FINGER PRINT");
-                                
+                                LSV_RcevAdmin.Items.Add("Connected to FINGER PRINT");                                
                             }
                             ));
                         }

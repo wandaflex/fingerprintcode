@@ -61,10 +61,15 @@ namespace FingerPrint
                             //invoca methode prise presence auto
                             //presenceAutomatique("aaaa",DateTime.Now);
 
+                           
+                        }
+                        ));
+
+                        if (received.Message.Contains("FINGER_ID"))
+                        {
                             message = presenceAutomatique(received.Message, dateNow);
                             client.Send(message);
                         }
-                        ));
 
                         if (received.Message.Contains("QUIT"))
                         {
@@ -87,6 +92,7 @@ namespace FingerPrint
                                 client.Send("READY");
                             }
                         }
+                        
                     }
                     catch (Exception ex)
                     {
