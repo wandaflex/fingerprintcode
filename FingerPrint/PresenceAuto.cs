@@ -33,9 +33,9 @@ namespace FingerPrint
             //DateTime dateNow = DateTime.Parse("6/10/2020 07:45:00 AM");
 
 
-            DateTime dateNow ;
+            DateTime dateNow = DateTime.Now;
 
-            dateNow = DateTime.Parse(DateTime.Now.ToString("MM-dd-yy HH:mm:ss"));
+            //dateNow = DateTime.Parse(DateTime.Now.ToString("MM-dd-yy HH:mm:ss"));
 
             //MessageBox.Show(dateNow.ToString("HH:mm:ss"));
 
@@ -118,6 +118,7 @@ namespace FingerPrint
             Console.WriteLine(finguerID);
                     
             string message = "";
+
             bool professeurTrouve = false;
             try
             {
@@ -178,6 +179,7 @@ namespace FingerPrint
                                         {
                                             using (MySqlConnection mySqlCon3 = new MySqlConnection(connectionString))
                                             {
+                                                Console.WriteLine(heureDebut_Programme - timeNow);
                                                 if ((heureDebut_Programme - timeNow) <= TimeSpan.Parse("00:40:00") || (timeNow-heureDebut_Programme ) <= TimeSpan.Parse("00:40:00"))
                                                 {
                                                     Console.WriteLine(heureDebut_Programme - timeNow);
