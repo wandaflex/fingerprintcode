@@ -124,3 +124,4 @@ C:\Users\Raoul\Documents\FinguerPrintCodeFinal\FingerPrint\obj\x86\Debug\FingerP
 C:\Users\Raoul\Documents\FinguerPrintCodeFinal\FingerPrint\obj\x86\Debug\FingerPrint.exe
 C:\Users\Raoul\Documents\FinguerPrintCodeFinal\FingerPrint\obj\x86\Debug\FingerPrint.pdb
 C:\Users\Raoul\Documents\FinguerPrintCodeFinal\FingerPrint\obj\x86\Debug\FingerPrint.csprojAssemblyReference.cache
+C:\Users\USer\Documents\ProjetGit\fingerprintcode\FingerPrint\obj\x86\Debug\FingerPrint.PresenceAuto.resources
