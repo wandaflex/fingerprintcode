@@ -30,12 +30,13 @@ namespace FingerPrint
         private void BTN_Start_Click(object sender, EventArgs e)
         {
             DateTime dateNow = DateTime.Parse("6/10/2020 07:45:00 AM");
-
+            string message = "";
 
             //create the client
             var client = UDPUser.ConnectTo("192.168.1.200", PORT);
             client.Send("READY");
             BTN_Start.Enabled = false;
+
 
             Task.Factory.StartNew(async () =>
             {
@@ -58,8 +59,8 @@ namespace FingerPrint
                             //invoca methode prise presence auto
                             //presenceAutomatique("aaaa",DateTime.Now);
 
-                            presenceAutomatique(received.Message, dateNow);
-
+                            message = presenceAutomatique(received.Message, dateNow);
+                            client.Send(message);
                         }
                         ));
 
