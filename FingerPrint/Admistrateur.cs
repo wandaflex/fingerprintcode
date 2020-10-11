@@ -758,8 +758,10 @@ namespace FingerPrint
                     
                     //else
                     //{
-                        mySqlCmd.Parameters.AddWithValue("_ProgrammeHeureDebut", CBX_HeureDebutProg.SelectedItem.ToString());
-                        mySqlCmd.Parameters.AddWithValue("_ProgrammeHeureFin", CBX_HeureFinProg.SelectedItem.ToString());
+                        //mySqlCmd.Parameters.AddWithValue("_ProgrammeHeureDebut", CBX_HeureDebutProg.SelectedItem.ToString());
+                        mySqlCmd.Parameters.AddWithValue("_ProgrammeHeureDebut", CBX_HeureDebutProg.Text.ToString());
+                        mySqlCmd.Parameters.AddWithValue("_ProgrammeHeureFin", CBX_HeureFinProg.Text.ToString());
+                        //mySqlCmd.Parameters.AddWithValue("_ProgrammeHeureFin", CBX_HeureFinProg.SelectedItem.ToString());
                         mySqlCmd.Parameters.AddWithValue("_ProgrammeIDClasse", CBX_SelectClasse.SelectedValue.ToString());
                         mySqlCmd.Parameters.AddWithValue("_ProgrammeIDAdmin", "1");
                         mySqlCmd.Parameters.AddWithValue("_ProgrammeIDProfMatiere", CBX_SelectProgProfMatiere.SelectedValue.ToString());
@@ -772,7 +774,7 @@ namespace FingerPrint
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Une Erreur est survenue, Veuillez contacter un programmeur." + Environment.NewLine + ex.Message);
+                MessageBox.Show("Une Erreur est survenue, Bien remplir votre formulaire programme." + Environment.NewLine + ex.Message);
             }
         }
 
