@@ -21,6 +21,7 @@ namespace FingerPrint
         private String profNom = "";
         private String empreinte_1 = "";
         private String empreinte_2 = "";
+
         public const int PORT = 2500;
         public PresenceAuto()
         {
@@ -96,8 +97,11 @@ namespace FingerPrint
             });
         }
 
-        public string presenceAutomatique(String finguerID, DateTime dateNow)
+        public string presenceAutomatique(String fp_message, DateTime dateNow)
         {
+            string[] messages = fp_message.Split('_');
+            string finguerID = messages[2];
+
             string message = "";
             bool professeurTrouve = false;
             try
@@ -183,17 +187,17 @@ namespace FingerPrint
                                                                         mySqlCmd3.ExecuteReader();
                                                                     if (heureDebut_Programme > timeNow)
                                                                     {
-                                                                        message = $"H_Debut_OK_{heureDebut_Programme}";
+                                                                        message = $"OK_{heureDebut_Programme}";
                                                                     }
                                                                     else
                                                                     {
-                                                                        message = $"H_Debut_OK_Retard {heureDebut_Programme - timeNow}";
+                                                                        message = $"Retard_{heureDebut_Programme - timeNow}";
                                                                     }
                                                                     
                                                                     //MessageBox.Show("heure de debut enregistrer avec succes");
                                                                     }
                                                                     else
-                                                                    {                                                                    
+                                                                    { //si h de fin fin deja enregistrer                                                                   
                                                                     message = "Presence_Extiste";
                                                                     //MessageBox.Show("presence exite deja");
                                                                     }
@@ -217,12 +221,12 @@ namespace FingerPrint
                                                                             mySqlCmd3.CommandType = CommandType.Text;
                                                                             mySqlCmd3.ExecuteReader();
 
-                                                                            message = "H_Fin_OK";
+                                                                            message = "HFin_OK";
                                                                             //MessageBox.Show("heure fin enregistrer avec succes");
                                                                         }
                                                                         else
                                                                         {
-                                                                            message = "H_Fin_Extiste";
+                                                                            message = "HFin_Extiste";
                                                                             //MessageBox.Show("HEure de fin deja enregistrer exite deja");
                                                                         }
 
@@ -237,15 +241,10 @@ namespace FingerPrint
                                                             }
 
                                                         }
-                                                    }
-
-                                                    
+                                                    }                                                    
                                                 }
-
-
                                                
                                             }
-
                                         }
                                     }
                                 }
@@ -255,17 +254,19 @@ namespace FingerPrint
                     }
                     if(professeurTrouve == false)
                     {
-                        message = "Prof_non_identifier";
-                        //MessageBox.Show("Professeur non idestifier");
+                        message = "NON_Programmer";
+                        MessageBox.Show(message);
                     }
                 }
             }
             catch (Exception ex)
             {
+                
                 message = "Error_Message ";
                 //MessageBox.Show(ex.ToString(), );
             }
 
+            message = "WDFPRES_" + message;
             return message;
         }         
     }

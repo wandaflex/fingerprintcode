@@ -986,13 +986,30 @@ namespace FingerPrint
 
         private string FingerID()
         {
-            int nb_Min = 1;
-            int nb_Max = 126;
-            Random num = new Random();
+            int userCount = 0;
+            int FingerID;
+            do
+            {
+                int nb_Min = 1;
+                int nb_Max = 126;
+                Random num = new Random();
 
-           int FingerID = num.Next(nb_Min, nb_Max);
-            //string msg = "WANDA_ENROLL_" + FingerID;
-            //verifier que ID nest pas ds la base de donnee
+                FingerID = num.Next(nb_Min, nb_Max);
+                //string msg = "WANDA_ENROLL_" + FingerID;
+                //verifier que ID nest pas ds la base de donnee
+                using (MySqlConnection mySqlCon4 = new MySqlConnection(connectionString))
+                {
+                    using (MySqlCommand mySqlCommand = new MySqlCommand($"SELECT COUNT(*) from professeur where Empreinte_1 = {FingerID} OR Empreinte_2 = {FingerID}", mySqlCon4))
+                    {
+                        mySqlCon4.Open();
+
+                        userCount = Convert.ToInt32(mySqlCommand.ExecuteScalar());
+
+                       
+                    }
+                }
+
+            } while (userCount == 1);
 
             return Convert.ToString(FingerID);
 
