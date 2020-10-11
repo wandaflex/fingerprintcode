@@ -178,7 +178,7 @@ namespace FingerPrint
                                         {
                                             using (MySqlConnection mySqlCon3 = new MySqlConnection(connectionString))
                                             {
-                                                if ((heureDebut_Programme - timeNow) <= TimeSpan.Parse("00:40:00"))
+                                                if ((heureDebut_Programme - timeNow) <= TimeSpan.Parse("00:40:00") || (timeNow-heureDebut_Programme ) <= TimeSpan.Parse("00:40:00"))
                                                 {
                                                     Console.WriteLine(heureDebut_Programme - timeNow);
                                                     using (MySqlConnection mySqlCon4 = new MySqlConnection(connectionString))
