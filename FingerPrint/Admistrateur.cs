@@ -983,7 +983,6 @@ namespace FingerPrint
             this.Close();
         }
 
-
         private string FingerID()
         {
             int userCount = 0;
@@ -1023,7 +1022,6 @@ namespace FingerPrint
             return id_send;
         }
 
-
         private void set_BTN_State(int ste)
         {
             if (ste == EMPR12_DISNABLED)
@@ -1055,7 +1053,6 @@ namespace FingerPrint
 
             LSV_RcevAdmin.Items.Add("ID " + get_sendID() + " Sent : " + msge);
             id_send += 1;
-                      
 
             Task.Factory.StartNew(async () =>
             {
@@ -1074,11 +1071,9 @@ namespace FingerPrint
                             }
                             ));
 
-
                             LSV_RcevAdmin.Invoke(new MethodInvoker(delegate
                             {
                                 LSV_RcevAdmin.Items.Add("FINGER PRINT disconnected");
-                               
                             }
                             ));
                             break;
@@ -1109,6 +1104,17 @@ namespace FingerPrint
                             ));
                         }
 
+                        else if (received.Message.Contains("ErrorFlags"))
+                        {
+                            //MessageBox.Show(received.Message);
+                            DialogResult dresult = MessageBox.Show(received.Message, "Alert"
+                              , MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                            if (dresult == DialogResult.OK)
+                            {
+                                client_empr1.Send("READY");
+                            }
+                        }
+
                         else
                         {
                             LSV_RcevAdmin.Invoke(new MethodInvoker(delegate
@@ -1116,8 +1122,7 @@ namespace FingerPrint
                                 LSV_RcevAdmin.Items.Add(received.Message);
                             }
                             ));
-
-                        }
+                         }
                      
                     }
                     catch (Exception ex)
@@ -1144,7 +1149,6 @@ namespace FingerPrint
             LSV_RcevAdmin.Items.Add("ID " + get_sendID() + " Sent : " + msge);
             id_send += 1;
 
-
             Task.Factory.StartNew(async () =>
             {
                 while (true)
@@ -1161,7 +1165,6 @@ namespace FingerPrint
                                 LBL_Connect.Text = "Disconnected";
                             }
                             ));
-
 
                             LSV_RcevAdmin.Invoke(new MethodInvoker(delegate
                             {
@@ -1196,6 +1199,18 @@ namespace FingerPrint
                             }
                             ));
                         }
+
+                        else if (received.Message.Contains("ErrorFlags"))
+                        {
+                            //MessageBox.Show(received.Message);
+                            DialogResult dresult = MessageBox.Show(received.Message, "Alert"
+                              , MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                            if (dresult == DialogResult.OK)
+                            {
+                                client_empr1.Send("READY");
+                            }
+                        }
+
                         else
                         {
                             LSV_RcevAdmin.Invoke(new MethodInvoker(delegate
@@ -1215,7 +1230,6 @@ namespace FingerPrint
                 }
             });
 
-
             //Emp 1 2 disabled
             set_BTN_State(EMPR12_DISNABLED);
         }
@@ -1225,8 +1239,7 @@ namespace FingerPrint
             LSV_RcevAdmin.Items.Clear();
             set_BTN_State(EMPR_RESET);
         }
-
-       
+      
         private void BTN_Quitter_Click(object sender, EventArgs e)
         {
             Login openForm = new Login();
