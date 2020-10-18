@@ -181,7 +181,9 @@ namespace FingerPrint
                                             using (MySqlConnection mySqlCon3 = new MySqlConnection(connectionString))
                                             {
                                                 Console.WriteLine(timeNow - heureDebut_Programme);
-                                                if ((timeNow - heureDebut_Programme) <= TimeSpan.Parse("00:40:00") || (timeNow - heureDebut_Programme) >= TimeSpan.Parse("-00:40:00"))
+                                                //if ((timeNow - heureDebut_Programme) <= TimeSpan.Parse("00:40:00") || (timeNow - heureDebut_Programme) >= TimeSpan.Parse("-00:40:00"))
+                                                if ( TimeBetween(TimeSpan.Parse("00:40:00"), (timeNow - heureDebut_Programme), (heureDebut_Programme - timeNow)) )
+                                                
                                                 {
                                                     Console.WriteLine(heureDebut_Programme - timeNow);
                                                     using (MySqlConnection mySqlCon4 = new MySqlConnection(connectionString))
@@ -292,6 +294,18 @@ namespace FingerPrint
 
             message = "WDF_" + message;
             return message;
-        }         
+        }
+
+        bool TimeBetween(TimeSpan now, TimeSpan start, TimeSpan end)
+        {
+            // convert datetime to a TimeSpan
+            //TimeSpan now = datetime.TimeOfDay;
+            // see if start comes before end
+            
+            if (start < end)
+                return start <= now && now <= end;
+            // start is after end, so do the inverse comparison
+            return !(end < now && now < start);
+        }
     }
 }
