@@ -285,7 +285,7 @@ namespace FingerPrint
                 //MessageBox.Show(ex.ToString(), );
             }
 
-            message = "WDFPRES_" + message;
+            message = "WANDA_WDFPRES_" + message;
             return message;
         }         
     }
