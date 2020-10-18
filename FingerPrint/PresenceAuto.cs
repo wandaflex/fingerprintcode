@@ -175,8 +175,8 @@ namespace FingerPrint
                                         {
                                             using (MySqlConnection mySqlCon3 = new MySqlConnection(connectionString))
                                             {
-                                                Console.WriteLine(heureDebut_Programme - timeNow);
-                                                if ((heureDebut_Programme - timeNow) <= TimeSpan.Parse("00:40:00") || (timeNow-heureDebut_Programme ) <= TimeSpan.Parse("00:40:00"))
+                                                Console.WriteLine(timeNow - heureDebut_Programme);
+                                                if ((timeNow - heureDebut_Programme) <= TimeSpan.Parse("00:40:00") || (time5Now - heureDebut_Programme) >= TimeSpan.Parse("-00:40:00"))
                                                 {
                                                     Console.WriteLine(heureDebut_Programme - timeNow);
                                                     using (MySqlConnection mySqlCon4 = new MySqlConnection(connectionString))
@@ -186,7 +186,7 @@ namespace FingerPrint
                                                             mySqlCon4.Open();
 
                                                             int userCount = Convert.ToInt32(mySqlCommand.ExecuteScalar());
-                                                            
+                                                             
                                                             if (RBN_Heure_Debut.Checked == true)
                                                             {
                                                                 Console.WriteLine(dateProg + " " + profID + " " + pmProfID + " " + heureDebut_Programme + " " + heureFin_Programme);
@@ -199,13 +199,13 @@ namespace FingerPrint
                                                                         mySqlCon3.Open();
                                                                         mySqlCmd3.CommandType = CommandType.Text;
                                                                         mySqlCmd3.ExecuteReader();
-                                                                    if (heureDebut_Programme > timeNow)
+                                                                    if (heureDebut_Programme >= timeNow)
                                                                     {
                                                                         message = $"PRESENCE OK {heureDebut_Programme}";
                                                                     }
                                                                     else
                                                                     {
-                                                                        message = $"Retard {heureDebut_Programme - timeNow}";
+                                                                        message = $"Retard {timeNow - heureDebut_Programme }";
                                                                     }
                                                                     
                                                                     //MessageBox.Show("heure de debut enregistrer avec succes");
