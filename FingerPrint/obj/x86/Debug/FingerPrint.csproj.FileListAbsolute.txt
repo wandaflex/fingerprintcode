@@ -105,10 +105,6 @@ C:\Users\Raoul\Documents\FinguerPrintCodeFinal\FingerPrint\bin\Debug\FingerPrint
 C:\Users\Raoul\Documents\FinguerPrintCodeFinal\FingerPrint\bin\Debug\FingerPrint.exe
 C:\Users\Raoul\Documents\FinguerPrintCodeFinal\FingerPrint\bin\Debug\FingerPrint.pdb
 C:\Users\Raoul\Documents\FinguerPrintCodeFinal\FingerPrint\bin\Debug\MySql.Data.dll
-C:\Users\Raoul\Documents\FinguerPrintCodeFinal\FingerPrint\bin\Debug\Google.Protobuf.dll
-C:\Users\Raoul\Documents\FinguerPrintCodeFinal\FingerPrint\bin\Debug\BouncyCastle.Crypto.dll
-C:\Users\Raoul\Documents\FinguerPrintCodeFinal\FingerPrint\bin\Debug\Ubiety.Dns.Core.dll
-C:\Users\Raoul\Documents\FinguerPrintCodeFinal\FingerPrint\bin\Debug\Renci.SshNet.dll
 C:\Users\Raoul\Documents\FinguerPrintCodeFinal\FingerPrint\bin\Debug\MySql.Data.xml
 C:\Users\Raoul\Documents\FinguerPrintCodeFinal\FingerPrint\obj\x86\Debug\FingerPrint.Admistrateur.resources
 C:\Users\Raoul\Documents\FinguerPrintCodeFinal\FingerPrint\obj\x86\Debug\FingerPrint.EmploieDeTempsForm.resources
