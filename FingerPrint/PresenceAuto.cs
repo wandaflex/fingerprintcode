@@ -201,7 +201,7 @@ namespace FingerPrint
                                                                         mySqlCmd3.ExecuteReader();
                                                                     if (heureDebut_Programme > timeNow)
                                                                     {
-                                                                        message = $"OK {heureDebut_Programme}";
+                                                                        message = $"PRESENCE OK {heureDebut_Programme}";
                                                                     }
                                                                     else
                                                                     {
@@ -235,12 +235,12 @@ namespace FingerPrint
                                                                             mySqlCmd3.CommandType = CommandType.Text;
                                                                             mySqlCmd3.ExecuteReader();
 
-                                                                            message = "HFin OK";
+                                                                            message = "Heure Fin OK";
                                                                             //MessageBox.Show("heure fin enregistrer avec succes");
                                                                         }
                                                                         else
                                                                         {
-                                                                            message = "HFin Extiste";
+                                                                            message = "Hr Fin Extiste";
                                                                             //MessageBox.Show("HEure de fin deja enregistrer exite deja");
                                                                         }
 
@@ -273,7 +273,7 @@ namespace FingerPrint
                     }
                     if(professeurTrouve == false)
                     {
-                        message = "NON Programmer";
+                        message = "PROF NON Programmer";
                         MessageBox.Show(message);
                     }
                 }
