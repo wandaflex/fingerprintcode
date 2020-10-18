@@ -182,7 +182,7 @@ namespace FingerPrint
                                             {
                                                 Console.WriteLine(timeNow - heureDebut_Programme);
                                                 //if ((timeNow - heureDebut_Programme) <= TimeSpan.Parse("00:40:00") || (timeNow - heureDebut_Programme) >= TimeSpan.Parse("-00:40:00"))
-                                                if (( TimeBetween(TimeSpan.Parse("00:40:00"), (timeNow - heureDebut_Programme), (heureDebut_Programme - timeNow)))  && ((timeNow - heureDebut_Programme) > TimeSpan.Parse("00:00:00")) )
+                                                if (( TimeBetween(TimeSpan.Parse("00:40:00"), (timeNow - heureDebut_Programme), (heureDebut_Programme - timeNow)))  && ((timeNow - heureDebut_Programme) < TimeSpan.Parse("-00:40:00")) )
                                                 
                                                 {
                                                     Console.WriteLine(heureDebut_Programme - timeNow);
