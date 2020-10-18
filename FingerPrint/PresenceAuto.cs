@@ -66,10 +66,6 @@ namespace FingerPrint
                         {
                             LSV_Rcev.Items.Add(received.Message);
 
-                            //invoca methode prise presence auto
-                            //presenceAutomatique("aaaa",DateTime.Now);
-
-                           
                         }
                         ));
 
@@ -216,7 +212,7 @@ namespace FingerPrint
                                                                     }
                                                                     else
                                                                     { //si h de fin fin deja enregistrer                                                                   
-                                                                    message = "Presence Extiste";
+                                                                    message = "Presence Existe";
                                                                     //MessageBox.Show("presence exite deja");
                                                                     }
 
@@ -277,7 +273,7 @@ namespace FingerPrint
                     }
                     if(professeurTrouve == false)
                     {
-                        message = "NON_Programmer";
+                        message = "NON Programmer";
                         MessageBox.Show(message);
                     }
                 }
@@ -285,7 +281,7 @@ namespace FingerPrint
             catch (Exception ex)
             {
                 
-                message = "Error_Message ";
+                message = "Error Message ";
                 //MessageBox.Show(ex.ToString(), );
             }
 
