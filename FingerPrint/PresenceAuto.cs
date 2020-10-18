@@ -73,6 +73,11 @@ namespace FingerPrint
                         {
                             message = presenceAutomatique(received.Message, dateNow);
                             client.Send(message);
+                            LSV_Rcev.Invoke(new MethodInvoker(delegate
+                            {
+                                LSV_Rcev.Items.Add(message);
+                            }
+                            ));
                         }
 
                         if (received.Message.Contains("QUIT"))
@@ -176,7 +181,7 @@ namespace FingerPrint
                                             using (MySqlConnection mySqlCon3 = new MySqlConnection(connectionString))
                                             {
                                                 Console.WriteLine(timeNow - heureDebut_Programme);
-                                                if ((timeNow - heureDebut_Programme) <= TimeSpan.Parse("00:40:00") || (time5Now - heureDebut_Programme) >= TimeSpan.Parse("-00:40:00"))
+                                                if ((timeNow - heureDebut_Programme) <= TimeSpan.Parse("00:40:00") || (timeNow - heureDebut_Programme) >= TimeSpan.Parse("-00:40:00"))
                                                 {
                                                     Console.WriteLine(heureDebut_Programme - timeNow);
                                                     using (MySqlConnection mySqlCon4 = new MySqlConnection(connectionString))
@@ -201,7 +206,7 @@ namespace FingerPrint
                                                                         mySqlCmd3.ExecuteReader();
                                                                     if (heureDebut_Programme >= timeNow)
                                                                     {
-                                                                        message = $"PRESENCE OK {heureDebut_Programme}";
+                                                                        message = $"OK {heureDebut_Programme}";
                                                                     }
                                                                     else
                                                                     {
@@ -285,7 +290,7 @@ namespace FingerPrint
                 //MessageBox.Show(ex.ToString(), );
             }
 
-            message = "WANDA_WDFPRES_" + message;
+            message = "WDF_" + message;
             return message;
         }         
     }
