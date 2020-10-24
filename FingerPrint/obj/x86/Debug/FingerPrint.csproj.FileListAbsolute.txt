@@ -101,11 +101,13 @@ C:\Users\Raoul\Documents\NewFingerPRint\FingerPrint\obj\x86\Debug\FingerPrint.cs
 C:\Users\Raoul\Documents\NewFingerPRint\FingerPrint\obj\x86\Debug\FingerPrint.exe
 C:\Users\Raoul\Documents\NewFingerPRint\FingerPrint\obj\x86\Debug\FingerPrint.pdb
 C:\Users\Raoul\Documents\NewFingerPRint\FingerPrint\obj\x86\Debug\FingerPrint.csprojAssemblyReference.cache
+C:\Users\USer\Documents\ProjetGit\fingerprintcode\FingerPrint\obj\x86\Debug\FingerPrint.PresenceAuto.resources
 C:\Users\Raoul\Documents\FinguerPrintCodeFinal\FingerPrint\bin\Debug\FingerPrint.exe.config
 C:\Users\Raoul\Documents\FinguerPrintCodeFinal\FingerPrint\bin\Debug\FingerPrint.exe
 C:\Users\Raoul\Documents\FinguerPrintCodeFinal\FingerPrint\bin\Debug\FingerPrint.pdb
 C:\Users\Raoul\Documents\FinguerPrintCodeFinal\FingerPrint\bin\Debug\MySql.Data.dll
 C:\Users\Raoul\Documents\FinguerPrintCodeFinal\FingerPrint\bin\Debug\MySql.Data.xml
+C:\Users\Raoul\Documents\FinguerPrintCodeFinal\FingerPrint\obj\x86\Debug\FingerPrint.csprojAssemblyReference.cache
 C:\Users\Raoul\Documents\FinguerPrintCodeFinal\FingerPrint\obj\x86\Debug\FingerPrint.Admistrateur.resources
 C:\Users\Raoul\Documents\FinguerPrintCodeFinal\FingerPrint\obj\x86\Debug\FingerPrint.EmploieDeTempsForm.resources
 C:\Users\Raoul\Documents\FinguerPrintCodeFinal\FingerPrint\obj\x86\Debug\FingerPrint.EmploieDeTempsViewForm.resources
@@ -119,5 +121,3 @@ C:\Users\Raoul\Documents\FinguerPrintCodeFinal\FingerPrint\obj\x86\Debug\FingerP
 C:\Users\Raoul\Documents\FinguerPrintCodeFinal\FingerPrint\obj\x86\Debug\FingerPrint.csproj.CopyComplete
 C:\Users\Raoul\Documents\FinguerPrintCodeFinal\FingerPrint\obj\x86\Debug\FingerPrint.exe
 C:\Users\Raoul\Documents\FinguerPrintCodeFinal\FingerPrint\obj\x86\Debug\FingerPrint.pdb
-C:\Users\Raoul\Documents\FinguerPrintCodeFinal\FingerPrint\obj\x86\Debug\FingerPrint.csprojAssemblyReference.cache
-C:\Users\USer\Documents\ProjetGit\fingerprintcode\FingerPrint\obj\x86\Debug\FingerPrint.PresenceAuto.resources

@@ -121,6 +121,8 @@ namespace FingerPrint
             string message = "";
 
             bool professeurTrouve = false;
+            bool programmeTrouve = false;
+
             try
             {
                 using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
@@ -208,16 +210,18 @@ namespace FingerPrint
                                                                         mySqlCon3.Open();
                                                                         mySqlCmd3.CommandType = CommandType.Text;
                                                                         mySqlCmd3.ExecuteReader();
-                                                                    if (heureDebut_Programme >= timeNow)
-                                                                    {
-                                                                        message = $"OK {heureDebut_Programme}";
-                                                                    }
-                                                                    else
-                                                                    {
-                                                                        message = $"Retard {timeNow - heureDebut_Programme }";
-                                                                    }
+                                                                        programmeTrouve = true;
+
+                                                                        if (heureDebut_Programme >= timeNow)
+                                                                        {
+                                                                            message = $"OK {heureDebut_Programme}";
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            message = $"Retard {timeNow - heureDebut_Programme }";
+                                                                        }
                                                                     
-                                                                    //MessageBox.Show("heure de debut enregistrer avec succes");
+                                                                        //MessageBox.Show("heure de debut enregistrer avec succes");
                                                                     }
                                                                     else
                                                                     { //si h de fin fin deja enregistrer                                                                   
@@ -266,10 +270,10 @@ namespace FingerPrint
                                                         }
                                                     }
                                                 }
-                                                else
-                                                {
-                                                    message = "retard > 40mn";
-                                                }
+                                                //else
+                                                //{
+                                                //    programmeTrouve == false
+                                                //}
                                                
                                             }
                                         }
@@ -284,6 +288,10 @@ namespace FingerPrint
                     {
                         message = "PROF NON Programmer";
                         MessageBox.Show(message);
+                    }
+                    if (programmeTrouve == false)
+                    {
+                        message = "retard > 40mn";
                     }
                 }
             }
