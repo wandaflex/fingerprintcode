@@ -1288,5 +1288,23 @@ namespace FingerPrint
             Diagnostic oGdiagnostic = new Diagnostic();
             oGdiagnostic.Show();
         }
+
+        private void DGV_ListePresence_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (DGV_ListePresence.CurrentRow.Index != -1)
+            {
+                //DTP_Programme.Value = DGV_ListeProgramme.CurrentRow.Cells[1].Value.ToString();
+
+                TXB_HeureDebutPres.Text = DGV_ListePresence.CurrentRow.Cells[3].Value.ToString();
+                TXB_HeureFinPres.Text = DGV_ListePresence.CurrentRow.Cells[4].Value.ToString();
+                DTP_Presence.Value = DateTime.Parse(DGV_ListePresence.CurrentRow.Cells[2].Value.ToString());
+
+                CBX_SelectNomProg.Text = DGV_ListePresence.CurrentRow.Cells[1].Value.ToString();                
+
+                presenceID = Convert.ToInt32(DGV_ListePresence.CurrentRow.Cells[0].Value.ToString());
+
+                BTN_EnregisterPresence.Text = "Modifier";
+            }
+        }
     }
 }
