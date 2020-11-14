@@ -80,6 +80,16 @@ namespace FingerPrint
                             ));
                         }
 
+                        if (received.Message.Contains("Wakeup"))
+                        {                            
+                            client.Send("Hi");
+                            LSV_Rcev.Invoke(new MethodInvoker(delegate
+                            {
+                                LSV_Rcev.Items.Add(received.Message);
+                            }
+                            ));
+                        }
+
                         if (received.Message.Contains("QUIT"))
                         {
                             LBL_Connect.Invoke(new MethodInvoker(delegate
@@ -121,8 +131,10 @@ namespace FingerPrint
             string message = "";
 
             bool professeurTrouve = false;
-            bool programmeTrouve = false;
-
+            string programmeTrouve = "";
+            string idDifferent = "";
+            string timeOut = "";
+            bool quitter = false;
             try
             {
                 using (MySqlConnection mySqlCon = new MySqlConnection(connectionString))
@@ -135,6 +147,8 @@ namespace FingerPrint
 
                     while (professeurs.Read())
                     {
+                        
+
                         profID = int.Parse(professeurs.GetString("idPROFESSEUR"));
                         profNom = professeurs.GetString("Nom");
                         empreinte_1 = professeurs.GetString("Empreinte_1");
@@ -164,6 +178,7 @@ namespace FingerPrint
                                 MySqlDataReader reader2 = mySqlCmd2.ExecuteReader();
                                 while (reader2.Read())
                                 {
+                                    
 
                                     TimeSpan timeNow = TimeSpan.Parse(dateNow.ToString("HH:mm"));
                                     //DateTime 
@@ -180,6 +195,7 @@ namespace FingerPrint
                                     {
                                         if(profID == pmProfID)
                                         {
+                                            idDifferent = "non";
                                             using (MySqlConnection mySqlCon3 = new MySqlConnection(connectionString))
                                             {
                                                 Console.WriteLine(timeNow - heureDebut_Programme);
@@ -210,23 +226,31 @@ namespace FingerPrint
                                                                         mySqlCon3.Open();
                                                                         mySqlCmd3.CommandType = CommandType.Text;
                                                                         mySqlCmd3.ExecuteReader();
-                                                                        programmeTrouve = true;
+                                                                        programmeTrouve = "ok";
 
                                                                         if (heureDebut_Programme >= timeNow)
                                                                         {
                                                                             message = $"OK {heureDebut_Programme}";
+                                                                        quitter = true;
+                                                                         // quitter = true;
                                                                         }
                                                                         else
                                                                         {
                                                                             message = $"Retard {timeNow - heureDebut_Programme }";
-                                                                        }                                                                    
+                                                                        quitter = true;
+                                                                         // quitter = true;
+
+                                                                        }
+                                                                    
                                                                         //MessageBox.Show("heure de debut enregistrer avec succes");
                                                                     }
                                                                     else
                                                                     { //si h de fin fin deja enregistrer                                                                   
                                                                     message = "Presence Existe";
+                                                                    quitter = true;
+                                                                     // quitter = true;
                                                                     //MessageBox.Show("presence exite deja");
-                                                                    }
+                                                                }
 
                                                             }
                                                             else if (RBN_Heure_Fin.Checked == true)
@@ -238,7 +262,7 @@ namespace FingerPrint
                                                                         mySqlCon5.Open();
 
                                                                         int userCountUP = Convert.ToInt32(mySqlCommandUpdat.ExecuteScalar());
-
+                                                                        Console.WriteLine($"{userCount} != 0 && {userCountUP}");
                                                                         if (userCount != 0 && userCountUP != 0)
                                                                         {
                                                                             string querry = $"UPDATE presence SET HeureFin = \"{timeNow}\" where PROGRAMMES_idPROGRAMMES = \"{progIDProgramme}\"";
@@ -246,13 +270,19 @@ namespace FingerPrint
                                                                             mySqlCon3.Open();
                                                                             mySqlCmd3.CommandType = CommandType.Text;
                                                                             mySqlCmd3.ExecuteReader();
+                                                                            programmeTrouve = "ok";
 
                                                                             message = "Heure Fin OK";
+                                                                            quitter = true;
+                                                                            
+
                                                                             //MessageBox.Show("heure fin enregistrer avec succes");
                                                                         }
                                                                         else
                                                                         {
                                                                             message = "Hr Fin Extiste";
+                                                                            quitter = true;
+                                                                           
                                                                             //MessageBox.Show("HEure de fin deja enregistrer exite deja");
                                                                         }
 
@@ -269,29 +299,65 @@ namespace FingerPrint
                                                         }
                                                     }
                                                 }
-                                                //else
-                                                //{
-                                                //    programmeTrouve == false
-                                                //}
-                                               
+                                                else//temps 40
+                                                {
+                                                    if (message != string.Empty)  
+                                                         timeOut = "non";
+                                                }
+
                                             }
+                                        }//id !=
+                                        else
+                                        {
+                                            idDifferent = "oui";
+                                            //quitter = true;
                                         }
-                                        
                                     }
+                                    else
+                                    {
+                                        programmeTrouve = "non";
+                                    }
+
+                                if (quitter == true)
+                                {
+                                    break;
+                                }
+
                                 }
                             }
-                        }                      
+                        }
 
+                        if (quitter == true)
+                        {
+                            break;
+                        }
                     }
-                    if(professeurTrouve == false)
+
+                    Console.WriteLine(message +"   "+ quitter + "PT "+ professeurTrouve+ " pgt " + programmeTrouve + " to" + timeOut);
+                    if (idDifferent == "oui")
+                        message = "NON PROGRAMMER";
+
+                    if (message != "" && quitter != true)
                     {
-                        message = "PROF NON Programmer";
-                        MessageBox.Show(message);
+                        if (professeurTrouve == false)
+                        {
+
+                            message = "PROF NON Trouver";
+                            // MessageBox.Show(message);
+                        }
+
+                        if (programmeTrouve == "non")
+                        {
+                            message = "NON PROGRAMMER";// "Temps >> 40 mins";
+                        }
+
+                        if (timeOut == "non")
+                        {
+                            message = "Temps >> 40 mins";// "Temps >> 40 mins";
+                        }
                     }
-                    if (programmeTrouve == false)
-                    {
-                        message = "retard > 40mn";
-                    }
+                       
+
                 }
             }
             catch (Exception ex)
