@@ -219,8 +219,7 @@ namespace FingerPrint
                                                                         else
                                                                         {
                                                                             message = $"Retard {timeNow - heureDebut_Programme }";
-                                                                        }
-                                                                    
+                                                                        }                                                                    
                                                                         //MessageBox.Show("heure de debut enregistrer avec succes");
                                                                     }
                                                                     else
