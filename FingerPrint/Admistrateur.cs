@@ -1282,5 +1282,11 @@ namespace FingerPrint
                 MessageBox.Show(ex.Message, "Error message");
             }
         }
+
+        private void BTN_Diag_Click(object sender, EventArgs e)
+        {
+            Diagnostic oGdiagnostic = new Diagnostic();
+            oGdiagnostic.Show();
+        }
     }
 }
