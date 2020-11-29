@@ -271,10 +271,8 @@ namespace FingerPrint
                                                                             mySqlCmd3.CommandType = CommandType.Text;
                                                                             mySqlCmd3.ExecuteReader();
                                                                             programmeTrouve = "ok";
-
                                                                             message = "Heure Fin OK";
-                                                                            quitter = true;
-                                                                            
+                                                                            quitter = true;                                                                           
 
                                                                             //MessageBox.Show("heure fin enregistrer avec succes");
                                                                         }
@@ -360,7 +358,7 @@ namespace FingerPrint
 
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 
                 message = "Error Message ";

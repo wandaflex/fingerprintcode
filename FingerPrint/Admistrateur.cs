@@ -792,7 +792,7 @@ namespace FingerPrint
 
                 programmeID = Convert.ToInt32(DGV_ListeProgramme.CurrentRow.Cells[0].Value.ToString());
                 
-                //BTN_EnregisterCycle.Text = "Modifier";
+                BTN_EnregisterProg.Text = "Modifier";
             }
 
         }

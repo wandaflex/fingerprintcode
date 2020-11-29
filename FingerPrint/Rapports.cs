@@ -27,10 +27,11 @@ namespace FingerPrint
         private const String TEMP_PAUSE_1 = "00:15:00";
         private const String TEMP_PAUSE_2 = "00:30:00";
         private const int PENALITE_RETARD = 5;
-        private TimeSpan H_DEBUT_PAUSE_1 = TimeSpan.Parse("10:45:00");
-        private TimeSpan H_DEBUT_PAUSE_2 = TimeSpan.Parse("12:30:00");
-        private TimeSpan H_FIN_PAUSE_1 = TimeSpan.Parse("11:00:00");
-        private TimeSpan H_FIN_PAUSE_2 = TimeSpan.Parse("13:00:00");
+        private TimeSpan H_DEBUT_PAUSE_1 = TimeSpan.Parse("10:30:00");        
+        private TimeSpan H_FIN_PAUSE_1 = TimeSpan.Parse("10:45:00");
+
+        private TimeSpan H_DEBUT_PAUSE_2 = TimeSpan.Parse("13:30:00");
+        private TimeSpan H_FIN_PAUSE_2 = TimeSpan.Parse("14:00:00");
 
 
         public Rapports()
@@ -52,8 +53,8 @@ namespace FingerPrint
         {
             string titre = String.Format("{0,-100} {1,-40} {2,-40} {3} \n", "Nom Professeur","Nombre heure premier cycle", " nombre heure second cycle ", "Total a payer");
             resultlabel.Text += titre + "\n\t";
-            DateTime dateDebut = dateTimePicker1.Value ;
-            DateTime dateFin = dateTimePicker2.Value ;
+            string dateDebut = dateTimePicker1.Value.Date.ToString("yyyy-MM-dd") ;
+            string dateFin = dateTimePicker2.Value.Date.ToString("yyyy-MM-dd");
             
             try
             {
@@ -87,10 +88,10 @@ namespace FingerPrint
                             "pm.idPROFESSEUR = pr.idPROFESSEUR and " +
                             "pm.idMATIERE = m.idMATIERE and " +
                             $"pr.idPROFESSEUR = {profID} and " +
-                            //$" pres.date BETWEEN DATE_FORMAT('{dateDebut}','%Y-%m-%d') AND DATE_FORMAT('{dateFin}','%Y-%m-%d') and " +
+                            $" pres.date BETWEEN '{dateDebut}' AND DATE_FORMAT('{dateFin}','%Y-%m-%d') and " +
                             "prg.visible = true and m.visible = true and cl.visible = true";
 
-                            //Console.WriteLine(query2);
+                            Console.WriteLine(query2);
                          
 
                             MySqlCommand mySqlCmd2 = new MySqlCommand(query2, mySqlCon2);
@@ -151,18 +152,51 @@ namespace FingerPrint
             TimeSpan nb_minute =  hFin_presence - hDebut_presence ;
 
             
-            if (hDebut_presence < H_DEBUT_PAUSE_1 && hFin_presence > H_FIN_PAUSE_1)
+            if ((hDebut_presence < H_DEBUT_PAUSE_1) && (hFin_presence > H_FIN_PAUSE_1))
                 nb_minute = nb_minute - TimeSpan.Parse(TEMP_PAUSE_1);
-            if (hDebut_presence < H_DEBUT_PAUSE_2 && hFin_presence > H_FIN_PAUSE_2)
+
+            if ((hDebut_presence < H_DEBUT_PAUSE_2) && (hFin_presence > H_FIN_PAUSE_2))//1
                 nb_minute = nb_minute - TimeSpan.Parse(TEMP_PAUSE_2);
 
             if ((hDebut_presence - hDebut_programme) > TimeSpan.Parse(TOLLERENCE_ABSENCE.ToString()))
+            {
                 nb_minute -= TimeSpan.Parse(PENALITE_RETARD.ToString());
+            }
+            /*
+              
+             if ((hDebut_presence - hDebut_programme > TimeSpan.Parse("00:00:00")) & (hDebut_presence - hDebut_programme < TimeSpan.Parse(TOLLERENCE_ABSENCE.ToString()))){
+                nb_minute = nb_minute - PENALITE_RETARD;
+            }       
+               
+
+	        else if ((heureDebut_Presence - heureDebut_Programme > 0:00:00) & (heureDebut_Presence - heureDebut_Programme >= TollerenceAbsence) 
+								       & (heureDebut_Presence - heureDebut_Programme < TollerenceAbsence*2))
+      
+                nb_minutes = nb_minutes - (PenaliteRetard*2)
+
+	        elseif ((heureDebut_Presence - heureDebut_Programme > 0:00:00) & (heureDebut_Presence - heureDebut_Programme >= TollerenceAbsence*2) 
+	                nb_minutes = nb_minutes - periode // (PenaliteRetard*4) // periode de 55 min equivalent a 1 hr
+                    
+             */
+
+            
 
             if ((hFin_presence - hFin_programme) > TimeSpan.Parse(TOLLERENCE_ABSENCE.ToString()))
                 nb_minute -= TimeSpan.Parse(PENALITE_RETARD.ToString());
 
+            //^^si on punche apres heure considerer heure de fin programme sion conciderer heur de punchage 
+
             Console.WriteLine(nb_minute.TotalMinutes);
+
+            /*
+            string HoursWorkedThisWeek = "50:08"
+            //50 hours and 8 minutes
+            string[] a = HoursWorkedThisWeek.Split(new string[] { ":" }, StringSplitOptions.None);
+            //a[0] contains the hours, a[1] contains the minutes
+            decHours = Math.Round(Convert.ToDecimal(a[0]) + (Convert.ToDecimal(a[1]) / 60), 2);
+            //Result is 50.13
+            */
+
             return (nb_minute.TotalMinutes) / PERIODE;
         }
 
