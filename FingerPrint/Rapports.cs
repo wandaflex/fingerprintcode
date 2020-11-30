@@ -23,15 +23,17 @@ namespace FingerPrint
         private double nombre_Heure_Cycle1 = 0.0;
         private double nombre_Heure_Cycle2 = 0.0;
         private const int PERIODE = 55;
-        private const int TOLLERENCE_ABSENCE = 5;
+        private const String TOLLERENCE_ABSENCE = "00:05:00";
         private const String TEMP_PAUSE_1 = "00:15:00";
         private const String TEMP_PAUSE_2 = "00:30:00";
-        private const int PENALITE_RETARD = 5;
+        private const String PENALITE_RETARD = "00:15:00";
         private TimeSpan H_DEBUT_PAUSE_1 = TimeSpan.Parse("10:30:00");        
         private TimeSpan H_FIN_PAUSE_1 = TimeSpan.Parse("10:45:00");
 
         private TimeSpan H_DEBUT_PAUSE_2 = TimeSpan.Parse("13:30:00");
         private TimeSpan H_FIN_PAUSE_2 = TimeSpan.Parse("14:00:00");
+
+        double total = 0;
 
 
         public Rapports()
@@ -51,7 +53,9 @@ namespace FingerPrint
 
         private void BTN_ValiderRapport_Click(object sender, EventArgs e)
         {
-            string titre = String.Format("{0,-100} {1,-40} {2,-40} {3} \n", "Nom Professeur","Nombre heure premier cycle", " nombre heure second cycle ", "Total a payer");
+
+            resultlabel.Text = "";
+            string titre = String.Format("{0,-100} {1,-30} {2,-30} {3} \n", "Nom Professeur","Nombre heure premier cycle", " nombre heure second cycle ", "Total a payer");
             resultlabel.Text += titre + "\n\t";
             string dateDebut = dateTimePicker1.Value.Date.ToString("yyyy-MM-dd") ;
             string dateFin = dateTimePicker2.Value.Date.ToString("yyyy-MM-dd");
@@ -131,15 +135,20 @@ namespace FingerPrint
                             if(total_a_payer != 0)
                             {
                                 resultlabel.Text += String.Format("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
-                                resultlabel.Text += String.Format("{0,-100} {1,-30} {2,-30} {3:N0} \n", profNom, Math.Round(nombre_Heure_Cycle1), Math.Round(nombre_Heure_Cycle2), Math.Round(total_a_payer));
+                                resultlabel.Text += String.Format("{0,-100} {1,-30} {2,-30} {3:N0} \n", profNom, Math.Round(nombre_Heure_Cycle1,2), Math.Round(nombre_Heure_Cycle2,2), Math.Round(total_a_payer));
                                     //$"{profNom}  = " + Math.Round(total_a_payer) + "\n\t";
                             }
+                            total += total_a_payer;
 
                             nombre_Heure_Cycle1 = 0.0;
                             nombre_Heure_Cycle2 = 0.0;
                         }                        
                     }
+
+                    resultlabel.Text += "\n\n Total A payer  -------------------------------------------------------------------------------------------------    " + total;
                 }
+
+                total = 0;
             }
             catch (Exception ex)
             {
@@ -149,55 +158,55 @@ namespace FingerPrint
 
         public double correctionTemp(TimeSpan hDebut_presence, TimeSpan hFin_presence, TimeSpan hDebut_programme, TimeSpan hFin_programme)
         {
-            TimeSpan nb_minute =  hFin_presence - hDebut_presence ;
+            if ((hFin_presence - hFin_programme) > TimeSpan.Parse("00:02:00"))
+                hFin_presence = hFin_programme;
+            if (hDebut_programme > hDebut_presence)
+                hDebut_presence = hDebut_programme;
 
-            
+            TimeSpan nb_minute =  hFin_presence - hDebut_presence ;
+            Console.WriteLine(nb_minute);
+            Console.WriteLine(hDebut_presence - hDebut_programme);
+            Console.WriteLine(TimeSpan.Parse(TOLLERENCE_ABSENCE.ToString()));
+
+
             if ((hDebut_presence < H_DEBUT_PAUSE_1) && (hFin_presence > H_FIN_PAUSE_1))
                 nb_minute = nb_minute - TimeSpan.Parse(TEMP_PAUSE_1);
 
             if ((hDebut_presence < H_DEBUT_PAUSE_2) && (hFin_presence > H_FIN_PAUSE_2))//1
                 nb_minute = nb_minute - TimeSpan.Parse(TEMP_PAUSE_2);
 
-            if ((hDebut_presence - hDebut_programme) > TimeSpan.Parse(TOLLERENCE_ABSENCE.ToString()))
-            {
-                nb_minute -= TimeSpan.Parse(PENALITE_RETARD.ToString());
-            }
-            /*
-              
-             if ((hDebut_presence - hDebut_programme > TimeSpan.Parse("00:00:00")) & (hDebut_presence - hDebut_programme < TimeSpan.Parse(TOLLERENCE_ABSENCE.ToString()))){
-                nb_minute = nb_minute - PENALITE_RETARD;
-            }       
-               
-
-	        else if ((heureDebut_Presence - heureDebut_Programme > 0:00:00) & (heureDebut_Presence - heureDebut_Programme >= TollerenceAbsence) 
-								       & (heureDebut_Presence - heureDebut_Programme < TollerenceAbsence*2))
-      
-                nb_minutes = nb_minutes - (PenaliteRetard*2)
-
-	        elseif ((heureDebut_Presence - heureDebut_Programme > 0:00:00) & (heureDebut_Presence - heureDebut_Programme >= TollerenceAbsence*2) 
-	                nb_minutes = nb_minutes - periode // (PenaliteRetard*4) // periode de 55 min equivalent a 1 hr
-                    
-             */
-
+            //if ((hDebut_presence - hDebut_programme) > TimeSpan.Parse(TOLLERENCE_ABSENCE.ToString()))
+            //{
+            //    nb_minute -= TimeSpan.Parse(PENALITE_RETARD.ToString());
+            //}
             
+              
+            if ((hDebut_presence - hDebut_programme) > TimeSpan.Parse("00:02:00")) 
+            {
+                if((hDebut_presence - hDebut_programme) < TimeSpan.Parse(PENALITE_RETARD.ToString())){
+                    nb_minute -= TimeSpan.Parse(PENALITE_RETARD.ToString());
+                }
+                else 
+                {
+                    if ((hDebut_presence - hDebut_programme) < TimeSpan.Parse("00:30:00")) {
+                        Console.WriteLine(nb_minute + "-30-------------------------------------------------");
+                        nb_minute -= TimeSpan.Parse("00:30:00");
+                    }
+                    else
+                    {
+                        nb_minute -= TimeSpan.Parse("00:55:00");
+                    }
+                }              
 
-            if ((hFin_presence - hFin_programme) > TimeSpan.Parse(TOLLERENCE_ABSENCE.ToString()))
-                nb_minute -= TimeSpan.Parse(PENALITE_RETARD.ToString());
-
-            //^^si on punche apres heure considerer heure de fin programme sion conciderer heur de punchage 
+            }
+                
 
             Console.WriteLine(nb_minute.TotalMinutes);
+            Console.WriteLine(nb_minute);
 
-            /*
-            string HoursWorkedThisWeek = "50:08"
-            //50 hours and 8 minutes
-            string[] a = HoursWorkedThisWeek.Split(new string[] { ":" }, StringSplitOptions.None);
-            //a[0] contains the hours, a[1] contains the minutes
-            decHours = Math.Round(Convert.ToDecimal(a[0]) + (Convert.ToDecimal(a[1]) / 60), 2);
-            //Result is 50.13
-            */
-
-            return (nb_minute.TotalMinutes) / PERIODE;
+            
+            double temp = Math.Round(((nb_minute.TotalMinutes) / PERIODE), 2);
+            return temp;
         }
 
         private void salairePrintDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
