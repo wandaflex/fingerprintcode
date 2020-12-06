@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,7 +34,14 @@ namespace FingerPrint
         private TimeSpan H_DEBUT_PAUSE_2 = TimeSpan.Parse("13:30:00");
         private TimeSpan H_FIN_PAUSE_2 = TimeSpan.Parse("14:00:00");
 
+        PaperSize paperSize = new PaperSize("papersize", 150, 500);//set the paper size
+        int totalnumber = 0;//this is for total number of items of the list or array
+        int itemperpage = 0;
+        int numberItemsPrinted = 0;
+
         double total = 0;
+
+        
 
 
         public Rapports()
@@ -54,8 +62,8 @@ namespace FingerPrint
         private void BTN_ValiderRapport_Click(object sender, EventArgs e)
         {
 
-            resultlabel.Text = "";
-            string titre = String.Format("{0,-100} {1,-30} {2,-30} {3} \n", "Nom Professeur","Nombre heure premier cycle", " nombre heure second cycle ", "Total a payer");
+            //resultlabel.Text = "";
+            string titre = String.Format("{0,-50} {1,-30} {2,-30} {3} \n", "Nom Professeur","Nombre heure premier cycle", " nombre heure second cycle ", "Total a payer");
             resultlabel.Text += titre + "\n\t";
             string dateDebut = dateTimePicker1.Value.Date.ToString("yyyy-MM-dd") ;
             string dateFin = dateTimePicker2.Value.Date.ToString("yyyy-MM-dd");
@@ -134,8 +142,8 @@ namespace FingerPrint
                             //Console.WriteLine($"Total a payer prof {profNom}  = "+total_a_payer);
                             if(total_a_payer != 0)
                             {
-                                resultlabel.Text += String.Format("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n");
-                                resultlabel.Text += String.Format("{0,-100} {1,-30} {2,-30} {3:N0} \n", profNom, Math.Round(nombre_Heure_Cycle1,2), Math.Round(nombre_Heure_Cycle2,2), Math.Round(total_a_payer));
+                                resultlabel.Text += String.Format("\n------------------------------------------------------------------------------------------------------------------------------\n");
+                                resultlabel.Text += String.Format("{0,-50} {1,-30} {2,-30} {3:N0} \n", profNom, Math.Round(nombre_Heure_Cycle1,2), Math.Round(nombre_Heure_Cycle2,2), Math.Round(total_a_payer));
                                     //$"{profNom}  = " + Math.Round(total_a_payer) + "\n\t";
                             }
                             total += total_a_payer;
@@ -145,8 +153,10 @@ namespace FingerPrint
                         }                        
                     }
 
-                    resultlabel.Text += "\n\n Total A payer  --------------------------------------------------------------------------------------------------------    " + total;
+                    resultlabel.Text += "\n\n Total A payer  ---------------------------------------------------------------------------------------------------------------------  " + total +"\n";
                 }
+
+                resultTextBox.Text = resultlabel.Text;
 
                 total = 0;
             }
@@ -189,7 +199,7 @@ namespace FingerPrint
                 else 
                 {
                     if ((hDebut_presence - hDebut_programme) < TimeSpan.Parse("00:30:00")) {
-                        Console.WriteLine(nb_minute + "-30-------------------------------------------------");
+                        //Console.WriteLine(nb_minute + "    -30-------------------------------------------------");
                         nb_minute -= TimeSpan.Parse("00:30:00");
                     }
                     else
@@ -222,7 +232,7 @@ namespace FingerPrint
 
             // Mesurer le titre
 
-            string titreString = "Des De salaire des enseignants";
+            string titreString = "Liste de salaire des enseignants";
             float largeurTitreFloat = e.Graphics.MeasureString(titreString, enteteFont).Width;
 
             // Position initiale du crayon : Coin supérieur gauche à l'intérieur des marges
@@ -245,21 +255,45 @@ namespace FingerPrint
             yFloat += hauteurPoliceEnteteFloat * 2.0F;
             xFloat -= e.MarginBounds.X;
 
-            e.Graphics.DrawString(resultlabel.Text, detailFont, Brushes.Black, xFloat, yFloat);
+            //e.Graphics.DrawString(resultlabel.Text, detailFont, Brushes.Black, xFloat, yFloat);
 
-            //yFloat += 
-            //foreach (string villesString in villesComboBox.Items)
-            //{
-            //    // Imprimer la ville
+            //yFloat +=
+            for (int i = numberItemsPrinted; i < resultTextBox.Lines.Count(); i++)
+            //foreach (string ligneString in resultTextBox.Lines)
+            {
 
-            //    e.Graphics.DrawString(villesString, detailFont, Brushes.Red, xFloat, yFloat);
+                numberItemsPrinted++;
+                // Imprimer la ville
+                if (numberItemsPrinted <= resultTextBox.Lines.Count())
+                {
+                    e.Graphics.DrawString(resultTextBox.Lines[i], detailFont, Brushes.Black, xFloat, yFloat);
 
-            //    // Descendre le crayon verticalement
+                    // Descendre le crayon verticalement
 
-            //    yFloat += hauteurPoliceDetailFloat;
-            //}
+                    yFloat += hauteurPoliceDetailFloat;
+                }
+                else
+                {
+                    e.HasMorePages = false;
+                }
+               
 
-            e.HasMorePages = true;
+                Console.WriteLine(resultTextBox.Lines[i]);
+                if (itemperpage < 50) // check whether  the number of item(per page) is more than 20 or not
+                {
+                    itemperpage += 1; // increment itemperpage by 1
+                    Console.WriteLine(itemperpage);
+                    e.HasMorePages = false; // set the HasMorePages property to false , so that no other page will not be added
+                }
+                else // if the number of item(per page) is more than 20 then add one page
+                {
+                    itemperpage = 0; //initiate itemperpage to 0 .
+                    e.HasMorePages = true; //e.HasMorePages raised the PrintPage event once per page .
+                    return;//It will call PrintPage event again
+                }
+            }
+
+            //e.HasMorePages = true;
 
         }
 
@@ -270,11 +304,19 @@ namespace FingerPrint
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(resultlabel.Text);
+            itemperpage = 0;
+            numberItemsPrinted = 0;
+            Console.WriteLine(resultTextBox.Lines.Count());
             //salairePrintDocument.DefaultPageSettings.PaperSize = 2;
             salairePrintPreviewDialog.ShowDialog();
 
             Console.WriteLine(resultlabel.Text);
+            //Console.WriteLine(resultTextBox.Lines[60]);
+        }
+
+        private void resultTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
