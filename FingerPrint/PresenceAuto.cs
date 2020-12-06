@@ -134,6 +134,7 @@ namespace FingerPrint
             string programmeTrouve = "";
             string idDifferent = "";
             string timeOut = "";
+            String tolerenceRetard = "00:10:00";
             bool quitter = false;
             try
             {
@@ -199,11 +200,12 @@ namespace FingerPrint
                                             using (MySqlConnection mySqlCon3 = new MySqlConnection(connectionString))
                                             {
                                                 Console.WriteLine(timeNow - heureDebut_Programme);
+                                                
                                                 //if ((timeNow - heureDebut_Programme) <= TimeSpan.Parse("00:40:00") || (timeNow - heureDebut_Programme) >= TimeSpan.Parse("-00:40:00"))
                                                 //if (( TimeBetween(TimeSpan.Parse("00:40:00"), (timeNow - heureDebut_Programme), (heureDebut_Programme - timeNow)))  && ((timeNow - heureDebut_Programme) < TimeSpan.Parse("-00:40:00")) )
 
 
-                                                if ((timeNow - heureDebut_Programme) <= TimeSpan.Parse("00:40:00") && (timeNow - heureDebut_Programme) >= TimeSpan.Parse("-00:40:00"))
+                                                if (((timeNow - heureDebut_Programme) <= TimeSpan.Parse(tolerenceRetard) && (timeNow - heureDebut_Programme) >= TimeSpan.Parse($"-{tolerenceRetard}")) || ((timeNow - heureFin_Programme) <= TimeSpan.Parse(tolerenceRetard) && (timeNow - heureFin_Programme) >= TimeSpan.Parse($"-{tolerenceRetard}")))
                                                 {
                                                     Console.WriteLine(heureDebut_Programme - timeNow);
                                                     using (MySqlConnection mySqlCon4 = new MySqlConnection(connectionString))
@@ -325,10 +327,10 @@ namespace FingerPrint
                             }
                         }
 
-                        if (quitter == true)
-                        {
-                            break;
-                        }
+                    if (quitter == true)
+                    {
+                        break;
+                    }
                     }
 
                     Console.WriteLine(message +"   "+ quitter + "PT "+ professeurTrouve+ " pgt " + programmeTrouve + " to" + timeOut);
