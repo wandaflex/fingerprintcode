@@ -238,6 +238,7 @@
             // BTN_Aide
             // 
             this.BTN_Aide.BackColor = System.Drawing.SystemColors.Info;
+            this.BTN_Aide.Enabled = false;
             this.BTN_Aide.Location = new System.Drawing.Point(901, 574);
             this.BTN_Aide.Name = "BTN_Aide";
             this.BTN_Aide.Size = new System.Drawing.Size(133, 23);
@@ -247,6 +248,7 @@
             // 
             // BTN_Quitter
             // 
+            this.BTN_Quitter.Enabled = false;
             this.BTN_Quitter.Location = new System.Drawing.Point(901, 603);
             this.BTN_Quitter.Name = "BTN_Quitter";
             this.BTN_Quitter.Size = new System.Drawing.Size(133, 27);
@@ -931,6 +933,7 @@
             this.TXB_RechercheAdmin.Name = "TXB_RechercheAdmin";
             this.TXB_RechercheAdmin.Size = new System.Drawing.Size(537, 20);
             this.TXB_RechercheAdmin.TabIndex = 7;
+            this.TXB_RechercheAdmin.TextChanged += new System.EventHandler(this.BTN_RechercheAdmin_Click);
             // 
             // BTN_RechercheAdmin
             // 
@@ -1311,6 +1314,7 @@
             this.BTN_AnnulerMatiere.TabIndex = 11;
             this.BTN_AnnulerMatiere.Text = "Annuler";
             this.BTN_AnnulerMatiere.UseVisualStyleBackColor = true;
+            this.BTN_AnnulerMatiere.Click += new System.EventHandler(this.BTN_AnnulerMatiere_Click);
             // 
             // BTN_SupprimerMatiere
             // 
@@ -1854,6 +1858,7 @@
             // 
             // button2
             // 
+            this.button2.Enabled = false;
             this.button2.Location = new System.Drawing.Point(900, 138);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(133, 37);
@@ -1895,6 +1900,7 @@
             // BTN_Diag
             // 
             this.BTN_Diag.BackColor = System.Drawing.Color.Coral;
+            this.BTN_Diag.Enabled = false;
             this.BTN_Diag.Location = new System.Drawing.Point(901, 640);
             this.BTN_Diag.Name = "BTN_Diag";
             this.BTN_Diag.Size = new System.Drawing.Size(134, 27);

@@ -37,22 +37,25 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.GBX_ListeRapport = new System.Windows.Forms.GroupBox();
-            this.resultTextBox = new System.Windows.Forms.TextBox();
-            this.resultlabel = new System.Windows.Forms.Label();
             this.Recherche_Rapport = new System.Windows.Forms.GroupBox();
             this.TBX_RechercheRapport = new System.Windows.Forms.TextBox();
             this.BTN_RechercheRapport = new System.Windows.Forms.Button();
             this.salairePrintPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.salairePrintDocument = new System.Drawing.Printing.PrintDocument();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.DGV_salaire = new System.Windows.Forms.DataGridView();
+            this.NomProfesseur = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreHeur = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GBX_FormRapport.SuspendLayout();
             this.GBX_ListeRapport.SuspendLayout();
             this.Recherche_Rapport.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_salaire)).BeginInit();
             this.SuspendLayout();
             // 
             // GBX_FormRapport
             // 
-            this.GBX_FormRapport.Controls.Add(this.button1);
             this.GBX_FormRapport.Controls.Add(this.LBL_DateFinRapport);
             this.GBX_FormRapport.Controls.Add(this.LBL_DateDebutRaport);
             this.GBX_FormRapport.Controls.Add(this.BTN_ValiderRapport);
@@ -67,7 +70,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(641, 17);
+            this.button1.Location = new System.Drawing.Point(647, 431);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 5;
@@ -120,8 +123,8 @@
             // 
             // GBX_ListeRapport
             // 
-            this.GBX_ListeRapport.Controls.Add(this.resultTextBox);
-            this.GBX_ListeRapport.Controls.Add(this.resultlabel);
+            this.GBX_ListeRapport.Controls.Add(this.button1);
+            this.GBX_ListeRapport.Controls.Add(this.DGV_salaire);
             this.GBX_ListeRapport.Location = new System.Drawing.Point(13, 189);
             this.GBX_ListeRapport.Name = "GBX_ListeRapport";
             this.GBX_ListeRapport.Size = new System.Drawing.Size(766, 460);
@@ -129,25 +132,6 @@
             this.GBX_ListeRapport.TabStop = false;
             this.GBX_ListeRapport.Text = "Liste Rapport";
             this.GBX_ListeRapport.Enter += new System.EventHandler(this.GBX_ListeRapport_Enter);
-            // 
-            // resultTextBox
-            // 
-            this.resultTextBox.Location = new System.Drawing.Point(13, 33);
-            this.resultTextBox.Multiline = true;
-            this.resultTextBox.Name = "resultTextBox";
-            this.resultTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.resultTextBox.Size = new System.Drawing.Size(747, 412);
-            this.resultTextBox.TabIndex = 1;
-            this.resultTextBox.TextChanged += new System.EventHandler(this.resultTextBox_TextChanged);
-            // 
-            // resultlabel
-            // 
-            this.resultlabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.resultlabel.Location = new System.Drawing.Point(13, 16);
-            this.resultlabel.Name = "resultlabel";
-            this.resultlabel.Size = new System.Drawing.Size(733, 14);
-            this.resultlabel.TabIndex = 0;
-            this.resultlabel.Visible = false;
             // 
             // Recherche_Rapport
             // 
@@ -197,6 +181,51 @@
             // 
             this.printDialog1.UseEXDialog = true;
             // 
+            // DGV_salaire
+            // 
+            this.DGV_salaire.AllowUserToAddRows = false;
+            this.DGV_salaire.AllowUserToDeleteRows = false;
+            this.DGV_salaire.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_salaire.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NomProfesseur,
+            this.NombreHeur,
+            this.Column2,
+            this.Column3});
+            this.DGV_salaire.Location = new System.Drawing.Point(6, 19);
+            this.DGV_salaire.Name = "DGV_salaire";
+            this.DGV_salaire.ReadOnly = true;
+            this.DGV_salaire.Size = new System.Drawing.Size(747, 380);
+            this.DGV_salaire.TabIndex = 2;
+            this.DGV_salaire.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // NomProfesseur
+            // 
+            this.NomProfesseur.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NomProfesseur.HeaderText = "Non Professeur";
+            this.NomProfesseur.Name = "NomProfesseur";
+            this.NomProfesseur.ReadOnly = true;
+            // 
+            // NombreHeur
+            // 
+            this.NombreHeur.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NombreHeur.HeaderText = "Nombre Heure Cycle1";
+            this.NombreHeur.Name = "NombreHeur";
+            this.NombreHeur.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.HeaderText = "Nombre Heure Cycle2";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column3.HeaderText = "Total A Payer";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
             // Rapports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -210,9 +239,9 @@
             this.GBX_FormRapport.ResumeLayout(false);
             this.GBX_FormRapport.PerformLayout();
             this.GBX_ListeRapport.ResumeLayout(false);
-            this.GBX_ListeRapport.PerformLayout();
             this.Recherche_Rapport.ResumeLayout(false);
             this.Recherche_Rapport.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_salaire)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -231,9 +260,12 @@
         private System.Windows.Forms.Label LBL_DateDebutRaport;
         private System.Windows.Forms.PrintPreviewDialog salairePrintPreviewDialog;
         private System.Drawing.Printing.PrintDocument salairePrintDocument;
-        private System.Windows.Forms.Label resultlabel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PrintDialog printDialog1;
-        private System.Windows.Forms.TextBox resultTextBox;
+        private System.Windows.Forms.DataGridView DGV_salaire;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomProfesseur;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreHeur;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     }
 }

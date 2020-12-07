@@ -1306,5 +1306,10 @@ namespace FingerPrint
                 BTN_EnregisterPresence.Text = "Modifier";
             }
         }
+
+        private void BTN_AnnulerMatiere_Click(object sender, EventArgs e)
+        {
+            cleanForm(GBX_FormMatiere, ref matiereID, BTN_EnregisterMatiere);
+        }
     }
 }

@@ -61,10 +61,10 @@ namespace FingerPrint
 
         private void BTN_ValiderRapport_Click(object sender, EventArgs e)
         {
-
+            DGV_salaire.Rows.Clear();
             //resultlabel.Text = "";
             string titre = String.Format("{0,-50} {1,-30} {2,-30} {3} \n", "Nom Professeur","Nombre heure premier cycle", " nombre heure second cycle ", "Total a payer");
-            resultlabel.Text += titre + "\n\t";
+            //resultlabel.Text += titre + "\n\t";
             string dateDebut = dateTimePicker1.Value.Date.ToString("yyyy-MM-dd") ;
             string dateFin = dateTimePicker2.Value.Date.ToString("yyyy-MM-dd");
             
@@ -142,9 +142,15 @@ namespace FingerPrint
                             //Console.WriteLine($"Total a payer prof {profNom}  = "+total_a_payer);
                             if(total_a_payer != 0)
                             {
-                                resultlabel.Text += String.Format("\n------------------------------------------------------------------------------------------------------------------------------\n");
-                                resultlabel.Text += String.Format("{0,-50} {1,-30} {2,-30} {3:N0} \n", profNom, Math.Round(nombre_Heure_Cycle1,2), Math.Round(nombre_Heure_Cycle2,2), Math.Round(total_a_payer));
-                                    //$"{profNom}  = " + Math.Round(total_a_payer) + "\n\t";
+                                //resultlabel.Text += String.Format("\n------------------------------------------------------------------------------------------------------------------------------\n");
+                                //resultlabel.Text += String.Format("{0,-50} {1,-30} {2,-30} {3:N0} \n", profNom, Math.Round(nombre_Heure_Cycle1,2), Math.Round(nombre_Heure_Cycle2,2), Math.Round(total_a_payer));
+                                //$"{profNom}  = " + Math.Round(total_a_payer) + "\n\t";
+
+                                int n = DGV_salaire.Rows.Add();
+                                DGV_salaire.Rows[n].Cells[0].Value = profNom;
+                                DGV_salaire.Rows[n].Cells[1].Value = Math.Round(nombre_Heure_Cycle1, 2);
+                                DGV_salaire.Rows[n].Cells[2].Value = Math.Round(nombre_Heure_Cycle2, 2);
+                                DGV_salaire.Rows[n].Cells[3].Value = Math.Round(total_a_payer);
                             }
                             total += total_a_payer;
 
@@ -152,11 +158,16 @@ namespace FingerPrint
                             nombre_Heure_Cycle2 = 0.0;
                         }                        
                     }
+                    int m = DGV_salaire.Rows.Add();
+                    DGV_salaire.Rows[m].Cells[0].Value = "  ";
+                    DGV_salaire.Rows[m].Cells[1].Value = "  ";
+                    DGV_salaire.Rows[m].Cells[2].Value = "Total A payer";
+                    DGV_salaire.Rows[m].Cells[3].Value = total;
 
-                    resultlabel.Text += "\n\n Total A payer  ---------------------------------------------------------------------------------------------------------------------  " + total +"\n";
+                    //.Text += "\n\n Total A payer  ---------------------------------------------------------------------------------------------------------------------  " + total +"\n";
                 }
 
-                resultTextBox.Text = resultlabel.Text;
+                //resultTextBox.Text = resultlabel.Text;
 
                 total = 0;
             }
@@ -253,24 +264,44 @@ namespace FingerPrint
             // Positioner le crayon avant d'imprimer la première ville
 
             yFloat += hauteurPoliceEnteteFloat * 2.0F;
-            xFloat -= e.MarginBounds.X;
+            xFloat -= e.MarginBounds.X + 3;
 
             //e.Graphics.DrawString(resultlabel.Text, detailFont, Brushes.Black, xFloat, yFloat);
 
             //yFloat +=
-            for (int i = numberItemsPrinted; i < resultTextBox.Lines.Count(); i++)
+            //for (int i = numberItemsPrinted; i < resultTextBox.Lines.Count(); i++)
             //foreach (string ligneString in resultTextBox.Lines)
+
+            e.Graphics.DrawString(DGV_salaire.Columns[0].HeaderText, enteteFont, Brushes.Black, xFloat, yFloat);
+            e.Graphics.DrawString(DGV_salaire.Columns[1].HeaderText, enteteFont, Brushes.Black, xFloat + 300, yFloat);
+            e.Graphics.DrawString(DGV_salaire.Columns[2].HeaderText, enteteFont, Brushes.Black, xFloat + 525, yFloat);
+            e.Graphics.DrawString(DGV_salaire.Columns[3].HeaderText, enteteFont, Brushes.Black, xFloat + 700, yFloat);
+
+            yFloat += hauteurPoliceDetailFloat + 10;
+
+            for (int i = numberItemsPrinted; i< DGV_salaire.Rows.Count;i++)
             {
 
                 numberItemsPrinted++;
                 // Imprimer la ville
-                if (numberItemsPrinted <= resultTextBox.Lines.Count())
+                if (numberItemsPrinted <= DGV_salaire.Rows.Count)
                 {
-                    e.Graphics.DrawString(resultTextBox.Lines[i], detailFont, Brushes.Black, xFloat, yFloat);
+                    //e.Graphics.DrawString(resultTextBox.Lines[i], detailFont, Brushes.Black, xFloat, yFloat);
+                    try
+                    {
+                        e.Graphics.DrawString(DGV_salaire.Rows[i].Cells[0].Value.ToString(), detailFont, Brushes.Black, xFloat, yFloat);
+                        e.Graphics.DrawString(DGV_salaire.Rows[i].Cells[1].Value.ToString(), detailFont, Brushes.Black, xFloat + 400, yFloat);
+                        e.Graphics.DrawString(DGV_salaire.Rows[i].Cells[2].Value.ToString(), detailFont, Brushes.Black, xFloat + 525, yFloat);
+                        e.Graphics.DrawString(DGV_salaire.Rows[i].Cells[3].Value.ToString(), detailFont, Brushes.Black, xFloat + 675, yFloat);
+                    }
+                    catch (NullReferenceException ex)
+                    {
+                        MessageBox.Show(ex.Message.ToString());
+                    }
 
                     // Descendre le crayon verticalement
 
-                    yFloat += hauteurPoliceDetailFloat;
+                    yFloat += hauteurPoliceDetailFloat+10;
                 }
                 else
                 {
@@ -278,8 +309,8 @@ namespace FingerPrint
                 }
                
 
-                Console.WriteLine(resultTextBox.Lines[i]);
-                if (itemperpage < 50) // check whether  the number of item(per page) is more than 20 or not
+                //Console.WriteLine(resultTextBox.Lines[i]);
+                if (itemperpage < 30) // check whether  the number of item(per page) is more than 20 or not
                 {
                     itemperpage += 1; // increment itemperpage by 1
                     Console.WriteLine(itemperpage);
@@ -294,7 +325,6 @@ namespace FingerPrint
             }
 
             //e.HasMorePages = true;
-
         }
 
         private void salairePrintPreviewDialog_Load(object sender, EventArgs e)
@@ -306,17 +336,28 @@ namespace FingerPrint
         {
             itemperpage = 0;
             numberItemsPrinted = 0;
-            Console.WriteLine(resultTextBox.Lines.Count());
+            //Console.WriteLine(resultTextBox.Lines.Count());
             //salairePrintDocument.DefaultPageSettings.PaperSize = 2;
+            
             salairePrintPreviewDialog.ShowDialog();
 
-            Console.WriteLine(resultlabel.Text);
+            //Console.WriteLine(resultlabel.Text);
             //Console.WriteLine(resultTextBox.Lines[60]);
         }
 
         private void resultTextBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void resultlabel_Click(object sender, EventArgs e)
+        {
+                
         }
     }
 }

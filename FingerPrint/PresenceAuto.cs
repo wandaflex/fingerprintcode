@@ -134,7 +134,7 @@ namespace FingerPrint
             string programmeTrouve = "";
             string idDifferent = "";
             string timeOut = "";
-            String tolerenceRetard = "00:10:00";
+            String tolerenceRetard = "00:40:00";
             bool quitter = false;
             try
             {
