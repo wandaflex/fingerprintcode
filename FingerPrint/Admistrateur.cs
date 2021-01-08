@@ -312,7 +312,7 @@ namespace FingerPrint
                     {
                         mySqlCmd.Parameters.AddWithValue("_MatiereCode", TXB_CodeMatiere.Text.Trim());
                         mySqlCmd.Parameters.AddWithValue("_MatiereNom", TXB_NomMatiere.Text.Trim());
-                        mySqlCmd.ExecuteNonQuery();
+                        mySqlCmd.ExecuteNonQuery(); 
                         MessageBox.Show("Submited successfully");
                         GridFill("MAtiereViewAll", DGV_ListeMatiere);
                     }
@@ -905,14 +905,14 @@ namespace FingerPrint
                 mySqlCmd.Parameters.AddWithValue("_ProgrammesID", programmeID);
                 mySqlCmd.ExecuteNonQuery();
                 MessageBox.Show("Deleted successfully");
-                cleanForm(GBX_FormAdmin, ref adminID, BTN_EnregisterProg);
+                cleanForm(GBX_FormProg, ref programmeID, BTN_EnregisterProg);
                 GridFill("ProgrammeViewFrorein", DGV_ListeProgramme);
             }
         }
 
         private void BTN_AnnulerProg_Click(object sender, EventArgs e)
         {
-            cleanForm(GBX_FormAdmin, ref adminID, BTN_EnregisterProg);
+            cleanForm(GBX_FormProg, ref programmeID, BTN_EnregisterProg);
         }
 
         private void BTN_SupprimerPresence_Click(object sender, EventArgs e)
@@ -925,7 +925,7 @@ namespace FingerPrint
                 mySqlCmd.Parameters.AddWithValue("_PresenceID", presenceID);
                 mySqlCmd.ExecuteNonQuery();
                 MessageBox.Show("Deleted successfully");
-                cleanForm(GBX_FormAdmin, ref adminID, BTN_EnregisterPresence);
+                cleanForm(GBX_FormPresence, ref presenceID, BTN_EnregisterPresence);
                 GridFill("PresenceProgrammeViewAll", DGV_ListePresence);
             }
         }
@@ -940,19 +940,19 @@ namespace FingerPrint
                 mySqlCmd.Parameters.AddWithValue("_ProfMatiereID", profMatiereID);
                 mySqlCmd.ExecuteNonQuery();
                 MessageBox.Show("Deleted successfully");
-                cleanForm(GBX_FormAdmin, ref adminID, BTN_EnregistrerMatProf);
+                cleanForm(GBX_FormMatiereProf, ref profMatiereID, BTN_EnregistrerMatProf);
                 GridFill("ProfMatiereViewFrorein", DGV_MatiereProf);
             }
         }
 
         private void BTN_AnnulerPresence_Click(object sender, EventArgs e)
         {
-            cleanForm(GBX_FormAdmin, ref adminID, BTN_EnregisterPresence);
+            cleanForm(GBX_FormPresence, ref presenceID, BTN_EnregisterPresence);
         }
 
         private void BTN_AnnulerMatProf_Click(object sender, EventArgs e)
         {
-            cleanForm(GBX_FormAdmin, ref adminID, BTN_EnregistrerMatProf);
+            cleanForm(GBX_FormMatiereProf, ref profMatiereID, BTN_EnregistrerMatProf);
         }
 
         private void DGV_MatiereProf_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -1037,7 +1037,7 @@ namespace FingerPrint
             else if (ste == EMPR_RESET)
             {
                 BTN_Empreinte1.Enabled = true;
-                BTN_Empreinte2.Enabled = false;
+                BTN_Empreinte2.Enabled = true;
             }
         }
 
@@ -1310,6 +1310,11 @@ namespace FingerPrint
         private void BTN_AnnulerMatiere_Click(object sender, EventArgs e)
         {
             cleanForm(GBX_FormMatiere, ref matiereID, BTN_EnregisterMatiere);
+        }
+
+        private void BTN_EtatReseau_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

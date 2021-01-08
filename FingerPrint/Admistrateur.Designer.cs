@@ -285,6 +285,7 @@
             this.BTN_EtatReseau.TabIndex = 5;
             this.BTN_EtatReseau.Text = "Etat du Reseau";
             this.BTN_EtatReseau.UseVisualStyleBackColor = true;
+            this.BTN_EtatReseau.Click += new System.EventHandler(this.BTN_EtatReseau_Click);
             // 
             // TPG_MatiereProf
             // 
